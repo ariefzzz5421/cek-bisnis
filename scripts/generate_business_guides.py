@@ -132,7 +132,7 @@ def draw_page_header(pdf, title, subtitle, accent, page_number, updated_at):
     pdf.drawString(84, height - 48, "CEK BISNIS")
     pdf.setFillColor(MUTED)
     pdf.setFont("Helvetica", 7)
-    pdf.drawString(84, height - 61, "FULL BUSINESS GUIDE")
+    pdf.drawString(84, height - 61, "PANDUAN RINGKAS")
     pdf.setFillColor(INK)
     pdf.setFont("Helvetica-Bold", 23)
     pdf.drawString(42, height - 112, title)
@@ -174,7 +174,7 @@ def generate_pdf(data, business):
     pdf.drawString(104, height - 61, "CEK BISNIS")
     pdf.setFillColor(colors.HexColor("#8A9292"))
     pdf.setFont("Helvetica", 8)
-    pdf.drawString(104, height - 76, "FULL BUSINESS GUIDE - 2026")
+    pdf.drawString(104, height - 76, "PANDUAN RINGKAS - 2026")
     pdf.setFillColor(accent)
     pdf.setFont("Helvetica-Bold", 10)
     pdf.drawString(44, height - 210, business["category"].upper())
@@ -396,6 +396,169 @@ def load_font(size, bold=False):
     return ImageFont.load_default()
 
 
+def generate_simple_pdf(data, business):
+    """Generate a concise three-page field guide."""
+    PDF_DIR.mkdir(parents=True, exist_ok=True)
+    path = PDF_DIR / f"cek-bisnis-{business['slug']}-guide.pdf"
+    pdf = canvas.Canvas(str(path), pagesize=A4)
+    width, height = A4
+    accent = colors.HexColor(business["accent"])
+    baseline_city = next(city for city in data["cities"] if city["id"] == "kediri")
+    baseline = metrics(business, baseline_city)
+    source_map = {source["id"]: source for source in data["sources"]}
+    business_sources = [source_map[source_id] for source_id in business["sourceIds"]]
+
+    # Page 1: decision numbers
+    pdf.setFillColor(INK)
+    pdf.rect(0, 0, width, height, stroke=0, fill=1)
+    draw_brandmark(pdf, 42, height - 77, 38, accent)
+    pdf.setFillColor(WHITE)
+    pdf.setFont("Helvetica-Bold", 13)
+    pdf.drawString(92, height - 50, "CEK BISNIS")
+    pdf.setFillColor(colors.HexColor("#8C9494"))
+    pdf.setFont("Helvetica", 7)
+    pdf.drawString(92, height - 64, "PANDUAN RINGKAS - KEDIRI")
+    pdf.setFillColor(accent)
+    pdf.setFont("Helvetica-Bold", 9)
+    pdf.drawString(42, height - 150, business["category"].upper())
+    title_y = height - 200
+    for line in wrap_lines(business["name"], width - 84, "Helvetica-Bold", 34)[:2]:
+        pdf.setFillColor(WHITE)
+        pdf.setFont("Helvetica-Bold", 34)
+        pdf.drawString(42, title_y, line)
+        title_y -= 40
+    title_y = draw_wrapped(pdf, business["oneLine"], 42, title_y - 5, width - 84, font_size=11, leading=15, color=colors.HexColor("#B9BDBC"), max_lines=3)
+
+    box_top = min(title_y - 40, height - 330)
+    card_w = (width - 96) / 2
+    cards = [
+        ("MODAL AWAL", f"{money(baseline['capex_low'],0)} - {money(baseline['capex_high'],0).replace('Rp','')}", "Alat, sewa, fit-out, kas awal", colors.HexColor("#202728")),
+        ("OPEX / BULAN", money(baseline["opex"]), "Pada omzet target", colors.HexColor("#202728")),
+        ("OMZET BEP", money(baseline["bep"]), f"{baseline['traffic']} {business['trafficLabel']}", accent),
+        ("TARGET OMZET", money(baseline["revenue"]), f"Laba model {money(baseline['profit'])}", colors.HexColor("#202728")),
+    ]
+    for index, (label, value, note, fill) in enumerate(cards):
+        col, row = index % 2, index // 2
+        x = 42 + col * (card_w + 12)
+        y = box_top - 110 - row * 122
+        pdf.setFillColor(fill)
+        pdf.roundRect(x, y, card_w, 106, 10, stroke=0, fill=1)
+        dark_text = fill == accent
+        pdf.setFillColor(colors.HexColor("#526044") if dark_text else colors.HexColor("#8C9494"))
+        pdf.setFont("Helvetica-Bold", 7)
+        pdf.drawString(x + 14, y + 80, label)
+        pdf.setFillColor(INK if dark_text else WHITE)
+        pdf.setFont("Helvetica-Bold", 14)
+        pdf.drawString(x + 14, y + 52, value)
+        pdf.setFillColor(colors.HexColor("#5E664E") if dark_text else colors.HexColor("#B9BDBC"))
+        pdf.setFont("Helvetica", 7)
+        pdf.drawString(x + 14, y + 25, note)
+    pdf.setFillColor(colors.HexColor("#FFF0EC"))
+    pdf.roundRect(42, 60, width - 84, 58, 8, stroke=0, fill=1)
+    draw_wrapped(pdf, "RISIKO: tambah buffer modal 15-25%. Angka ini screening awal, bukan jaminan untung.", 56, 91, width - 112, font_name="Helvetica-Bold", font_size=8, leading=11, color=colors.HexColor("#72524B"))
+    pdf.showPage()
+
+    # Page 2: what to buy and run
+    draw_page_header(pdf, "Beli dan jalankan", business["format"], accent, 2, data["updatedAt"])
+    top_y = height - 180
+    left_x, right_x = 42, 314
+    col_w = 239
+    pdf.setFillColor(INK)
+    pdf.setFont("Helvetica-Bold", 13)
+    pdf.drawString(left_x, top_y, "Daftar modal")
+    pdf.drawString(right_x, top_y, "Operasi harian")
+    y_left = top_y - 24
+    for index, item in enumerate(business["equipment"], start=1):
+        pdf.setFillColor(colors.white)
+        pdf.roundRect(left_x, y_left - 72, col_w, 64, 7, stroke=0, fill=1)
+        pdf.setFillColor(accent)
+        pdf.circle(left_x + 14, y_left - 22, 8, stroke=0, fill=1)
+        pdf.setFillColor(INK)
+        pdf.setFont("Helvetica-Bold", 7)
+        pdf.drawCentredString(left_x + 14, y_left - 24, str(index))
+        pdf.setFont("Helvetica-Bold", 8)
+        for line_index, line in enumerate(wrap_lines(item["item"], 145, "Helvetica-Bold", 8)[:2]):
+            pdf.drawString(left_x + 29, y_left - 18 - line_index * 10, line)
+        pdf.setFont("Helvetica-Bold", 7)
+        pdf.drawRightString(left_x + col_w - 10, y_left - 19, item["range"])
+        y_left -= 72
+    y_right = top_y - 25
+    for index, item in enumerate(business["dailyOps"], start=1):
+        pdf.setFillColor(accent)
+        pdf.circle(right_x + 8, y_right, 7, stroke=0, fill=1)
+        pdf.setFillColor(INK)
+        pdf.setFont("Helvetica-Bold", 7)
+        pdf.drawCentredString(right_x + 8, y_right - 2, str(index))
+        y_right = draw_wrapped(pdf, item, right_x + 23, y_right + 3, col_w - 23, font_name="Helvetica-Bold", font_size=8, leading=10, max_lines=2) - 13
+    pdf.setFillColor(INK)
+    pdf.setFont("Helvetica-Bold", 13)
+    pdf.drawString(right_x, y_right - 8, "Sebelum sewa")
+    checklist_y = y_right - 33
+    for item in business["checklist"]:
+        pdf.setFillColor(LIME)
+        pdf.roundRect(right_x, checklist_y - 5, 9, 9, 2, stroke=0, fill=1)
+        checklist_y = draw_wrapped(pdf, item, right_x + 15, checklist_y + 2, col_w - 15, font_size=7.5, leading=10, max_lines=2) - 9
+    pdf.setFillColor(colors.HexColor("#FFF0EC"))
+    pdf.roundRect(42, 66, width - 84, 65, 8, stroke=0, fill=1)
+    draw_wrapped(pdf, f"TITIK YANG DICARI: {business['locationSignal']}", 56, 103, width - 112, font_name="Helvetica-Bold", font_size=8, leading=11, color=colors.HexColor("#72524B"), max_lines=3)
+    pdf.showPage()
+
+    # Page 3: 90-day plan, risk and sources
+    draw_page_header(pdf, "Rencana 90 hari", "Tiga tahap. Berhenti bila validasi lokasi dan permintaan tidak lolos.", accent, 3, data["updatedAt"])
+    card_w = (width - 112) / 3
+    card_y = height - 400
+    for index, phase in enumerate(business["plan90"]):
+        x = 42 + index * (card_w + 14)
+        pdf.setFillColor(INK)
+        pdf.roundRect(x, card_y, card_w, 220, 10, stroke=0, fill=1)
+        pdf.setFillColor(accent)
+        pdf.setFont("Helvetica-Bold", 8)
+        pdf.drawString(x + 13, card_y + 190, phase["phase"])
+        pdf.setFillColor(WHITE)
+        pdf.setFont("Helvetica-Bold", 12)
+        title_cursor = card_y + 162
+        for line in wrap_lines(phase["title"], card_w - 26, "Helvetica-Bold", 12)[:2]:
+            pdf.drawString(x + 13, title_cursor, line)
+            title_cursor -= 15
+        action_y = card_y + 112
+        for action in phase["actions"]:
+            pdf.setFillColor(accent)
+            pdf.circle(x + 17, action_y + 2, 2.5, stroke=0, fill=1)
+            action_y = draw_wrapped(pdf, action, x + 25, action_y + 4, card_w - 38, font_size=7, leading=9, color=colors.HexColor("#C6CACA"), max_lines=2) - 9
+
+    y = card_y - 30
+    pdf.setFillColor(INK)
+    pdf.setFont("Helvetica-Bold", 12)
+    pdf.drawString(42, y, "Risiko utama")
+    risk_y = y - 22
+    for risk in business["risks"]:
+        pdf.setFillColor(RED)
+        pdf.circle(47, risk_y + 2, 3, stroke=0, fill=1)
+        risk_y = draw_wrapped(pdf, risk, 58, risk_y + 4, width - 100, font_size=7.5, leading=10, max_lines=2) - 7
+    permit_y = risk_y - 8
+    pdf.setFillColor(INK)
+    pdf.setFont("Helvetica-Bold", 11)
+    pdf.drawString(42, permit_y, "Izin")
+    permit_y -= 18
+    for permit in business["permits"]:
+        permit_y = draw_wrapped(pdf, f"- {permit}", 42, permit_y, width - 84, font_size=7, leading=9, max_lines=2) - 4
+    source_y = min(permit_y - 10, 104)
+    pdf.setFillColor(INK)
+    pdf.setFont("Helvetica-Bold", 9)
+    pdf.drawString(42, source_y, "Sumber")
+    source_y -= 14
+    for source in business_sources:
+        host = urlparse(source["url"]).netloc.replace("www.", "")
+        pdf.setFillColor(MUTED)
+        pdf.setFont("Helvetica", 6.5)
+        pdf.drawString(42, source_y, source["title"][:62])
+        pdf.drawRightString(width - 42, source_y, host)
+        source_y -= 10
+    pdf.showPage()
+    pdf.save()
+    return path
+
+
 def pil_wrapped(draw, text, xy, font, fill, max_width, line_gap=8):
     x, y = xy
     words = text.split()
@@ -468,7 +631,7 @@ def main():
     data = json.loads(DATA_PATH.read_text(encoding="utf-8"))
     generated = []
     for business in data["businesses"]:
-        generated.append(generate_pdf(data, business))
+        generated.append(generate_simple_pdf(data, business))
         generated.append(generate_preview(data, business))
     print(f"Generated {len(generated)} files")
     for path in generated:

@@ -1,195 +1,100 @@
+import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowDown,
-  ArrowRight,
-  ArrowUpRight,
-  BarChart3,
-  CheckCircle2,
-  FileText,
-  ImageDown,
-  Info,
-  MapPin,
-  ShieldAlert,
-  Sparkles,
-  Target,
-  WalletCards,
-} from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Download, FileText, ImageDown, Map, MapPin, ShieldAlert } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { BusinessIcon } from "@/components/BusinessIcon";
+import { BusinessTour } from "@/components/BusinessTour";
 import { SiteHeader } from "@/components/SiteHeader";
-import { businessData, businesses, cities, formatMoney } from "@/lib/business-data";
-
-const cityAverages = cities
-  .map((city) => ({
-    ...city,
-    average: Math.round(Object.values(city.scores).reduce((sum, score) => sum + score, 0) / Object.values(city.scores).length),
-    costIndex: Math.round(((city.wageFactor + city.rentFactor) / 2) * 100),
-  }))
-  .sort((a, b) => b.average - a.average);
+import { businessData, businesses, formatMoney } from "@/lib/business-data";
+import { placesMeta } from "@/lib/location-survey";
 
 export default function Home() {
   return (
     <main>
       <SiteHeader />
 
-      <section className="landing-hero" id="top">
-        <div className="hero-grid" aria-hidden="true" />
-        <div className="landing-hero-copy">
-          <div className="eyebrow"><span className="live-dot" /> Data Indonesia - diperbarui {businessData.updatedAt}</div>
-          <h1>Jangan buka usaha<br />hanya karena <em>kelihatan ramai.</em></h1>
-          <p>
-            Pilih jenis usaha, cek modal awal, biaya bulanan, omzet minimum,
-            kota paling cocok, dan rencana 90 hari sebelum uang benar-benar keluar.
-          </p>
+      <section className="real-hero">
+        <div className="real-hero-copy">
+          <span className="eyebrow"><i /> DATA INDONESIA · {businessData.updatedAt}</span>
+          <h1>Lihat usahanya.<br /><em>Hitung risikonya.</em></h1>
+          <p>Modal, biaya, BEP, dan lokasi—sebelum uang keluar.</p>
           <div className="hero-actions">
-            <Link className="button-primary" href="#pilih-usaha">Pilih jenis usaha <ArrowDown size={19} /></Link>
-            <Link className="button-ghost" href="#metode"><Info size={18} /> Lihat dasar datanya</Link>
+            <Link className="button-primary" href="#pilih-usaha">Pilih usaha <ArrowRight size={19} /></Link>
+            <Link className="button-ghost" href="/survei-lokasi"><MapPin size={18} /> Survei lokasi</Link>
           </div>
-          <div className="hero-proof">
-            <div><strong>7</strong><span>panduan usaha</span></div>
-            <div><strong>12</strong><span>kota pembanding</span></div>
-            <div><strong>2</strong><span>format download</span></div>
+          <div className="real-proof">
+            <div><strong>7</strong><span>usaha</span></div>
+            <div><strong>{placesMeta.count}</strong><span>kota & kabupaten</span></div>
+            <div><strong>2</strong><span>file unduhan</span></div>
           </div>
         </div>
-
-        <div className="landing-hero-visual">
-          <div className="hero-brand-lockup">
-            <BrandLogo large />
-            <span>BUSINESS FEASIBILITY LAB</span>
-          </div>
-          <div className="decision-card">
-            <div className="decision-head">
-              <span>PILIHAN CEPAT</span>
-              <b>Mulai dari budget kamu</b>
-            </div>
-            {businesses.slice(0, 4).map((business) => (
-              <Link href={`/usaha/${business.slug}`} key={business.id}>
-                <span className="decision-icon" style={{ background: business.accent }}><BusinessIcon id={business.id} size={20} /></span>
-                <span><small>{business.category}</small><b>{business.name}</b></span>
-                <span className="decision-capex">{formatMoney(business.capex[0], 0)}+</span>
-                <ArrowRight size={17} />
-              </Link>
-            ))}
-            <Link className="decision-more" href="#pilih-usaha">Lihat semua 7 usaha <ArrowDown size={16} /></Link>
-          </div>
-          <div className="hero-badge hero-badge-a"><FileText size={16} /> PDF plan siap unduh</div>
-          <div className="hero-badge hero-badge-b"><MapPin size={16} /> Skor 12 kota</div>
-        </div>
+        <BusinessTour />
       </section>
 
-      <section className="business-directory" id="pilih-usaha">
-        <div className="section-heading directory-heading">
-          <div>
-            <span className="section-kicker">01 / PILIH JENIS USAHA</span>
-            <h2>Satu pilihan, satu halaman analisis lengkap.</h2>
-          </div>
-          <p>Setiap halaman berisi unit economics, ranking kota, estimasi omzet, alat yang dibutuhkan, risiko, rencana 90 hari, PDF, dan kartu preview.</p>
+      <section className="real-business-section" id="pilih-usaha">
+        <div className="real-section-head">
+          <div><span>01 · PILIH USAHA</span><h2>Mulai dari satu model.</h2></div>
+          <p>Angka utama. Contoh nyata. Panduan singkat.</p>
         </div>
-
-        <div className="business-directory-grid">
+        <div className="real-business-grid">
           {businesses.map((business, index) => (
-            <Link className="directory-card" href={`/usaha/${business.slug}`} key={business.id} style={{ "--accent": business.accent } as React.CSSProperties}>
-              <div className="directory-card-top">
-                <span className="directory-number">0{index + 1}</span>
-                <span className="directory-icon"><BusinessIcon id={business.id} size={28} /></span>
+            <Link className="real-business-card" href={`/usaha/${business.slug}`} key={business.id} style={{ "--accent": business.accent } as React.CSSProperties}>
+              <div className="business-photo">
+                <Image src={`/businesses/${business.slug}.jpg`} alt={`Contoh nyata ${business.name} di Indonesia`} width={1536} height={1024} unoptimized />
+                <span><BusinessIcon id={business.id} size={22} /> 0{index + 1}</span>
               </div>
-              <span className="directory-category">{business.category}</span>
-              <h3>{business.name}</h3>
-              <p>{business.oneLine}</p>
-              <div className="directory-metrics">
-                <div><small>Modal awal</small><b>{formatMoney(business.capex[0], 0)}-{formatMoney(business.capex[1], 0).replace("Rp", "")}</b></div>
-                <div><small>Target omzet</small><b>{formatMoney(business.targetRevenue, 0)} / bln</b></div>
+              <div className="business-card-body">
+                <small>{business.category}</small>
+                <h3>{business.name}</h3>
+                <p>{business.oneLine}</p>
+                <div><span><small>Modal</small><b>{formatMoney(business.capex[0], 0)}+</b></span><span><small>Target</small><b>{formatMoney(business.targetRevenue, 0)}/bln</b></span></div>
+                <em>Buka analisis <ArrowUpRight size={16} /></em>
               </div>
-              <span className="directory-link">Buka analisis <ArrowUpRight size={17} /></span>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="city-overview" id="kota">
-        <div className="section-heading city-heading">
-          <div>
-            <span className="section-kicker">02 / KOTA DAN LOKASI RAMAI</span>
-            <h2>Kota ramai belum tentu paling untung.</h2>
-          </div>
-          <p>Skor kota menimbang demand, daya beli, biaya masuk, dan tekanan kompetisi. Indeks biaya nasional = 100.</p>
+      <section className="map-cta" id="lokasi">
+        <div className="map-cta-copy">
+          <span>02 · SURVEI SELURUH INDONESIA</span>
+          <h2>Cari kota.<br />Klik lokasi.<br />Lihat skor.</h2>
+          <ul>
+            <li><Check size={17} /> Pesaing nyata di peta</li>
+            <li><Check size={17} /> Pemicu ramai dan akses</li>
+            <li><Check size={17} /> Estimasi omzet model</li>
+          </ul>
+          <Link href="/survei-lokasi">Buka peta Indonesia <ArrowRight size={19} /></Link>
         </div>
-
-        <div className="city-board">
-          <div className="city-board-intro">
-            <MapPin size={24} />
-            <h3>Radar peluang Indonesia</h3>
-            <p>Pilih usaha terlebih dahulu untuk melihat ranking yang spesifik dan estimasi omzet per kota.</p>
-            <div className="city-legend"><i /> Peluang tinggi <i /> Peluang sehat <i /> Perlu validasi</div>
-          </div>
-          <div className="city-list">
-            {cityAverages.slice(0, 8).map((city, index) => (
-              <article key={city.id}>
-                <span className="city-rank">{String(index + 1).padStart(2, "0")}</span>
-                <div><h3>{city.name}</h3><p>{city.hotspots.slice(0, 2).join(" - ")}</p></div>
-                <div className="city-index"><small>Biaya</small><b>{city.costIndex}</b></div>
-                <div className="city-score"><small>Skor umum</small><b>{city.average}</b></div>
-              </article>
-            ))}
-          </div>
-        </div>
-        <p className="model-disclaimer"><ShieldAlert size={17} /> Area ramai di atas adalah shortlist survei, bukan traffic live. Hitung pejalan, kendaraan, kos, rumah, dan pesaing selama minimal 7 hari.</p>
-      </section>
-
-      <section className="download-explainer">
-        <div className="download-copy">
-          <span className="section-kicker">03 / BAWA PULANG RENCANANYA</span>
-          <h2>Bukan cuma lihat.<br />Bisa langsung dipakai.</h2>
-          <p>Setiap jenis usaha punya dua file yang siap diunduh setelah kamu memilih kota dan skenario omzet.</p>
-        </div>
-        <div className="download-cards">
-          <article>
-            <span className="download-icon"><FileText size={28} /></span>
-            <div><small>VERSI 01</small><h3>PDF Full Business Guide</h3></div>
-            <p>Modal, OPEX, BEP, alat, SOP harian, ranking kota, risiko, izin, dan rencana 90 hari.</p>
-            <span className="file-meta">6 halaman - A4 - siap cetak</span>
-          </article>
-          <article>
-            <span className="download-icon"><ImageDown size={28} /></span>
-            <div><small>VERSI 02</small><h3>Image Business Preview</h3></div>
-            <p>Kartu ringkas 1200 x 1500 berisi angka utama dan kota pilihan untuk dibagikan atau disimpan.</p>
-            <span className="file-meta">PNG - kota menyesuaikan</span>
-          </article>
+        <div className="map-cta-visual">
+          <div className="map-grid-lines" />
+          <Map size={210} strokeWidth={0.75} />
+          <div className="map-pin-demo pin-a"><i /> Kediri</div>
+          <div className="map-pin-demo pin-b"><i /> Makassar</div>
+          <div className="map-pin-demo pin-c"><i /> Medan</div>
+          <p><ShieldAlert size={16} /> Skor awal, bukan traffic live.</p>
         </div>
       </section>
 
-      <section className="method-section landing-method" id="metode">
-        <div className="method-intro">
-          <span className="section-kicker">04 / METODE DAN SUMBER</span>
-          <h2>Angka yang bisa dibongkar,<br />bukan janji manis.</h2>
-          <p>{businessData.methodNote}</p>
-        </div>
-        <div className="formula-grid">
-          <article><span>01</span><WalletCards size={24} /><h3>CAPEX</h3><p>Alat, fit-out, deposit, stok awal, dan kas kerja.</p></article>
-          <article><span>02</span><BarChart3 size={24} /><h3>OPEX</h3><p>Biaya tetap ditambah biaya variabel pada omzet terpilih.</p></article>
-          <article><span>03</span><Target size={24} /><h3>BEP omzet</h3><p>Biaya tetap dibagi margin kontribusi bisnis.</p></article>
-          <article><span>04</span><Sparkles size={24} /><h3>Skor kota</h3><p>Demand, daya beli, biaya, dan kompetisi lokal.</p></article>
-        </div>
-        <div className="source-strip">
+      <section className="simple-download" id="download">
+        <div><span>03 · SIMPAN RENCANA</span><h2>Dua file. Langsung pakai.</h2></div>
+        <article><FileText size={28} /><div><small>PDF · 3 HALAMAN</small><h3>Panduan usaha</h3><p>Angka, alat, operasi, dan rencana 90 hari.</p></div><Download size={20} /></article>
+        <article><ImageDown size={28} /><div><small>PNG · PREVIEW</small><h3>Kartu ringkas</h3><p>Modal, BEP, omzet, dan traffic minimum.</p></div><Download size={20} /></article>
+      </section>
+
+      <section className="data-strip" id="data">
+        <div><span>DASAR DATA</span><h2>Bisa dicek. Tetap perlu survei.</h2></div>
+        <div className="data-links">
           {businessData.sources.slice(0, 5).map((source) => (
-            <a href={source.url} target="_blank" rel="noreferrer" key={source.id}>
-              <CheckCircle2 size={16} /><span><b>{source.title}</b><small>{source.note}</small></span><ArrowUpRight size={16} />
-            </a>
+            <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><Check size={15} /><span><b>{source.title}</b><small>{source.note}</small></span><ArrowUpRight size={15} /></a>
           ))}
+          <a href={placesMeta.sourceUrl} target="_blank" rel="noreferrer"><Check size={15} /><span><b>GeoNames Indonesia</b><small>{placesMeta.count} kota/kabupaten · {placesMeta.license}</small></span><ArrowUpRight size={15} /></a>
         </div>
       </section>
 
-      <section className="closing-section landing-closing">
-        <div><span>SUDAH SIAP MEMILIH?</span><h2>Hitung dulu.<br />Baru buka.</h2></div>
-        <Link href="#pilih-usaha">Pilih usaha <ArrowUpRight size={21} /></Link>
-        <div className="closing-logo"><BrandLogo large /></div>
-      </section>
+      <section className="real-closing"><div><span>SUDAH PUNYA CALON USAHA?</span><h2>Hitung dulu.<br />Baru buka.</h2></div><Link href="#pilih-usaha">Mulai cek <ArrowUpRight size={20} /></Link></section>
 
-      <footer>
-        <BrandLogo />
-        <p>Preview unit economics UMKM Indonesia - bukan jaminan keuntungan.</p>
-        <span>© 2026</span>
-      </footer>
+      <footer><BrandLogo /><p>Estimasi awal UMKM Indonesia. Bukan jaminan untung.</p><span>© 2026</span></footer>
     </main>
   );
 }

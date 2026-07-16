@@ -3,11 +3,11 @@ import Image from "next/image";
 
 export function BrandLogo({ large = false }: { large?: boolean }) {
   return (
-    <Link className={`brand brand-c ${large ? "brand-large" : ""}`} href="/" aria-label="Cek Bisnis beranda">
-      <span className={`logo-crop ${large ? "logo-crop-large" : "logo-crop-small"}`} aria-hidden="true">
-        <Image src="/brand/logo-options.png" alt="" width={1536} height={1024} priority />
+    <Link className={`brand ${large ? "brand-large" : ""}`} href="/" aria-label="Cek Bisnis beranda">
+      <span className={`brand-mark ${large ? "brand-mark-large" : ""}`} aria-hidden="true">
+        <Image src="/favicon.svg" alt="" width={64} height={64} priority unoptimized />
       </span>
-      <span className="brand-wordmark">CEK BISNIS</span>
+      <span className="brand-wordmark"><b>CEK</b> BISNIS</span>
     </Link>
   );
 }

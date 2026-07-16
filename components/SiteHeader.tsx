@@ -8,11 +8,11 @@ export function SiteHeader() {
       <BrandLogo />
       <nav className="site-nav" aria-label="Navigasi utama">
         <Link href="/#pilih-usaha">Jenis usaha</Link>
-        <Link href="/#kota">Kota ramai</Link>
-        <Link href="/#metode">Metode data</Link>
+        <Link href="/survei-lokasi">Survei lokasi</Link>
+        <Link href="/#data">Dasar data</Link>
       </nav>
-      <Link className="header-action" href="/#pilih-usaha">
-        Pilih usaha <ArrowRight size={17} />
+      <Link className="header-action" href="/survei-lokasi">
+        Cek lokasi <ArrowRight size={17} />
       </Link>
     </header>
   );

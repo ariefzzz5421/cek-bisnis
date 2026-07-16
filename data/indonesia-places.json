@@ -1,0 +1,4482 @@
+{
+    "source":  "GeoNames Indonesia daily extract",
+    "sourceUrl":  "https://download.geonames.org/export/dump/ID.zip",
+    "license":  "CC BY 4.0",
+    "snapshot":  "2026-02-09",
+    "count":  497,
+    "places":  [
+                   {
+                       "id":  "1642911",
+                       "name":  "Jakarta",
+                       "province":  "DKI Jakarta",
+                       "lat":  -6.21462,
+                       "lng":  106.84513,
+                       "population":  8540121,
+                       "kind":  "PPLC"
+                   },
+                   {
+                       "id":  "1625822",
+                       "name":  "Surabaya",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.24917,
+                       "lng":  112.75083,
+                       "population":  3018022,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1649378",
+                       "name":  "Bekasi",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.2349,
+                       "lng":  106.9896,
+                       "population":  2648272,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1650357",
+                       "name":  "Bandung",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.92222,
+                       "lng":  107.60694,
+                       "population":  2528163,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1214520",
+                       "name":  "Medan",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.58333,
+                       "lng":  98.66667,
+                       "population":  2486283,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1645524",
+                       "name":  "Depok",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.4,
+                       "lng":  106.81861,
+                       "population":  2163635,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1625084",
+                       "name":  "Tangerang",
+                       "province":  "Banten",
+                       "lat":  -6.17806,
+                       "lng":  106.63,
+                       "population":  1927815,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1633070",
+                       "name":  "Palembang",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -2.91673,
+                       "lng":  104.7458,
+                       "population":  1801367,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1627896",
+                       "name":  "Semarang",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.99306,
+                       "lng":  110.42083,
+                       "population":  1694740,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1622786",
+                       "name":  "Makassar",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.14861,
+                       "lng":  119.43194,
+                       "population":  1474393,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "8581443",
+                       "name":  "South Tangerang",
+                       "province":  "Banten",
+                       "lat":  -6.28862,
+                       "lng":  106.71789,
+                       "population":  1429529,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "6295587",
+                       "name":  "Batam",
+                       "province":  "Riau",
+                       "lat":  1.14937,
+                       "lng":  104.02491,
+                       "population":  1296960,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1642548",
+                       "name":  "Jepara",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.5924,
+                       "lng":  110.671,
+                       "population":  1257912,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1631761",
+                       "name":  "Pekanbaru",
+                       "province":  "Riau",
+                       "lat":  0.51667,
+                       "lng":  101.44167,
+                       "population":  1167599,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1624917",
+                       "name":  "Bandar Lampung",
+                       "province":  "Lampung",
+                       "lat":  -5.42917,
+                       "lng":  105.26111,
+                       "population":  1166066,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1648473",
+                       "name":  "Bogor",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.59444,
+                       "lng":  106.78917,
+                       "population":  1078351,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1633419",
+                       "name":  "Padang",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.94924,
+                       "lng":  100.35427,
+                       "population":  942938,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1636722",
+                       "name":  "Malang",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.9797,
+                       "lng":  112.6304,
+                       "population":  889359,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1629001",
+                       "name":  "Samarinda",
+                       "province":  "Kalimantan Timur",
+                       "lat":  -0.49167,
+                       "lng":  117.14583,
+                       "population":  865306,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1624647",
+                       "name":  "Tasikmalaya",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.3274,
+                       "lng":  108.2207,
+                       "population":  770839,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1627549",
+                       "name":  "Serang",
+                       "province":  "Banten",
+                       "lat":  -6.11528,
+                       "lng":  106.15417,
+                       "population":  735651,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1650527",
+                       "name":  "Balikpapan",
+                       "province":  "Kalimantan Timur",
+                       "lat":  -1.26753,
+                       "lng":  116.82887,
+                       "population":  695287,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630789",
+                       "name":  "Pontianak",
+                       "province":  "Kalimantan Barat",
+                       "lat":  -0.03194,
+                       "lng":  109.325,
+                       "population":  686019,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1626801",
+                       "name":  "Situbondo",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.70623,
+                       "lng":  114.00976,
+                       "population":  685967,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1645528",
+                       "name":  "Denpasar",
+                       "province":  "Bali",
+                       "lat":  -8.65,
+                       "lng":  115.21667,
+                       "population":  670210,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1650213",
+                       "name":  "Banjarmasin",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.31987,
+                       "lng":  114.59075,
+                       "population":  657663,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642858",
+                       "name":  "Jambi City",
+                       "province":  "Jambi",
+                       "lat":  -1.6,
+                       "lng":  103.61667,
+                       "population":  635101,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1646448",
+                       "name":  "Cimahi",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.87222,
+                       "lng":  107.5425,
+                       "population":  581994,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1625812",
+                       "name":  "Surakarta",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.55611,
+                       "lng":  110.83167,
+                       "population":  526870,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "2057087",
+                       "name":  "Kupang",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -10.17083,
+                       "lng":  123.60694,
+                       "population":  474801,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1646511",
+                       "name":  "Cilegon",
+                       "province":  "Banten",
+                       "lat":  -6.0144,
+                       "lng":  106.0542,
+                       "population":  470378,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1636544",
+                       "name":  "Manado",
+                       "province":  "Sulawesi Utara",
+                       "lat":  1.48218,
+                       "lng":  124.84892,
+                       "population":  458582,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1635882",
+                       "name":  "Mataram",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.58333,
+                       "lng":  116.11667,
+                       "population":  441147,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "2082600",
+                       "name":  "Jayapura",
+                       "province":  "Papua",
+                       "lat":  -2.53371,
+                       "lng":  140.71813,
+                       "population":  410852,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1649150",
+                       "name":  "Bengkulu",
+                       "province":  "Bengkulu",
+                       "lat":  -3.80044,
+                       "lng":  102.26554,
+                       "population":  397321,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1633034",
+                       "name":  "Palu",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -0.90833,
+                       "lng":  119.87083,
+                       "population":  389959,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1621177",
+                       "name":  "Yogyakarta",
+                       "province":  "DI Yogyakarta",
+                       "lat":  -7.80139,
+                       "lng":  110.36472,
+                       "population":  375699,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1626381",
+                       "name":  "Sukabumi",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.91806,
+                       "lng":  106.92667,
+                       "population":  365735,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1647003",
+                       "name":  "Cibinong",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.48167,
+                       "lng":  106.85417,
+                       "population":  363424,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640344",
+                       "name":  "Kendari",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -3.9778,
+                       "lng":  122.51507,
+                       "population":  351085,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1645133",
+                       "name":  "Dumai",
+                       "province":  "Riau",
+                       "lat":  1.66711,
+                       "lng":  101.44316,
+                       "population":  349389,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1651531",
+                       "name":  "Ambon",
+                       "province":  "Maluku",
+                       "lat":  -3.69583,
+                       "lng":  128.18333,
+                       "population":  347288,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1646170",
+                       "name":  "Cirebon",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.7063,
+                       "lng":  108.557,
+                       "population":  344851,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1631766",
+                       "name":  "Pekalongan",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.8886,
+                       "lng":  109.67529999999999,
+                       "population":  324564,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1633118",
+                       "name":  "Palangkaraya",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -2.20833,
+                       "lng":  113.91667,
+                       "population":  318247,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1214189",
+                       "name":  "Percut",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.6253,
+                       "lng":  98.864,
+                       "population":  311063,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1641134",
+                       "name":  "Karawang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.30525,
+                       "lng":  107.3197,
+                       "population":  307880,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640660",
+                       "name":  "Kediri",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.81667,
+                       "lng":  112.01667,
+                       "population":  301424,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1642588",
+                       "name":  "Jember",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.17211,
+                       "lng":  113.69953,
+                       "population":  298585,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624494",
+                       "name":  "Tegal",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.8694,
+                       "lng":  109.1402,
+                       "population":  297173,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1650217",
+                       "name":  "Banjarbaru",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.4406,
+                       "lng":  114.8365,
+                       "population":  293332,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1646494",
+                       "name":  "Cileungsir",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.39472,
+                       "lng":  106.95917,
+                       "population":  289833,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1215355",
+                       "name":  "Binjai",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.6001,
+                       "lng":  98.4854,
+                       "population":  279302,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214204",
+                       "name":  "Pematangsiantar",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.9595,
+                       "lng":  99.0687,
+                       "population":  279198,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1215502",
+                       "name":  "Banda Aceh",
+                       "province":  "Aceh",
+                       "lat":  5.54167,
+                       "lng":  95.33333,
+                       "population":  267962,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1632228",
+                       "name":  "Pasarkemis",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.17028,
+                       "lng":  106.53028,
+                       "population":  263289,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1646559",
+                       "name":  "Cilacap",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.72639,
+                       "lng":  109.00944,
+                       "population":  256996,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624725",
+                       "name":  "Tarakan",
+                       "province":  "Kalimantan Utara",
+                       "lat":  3.31332,
+                       "lng":  117.59152,
+                       "population":  255310,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1626916",
+                       "name":  "Singkawang",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.90925,
+                       "lng":  108.98463,
+                       "population":  253812,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1214369",
+                       "name":  "Padangsidempuan",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.37952,
+                       "lng":  99.27146,
+                       "population":  243843,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1630634",
+                       "name":  "Probolinggo",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.7543,
+                       "lng":  113.2159,
+                       "population":  243746,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1623502",
+                       "name":  "Toli-Toli",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  1.04018,
+                       "lng":  120.81764,
+                       "population":  242783,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637158",
+                       "name":  "Lubuklinggau",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.2945,
+                       "lng":  102.8614,
+                       "population":  234166,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630328",
+                       "name":  "Purwokerto",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.42139,
+                       "lng":  109.23444,
+                       "population":  230235,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624863",
+                       "name":  "Tanjung Pinang",
+                       "province":  "Kepulauan Riau",
+                       "lat":  0.91667,
+                       "lng":  104.45833,
+                       "population":  227663,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632654",
+                       "name":  "Pangkalpinang",
+                       "province":  "Kepulauan Bangka Belitung",
+                       "lat":  -2.12914,
+                       "lng":  106.11377,
+                       "population":  226297,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1649824",
+                       "name":  "Batu",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.87,
+                       "lng":  112.52833,
+                       "population":  225408,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1648637",
+                       "name":  "Bitung",
+                       "province":  "Sulawesi Utara",
+                       "lat":  1.44059,
+                       "lng":  125.12824,
+                       "population":  225134,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639850",
+                       "name":  "Klungkung",
+                       "province":  "Bali",
+                       "lat":  -8.53333,
+                       "lng":  115.4,
+                       "population":  223720,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1626542",
+                       "name":  "Sorong",
+                       "province":  "Papua Barat Daya",
+                       "lat":  -0.87956,
+                       "lng":  131.26104,
+                       "population":  219958,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1646034",
+                       "name":  "Citeureup",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.48556,
+                       "lng":  106.88194,
+                       "population":  214668,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1632033",
+                       "name":  "Pasuruan",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.6453,
+                       "lng":  112.9075,
+                       "population":  213469,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1637510",
+                       "name":  "Loa Janan",
+                       "province":  "Kalimantan Timur",
+                       "lat":  -0.58295,
+                       "lng":  117.09503,
+                       "population":  212816,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1624041",
+                       "name":  "Ternate",
+                       "province":  "Maluku Utara",
+                       "lat":  0.79065,
+                       "lng":  127.38424,
+                       "population":  210836,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1650234",
+                       "name":  "Banjar",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.1955,
+                       "lng":  107.4313,
+                       "population":  209791,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1646194",
+                       "name":  "Ciputat",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.2375,
+                       "lng":  106.69556,
+                       "population":  207858,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1647383",
+                       "name":  "Ciampea",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.55472,
+                       "lng":  106.70083,
+                       "population":  207212,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1643837",
+                       "name":  "Gorontalo",
+                       "province":  "Gorontalo",
+                       "lat":  0.5375,
+                       "lng":  123.0625,
+                       "population":  205390,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1636930",
+                       "name":  "Madiun",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.6298,
+                       "lng":  111.5239,
+                       "population":  202544,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1629710",
+                       "name":  "Rengasdengklok",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.15917,
+                       "lng":  107.29806,
+                       "population":  201463,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1214658",
+                       "name":  "Lhokseumawe",
+                       "province":  "Aceh",
+                       "lat":  5.1801,
+                       "lng":  97.1507,
+                       "population":  200876,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1626103",
+                       "name":  "Sumedang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.85861,
+                       "lng":  107.91639,
+                       "population":  200000,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629131",
+                       "name":  "Salatiga",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.33194,
+                       "lng":  110.49278,
+                       "population":  198971,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1628453",
+                       "name":  "Sawangan",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.40278,
+                       "lng":  106.77444,
+                       "population":  197170,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1648186",
+                       "name":  "Bontang",
+                       "province":  "Kalimantan Timur",
+                       "lat":  0.1324,
+                       "lng":  117.4854,
+                       "population":  194606,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1963770",
+                       "name":  "Padalarang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.83778,
+                       "lng":  107.47278,
+                       "population":  193114,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1645895",
+                       "name":  "Curug",
+                       "province":  "Banten",
+                       "lat":  -6.26583,
+                       "lng":  106.55639,
+                       "population":  191406,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1213547",
+                       "name":  "Tanjungbalai",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.96667,
+                       "lng":  99.8,
+                       "population":  190935,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1638868",
+                       "name":  "Labuan Bajo",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.4964,
+                       "lng":  119.8877,
+                       "population":  188724,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1633037",
+                       "name":  "Palopo",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -2.9925,
+                       "lng":  120.19694,
+                       "population":  184961,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1631648",
+                       "name":  "Pemalang",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.89193,
+                       "lng":  109.38263,
+                       "population":  184149,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214724",
+                       "name":  "Langsa",
+                       "province":  "Aceh",
+                       "lat":  4.4683,
+                       "lng":  97.9683,
+                       "population":  184016,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1638063",
+                       "name":  "Lembang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.81167,
+                       "lng":  107.6175,
+                       "population":  183130,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1626899",
+                       "name":  "Singosari",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.8924,
+                       "lng":  112.6658,
+                       "population":  182656,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1635283",
+                       "name":  "Metro",
+                       "province":  "Lampung",
+                       "lat":  -5.11306,
+                       "lng":  105.30667,
+                       "population":  182293,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1630341",
+                       "name":  "Purwakarta",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.55694,
+                       "lng":  107.44333,
+                       "population":  179233,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1990589",
+                       "name":  "Teluknaga",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.09889,
+                       "lng":  106.63806,
+                       "population":  175155,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1647142",
+                       "name":  "Cianjur",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.82222,
+                       "lng":  107.13944,
+                       "population":  174587,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632937",
+                       "name":  "Pamulang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.34278,
+                       "lng":  106.73833,
+                       "population":  174557,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1985663",
+                       "name":  "Cikupa",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.23639,
+                       "lng":  106.50833,
+                       "population":  174041,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1622636",
+                       "name":  "Ungaran",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.13972,
+                       "lng":  110.405,
+                       "population":  171378,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630997",
+                       "name":  "Plumbon",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.705,
+                       "lng":  108.47278,
+                       "population":  167105,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1628884",
+                       "name":  "Sampit",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -2.5315,
+                       "lng":  112.9496,
+                       "population":  166773,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648759",
+                       "name":  "Bima",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.46006,
+                       "lng":  118.72667,
+                       "population":  165113,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1650227",
+                       "name":  "Banjaran",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.04528,
+                       "lng":  107.58778,
+                       "population":  164952,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1649541",
+                       "name":  "Baubau",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -5.4633,
+                       "lng":  122.6024,
+                       "population":  161280,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1648580",
+                       "name":  "Blitar",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.0983,
+                       "lng":  112.1681,
+                       "population":  161204,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1632353",
+                       "name":  "Parepare",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -4.0135,
+                       "lng":  119.6255,
+                       "population":  160309,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1213614",
+                       "name":  "Sunggal",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.5765,
+                       "lng":  98.6151,
+                       "population":  157914,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1214191",
+                       "name":  "Perbaungan",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.5679,
+                       "lng":  98.956,
+                       "population":  157174,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1621884",
+                       "name":  "Watampone",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -4.5386,
+                       "lng":  120.3279,
+                       "population":  149336,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651112",
+                       "name":  "Astanajapura",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.8017,
+                       "lng":  108.6311,
+                       "population":  148047,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1623834",
+                       "name":  "Timika",
+                       "province":  "Papua Tengah",
+                       "lat":  -4.61407,
+                       "lng":  136.67679,
+                       "population":  142909,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1214882",
+                       "name":  "Kisaran",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.9845,
+                       "lng":  99.6158,
+                       "population":  141915,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635111",
+                       "name":  "Mojokerto",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.4664,
+                       "lng":  112.4338,
+                       "population":  141785,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1631905",
+                       "name":  "Payakumbuh",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.2159,
+                       "lng":  100.6334,
+                       "population":  139576,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649881",
+                       "name":  "Batang",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.4846,
+                       "lng":  110.7083,
+                       "population":  139492,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1630333",
+                       "name":  "Purwodadi",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.0868,
+                       "lng":  110.9158,
+                       "population":  139387,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627253",
+                       "name":  "Sidoarjo",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.4478,
+                       "lng":  112.7183,
+                       "population":  139189,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621613",
+                       "name":  "Weru",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.711,
+                       "lng":  108.5037,
+                       "population":  139004,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1626444",
+                       "name":  "Subang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.57,
+                       "lng":  107.75667,
+                       "population":  137234,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630058",
+                       "name":  "Rangkasbitung",
+                       "province":  "Banten",
+                       "lat":  -6.3591,
+                       "lng":  106.2494,
+                       "population":  137041,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215102",
+                       "name":  "Gunungsitoli",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.2888,
+                       "lng":  97.6143,
+                       "population":  136707,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649593",
+                       "name":  "Baturaja",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -4.12891,
+                       "lng":  104.16695,
+                       "population":  134759,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651887",
+                       "name":  "Adiwerna",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.9375,
+                       "lng":  109.1325,
+                       "population":  134188,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1636308",
+                       "name":  "Manokwari",
+                       "province":  "Papua Barat",
+                       "lat":  -0.86291,
+                       "lng":  134.06402,
+                       "population":  132300,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1644409",
+                       "name":  "Garut",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.245,
+                       "lng":  107.921,
+                       "population":  131809,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636022",
+                       "name":  "Martapura",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.4109,
+                       "lng":  114.8642,
+                       "population":  131449,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632276",
+                       "name":  "Parung",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.42139,
+                       "lng":  106.73306,
+                       "population":  128905,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1636884",
+                       "name":  "Magelang",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.47056,
+                       "lng":  110.21778,
+                       "population":  128709,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1646698",
+                       "name":  "Cikampek",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.41972,
+                       "lng":  107.45583,
+                       "population":  127173,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1639900",
+                       "name":  "Klaten",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.70583,
+                       "lng":  110.60639,
+                       "population":  126831,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642414",
+                       "name":  "Jombang",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.54595,
+                       "lng":  112.23307,
+                       "population":  126465,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1632197",
+                       "name":  "Paseh",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.068,
+                       "lng":  107.794,
+                       "population":  126181,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "7334948",
+                       "name":  "Sukawati",
+                       "province":  "Bali",
+                       "lat":  -8.4913,
+                       "lng":  115.0459,
+                       "population":  125470,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1637090",
+                       "name":  "Lumajang",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.1335,
+                       "lng":  113.2248,
+                       "population":  123626,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1643078",
+                       "name":  "Indramayu",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.32639,
+                       "lng":  108.32,
+                       "population":  123263,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639500",
+                       "name":  "Kotamobagu",
+                       "province":  "Sulawesi Utara",
+                       "lat":  0.74194,
+                       "lng":  124.31208,
+                       "population":  121756,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1647866",
+                       "name":  "Bukittinggi",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.30907,
+                       "lng":  100.37055,
+                       "population":  121028,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627610",
+                       "name":  "Sepatan",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.11889,
+                       "lng":  106.575,
+                       "population":  118439,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1650077",
+                       "name":  "Banyuwangi",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.2325,
+                       "lng":  114.35755,
+                       "population":  117558,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213500",
+                       "name":  "Tebingtinggi",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.3285,
+                       "lng":  99.1625,
+                       "population":  117530,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1640581",
+                       "name":  "Kedungwuni",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.97038,
+                       "lng":  109.64794,
+                       "population":  117249,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "2082539",
+                       "name":  "Merauke",
+                       "province":  "Papua Selatan",
+                       "lat":  -8.49958,
+                       "lng":  140.40613,
+                       "population":  116864,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1626560",
+                       "name":  "Soreang",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.03306,
+                       "lng":  107.51833,
+                       "population":  116780,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632998",
+                       "name":  "Pamanukan",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.28417,
+                       "lng":  107.81056,
+                       "population":  114290,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1638284",
+                       "name":  "Lawang",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.8353,
+                       "lng":  112.6947,
+                       "population":  112540,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1639094",
+                       "name":  "Kuningan",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.97583,
+                       "lng":  108.48306,
+                       "population":  111742,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1646492",
+                       "name":  "Cileunyi",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.93889,
+                       "lng":  107.75278,
+                       "population":  111476,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1639362",
+                       "name":  "Kresek",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.13139,
+                       "lng":  106.37972,
+                       "population":  110182,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1647149",
+                       "name":  "Ciamis",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.3257,
+                       "lng":  108.3534,
+                       "population":  109839,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1631733",
+                       "name":  "Pelabuhanratu",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.9875,
+                       "lng":  106.55139,
+                       "population":  109523,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632694",
+                       "name":  "Pangkalanbuun",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -2.6832,
+                       "lng":  111.6259,
+                       "population":  108814,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1631992",
+                       "name":  "Pati",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.7559,
+                       "lng":  111.038,
+                       "population":  107028,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1646678",
+                       "name":  "Cikarang",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.26111,
+                       "lng":  107.15278,
+                       "population":  106479,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632358",
+                       "name":  "Pare",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.7679,
+                       "lng":  112.198,
+                       "population":  106007,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1651226",
+                       "name":  "Arjawinangun",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.64528,
+                       "lng":  108.41028,
+                       "population":  105845,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "6713355",
+                       "name":  "Subulussalam",
+                       "province":  "Aceh",
+                       "lat":  2.662,
+                       "lng":  97.8827,
+                       "population":  105553,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1645518",
+                       "name":  "Depok",
+                       "province":  "DI Yogyakarta",
+                       "lat":  -7.7625,
+                       "lng":  110.43167,
+                       "population":  104527,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1624877",
+                       "name":  "Tanjung Pandan",
+                       "province":  "Kepulauan Bangka Belitung",
+                       "lat":  -2.73353,
+                       "lng":  107.63477,
+                       "population":  103062,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1214073",
+                       "name":  "Rantauprapat",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.1,
+                       "lng":  99.83333,
+                       "population":  103009,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1215412",
+                       "name":  "Belawan",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.7755,
+                       "lng":  98.6832,
+                       "population":  102707,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1625929",
+                       "name":  "Sungai Penuh",
+                       "province":  "Jambi",
+                       "lat":  -2.0561,
+                       "lng":  101.3913,
+                       "population":  102224,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1625958",
+                       "name":  "Sungailiat",
+                       "province":  "Kepulauan Bangka Belitung",
+                       "lat":  -1.85442,
+                       "lng":  106.12215,
+                       "population":  100750,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1643761",
+                       "name":  "Grogol",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.60111,
+                       "lng":  110.81861,
+                       "population":  100613,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1634266",
+                       "name":  "Negara",
+                       "province":  "Bali",
+                       "lat":  -8.35694,
+                       "lng":  114.61694,
+                       "population":  100074,
+                       "kind":  "PPL"
+                   },
+                   {
+                       "id":  "1634614",
+                       "name":  "Nabire",
+                       "province":  "Papua Tengah",
+                       "lat":  -3.35989,
+                       "lng":  135.50074,
+                       "population":  99848,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1626183",
+                       "name":  "Sumber",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.76028,
+                       "lng":  108.48306,
+                       "population":  96725,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621395",
+                       "name":  "Wonosobo",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.35889,
+                       "lng":  109.90306,
+                       "population":  92990,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627957",
+                       "name":  "Selong",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.6503,
+                       "lng":  116.5318,
+                       "population":  92464,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632978",
+                       "name":  "Pamekasan",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.1568,
+                       "lng":  113.4746,
+                       "population":  92447,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632823",
+                       "name":  "Pandeglang",
+                       "province":  "Banten",
+                       "lat":  -6.3084,
+                       "lng":  106.1067,
+                       "population":  92316,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639215",
+                       "name":  "Kudus",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.8048,
+                       "lng":  110.8405,
+                       "population":  92156,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635815",
+                       "name":  "Maumere",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.6199,
+                       "lng":  122.2111,
+                       "population":  87720,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621399",
+                       "name":  "Wonosari",
+                       "province":  "DI Yogyakarta",
+                       "lat":  -7.96556,
+                       "lng":  110.60361,
+                       "population":  87454,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1644932",
+                       "name":  "Ende",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.8432,
+                       "lng":  121.6623,
+                       "population":  87269,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648451",
+                       "name":  "Bojonegoro",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.1502,
+                       "lng":  111.8817,
+                       "population":  86568,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650298",
+                       "name":  "Bangkalan",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.0455,
+                       "lng":  112.7351,
+                       "population":  86250,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626887",
+                       "name":  "Sintang",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.06667,
+                       "lng":  111.5,
+                       "population":  85000,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626099",
+                       "name":  "Sumenep",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.01152,
+                       "lng":  113.86042,
+                       "population":  84656,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651103",
+                       "name":  "Atambua",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -9.10611,
+                       "lng":  124.8925,
+                       "population":  82196,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630798",
+                       "name":  "Ponorogo",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.8685,
+                       "lng":  111.462,
+                       "population":  79026,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623180",
+                       "name":  "Tuban",
+                       "province":  "Jawa Timur",
+                       "lat":  -6.8976,
+                       "lng":  112.0649,
+                       "population":  76242,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636806",
+                       "name":  "Majene",
+                       "province":  "Sulawesi Barat",
+                       "lat":  -3.5403,
+                       "lng":  118.9707,
+                       "population":  73883,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1643776",
+                       "name":  "Gresik",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.15389,
+                       "lng":  112.65611,
+                       "population":  73629,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214965",
+                       "name":  "Kabanjahe",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.1001,
+                       "lng":  98.4908,
+                       "population":  73581,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626649",
+                       "name":  "Solok",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.8006,
+                       "lng":  100.6571,
+                       "population":  73438,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636816",
+                       "name":  "Majalengka",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.83611,
+                       "lng":  108.22778,
+                       "population":  73052,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626498",
+                       "name":  "Sragen",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.42639,
+                       "lng":  111.02222,
+                       "population":  71522,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630238",
+                       "name":  "Raha",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.838,
+                       "lng":  122.7209,
+                       "population":  69980,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634131",
+                       "name":  "Nganjuk",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.6051,
+                       "lng":  111.9035,
+                       "population":  69011,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624827",
+                       "name":  "Tanjung Selor",
+                       "province":  "Kalimantan Utara",
+                       "lat":  2.8375,
+                       "lng":  117.36528,
+                       "population":  67837,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1622167",
+                       "name":  "Wamena",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -4.09583,
+                       "lng":  138.94806,
+                       "population":  66080,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1638775",
+                       "name":  "Lahat",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.78514,
+                       "lng":  103.54279,
+                       "population":  65906,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630935",
+                       "name":  "Polewali",
+                       "province":  "Sulawesi Barat",
+                       "lat":  -3.4324,
+                       "lng":  119.3435,
+                       "population":  65800,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623080",
+                       "name":  "Tulungagung",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.0657,
+                       "lng":  111.9025,
+                       "population":  65262,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214488",
+                       "name":  "Meulaboh",
+                       "province":  "Aceh",
+                       "lat":  4.14402,
+                       "lng":  96.12664,
+                       "population":  64646,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650119",
+                       "name":  "Bantul",
+                       "province":  "DI Yogyakarta",
+                       "lat":  -7.88806,
+                       "lng":  110.32889,
+                       "population":  64360,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626185",
+                       "name":  "Sumbawa Besar",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.49317,
+                       "lng":  117.42024,
+                       "population":  62753,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626758",
+                       "name":  "Slawi",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.9816,
+                       "lng":  109.1407,
+                       "population":  61206,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648084",
+                       "name":  "Boyolali",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.53306,
+                       "lng":  110.59583,
+                       "population":  59851,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "13405902",
+                       "name":  "Kota Sambas",
+                       "province":  "Kalimantan Barat",
+                       "lat":  1.36259,
+                       "lng":  109.30093,
+                       "population":  57295,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630366",
+                       "name":  "Purbalingga",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.38806,
+                       "lng":  109.36389,
+                       "population":  56903,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626754",
+                       "name":  "Sleman",
+                       "province":  "DI Yogyakarta",
+                       "lat":  -7.71556,
+                       "lng":  110.35556,
+                       "population":  56215,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625420",
+                       "name":  "Taliwang",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.7449,
+                       "lng":  116.8532,
+                       "population":  55340,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1645343",
+                       "name":  "Dompu",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.5365,
+                       "lng":  118.4634,
+                       "population":  54987,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628899",
+                       "name":  "Sampang",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.1872,
+                       "lng":  113.2394,
+                       "population":  53269,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640296",
+                       "name":  "Kepanjen",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.1303,
+                       "lng":  112.5727,
+                       "population":  51919,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648568",
+                       "name":  "Blora",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.9698,
+                       "lng":  111.4186,
+                       "population":  51811,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213840",
+                       "name":  "Sidikalang",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.74899,
+                       "lng":  98.3127,
+                       "population":  50671,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626936",
+                       "name":  "Singaparna",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.3515,
+                       "lng":  108.111,
+                       "population":  48882,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640576",
+                       "name":  "Kefamenanu",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -9.44667,
+                       "lng":  124.47806,
+                       "population":  48202,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637001",
+                       "name":  "Luwuk",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -0.9516,
+                       "lng":  122.7875,
+                       "population":  47778,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630723",
+                       "name":  "Poso",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -1.3959,
+                       "lng":  120.7524,
+                       "population":  47477,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213713",
+                       "name":  "Singkil",
+                       "province":  "Aceh",
+                       "lat":  2.2874,
+                       "lng":  97.7884,
+                       "population":  46800,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634788",
+                       "name":  "Muara Teweh",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -0.94734,
+                       "lng":  114.8962,
+                       "population":  46652,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1645875",
+                       "name":  "Curup",
+                       "province":  "Bengkulu",
+                       "lat":  -3.4703,
+                       "lng":  102.5207,
+                       "population":  46245,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "2082460",
+                       "name":  "Sentani",
+                       "province":  "Papua",
+                       "lat":  -2.5691,
+                       "lng":  140.5127,
+                       "population":  44779,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1643089",
+                       "name":  "Indralaya",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.25249,
+                       "lng":  104.67555,
+                       "population":  42498,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639524",
+                       "name":  "Kotabumi",
+                       "province":  "Lampung",
+                       "lat":  -4.82505,
+                       "lng":  104.8817,
+                       "population":  42366,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648844",
+                       "name":  "Biak",
+                       "province":  "Papua",
+                       "lat":  -1.1767,
+                       "lng":  136.082,
+                       "population":  41731,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629380",
+                       "name":  "Ruteng",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.61139,
+                       "lng":  120.46444,
+                       "population":  41533,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626895",
+                       "name":  "Sinjai",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.1241,
+                       "lng":  120.253,
+                       "population":  40797,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629974",
+                       "name":  "Rantepao",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -2.9701,
+                       "lng":  119.8978,
+                       "population":  40438,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636426",
+                       "name":  "Manggar",
+                       "province":  "Kepulauan Bangka Belitung",
+                       "lat":  -2.88333,
+                       "lng":  108.26667,
+                       "population":  39135,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635984",
+                       "name":  "Masamba",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -2.5537,
+                       "lng":  120.3279,
+                       "population":  38024,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634519",
+                       "name":  "Namlea",
+                       "province":  "Maluku",
+                       "lat":  -3.26194,
+                       "lng":  127.09292,
+                       "population":  37869,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625014",
+                       "name":  "Tanjung",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -2.1709,
+                       "lng":  115.4077,
+                       "population":  37291,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8667930",
+                       "name":  "Masohi",
+                       "province":  "Maluku",
+                       "lat":  -3.29833,
+                       "lng":  128.96882,
+                       "population":  36433,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1622318",
+                       "name":  "Waingapu",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -9.6567,
+                       "lng":  120.2641,
+                       "population":  35932,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634739",
+                       "name":  "Mulia",
+                       "province":  "Papua Tengah",
+                       "lat":  -3.71472,
+                       "lng":  137.98528,
+                       "population":  35884,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "7336548",
+                       "name":  "Tambolaka",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -9.4283,
+                       "lng":  119.238,
+                       "population":  35790,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214294",
+                       "name":  "Pangururan",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.6081,
+                       "lng":  98.6961,
+                       "population":  34209,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639286",
+                       "name":  "Kuala Tungkal",
+                       "province":  "Jambi",
+                       "lat":  -0.81623,
+                       "lng":  103.46111,
+                       "population":  33683,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625708",
+                       "name":  "Tabanan",
+                       "province":  "Bali",
+                       "lat":  -8.5413,
+                       "lng":  115.12522,
+                       "population":  33667,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649163",
+                       "name":  "Bengkayang",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.83194,
+                       "lng":  109.43589,
+                       "population":  33385,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623424",
+                       "name":  "Tondano",
+                       "province":  "Sulawesi Utara",
+                       "lat":  1.3054,
+                       "lng":  124.91261,
+                       "population":  33317,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1641301",
+                       "name":  "Amlapura",
+                       "province":  "Bali",
+                       "lat":  -8.45,
+                       "lng":  115.61667,
+                       "population":  31869,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651763",
+                       "name":  "Airmadidi",
+                       "province":  "Sulawesi Utara",
+                       "lat":  1.42804,
+                       "lng":  124.97774,
+                       "population":  31446,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637833",
+                       "name":  "Lewoleba",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.3723,
+                       "lng":  123.418,
+                       "population":  30151,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636029",
+                       "name":  "Maros",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.006,
+                       "lng":  119.5727,
+                       "population":  30000,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628858",
+                       "name":  "Sanana",
+                       "province":  "Maluku Utara",
+                       "lat":  -2.05853,
+                       "lng":  125.97786,
+                       "population":  29716,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623251",
+                       "name":  "Trenggalek",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.0764,
+                       "lng":  111.70641,
+                       "population":  29083,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626698",
+                       "name":  "Sofifi",
+                       "province":  "Maluku Utara",
+                       "lat":  0.73729,
+                       "lng":  127.5588,
+                       "population":  27591,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1645559",
+                       "name":  "Demak",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.8909,
+                       "lng":  110.6396,
+                       "population":  27251,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634678",
+                       "name":  "Muntok",
+                       "province":  "Kepulauan Bangka Belitung",
+                       "lat":  -2.06719,
+                       "lng":  105.16228,
+                       "population":  26709,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213495",
+                       "name":  "Teluk Dalam",
+                       "province":  "Sumatera Utara",
+                       "lat":  0.5729,
+                       "lng":  97.8034,
+                       "population":  25780,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636657",
+                       "name":  "Malinau",
+                       "province":  "Kalimantan Utara",
+                       "lat":  3.58855,
+                       "lng":  116.62391,
+                       "population":  25596,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1647638",
+                       "name":  "Bungku",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -2.5471,
+                       "lng":  121.972,
+                       "population":  25477,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648691",
+                       "name":  "Bintuni",
+                       "province":  "Papua Barat",
+                       "lat":  -2.10967,
+                       "lng":  133.52461,
+                       "population":  24742,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215326",
+                       "name":  "Blangpidie",
+                       "province":  "Aceh",
+                       "lat":  3.73956,
+                       "lng":  96.83608,
+                       "population":  24085,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651852",
+                       "name":  "Agats",
+                       "province":  "Papua Selatan",
+                       "lat":  -5.54505,
+                       "lng":  138.13522,
+                       "population":  23869,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1645663",
+                       "name":  "Daruba",
+                       "province":  "Maluku Utara",
+                       "lat":  2.05049,
+                       "lng":  128.29398,
+                       "population":  23566,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1622293",
+                       "name":  "Waisai",
+                       "province":  "Papua Barat Daya",
+                       "lat":  -0.2379,
+                       "lng":  130.5072,
+                       "population":  22541,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634511",
+                       "name":  "Namrole",
+                       "province":  "Maluku",
+                       "lat":  -3.84548,
+                       "lng":  126.72619,
+                       "population":  21513,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623772",
+                       "name":  "Tiom",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -3.92361,
+                       "lng":  138.45472,
+                       "population":  21324,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634904",
+                       "name":  "Muara Bungo",
+                       "province":  "Jambi",
+                       "lat":  -1.49018,
+                       "lng":  102.1149,
+                       "population":  21243,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624196",
+                       "name":  "Teminabuan",
+                       "province":  "Papua Barat Daya",
+                       "lat":  -1.4416,
+                       "lng":  132.01428,
+                       "population":  19491,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642069",
+                       "name":  "Kalabahi",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.2151,
+                       "lng":  124.5458,
+                       "population":  19210,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1644833",
+                       "name":  "Fakfak",
+                       "province":  "Papua",
+                       "lat":  -2.92481,
+                       "lng":  132.29813,
+                       "population":  18900,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213821",
+                       "name":  "Sigli",
+                       "province":  "Aceh",
+                       "lat":  5.3848,
+                       "lng":  95.9609,
+                       "population":  17504,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630034",
+                       "name":  "Ransiki",
+                       "province":  "Papua Barat",
+                       "lat":  -1.5083,
+                       "lng":  134.1708,
+                       "population":  16245,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636556",
+                       "name":  "Mamuju",
+                       "province":  "Sulawesi Barat",
+                       "lat":  -2.68056,
+                       "lng":  118.88611,
+                       "population":  15000,
+                       "kind":  "PPLA"
+                   },
+                   {
+                       "id":  "1213721",
+                       "name":  "Sinabang",
+                       "province":  "Aceh",
+                       "lat":  2.4803,
+                       "lng":  96.3801,
+                       "population":  15000,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627453",
+                       "name":  "Serui",
+                       "province":  "Papua",
+                       "lat":  -1.8802,
+                       "lng":  136.2426,
+                       "population":  13568,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11012571",
+                       "name":  "Kobakma",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -3.66417,
+                       "lng":  139.065,
+                       "population":  13062,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636990",
+                       "name":  "Maba",
+                       "province":  "Maluku Utara",
+                       "lat":  0.7007,
+                       "lng":  128.29197,
+                       "population":  12560,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640293",
+                       "name":  "Kepi",
+                       "province":  "Papua Selatan",
+                       "lat":  -6.52461,
+                       "lng":  139.32224,
+                       "population":  8394,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1638874",
+                       "name":  "Labuha",
+                       "province":  "Maluku Utara",
+                       "lat":  -0.62546,
+                       "lng":  127.47808,
+                       "population":  7073,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8531221",
+                       "name":  "Karubaga",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -3.6994,
+                       "lng":  138.4579,
+                       "population":  6703,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11012573",
+                       "name":  "Kenyam",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -4.59972,
+                       "lng":  138.38417,
+                       "population":  6394,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11023936",
+                       "name":  "Elelim",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -3.759,
+                       "lng":  139.7075,
+                       "population":  5946,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11033761",
+                       "name":  "Tuapejat",
+                       "province":  "Sumatera Barat",
+                       "lat":  -2.02833,
+                       "lng":  99.58944,
+                       "population":  5756,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11010427",
+                       "name":  "Tiakur",
+                       "province":  "Maluku",
+                       "lat":  -8.15,
+                       "lng":  127.795,
+                       "population":  5227,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "2057166",
+                       "name":  "Baa",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -10.7263,
+                       "lng":  123.0492,
+                       "population":  1263,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11025990",
+                       "name":  "Fef",
+                       "province":  "Papua Barat Daya",
+                       "lat":  -0.80889,
+                       "lng":  132.43222,
+                       "population":  966,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "6726013",
+                       "name":  "Aek Kanopan",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.5704,
+                       "lng":  99.6534,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11025556",
+                       "name":  "Aimas",
+                       "province":  "Papua Barat Daya",
+                       "lat":  -0.95698,
+                       "lng":  131.33535,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651489",
+                       "name":  "Ampana",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -0.86901,
+                       "lng":  121.58367,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651410",
+                       "name":  "Andoolo",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.3273,
+                       "lng":  122.2522,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651245",
+                       "name":  "Argamakmur",
+                       "province":  "Bengkulu",
+                       "lat":  -3.4232,
+                       "lng":  102.1891,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11033803",
+                       "name":  "Arosuka",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.95221,
+                       "lng":  100.621,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1651130",
+                       "name":  "Asera",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -3.4746,
+                       "lng":  122.0669,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650801",
+                       "name":  "Bagan Si Api-api",
+                       "province":  "Riau",
+                       "lat":  2.15668,
+                       "lng":  100.80763,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650720",
+                       "name":  "Bajawa",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.7848,
+                       "lng":  120.9744,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215510",
+                       "name":  "Balige",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.3328,
+                       "lng":  99.0657,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11010247",
+                       "name":  "Bandar Seri Bentan",
+                       "province":  "Kepulauan Riau",
+                       "lat":  1.05417,
+                       "lng":  104.48,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650328",
+                       "name":  "Banggai",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -1.5887,
+                       "lng":  123.4992,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650285",
+                       "name":  "Bangkinang",
+                       "province":  "Riau",
+                       "lat":  0.33833,
+                       "lng":  101.02361,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650281",
+                       "name":  "Bangko",
+                       "province":  "Jambi",
+                       "lat":  -2.0796,
+                       "lng":  102.2573,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650264",
+                       "name":  "Bangli",
+                       "province":  "Bali",
+                       "lat":  -8.4542,
+                       "lng":  115.3545,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650210",
+                       "name":  "Banjarnegara",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.39611,
+                       "lng":  109.69611,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1650184",
+                       "name":  "Bantaeng",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.5475,
+                       "lng":  119.9509,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649976",
+                       "name":  "Barru",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -4.412,
+                       "lng":  119.618,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009767",
+                       "name":  "Batang",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.90778,
+                       "lng":  109.73028,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649869",
+                       "name":  "Batauga",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -5.5882,
+                       "lng":  122.5964,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649674",
+                       "name":  "Batulicin",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.42022,
+                       "lng":  116.00611,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649575",
+                       "name":  "Batusangkar",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.4606,
+                       "lng":  100.6107,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649267",
+                       "name":  "Belopa",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -3.3849,
+                       "lng":  120.3676,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649169",
+                       "name":  "Bengkalis",
+                       "province":  "Riau",
+                       "lat":  1.46667,
+                       "lng":  102.13333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649108",
+                       "name":  "Benteng",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -6.1184,
+                       "lng":  120.4605,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1939583",
+                       "name":  "Betun",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -9.56722,
+                       "lng":  124.9075,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648694",
+                       "name":  "Bintuhan",
+                       "province":  "Bengkulu",
+                       "lat":  -4.79371,
+                       "lng":  103.34836,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1649344",
+                       "name":  "Blambangan Umpu",
+                       "province":  "Lampung",
+                       "lat":  -4.50263,
+                       "lng":  104.51926,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215338",
+                       "name":  "Blangkejeren",
+                       "province":  "Aceh",
+                       "lat":  3.9971,
+                       "lng":  97.3384,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648512",
+                       "name":  "Bobong",
+                       "province":  "Maluku Utara",
+                       "lat":  -1.94625,
+                       "lng":  124.38394,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648140",
+                       "name":  "Boroko",
+                       "province":  "Sulawesi Utara",
+                       "lat":  0.9083,
+                       "lng":  123.2679,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635754",
+                       "name":  "Borong",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.8125,
+                       "lng":  120.60972,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11022289",
+                       "name":  "Botawa",
+                       "province":  "Papua",
+                       "lat":  -2.21,
+                       "lng":  136.44722,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1648065",
+                       "name":  "Brebes",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.8691,
+                       "lng":  109.0378,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1647845",
+                       "name":  "Bula",
+                       "province":  "Maluku",
+                       "lat":  -3.1112,
+                       "lng":  130.4954,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1647739",
+                       "name":  "Bulukumba",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.55,
+                       "lng":  120.18333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1647601",
+                       "name":  "Buntok",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -1.72139,
+                       "lng":  114.8397,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1647574",
+                       "name":  "Buol",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  1.15631,
+                       "lng":  121.43805,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11032462",
+                       "name":  "Buranga",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.80098,
+                       "lng":  122.98308,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11012570",
+                       "name":  "Burmeso",
+                       "province":  "Papua",
+                       "lat":  -2.32611,
+                       "lng":  138.04139,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215262",
+                       "name":  "Calang",
+                       "province":  "Aceh",
+                       "lat":  4.6306,
+                       "lng":  95.5754,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1647290",
+                       "name":  "Caruban",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.5447,
+                       "lng":  111.6566,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1646147",
+                       "name":  "Ciruas",
+                       "province":  "Banten",
+                       "lat":  -6.125,
+                       "lng":  106.23278,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639519",
+                       "name":  "Daik Lingga",
+                       "province":  "Kepulauan Riau",
+                       "lat":  -0.21451,
+                       "lng":  104.61824,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215188",
+                       "name":  "Dolok Sanggul",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.2588,
+                       "lng":  98.7501,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1645323",
+                       "name":  "Donggala",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -0.6723,
+                       "lng":  119.7402,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1644906",
+                       "name":  "Enrekang",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -3.56508,
+                       "lng":  119.77025,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1644305",
+                       "name":  "Gedong Tataan",
+                       "province":  "Lampung",
+                       "lat":  -5.3827,
+                       "lng":  105.0955,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1644131",
+                       "name":  "Gerung",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.683,
+                       "lng":  116.1253,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1644099",
+                       "name":  "Gianyar",
+                       "province":  "Bali",
+                       "lat":  -8.5435,
+                       "lng":  115.3272,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1643980",
+                       "name":  "Godo",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.56114,
+                       "lng":  118.66647,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1643569",
+                       "name":  "Gunung Sugih",
+                       "province":  "Lampung",
+                       "lat":  -4.9753,
+                       "lng":  105.21396,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1215101",
+                       "name":  "Gunung Tua",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.51274,
+                       "lng":  99.62628,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8571744",
+                       "name":  "Idi Rayeuk",
+                       "province":  "Aceh",
+                       "lat":  4.94952,
+                       "lng":  97.77267,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11012575",
+                       "name":  "Ilaga",
+                       "province":  "Papua Tengah",
+                       "lat":  -3.95,
+                       "lng":  137.4,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642920",
+                       "name":  "Jailolo",
+                       "province":  "Maluku Utara",
+                       "lat":  1.06504,
+                       "lng":  127.46786,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642832",
+                       "name":  "Jampang Tengah",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.0568,
+                       "lng":  106.8014,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642570",
+                       "name":  "Jeneponto",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.6765,
+                       "lng":  119.7484,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1642099",
+                       "name":  "Kajen",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.0324,
+                       "lng":  109.5773,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1641978",
+                       "name":  "Kalianda",
+                       "province":  "Lampung",
+                       "lat":  -5.73805,
+                       "lng":  105.5916,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1641547",
+                       "name":  "Kandangan",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -2.7837,
+                       "lng":  115.2772,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009132",
+                       "name":  "Karang Tinggi",
+                       "province":  "Bengkulu",
+                       "lat":  -3.75,
+                       "lng":  102.4225,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1641315",
+                       "name":  "Karanganyar",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.59833,
+                       "lng":  110.94444,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8572002",
+                       "name":  "Karangbaru",
+                       "province":  "Aceh",
+                       "lat":  4.30563,
+                       "lng":  98.02709,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640844",
+                       "name":  "Kayu Agung",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.392,
+                       "lng":  104.8306,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640706",
+                       "name":  "Kebumen",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.66861,
+                       "lng":  109.65361,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640350",
+                       "name":  "Kendal",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.9213,
+                       "lng":  110.2022,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1641464",
+                       "name":  "Kepahiang",
+                       "province":  "Bengkulu",
+                       "lat":  -3.6455,
+                       "lng":  102.5712,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1640135",
+                       "name":  "Ketapang",
+                       "province":  "Kalimantan Barat",
+                       "lat":  -1.83862,
+                       "lng":  109.97728,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11011787",
+                       "name":  "Kigamani",
+                       "province":  "Papua Tengah",
+                       "lat":  -3.96139,
+                       "lng":  135.94361,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639840",
+                       "name":  "Koba",
+                       "province":  "Kepulauan Bangka Belitung",
+                       "lat":  -2.49313,
+                       "lng":  106.4081,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1622728",
+                       "name":  "Kolaka",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.0597,
+                       "lng":  121.60556,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639721",
+                       "name":  "Kolonodale",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -1.9825,
+                       "lng":  121.3364,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8537084",
+                       "name":  "Kota Agung",
+                       "province":  "Lampung",
+                       "lat":  -5.50257,
+                       "lng":  104.64538,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639494",
+                       "name":  "Kota Pinang",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.89076,
+                       "lng":  100.09211,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "7910925",
+                       "name":  "Kota Ternate",
+                       "province":  "Maluku",
+                       "lat":  0.78333,
+                       "lng":  127.36667,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639534",
+                       "name":  "Kotabaru Hilir",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.24267,
+                       "lng":  116.22514,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639334",
+                       "name":  "Krui",
+                       "province":  "Lampung",
+                       "lat":  -5.19131,
+                       "lng":  103.932,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8660721",
+                       "name":  "Kuala Pembuang",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -3.39228,
+                       "lng":  112.55049,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639111",
+                       "name":  "Kumurkek",
+                       "province":  "Papua Barat Daya",
+                       "lat":  -1.25667,
+                       "lng":  132.49972,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639278",
+                       "name":  "Kwandang",
+                       "province":  "Gorontalo",
+                       "lat":  0.8348,
+                       "lng":  122.915,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11039235",
+                       "name":  "Labungkari",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -5.26318,
+                       "lng":  122.55104,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1638497",
+                       "name":  "Langara",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.0248,
+                       "lng":  122.9906,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1638479",
+                       "name":  "Langgur",
+                       "province":  "Maluku",
+                       "lat":  -5.66689,
+                       "lng":  132.73762,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1638385",
+                       "name":  "Larantuka",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.3468,
+                       "lng":  122.9771,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625776",
+                       "name":  "Lasusua",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -3.5105,
+                       "lng":  120.8844,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11033463",
+                       "name":  "Laworo",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.78333,
+                       "lng":  122.52472,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214646",
+                       "name":  "Limapuluh",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.1689,
+                       "lng":  99.4175,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637651",
+                       "name":  "Limboto",
+                       "province":  "Gorontalo",
+                       "lat":  0.627,
+                       "lng":  122.9778,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637532",
+                       "name":  "Liwa",
+                       "province":  "Lampung",
+                       "lat":  -5.03554,
+                       "lng":  104.07595,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637426",
+                       "name":  "Lolak",
+                       "province":  "Sulawesi Utara",
+                       "lat":  0.8755,
+                       "lng":  124.0098,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11038159",
+                       "name":  "Lotu",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.4299,
+                       "lng":  97.35365,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637192",
+                       "name":  "Lubuk Basung",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.32545,
+                       "lng":  100.06462,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214617",
+                       "name":  "Lubuk Pakam",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.5592,
+                       "lng":  98.8733,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1637131",
+                       "name":  "Lubuk Sikaping",
+                       "province":  "Sumatera Barat",
+                       "lat":  0.14411,
+                       "lng":  100.1657,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636878",
+                       "name":  "Magetan",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.65667,
+                       "lng":  111.33139,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636798",
+                       "name":  "Makale",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -3.1019,
+                       "lng":  119.8539,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636663",
+                       "name":  "Malili",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -2.6351,
+                       "lng":  121.0948,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636607",
+                       "name":  "Mamasa",
+                       "province":  "Sulawesi Barat",
+                       "lat":  -2.942,
+                       "lng":  119.3776,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009043",
+                       "name":  "Mangupura",
+                       "province":  "Bali",
+                       "lat":  -8.54389,
+                       "lng":  115.17,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636315",
+                       "name":  "Manna",
+                       "province":  "Bengkulu",
+                       "lat":  -4.4651,
+                       "lng":  102.90386,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636192",
+                       "name":  "Marabahan",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.0136,
+                       "lng":  114.7687,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636066",
+                       "name":  "Marisa",
+                       "province":  "Gorontalo",
+                       "lat":  0.4655,
+                       "lng":  121.9386,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1636021",
+                       "name":  "Martapura",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -4.31885,
+                       "lng":  104.34715,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "7611480",
+                       "name":  "Mbay",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -8.5613,
+                       "lng":  121.2717,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635612",
+                       "name":  "Mempawah",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.37102,
+                       "lng":  108.97013,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635542",
+                       "name":  "Menggala",
+                       "province":  "Lampung",
+                       "lat":  -4.47131,
+                       "lng":  105.25214,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635106",
+                       "name":  "Mojosari",
+                       "province":  "Jawa Timur",
+                       "lat":  -7.5194,
+                       "lng":  112.5597,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1635087",
+                       "name":  "Molibagu",
+                       "province":  "Sulawesi Utara",
+                       "lat":  0.38981,
+                       "lng":  123.98263,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634915",
+                       "name":  "Muara Beliti",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.2486,
+                       "lng":  103.0335,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634891",
+                       "name":  "Muara Enim",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.6486,
+                       "lng":  103.771,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634814",
+                       "name":  "Muara Sabak",
+                       "province":  "Jambi",
+                       "lat":  -1.13612,
+                       "lng":  103.84987,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634792",
+                       "name":  "Muara Tebo",
+                       "province":  "Jambi",
+                       "lat":  -1.476,
+                       "lng":  102.4435,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634939",
+                       "name":  "Muaro",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.66387,
+                       "lng":  100.95818,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634750",
+                       "name":  "Mukomuko",
+                       "province":  "Bengkulu",
+                       "lat":  -2.5689,
+                       "lng":  101.1118,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "6260829",
+                       "name":  "Mungkid",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.5925,
+                       "lng":  110.21889,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634490",
+                       "name":  "Nanga Bulik",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -2.1624,
+                       "lng":  111.4885,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634436",
+                       "name":  "Nangah Pinoh",
+                       "province":  "Kalimantan Barat",
+                       "lat":  -0.33333,
+                       "lng":  111.73333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1634201",
+                       "name":  "Ngabang",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.38333,
+                       "lng":  109.95,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1964069",
+                       "name":  "Ngamprah",
+                       "province":  "Jawa Barat",
+                       "lat":  -6.80361,
+                       "lng":  107.27528,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "2057005",
+                       "name":  "Oelamasi",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -10.0642,
+                       "lng":  123.8787,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11012574",
+                       "name":  "Oksibil",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -4.90417,
+                       "lng":  140.62972,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1633587",
+                       "name":  "Ondong Siau",
+                       "province":  "Sulawesi Utara",
+                       "lat":  2.7473,
+                       "lng":  125.3611,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "6729749",
+                       "name":  "Onolimbu",
+                       "province":  "Sumatera Utara",
+                       "lat":  0.99459,
+                       "lng":  97.49746,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1633439",
+                       "name":  "Pacitan",
+                       "province":  "Jawa Timur",
+                       "lat":  -8.19389,
+                       "lng":  111.10333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11033806",
+                       "name":  "Padang Aro",
+                       "province":  "Sumatera Barat",
+                       "lat":  -1.52722,
+                       "lng":  101.26361,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1633239",
+                       "name":  "Painan",
+                       "province":  "Sumatera Barat",
+                       "lat":  -1.35172,
+                       "lng":  100.57383,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632906",
+                       "name":  "Panaragan",
+                       "province":  "Lampung",
+                       "lat":  -4.47784,
+                       "lng":  105.08142,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "6704322",
+                       "name":  "Pandan",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.6838,
+                       "lng":  98.822,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632724",
+                       "name":  "Pangkajene",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -4.8372,
+                       "lng":  119.5472,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632701",
+                       "name":  "Pangkalan Balai",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -2.8812,
+                       "lng":  104.3943,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1639051",
+                       "name":  "Pangkalan Kerinci",
+                       "province":  "Riau",
+                       "lat":  0.39611,
+                       "lng":  101.85722,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632325",
+                       "name":  "Parigi",
+                       "province":  "Jawa Barat",
+                       "lat":  -7.7015,
+                       "lng":  108.496,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632331",
+                       "name":  "Parigi",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -0.8156,
+                       "lng":  120.1768,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632316",
+                       "name":  "Paringin",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -2.3357,
+                       "lng":  115.4749,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632306",
+                       "name":  "Parit Malintang",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.62046,
+                       "lng":  100.27885,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632206",
+                       "name":  "Pasar Wajo",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -5.4957,
+                       "lng":  122.8447,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632081",
+                       "name":  "Pasir Pengaraian",
+                       "province":  "Riau",
+                       "lat":  0.86459,
+                       "lng":  100.29547,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1631727",
+                       "name":  "Pelaihari",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -3.7987,
+                       "lng":  114.7788,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214205",
+                       "name":  "Pematang Raya",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.9658,
+                       "lng":  98.8473,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1632912",
+                       "name":  "Penajam",
+                       "province":  "Kalimantan Timur",
+                       "lat":  -1.24919,
+                       "lng":  116.76968,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1631103",
+                       "name":  "Pinrang",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -3.78611,
+                       "lng":  119.65222,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1631075",
+                       "name":  "Piru",
+                       "province":  "Maluku",
+                       "lat":  -3.0618,
+                       "lng":  128.1945,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630639",
+                       "name":  "Pringsewu",
+                       "province":  "Lampung",
+                       "lat":  -5.35822,
+                       "lng":  104.97441,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630555",
+                       "name":  "Pulang Pisau",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -2.7671,
+                       "lng":  114.2406,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009133",
+                       "name":  "Pulau Pramuka",
+                       "province":  "DKI Jakarta",
+                       "lat":  -5.74583,
+                       "lng":  106.61389,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8562785",
+                       "name":  "Pulau Punjung",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.959,
+                       "lng":  101.5002,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630349",
+                       "name":  "Puruk Cahu",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -0.58333,
+                       "lng":  114.58333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630326",
+                       "name":  "Purworejo",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.71139,
+                       "lng":  110.01028,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630281",
+                       "name":  "Putussibau",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.83333,
+                       "lng":  112.93333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630146",
+                       "name":  "Ranai",
+                       "province":  "Kepulauan Riau",
+                       "lat":  3.9384,
+                       "lng":  108.38401,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1630033",
+                       "name":  "Rantau",
+                       "province":  "Kalimantan Selatan",
+                       "lat":  -2.9334,
+                       "lng":  115.1621,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8432628",
+                       "name":  "Rantau Prapat",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.3321,
+                       "lng":  100.05205,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629930",
+                       "name":  "Rasiei",
+                       "province":  "Papua Barat",
+                       "lat":  -2.817,
+                       "lng":  134.5292,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629923",
+                       "name":  "Ratahan",
+                       "province":  "Sulawesi Utara",
+                       "lat":  1.0549,
+                       "lng":  124.8012,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8060713",
+                       "name":  "Rembang",
+                       "province":  "Jawa Tengah",
+                       "lat":  -6.707,
+                       "lng":  111.3498,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629435",
+                       "name":  "Rumbia",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -4.62767,
+                       "lng":  122.00472,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1214007",
+                       "name":  "Salak",
+                       "province":  "Sumatera Utara",
+                       "lat":  2.5566,
+                       "lng":  98.3235,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1629159",
+                       "name":  "Salakan",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -1.3085,
+                       "lng":  123.2909,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628979",
+                       "name":  "Sambas",
+                       "province":  "Kalimantan Barat",
+                       "lat":  1.33333,
+                       "lng":  109.25,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627717",
+                       "name":  "Sangatta",
+                       "province":  "Kalimantan Timur",
+                       "lat":  0.5049,
+                       "lng":  117.5279,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628802",
+                       "name":  "Sanggau",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.13333,
+                       "lng":  110.6,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628596",
+                       "name":  "Sarilamak",
+                       "province":  "Sumatera Barat",
+                       "lat":  -0.1503,
+                       "lng":  100.664,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628581",
+                       "name":  "Sarolangun",
+                       "province":  "Jambi",
+                       "lat":  -2.3121,
+                       "lng":  102.7271,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "2056953",
+                       "name":  "Seba",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -10.4933,
+                       "lng":  121.8393,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213619",
+                       "name":  "Sei Rampah",
+                       "province":  "Sumatera Utara",
+                       "lat":  3.4845,
+                       "lng":  99.1366,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628174",
+                       "name":  "Sekadau",
+                       "province":  "Kalimantan Barat",
+                       "lat":  0.01667,
+                       "lng":  110.9,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628131",
+                       "name":  "Sekayu",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -2.8819,
+                       "lng":  103.8344,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1628019",
+                       "name":  "Selat Panjang",
+                       "province":  "Riau",
+                       "lat":  0.99408,
+                       "lng":  102.70817,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "7083717",
+                       "name":  "Semarapura",
+                       "province":  "Bali",
+                       "lat":  -8.5346,
+                       "lng":  115.4022,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11010168",
+                       "name":  "Sendawar",
+                       "province":  "Kalimantan Timur",
+                       "lat":  -0.23639,
+                       "lng":  115.69472,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627708",
+                       "name":  "Sengeti",
+                       "province":  "Jambi",
+                       "lat":  -1.4772,
+                       "lng":  103.50765,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1627342",
+                       "name":  "Siak Sri Indrapura",
+                       "province":  "Riau",
+                       "lat":  0.79317,
+                       "lng":  102.0511,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213847",
+                       "name":  "Sibuhuan",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.05387,
+                       "lng":  99.73018,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1969686",
+                       "name":  "Sidenreng",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -3.92753,
+                       "lng":  119.7993,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11028931",
+                       "name":  "Sigi Biromaru",
+                       "province":  "Sulawesi Tengah",
+                       "lat":  -0.94982,
+                       "lng":  119.91805,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213746",
+                       "name":  "Simpang Empat",
+                       "province":  "Sumatera Barat",
+                       "lat":  0.09703,
+                       "lng":  99.82339,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "6702698",
+                       "name":  "Simpang Tiga Redelong",
+                       "province":  "Aceh",
+                       "lat":  4.722,
+                       "lng":  96.8743,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213696",
+                       "name":  "Sipirok",
+                       "province":  "Sumatera Utara",
+                       "lat":  1.60248,
+                       "lng":  99.27377,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009145",
+                       "name":  "Siulak",
+                       "province":  "Jambi",
+                       "lat":  -1.94667,
+                       "lng":  101.33417,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626551",
+                       "name":  "Sorendiweri",
+                       "province":  "Papua",
+                       "lat":  -0.73389,
+                       "lng":  135.73611,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11011788",
+                       "name":  "Sugapa",
+                       "province":  "Papua Tengah",
+                       "lat":  -3.74306,
+                       "lng":  137.05,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "8571839",
+                       "name":  "Suka Makmue",
+                       "province":  "Aceh",
+                       "lat":  4.00312,
+                       "lng":  96.61762,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626375",
+                       "name":  "Sukadana",
+                       "province":  "Lampung",
+                       "lat":  -5.06446,
+                       "lng":  105.54869,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626376",
+                       "name":  "Sukadana",
+                       "province":  "Kalimantan Barat",
+                       "lat":  -1.25,
+                       "lng":  109.95,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1626272",
+                       "name":  "Sukoharjo",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.6725,
+                       "lng":  110.83806,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11023932",
+                       "name":  "Sumohai",
+                       "province":  "Papua Pegunungan",
+                       "lat":  -4.68944,
+                       "lng":  139.35472,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009865",
+                       "name":  "Sungai Raya",
+                       "province":  "Kalimantan Barat",
+                       "lat":  -0.12694,
+                       "lng":  109.40389,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625863",
+                       "name":  "Sungguminasa",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.1971,
+                       "lng":  119.451,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009134",
+                       "name":  "Suwawa",
+                       "province":  "Gorontalo",
+                       "lat":  0.5325,
+                       "lng":  123.14694,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625564",
+                       "name":  "Tais",
+                       "province":  "Bengkulu",
+                       "lat":  -4.07543,
+                       "lng":  102.57739,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625546",
+                       "name":  "Takalar",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -5.4258,
+                       "lng":  119.4384,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1213593",
+                       "name":  "Takengon",
+                       "province":  "Aceh",
+                       "lat":  4.6212,
+                       "lng":  96.8467,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625453",
+                       "name":  "Talang Ubi",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.2656,
+                       "lng":  103.8253,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625236",
+                       "name":  "Tamiang Layang",
+                       "province":  "Kalimantan Tengah",
+                       "lat":  -2.1236,
+                       "lng":  115.1958,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625175",
+                       "name":  "Tana Paser",
+                       "province":  "Kalimantan Timur",
+                       "lat":  -1.9051,
+                       "lng":  116.1913,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "2082430",
+                       "name":  "Tanah Merah",
+                       "province":  "Papua Selatan",
+                       "lat":  -6.09756,
+                       "lng":  140.30649,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624997",
+                       "name":  "Tanjung",
+                       "province":  "Nusa Tenggara Barat",
+                       "lat":  -8.356,
+                       "lng":  116.1565,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624704",
+                       "name":  "Tarempa",
+                       "province":  "Kepulauan Riau",
+                       "lat":  3.21583,
+                       "lng":  106.21722,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624511",
+                       "name":  "Tebing Tinggi",
+                       "province":  "Sumatera Selatan",
+                       "lat":  -3.5842,
+                       "lng":  103.0772,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1625395",
+                       "name":  "Teluk Kuantan",
+                       "province":  "Riau",
+                       "lat":  -0.5283,
+                       "lng":  101.581,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624238",
+                       "name":  "Temanggung",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.31917,
+                       "lng":  110.19278,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1624219",
+                       "name":  "Tembilahan",
+                       "province":  "Riau",
+                       "lat":  -0.3227,
+                       "lng":  103.1603,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623954",
+                       "name":  "Tideng Pale",
+                       "province":  "Kalimantan Utara",
+                       "lat":  3.60815,
+                       "lng":  116.90668,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009130",
+                       "name":  "Tigaraksa",
+                       "province":  "Banten",
+                       "lat":  -6.22806,
+                       "lng":  106.51389,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623923",
+                       "name":  "Tigi",
+                       "province":  "Papua Tengah",
+                       "lat":  -3.96667,
+                       "lng":  136.26667,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1623890",
+                       "name":  "Tilamuta",
+                       "province":  "Gorontalo",
+                       "lat":  0.5273,
+                       "lng":  122.3463,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1968822",
+                       "name":  "Tobadak",
+                       "province":  "Sulawesi Barat",
+                       "lat":  -2.08944,
+                       "lng":  119.34722,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11009131",
+                       "name":  "Tubei",
+                       "province":  "Bengkulu",
+                       "lat":  -3.11917,
+                       "lng":  102.2,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "6960316",
+                       "name":  "Tutuyan",
+                       "province":  "Sulawesi Utara",
+                       "lat":  0.7654,
+                       "lng":  124.6144,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1622814",
+                       "name":  "Ujoh Bilang",
+                       "province":  "Kalimantan Timur",
+                       "lat":  0.55,
+                       "lng":  115.25,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11025117",
+                       "name":  "Ullong",
+                       "province":  "Papua Barat",
+                       "lat":  -1.37083,
+                       "lng":  133.91306,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1974329",
+                       "name":  "Unaaha",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -3.8539,
+                       "lng":  122.042,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1622351",
+                       "name":  "Waikabubak",
+                       "province":  "Nusa Tenggara Timur",
+                       "lat":  -9.6475,
+                       "lng":  119.3889,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1622124",
+                       "name":  "Wanci",
+                       "province":  "Sulawesi Tenggara",
+                       "lat":  -5.3271,
+                       "lng":  123.5388,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "2082399",
+                       "name":  "Waris",
+                       "province":  "Papua",
+                       "lat":  -3.11667,
+                       "lng":  140.88333,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621878",
+                       "name":  "Watansoppeng",
+                       "province":  "Sulawesi Selatan",
+                       "lat":  -4.3522,
+                       "lng":  119.8841,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621867",
+                       "name":  "Wates",
+                       "province":  "DI Yogyakarta",
+                       "lat":  -7.85722,
+                       "lng":  110.15694,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621683",
+                       "name":  "Weda",
+                       "province":  "Maluku Utara",
+                       "lat":  0.32952,
+                       "lng":  127.87389,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "11010380",
+                       "name":  "Wiralaga Mulya",
+                       "province":  "Lampung",
+                       "lat":  -3.84278,
+                       "lng":  105.49389,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   },
+                   {
+                       "id":  "1621431",
+                       "name":  "Wonogiri",
+                       "province":  "Jawa Tengah",
+                       "lat":  -7.81444,
+                       "lng":  110.92056,
+                       "population":  0,
+                       "kind":  "PPLA2"
+                   }
+               ]
+}

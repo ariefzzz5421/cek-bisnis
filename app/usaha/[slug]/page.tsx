@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const business = getBusiness(slug);
   if (!business) return { title: "Usaha tidak ditemukan - Cek Bisnis" };
   return {
-    title: `${business.name} - Modal, OPEX, BEP dan Kota Terbaik | Cek Bisnis`,
-    description: `Panduan lengkap ${business.name}: estimasi modal, biaya bulanan, omzet BEP, ranking kota Indonesia, rencana 90 hari, PDF dan preview image.`,
+    title: `${business.name} - Modal, OPEX, BEP dan Survei Lokasi | Cek Bisnis`,
+    description: `Panduan ringkas ${business.name}: modal, biaya bulanan, omzet BEP, survei lokasi Indonesia, PDF dan preview image.`,
   };
 }
 
