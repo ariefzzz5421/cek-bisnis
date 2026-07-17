@@ -24,6 +24,7 @@ const endpoints = [
 ];
 
 type SelectedPoint = { lat: number; lng: number; place: IndonesiaPlace; distance: number };
+type OverpassResponse = { elements: OsmElement[]; osm3s?: { timestamp_osm_base?: string } };
 
 export function LocationSurvey({ business }: { business: Business }) {
   const mapElement = useRef<HTMLDivElement>(null);
@@ -140,14 +141,14 @@ export function LocationSurvey({ business }: { business: Business }) {
       }
 
       const overpassQuery = buildOverpassQuery(selected.lat, selected.lng, radius);
-      let payload: { elements: OsmElement[]; osm3s?: { timestamp_osm_base?: string } } | null = null;
+      let payload: OverpassResponse | null = null;
       for (const endpoint of endpoints) {
         const controller = new AbortController();
         const timeout = window.setTimeout(() => controller.abort(), 24_000);
         try {
           const response = await fetch(`${endpoint}?data=${encodeURIComponent(overpassQuery)}`, { signal: controller.signal });
           if (!response.ok) continue;
-          payload = await response.json() as typeof payload;
+          payload = await response.json() as OverpassResponse;
           break;
         } catch {
           // Try the next public Overpass endpoint.
