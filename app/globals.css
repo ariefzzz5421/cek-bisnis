@@ -88,6 +88,7 @@ main { overflow: hidden; }
   gap: 9px;
   padding: 11px 16px;
   transition: 160ms ease;
+  white-space: nowrap;
 }
 .header-action:hover { background: white; color: var(--ink); }
 
@@ -887,4 +888,110 @@ footer > span { color: rgba(255,255,255,.44); text-align: right; }
   .guide-columns,.plan-steps { grid-template-columns: 1fr; }.guide-columns .risk-guide { grid-column: auto; }
   .simple-business-download { gap: 60px; grid-template-columns: 1fr; padding: 68px 30px; }.simple-business-download > img { max-width: 290px; }.simple-business-download h2 { font-size: 58px; }.compact-sources > div { grid-template-columns: 1fr; }
   .survey-page-hero { grid-template-columns: 1fr; }.survey-page-hero > div { padding: 60px 20px; }.survey-page-hero h1 { font-size: 59px; }.survey-page-hero > img { max-height: 330px; }
+}
+
+/* 2026 responsive planner refresh */
+body { font-size: 17px; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.business-card-body > p { font-size: 14px; }
+.business-scale-section { background: #deded7; padding: 92px clamp(24px, 6vw, 96px); }
+.scale-grid { display: grid; gap: 14px; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 auto; max-width: 1380px; }
+.scale-grid > button { background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: 16px; color: var(--ink); cursor: pointer; display: grid; gap: 15px; min-height: 330px; padding: 24px; text-align: left; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+.scale-grid > button:hover { border-color: var(--ink); transform: translateY(-3px); }
+.scale-grid > button.active { background: var(--ink); border-color: var(--ink); color: white; box-shadow: 0 24px 55px rgba(18,22,23,.18); }
+.scale-grid > button > span { color: #657070; font-family: var(--font-mono); font-size: 12px; font-weight: 850; text-transform: uppercase; }
+.scale-grid > button.active > span { color: var(--lime); }
+.scale-grid > button > strong { font-size: clamp(25px,2.5vw,38px); letter-spacing: -.055em; line-height: 1; }
+.scale-grid > button > div { border-top: 1px solid var(--line); display: grid; gap: 4px; padding-top: 13px; }
+.scale-grid > button.active > div { border-color: rgba(255,255,255,.14); }
+.scale-grid small { color: #707a7a; font-size: 11px; }
+.scale-grid b { font-size: 14px; }
+.scale-grid > button.active small { color: rgba(255,255,255,.48); }
+.scale-grid footer { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.scale-grid em { background: rgba(18,22,23,.07); border-radius: 999px; font-size: 10px; font-style: normal; padding: 6px 9px; }
+.scale-grid > button.active em { background: rgba(255,255,255,.1); color: rgba(255,255,255,.72); }
+
+.equipment-breakdown { display: grid; gap: 16px; grid-template-columns: minmax(290px,.72fr) minmax(0,1.28fr); margin: 0 auto 16px; max-width: 1380px; }
+.equipment-visual { background: var(--ink); border-radius: 16px; color: white; overflow: hidden; }
+.equipment-atlas-crop { aspect-ratio: 3/4; background-image: url('/businesses/equipment-atlas.webp'); background-repeat: no-repeat; background-size: 400% 200%; width: 100%; }
+.equipment-visual > div:last-child { align-items: center; display: grid; gap: 4px; grid-template-columns: auto 1fr; padding: 18px; }
+.equipment-visual > div:last-child svg { color: var(--lime); grid-row: 1/3; margin-right: 5px; }
+.equipment-visual > div:last-child span { color: rgba(255,255,255,.46); font-family: var(--font-mono); font-size: 9px; }
+.equipment-visual > div:last-child b { font-size: 17px; }
+.equipment-list { background: white; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.equipment-list-head, .equipment-detail-row { align-items: center; display: grid; gap: 14px; grid-template-columns: minmax(190px,1.35fr) .58fr .72fr .75fr; padding: 13px 18px; }
+.equipment-list-head { background: var(--ink); color: rgba(255,255,255,.5); font-family: var(--font-mono); font-size: 9px; font-weight: 800; text-transform: uppercase; }
+.equipment-detail-row { border-bottom: 1px solid rgba(18,22,23,.09); min-height: 69px; }
+.equipment-detail-row > span:first-child { align-items: center; display: flex; gap: 9px; }
+.equipment-detail-row i { background: #edf0ea; border-radius: 999px; color: #657070; flex: 0 0 auto; font-family: var(--font-mono); font-size: 8px; font-style: normal; padding: 4px 6px; }
+.equipment-detail-row i.required { background: #e2f7c9; color: #3e5b24; }
+.equipment-detail-row b { font-size: 12px; }
+.equipment-detail-row > span:not(:first-child), .equipment-detail-row strong { font-family: var(--font-mono); font-size: 10px; }
+.equipment-list > p { align-items: flex-start; color: var(--muted); display: flex; font-size: 10px; gap: 7px; line-height: 1.5; margin: 0; padding: 14px 18px; }
+.equipment-list > p svg { flex: 0 0 auto; }
+
+.survey-controls { grid-template-columns: minmax(240px,1fr) 155px 185px 175px; }
+.map-download { align-items: center; background: var(--lime); border: 1px solid var(--ink); border-radius: 9px; color: var(--ink); cursor: pointer; display: flex; font-size: 11px; font-weight: 850; gap: 8px; justify-content: center; }
+.survey-empty small { color: #7a8383; font-size: 9px; line-height: 1.5; margin-top: 10px; max-width: 250px; }
+.leaflet-tooltip { font-family: var(--font-sans); font-size: 12px; line-height: 1.45; }
+
+@media (max-width: 1180px) {
+  .survey-controls { grid-template-columns: 1fr 160px 190px; }
+  .map-download { grid-column: 1/-1; min-height: 44px; }
+  .equipment-breakdown { grid-template-columns: 330px minmax(0,1fr); }
+  .equipment-list-head, .equipment-detail-row { grid-template-columns: minmax(160px,1.2fr) .55fr .68fr .72fr; }
+}
+
+@media (max-width: 850px) {
+  .site-header { height: 72px; padding: 0 20px; }
+  .site-nav { gap: 18px; }
+  .site-nav a { font-size: 12px; }
+  .equipment-breakdown { grid-template-columns: 1fr; }
+  .equipment-visual { justify-self: center; max-width: 430px; width: 100%; }
+  .scale-grid { grid-template-columns: 1fr; }
+  .scale-grid > button { min-height: 0; }
+}
+
+@media (max-width: 700px) {
+  .site-header { height: 68px; padding: 0 14px; position: sticky; top: 0; }
+  .site-nav { display: none; }
+  .logo-crop-small { height: 40px; width: 40px; }
+  .brand-wordmark { font-size: 14px; }
+  .header-action { font-size: 12px; min-height: 43px; padding: 9px 12px; }
+  .real-hero { gap: 34px; }
+  .real-hero h1, .photo-detail-copy h1, .survey-page-hero h1 { font-size: clamp(49px,14vw,62px); overflow-wrap: anywhere; }
+  .real-proof { display: grid; grid-template-columns: repeat(3,1fr); width: 100%; }
+  .real-proof span { font-size: 11px; }
+  .business-scale-section { padding: 64px 16px; }
+  .scale-grid > button { padding: 20px; }
+  .scale-grid > button > strong { font-size: 31px; }
+  .equipment-breakdown { gap: 12px; }
+  .equipment-visual { max-width: 360px; }
+  .equipment-list-head { display: none; }
+  .equipment-detail-row { align-items: start; gap: 8px 14px; grid-template-columns: 1fr 1fr; padding: 15px; }
+  .equipment-detail-row > span:first-child { grid-column: 1/-1; }
+  .equipment-detail-row b { font-size: 13px; }
+  .equipment-detail-row > span:not(:first-child), .equipment-detail-row strong { display: grid; font-size: 12px; gap: 2px; }
+  .equipment-detail-row [data-label]::before { color: var(--muted); content: attr(data-label); font-family: var(--font-sans); font-size: 9px; font-weight: 500; }
+  .equipment-detail-row strong { text-align: right; }
+  .survey-controls { grid-template-columns: 1fr; padding: 10px; }
+  .map-download { grid-column: auto; min-height: 46px; }
+  .survey-map { min-height: 500px; }
+  .survey-result { padding: 20px; }
+  .survey-map-hint { font-size: 9px; max-width: calc(100% - 30px); text-align: center; }
+  .survey-business-picker > div { flex-wrap: nowrap; margin-inline: -24px; overflow-x: auto; padding: 0 24px 5px; scrollbar-width: none; }
+  .survey-business-picker button { flex: 0 0 auto; min-height: 44px; }
+  .simple-business-download { padding-inline: 24px; }
+}
+
+@media (max-width: 430px) {
+  .brand-wordmark { display: none; }
+  .real-hero h1, .photo-detail-copy h1, .survey-page-hero h1 { font-size: 50px; }
+  .real-proof { gap: 12px; }
+  .real-proof strong { font-size: 18px; }
+  .button-primary, .button-ghost { justify-content: center; width: 100%; }
+  .business-photo { aspect-ratio: 4/3; }
+  .map-cta-copy h2, .real-section-head h2, .survey-topbar h2 { font-size: 42px; }
+  .survey-map { min-height: 460px; }
+  .simple-business-download h2 { font-size: 49px; }
 }

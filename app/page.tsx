@@ -60,9 +60,9 @@ export default function Home() {
           <span>02 · SURVEI SELURUH INDONESIA</span>
           <h2>Cari kota.<br />Klik lokasi.<br />Lihat skor.</h2>
           <ul>
-            <li><Check size={17} /> Pesaing nyata di peta</li>
-            <li><Check size={17} /> Pemicu ramai dan akses</li>
-            <li><Check size={17} /> Estimasi omzet model</li>
+            <li><Check size={17} /> 497 marker kota & kabupaten</li>
+            <li><Check size={17} /> Top usaha + skor tiap kota</li>
+            <li><Check size={17} /> Pesaing OSM + estimasi omzet</li>
           </ul>
           <Link href="/survei-lokasi">Buka peta Indonesia <ArrowRight size={19} /></Link>
         </div>
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="map-pin-demo pin-a"><i /> Kediri</div>
           <div className="map-pin-demo pin-b"><i /> Makassar</div>
           <div className="map-pin-demo pin-c"><i /> Medan</div>
-          <p><ShieldAlert size={16} /> Skor awal, bukan traffic live.</p>
+          <p><ShieldAlert size={16} /> Bisa zoom, klik, dan unduh GeoJSON.</p>
         </div>
       </section>
 

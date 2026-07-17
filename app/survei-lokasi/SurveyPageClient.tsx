@@ -15,8 +15,8 @@ export function SurveyPageClient() {
       <section className="survey-page-hero">
         <div>
           <span>497 KOTA & KABUPATEN</span>
-          <h1>Survei usaha<br />di seluruh Indonesia.</h1>
-          <p>Pilih usaha. Cari kota. Klik titik lokasi.</p>
+          <h1>Survei usaha<br />di peta Indonesia.</h1>
+          <p>497 kota. Zoom, geser, cari titik, lalu baca top usaha dan pesaing sekitar.</p>
         </div>
         <Image src="/businesses/toko-kelontong.jpg" alt="Contoh toko kelontong Indonesia" width={1536} height={1024} priority unoptimized />
       </section>

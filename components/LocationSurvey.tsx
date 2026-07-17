@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, Building2, LoaderCircle, MapPin, Search, Store, Users, Waypoints } from "lucide-react";
+import { AlertTriangle, Building2, Download, Globe2, LoaderCircle, MapPin, Search, Store, Users, Waypoints } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Map as LeafletMap, LayerGroup } from "leaflet";
 import type { Business } from "@/lib/business-data";
@@ -9,9 +9,11 @@ import {
   analyzeOsmSurvey,
   buildOverpassQuery,
   findNearestPlace,
+  getPlaceRecommendation,
   indonesiaPlaces,
   normalizeSearch,
   placesMeta,
+  scorePlaceForBusiness,
   type IndonesiaPlace,
   type LocationSurveyResult,
   type OsmElement,
@@ -30,6 +32,7 @@ export function LocationSurvey({ business }: { business: Business }) {
   const mapElement = useRef<HTMLDivElement>(null);
   const mapRef = useRef<LeafletMap | null>(null);
   const resultLayerRef = useRef<LayerGroup | null>(null);
+  const nationwideLayerRef = useRef<LayerGroup | null>(null);
   const clickHandlerRef = useRef<(lat: number, lng: number) => void>(() => {});
   const [selected, setSelected] = useState<SelectedPoint>({ lat: defaultPlace.lat, lng: defaultPlace.lng, place: defaultPlace, distance: 0 });
   const [mapReady, setMapReady] = useState(false);
@@ -38,6 +41,7 @@ export function LocationSurvey({ business }: { business: Business }) {
   const [result, setResult] = useState<LocationSurveyResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const selectedRecommendation = useMemo(() => getPlaceRecommendation(selected.place), [selected.place]);
 
   const searchResults = useMemo(() => {
     const normalized = normalizeSearch(query.trim());
@@ -67,9 +71,9 @@ export function LocationSurvey({ business }: { business: Business }) {
 
     void import("leaflet").then((L) => {
       if (disposed || !mapElement.current || mapRef.current) return;
-      localMap = L.map(mapElement.current, { zoomControl: true, minZoom: 5 }).setView(
-        [defaultPlace.lat, defaultPlace.lng],
-        12,
+      localMap = L.map(mapElement.current, { zoomControl: true, minZoom: 4, maxZoom: 18 }).setView(
+        [-2.4, 118.2],
+        5,
       );
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 19,
@@ -91,7 +95,34 @@ export function LocationSurvey({ business }: { business: Business }) {
     let disposed = false;
     void import("leaflet").then((L) => {
       if (disposed || !mapRef.current) return;
-      mapRef.current.setView([selected.lat, selected.lng], Math.max(mapRef.current.getZoom(), 13), { animate: true });
+      nationwideLayerRef.current?.remove();
+      const layer = L.layerGroup().addTo(mapRef.current);
+      indonesiaPlaces.forEach((place) => {
+        const score = scorePlaceForBusiness(place, business.id);
+        const recommendation = getPlaceRecommendation(place).top;
+        const marker = L.circleMarker([place.lat, place.lng], {
+          radius: Math.max(3, Math.min(8, 3 + (score - 55) / 10)),
+          color: score >= 82 ? "#456e25" : score >= 70 ? "#9a701a" : "#985449",
+          fillColor: score >= 82 ? "#B7F26C" : score >= 70 ? "#F4C95D" : "#FF8A77",
+          fillOpacity: 0.72,
+          weight: 1,
+        });
+        marker.bindTooltip(
+          `<strong>${place.name}</strong><br/>${place.province}<br/>Skor ${business.short}: ${score}/100<br/>Top model: ${recommendation.business.short}`,
+          { direction: "top", offset: [0, -5] },
+        );
+        marker.on("click", () => clickHandlerRef.current(place.lat, place.lng));
+        marker.addTo(layer);
+      });
+      nationwideLayerRef.current = layer;
+    });
+    return () => { disposed = true; };
+  }, [business.id, business.short, mapReady]);
+
+  useEffect(() => {
+    let disposed = false;
+    void import("leaflet").then((L) => {
+      if (disposed || !mapRef.current) return;
       resultLayerRef.current?.remove();
       const layer = L.layerGroup().addTo(mapRef.current);
       L.circle([selected.lat, selected.lng], {
@@ -177,6 +208,33 @@ export function LocationSurvey({ business }: { business: Business }) {
 
   const nearestCompetitors = result?.pois.filter((poi) => poi.category === "competitor").slice(0, 5) ?? [];
 
+  const downloadNationwideData = () => {
+    const features = indonesiaPlaces.map((place) => {
+      const recommendation = getPlaceRecommendation(place).top;
+      return {
+        type: "Feature",
+        geometry: { type: "Point", coordinates: [place.lng, place.lat] },
+        properties: {
+          city: place.name,
+          province: place.province,
+          population: place.population,
+          selectedBusiness: business.name,
+          selectedBusinessScore: scorePlaceForBusiness(place, business.id),
+          topBusiness: recommendation.business.name,
+          topBusinessScore: recommendation.score,
+          model: "GeoNames population + city role; validate with OSM survey and field count",
+        },
+      };
+    });
+    const file = new Blob([JSON.stringify({ type: "FeatureCollection", features }, null, 2)], { type: "application/geo+json" });
+    const url = URL.createObjectURL(file);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = `cek-bisnis-indonesia-${business.slug}.geojson`;
+    anchor.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section className="survey-shell" aria-labelledby={`survey-${business.id}`}>
       <div className="survey-topbar">
@@ -184,7 +242,7 @@ export function LocationSurvey({ business }: { business: Business }) {
           <span className="section-kicker">SURVEI LOKASI</span>
           <h2 id={`survey-${business.id}`}>Klik titik. Baca peluang.</h2>
         </div>
-        <div className="survey-source-pill"><span /> OSM + GeoNames</div>
+        <div className="survey-source-pill"><span /> {placesMeta.count} kota · OSM + GeoNames</div>
       </div>
 
       <div className="survey-controls">
@@ -216,12 +274,15 @@ export function LocationSurvey({ business }: { business: Business }) {
           {loading ? <LoaderCircle className="spin" size={18} /> : <Waypoints size={18} />}
           {loading ? "Membaca peta..." : "Jalankan survei"}
         </button>
+        <button className="map-download" type="button" onClick={downloadNationwideData}>
+          <Download size={18} /> Unduh GeoJSON
+        </button>
       </div>
 
       <div className="survey-layout">
         <div className="survey-map-wrap">
           <div className="survey-map" ref={mapElement} />
-          <div className="survey-map-hint"><MapPin size={15} /> Klik titik mana pun di Indonesia</div>
+          <div className="survey-map-hint"><Globe2 size={15} /> Zoom, geser, atau klik 497 kota</div>
         </div>
 
         <aside className="survey-result" aria-live="polite">
@@ -234,8 +295,9 @@ export function LocationSurvey({ business }: { business: Business }) {
           {!result && !error && (
             <div className="survey-empty">
               <MapPin size={28} />
-              <b>Siap disurvei</b>
-              <p>Pilih titik lalu tekan tombol survei.</p>
+              <b>Top awal: {selectedRecommendation.top.business.name}</b>
+              <p>Skor model {selectedRecommendation.top.score}/100 · populasi {selected.place.population > 0 ? selected.place.population.toLocaleString("id-ID") : "belum tersedia"}</p>
+              <small>Pilih titik lalu jalankan survei untuk membaca pesaing dan pemicu ramai dari OSM.</small>
             </div>
           )}
           {error && <div className="survey-error"><AlertTriangle size={19} />{error}</div>}
@@ -274,7 +336,7 @@ export function LocationSurvey({ business }: { business: Business }) {
 
       <div className="survey-footnote">
         <AlertTriangle size={16} />
-        <span>Skor = aktivitas sekitar + kompetisi + kepadatan + akses + ukuran kota. Ini penyaring awal, bukan data penjualan atau jumlah orang lewat.</span>
+        <span>Marker nasional = populasi GeoNames + peran kota. Skor titik = aktivitas, kompetisi, kepadatan, akses, dan ukuran kota dari OSM. Bukan data penjualan atau jumlah orang lewat.</span>
         <a href={placesMeta.sourceUrl} target="_blank" rel="noreferrer">GeoNames {placesMeta.license}</a>
       </div>
     </section>

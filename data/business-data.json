@@ -9,10 +9,16 @@
       "url": "https://www.bps.go.id/id/pressrelease/2026/05/05/2574/tingkat-pengangguran-terbuka--tpt--sebesar-4-68-persen--rata-rata-upah-buruh-sebesar-3-29-juta-rupiah-.html"
     },
     {
+      "id": "bps-imk",
+      "title": "BPS - Profil Industri Mikro dan Kecil 2024",
+      "note": "Rujukan nasional terbaru untuk karakteristik usaha, tenaga kerja, kendala, dan struktur IMK Indonesia.",
+      "url": "https://www.bps.go.id/id/publication/2025/09/16/a83f105e49377d0a7434e62a/profil-industri-mikro-dan-kecil-2024.html"
+    },
+    {
       "id": "bi-retail",
       "title": "Bank Indonesia - Survei Penjualan Eceran April 2026",
-      "note": "IPR Maret 2026 tercatat 256,7; penjualan makanan, minuman, rekreasi, dan sandang tetap menjadi penggerak.",
-      "url": "https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2810326.aspx"
+      "note": "Realisasi IPR April 2026 tercatat 226,9; proyeksi Mei 2026 sebesar 225,0.",
+      "url": "https://www.bi.go.id/id/publikasi/laporan/Documents/SPE-April-2026.pdf"
     },
     {
       "id": "esdm-electricity",
@@ -92,7 +98,7 @@
         { "phase": "Hari 46-90", "title": "Kejar repeat order", "actions": ["Paket kos bulanan", "Program referral", "Pantau kg per mesin per hari"] }
       ],
       "permits": ["NIB melalui OSS sesuai KBLI jasa pencucian", "Cek persetujuan lingkungan dan pembuangan air setempat"],
-      "sourceIds": ["bps-wage", "esdm-electricity", "laundry-package", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "esdm-electricity", "laundry-package", "oss"]
     },
     {
       "id": "kelontong",
@@ -134,7 +140,7 @@
         { "phase": "Hari 46-90", "title": "Percepat rotasi", "actions": ["Tambah SKU berdasarkan data", "Paket langganan warung", "Negosiasi tempo pemasok"] }
       ],
       "permits": ["NIB perdagangan eceran melalui OSS", "Perizinan tambahan bila menjual produk khusus tertentu"],
-      "sourceIds": ["bps-wage", "bi-retail", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "oss"]
     },
     {
       "id": "franchise",
@@ -176,7 +182,7 @@
         { "phase": "Hari 46-90", "title": "Optimasi jam ramai", "actions": ["Paket bundling", "Sampling lokal", "Pantau cup per jam"] }
       ],
       "permits": ["NIB dan KBLI F&B sesuai format", "Sertifikasi halal dan izin pangan sesuai kewajiban produk"],
-      "sourceIds": ["bps-wage", "bi-retail", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "oss"]
     },
     {
       "id": "game",
@@ -218,7 +224,7 @@
         { "phase": "Hari 46-90", "title": "Naikkan utilisasi", "actions": ["Liga mingguan", "Membership off-peak", "Paket snack"] }
       ],
       "permits": ["NIB untuk aktivitas hiburan/recreational yang sesuai", "Pastikan penggunaan software dan game legal"],
-      "sourceIds": ["bps-wage", "bi-retail", "esdm-electricity", "sony-ps5", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "esdm-electricity", "sony-ps5", "oss"]
     },
     {
       "id": "gym",
@@ -260,7 +266,7 @@
         { "phase": "Hari 61-90", "title": "Jaga retensi", "actions": ["Onboarding 30 hari", "Kelas komunitas", "Follow-up member pasif"] }
       ],
       "permits": ["NIB untuk aktivitas pusat kebugaran", "K3, keselamatan alat, dan persetujuan bangunan sesuai lokasi"],
-      "sourceIds": ["bps-wage", "esdm-electricity", "gym-package", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "esdm-electricity", "gym-package", "oss"]
     },
     {
       "id": "coffee",
@@ -302,7 +308,7 @@
         { "phase": "Hari 46-90", "title": "Dorong repeat", "actions": ["Loyalty sederhana", "Menu kantor", "Pantau order per jam"] }
       ],
       "permits": ["NIB dan KBLI penyediaan minuman", "Kewajiban halal dan higiene sesuai format produk"],
-      "sourceIds": ["bps-wage", "bi-retail", "coffee-capex", "esdm-electricity", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "coffee-capex", "esdm-electricity", "oss"]
     },
     {
       "id": "barber",
@@ -344,7 +350,7 @@
         { "phase": "Hari 46-90", "title": "Bangun repeat", "actions": ["Reminder 4 minggu", "Paket father-son", "Jual grooming"] }
       ],
       "permits": ["NIB untuk jasa pangkas rambut", "Standar kebersihan dan pembuangan limbah ringan"],
-      "sourceIds": ["bps-wage", "oss"]
+      "sourceIds": ["bps-wage", "bps-imk", "oss"]
     }
   ],
   "cities": [

@@ -1,5 +1,5 @@
 import placesData from "@/data/indonesia-places.json";
-import type { Business, BusinessId } from "@/lib/business-data";
+import { businesses, type Business, type BusinessId } from "@/lib/business-data";
 
 export type IndonesiaPlace = {
   id: string;
@@ -71,6 +71,35 @@ export const placesMeta = {
 
 export const normalizeSearch = (value: string) =>
   value.toLocaleLowerCase("id-ID").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+const clampScore = (value: number) => Math.min(96, Math.max(45, Math.round(value)));
+
+export const scorePlaceForBusiness = (place: IndonesiaPlace, businessId: BusinessId) => {
+  const population = Math.max(place.population, 12_000);
+  const market = 48 + (Math.log10(population) - 4) * 15;
+  const capitalBonus = place.kind === "PPLC" ? 7 : place.kind === "PPLA" ? 4 : 0;
+  const largeMarket = population >= 750_000 ? 6 : population >= 250_000 ? 3 : 0;
+  const smallerMarket = population < 180_000 ? 6 : 0;
+  const regionalName = normalizeSearch(`${place.name} ${place.province}`);
+  const visitorEconomy = /(bali|yogyakarta|bandung|malang|lombok|batam|denpasar)/.test(regionalName) ? 5 : 0;
+  const fit: Record<BusinessId, number> = {
+    laundry: (population >= 150_000 && population <= 2_500_000 ? 7 : 2) + visitorEconomy,
+    kelontong: 5 + smallerMarket,
+    franchise: largeMarket + capitalBonus,
+    game: (population >= 200_000 ? 6 : 1) + capitalBonus,
+    gym: largeMarket + capitalBonus + visitorEconomy,
+    coffee: largeMarket + capitalBonus + visitorEconomy,
+    barber: 7 + (population >= 100_000 ? 3 : 0),
+  };
+  return clampScore(market + fit[businessId]);
+};
+
+export const getPlaceRecommendation = (place: IndonesiaPlace) => {
+  const ranked = businesses
+    .map((business) => ({ business, score: scorePlaceForBusiness(place, business.id) }))
+    .sort((a, b) => b.score - a.score);
+  return { top: ranked[0], ranked };
+};
 
 export const haversineKm = (lat1: number, lng1: number, lat2: number, lng2: number) => {
   const toRad = (value: number) => value * Math.PI / 180;

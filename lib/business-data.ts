@@ -100,15 +100,20 @@ export const formatMoney = (value: number, decimals = 1) => {
   return `Rp${rounded.toLocaleString("id-ID")} jt`;
 };
 
-export const calculateMetrics = (business: Business, city: City, targetRevenue?: number) => {
+export const calculateMetrics = (
+  business: Business,
+  city: City,
+  targetRevenue?: number,
+  scaleCapex: [number, number] = business.capex,
+) => {
   const monthlyRevenue = targetRevenue ?? Math.round(business.targetRevenue * city.demandFactor);
   const payrollBase = business.staffCount * business.staffCostBase;
   const otherFixed = business.fixedBase - business.rentBase - payrollBase;
   const rent = business.rentBase * city.rentFactor;
   const payroll = payrollBase * city.wageFactor;
   const fixedCost = Math.max(1, otherFixed + rent + payroll);
-  const capexLow = business.capex[0] * city.capexFactor;
-  const capexHigh = business.capex[1] * city.capexFactor;
+  const capexLow = scaleCapex[0] * city.capexFactor;
+  const capexHigh = scaleCapex[1] * city.capexFactor;
   const capexMid = (capexLow + capexHigh) / 2;
   const breakEvenRevenue = fixedCost / (1 - business.variableRate);
   const opex = fixedCost + monthlyRevenue * business.variableRate;
