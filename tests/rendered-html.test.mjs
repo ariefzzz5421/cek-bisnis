@@ -25,8 +25,8 @@ test("server-renders the Cek Bisnis landing page", async () => {
 
   const html = await response.text();
   assert.match(html, /Cek Bisnis - Panduan Modal, OPEX dan BEP/i);
-  assert.match(html, /Pilih jenis usaha/i);
-  assert.match(html, /Survei seluruh Indonesia/i);
+  assert.match(html, /Pilih model usaha/i);
+  assert.match(html, /Peta usaha Indonesia/i);
   assert.match(html, /497/i);
   assert.match(html, /PDF · 3 halaman/i);
 });
@@ -35,7 +35,7 @@ test("server-renders the all-Indonesia location survey", async () => {
   const response = await render("/survei-lokasi");
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(html, /Survei usaha/i);
+  assert.match(html, /Cek lokasi sebelum/i);
   assert.match(html, /Klik titik\. Baca peluang/i);
   assert.match(html, /Jalankan survei/i);
 });
@@ -52,6 +52,9 @@ test("every business has a working routed analysis page", async () => {
     assert.match(html, /HITUNG ANGKA/i);
     assert.match(html, /SURVEI LOKASI/i);
     assert.match(html, /PDF panduan 3 halaman/i);
+    assert.match(html, new RegExp(`/equipment/${business.slug}-atlas\\.webp`));
+    assert.equal((html.match(/class="equipment-product"/g) ?? []).length, 8, `${business.slug} equipment card count`);
+    assert.equal((html.match(/class="equipment-product__body"/g) ?? []).length, 8, `${business.slug} supplier link count`);
   }
 });
 
@@ -82,4 +85,14 @@ test("every business ships a realistic scene and the landing tour video", async 
   }
   const videoInfo = await stat(new URL("../public/businesses/business-tour.mp4", import.meta.url));
   assert.ok(videoInfo.size > 1_000_000, "business tour video is unexpectedly small");
+});
+
+test("every business ships a generated equipment atlas", async () => {
+  for (const business of businessData.businesses) {
+    const atlasUrl = new URL(`../public/equipment/${business.slug}-atlas.webp`, import.meta.url);
+    const [info, file] = await Promise.all([stat(atlasUrl), readFile(atlasUrl)]);
+    assert.ok(info.size > 50_000, `${business.slug} equipment atlas is unexpectedly small`);
+    assert.equal(file.subarray(0, 4).toString(), "RIFF");
+    assert.equal(file.subarray(8, 12).toString(), "WEBP");
+  }
 });

@@ -19,6 +19,12 @@ export type DetailedEquipment = {
   priority: "Wajib" | "Pendukung";
 };
 
+export type EquipmentSupplier = {
+  name: string;
+  label: "Toko resmi" | "Merek resmi" | "Dealer resmi" | "Mitra resmi";
+  url: string;
+};
+
 export type BusinessDetail = {
   imagePosition: string;
   imageAlt: string;
@@ -171,3 +177,78 @@ export const businessDetails: Record<BusinessId, BusinessDetail> = {
 };
 
 export const getBusinessDetail = (id: BusinessId) => businessDetails[id];
+
+export const equipmentSuppliers: Record<BusinessId, EquipmentSupplier[]> = {
+  laundry: [
+    { name: "LG Commercial Laundry", label: "Merek resmi", url: "https://www.lg.com/id/business/commercial-laundry/" },
+    { name: "LG Commercial Laundry", label: "Merek resmi", url: "https://www.lg.com/id/business/commercial-laundry/" },
+    { name: "Ramesia", label: "Toko resmi", url: "https://ramesia.com/product/" },
+    { name: "CAS Indonesia", label: "Dealer resmi", url: "https://www.casindonesia.com/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "Moka Hardware", label: "Toko resmi", url: "https://www.mokapos.com/hardware/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+  ],
+  kelontong: [
+    { name: "KlikIndogrosir", label: "Toko resmi", url: "https://klikindogrosir.com/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "MODENA", label: "Merek resmi", url: "https://www.modena.com/id_id/professional.html" },
+    { name: "MODENA", label: "Merek resmi", url: "https://www.modena.com/id_id/professional.html" },
+    { name: "Moka Hardware", label: "Toko resmi", url: "https://www.mokapos.com/hardware/" },
+    { name: "Hikvision Indonesia", label: "Merek resmi", url: "https://www.hikvision.com/id/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+  ],
+  franchise: [
+    { name: "Es Teh Poci", label: "Mitra resmi", url: "https://www.estehpoci.co.id/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "Ramesia Cup Sealer", label: "Toko resmi", url: "https://ramesia.com/cup-sealer/" },
+    { name: "Ramesia", label: "Toko resmi", url: "https://ramesia.com/product/" },
+    { name: "MODENA Professional", label: "Merek resmi", url: "https://www.modena.com/id_id/professional.html" },
+    { name: "3M Indonesia", label: "Merek resmi", url: "https://www.3m.co.id/3M/en_ID/p/c/filtration-separation/filter-cartridges-media/i/commercial-solutions/" },
+    { name: "Moka Hardware", label: "Toko resmi", url: "https://www.mokapos.com/hardware/" },
+    { name: "Es Teh Poci", label: "Mitra resmi", url: "https://www.estehpoci.co.id/" },
+  ],
+  game: [
+    { name: "PlayStation Indonesia", label: "Merek resmi", url: "https://www.playstation.com/en-id/ps5/buy-now/" },
+    { name: "Sony Indonesia", label: "Dealer resmi", url: "https://www.sony.co.id/id/dealer-locator" },
+    { name: "PlayStation Indonesia", label: "Merek resmi", url: "https://www.playstation.com/en-id/ps5/buy-now/" },
+    { name: "IKEA Indonesia", label: "Toko resmi", url: "https://www.ikea.co.id/in/produk/sofa-dan-kursi-berlengan/sofa" },
+    { name: "TP-Link Indonesia", label: "Merek resmi", url: "https://www.tp-link.com/id/home-networking/wifi-router/" },
+    { name: "Schneider Electric", label: "Merek resmi", url: "https://www.se.com/id/id/product-category/8000-uninterruptible-power-supply-ups/" },
+    { name: "Hikvision Indonesia", label: "Merek resmi", url: "https://www.hikvision.com/id/" },
+    { name: "PlayStation Store", label: "Toko resmi", url: "https://store.playstation.com/en-id/pages/latest" },
+  ],
+  gym: [
+    { name: "OB Fitness & Health", label: "Toko resmi", url: "https://www.ob-fit.com/" },
+    { name: "OB Fitness & Health", label: "Toko resmi", url: "https://www.ob-fit.com/" },
+    { name: "OB Fitness & Health", label: "Toko resmi", url: "https://www.ob-fit.com/" },
+    { name: "OB Fitness & Health", label: "Toko resmi", url: "https://www.ob-fit.com/" },
+    { name: "OB Fitness & Health", label: "Toko resmi", url: "https://www.ob-fit.com/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "IKEA Indonesia", label: "Toko resmi", url: "https://www.ikea.co.id/in/" },
+    { name: "Hikvision Indonesia", label: "Merek resmi", url: "https://www.hikvision.com/id/" },
+  ],
+  coffee: [
+    { name: "Monopole", label: "Dealer resmi", url: "https://monopole.co.id/about" },
+    { name: "Otten Coffee", label: "Toko resmi", url: "https://ottencoffee.co.id/categories/grinders" },
+    { name: "3M Indonesia", label: "Merek resmi", url: "https://www.3m.co.id/3M/en_ID/p/c/filtration-separation/filter-cartridges-media/i/commercial-solutions/" },
+    { name: "MODENA Professional", label: "Merek resmi", url: "https://www.modena.com/id_id/professional.html" },
+    { name: "Otten Coffee", label: "Toko resmi", url: "https://ottencoffee.co.id/categories/barista-tools" },
+    { name: "Moka Hardware", label: "Toko resmi", url: "https://www.mokapos.com/hardware/" },
+    { name: "Mitra10", label: "Toko resmi", url: "https://www.mitra10.com/" },
+    { name: "Otten Coffee", label: "Toko resmi", url: "https://ottencoffee.co.id/" },
+  ],
+  barber: [
+    { name: "Luvance Salon Supplier", label: "Toko resmi", url: "https://www.luvancesalonsupplier.com/" },
+    { name: "Luvance Salon Supplier", label: "Toko resmi", url: "https://www.luvancesalonsupplier.com/" },
+    { name: "Wahl Southeast Asia", label: "Merek resmi", url: "https://sea.wahl.com/" },
+    { name: "Wahl Official Store", label: "Toko resmi", url: "https://shopee.co.id/wahl.id" },
+    { name: "Wahl Official Store", label: "Toko resmi", url: "https://shopee.co.id/wahl.id" },
+    { name: "Electronic City", label: "Toko resmi", url: "https://eci.id/product/46959/detail" },
+    { name: "Luvance Salon Supplier", label: "Toko resmi", url: "https://www.luvancesalonsupplier.com/" },
+    { name: "DAIKIN i-Shop", label: "Dealer resmi", url: "https://ishop.daikin.co.id/" },
+  ],
+};
+
+export const getEquipmentSupplier = (id: BusinessId, index: number) => equipmentSuppliers[id][index];

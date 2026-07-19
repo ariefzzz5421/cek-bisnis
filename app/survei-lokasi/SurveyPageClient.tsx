@@ -5,6 +5,7 @@ import { useState } from "react";
 import { BusinessIcon } from "@/components/BusinessIcon";
 import { LocationSurvey } from "@/components/LocationSurvey";
 import { businesses } from "@/lib/business-data";
+import { placesMeta } from "@/lib/location-survey";
 
 export function SurveyPageClient() {
   const [businessId, setBusinessId] = useState(businesses[0].id);
@@ -12,17 +13,18 @@ export function SurveyPageClient() {
 
   return (
     <>
-      <section className="survey-page-hero">
-        <div>
-          <span>497 KOTA & KABUPATEN</span>
-          <h1>Survei usaha<br />di peta Indonesia.</h1>
-          <p>497 kota. Zoom, geser, cari titik, lalu baca top usaha dan pesaing sekitar.</p>
+      <section className="survey-page-hero survey-workbench-hero">
+        <div className="survey-workbench-hero__copy">
+          <span>PETA USAHA INDONESIA</span>
+          <h1>Cek lokasi sebelum<br />membayar sewa.</h1>
+          <p>Cari kota, klik titik, lalu baca skor awal, pesaing sekitar, pemicu ramai, dan estimasi omzet.</p>
+          <dl><div><dt>Kota & kabupaten</dt><dd>{placesMeta.count}</dd></div><div><dt>Data titik</dt><dd>OpenStreetMap</dd></div></dl>
         </div>
-        <Image src="/businesses/toko-kelontong.jpg" alt="Contoh toko kelontong Indonesia" width={1536} height={1024} priority unoptimized />
+        <div className="survey-workbench-hero__media"><Image src="/businesses/toko-kelontong.jpg" alt="Contoh toko kelontong Indonesia" width={1536} height={1024} priority unoptimized /><span><b>Pilih titik</b> lalu jalankan survei</span></div>
       </section>
 
       <section className="survey-business-picker">
-        <span>PILIH JENIS USAHA</span>
+        <span>USAHA YANG DIUJI</span>
         <div>
           {businesses.map((item) => (
             <button

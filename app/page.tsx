@@ -1,210 +1,149 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, FileText, ImageDown, Map, ShieldAlert } from "lucide-react";
-import { BrandLogo } from "@/components/BrandLogo";
+import { ArrowRight, ArrowUpRight, Check, FileText, ImageDown, MapPinned, ShieldCheck } from "lucide-react";
+import { BusinessIcon } from "@/components/BusinessIcon";
 import { BusinessTour } from "@/components/BusinessTour";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { businessData, businesses, formatMoney } from "@/lib/business-data";
-import { placesMeta } from "@/lib/location-survey";
+import { indonesiaPlaces, placesMeta, scorePlaceForBusiness } from "@/lib/location-survey";
 
-const workflow = [
-  { number: "1.0", label: "Pilih usaha", href: "#pilih-usaha" },
-  { number: "2.0", label: "Baca angka", href: "#cara-kerja" },
-  { number: "3.0", label: "Survei kota", href: "#lokasi" },
-  { number: "4.0", label: "Simpan rencana", href: "#simpan-rencana" },
-];
+const featured = businesses[0];
+const mapPlaces = ["Kediri", "Bandung", "Makassar"].map((name) => indonesiaPlaces.find((place) => place.name === name)).filter(Boolean);
 
 export default function Home() {
   return (
-    <main className="decision-page">
+    <main className="workbench-page">
       <SiteHeader landing />
 
-      <section className="decision-hero" aria-labelledby="decision-title">
-        <div className="decision-hero__copy">
-          <p className="decision-meta"><span aria-hidden="true" /> Data Indonesia · {businessData.updatedAt}</p>
-          <h1 id="decision-title">Lihat usahanya.<br />Hitung risikonya.</h1>
-          <p className="decision-lede">Modal, biaya, BEP, dan lokasi—sebelum uang keluar.</p>
-          <Link className="decision-primary" href="#pilih-usaha">
-            Mulai analisis usaha <ArrowRight size={19} aria-hidden="true" />
-          </Link>
+      <section className="workbench-hero" aria-labelledby="workbench-title">
+        <div className="workbench-hero__copy">
+          <p className="workbench-kicker"><span aria-hidden="true" /> Data Indonesia · diperbarui {businessData.updatedAt}</p>
+          <h1 id="workbench-title">Sebelum buka usaha,<br />buka angkanya.</h1>
+          <p>Bandingkan modal, biaya bulanan, omzet BEP, alat, dan lokasi untuk tujuh model UMKM Indonesia.</p>
+          <div className="workbench-hero__actions">
+            <Link className="workbench-button workbench-button--primary" href="#pilih-usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link className="workbench-button workbench-button--quiet" href="/survei-lokasi"><MapPinned size={18} aria-hidden="true" /> Buka peta Indonesia</Link>
+          </div>
+          <dl className="workbench-proof">
+            <div><dt>Model usaha</dt><dd>{businesses.length}</dd></div>
+            <div><dt>Kota & kabupaten</dt><dd>{placesMeta.count}</dd></div>
+            <div><dt>Format unduhan</dt><dd>PDF + PNG</dd></div>
+          </dl>
         </div>
 
-        <nav className="workflow-index" aria-label="Tahapan analisis usaha">
-          {workflow.map((step) => (
-            <a href={step.href} key={step.number}>
-              <span>{step.number}</span>
-              <b>{step.label}</b>
-              <ArrowRight size={18} aria-hidden="true" />
-            </a>
-          ))}
-        </nav>
-
-        <div className="decision-proof" aria-label="Cakupan Cek Bisnis">
-          <div><strong>{businesses.length}</strong><span>model usaha</span></div>
-          <div><strong>{placesMeta.count}</strong><span>kota &amp; kabupaten</span></div>
-          <div><strong>2</strong><span>format unduhan</span></div>
+        <div className="workbench-preview" aria-label="Contoh ringkasan analisis Laundry Kiloan">
+          <div className="workbench-preview__bar"><span>Ringkasan keputusan</span><i>Siap dihitung</i></div>
+          <div className="workbench-preview__business">
+            <Image src={`/businesses/${featured.slug}.jpg`} alt={`Contoh ${featured.name}`} width={640} height={420} priority unoptimized />
+            <div><small>{featured.category}</small><h2>{featured.name}</h2><p>{featured.oneLine}</p></div>
+          </div>
+          <div className="workbench-preview__metrics">
+            <div><small>Modal awal</small><b>{formatMoney(featured.capex[0], 0)}-{formatMoney(featured.capex[1], 0).replace("Rp", "")}</b></div>
+            <div><small>Target omzet</small><b>{formatMoney(featured.targetRevenue, 0)}/bln</b></div>
+            <div><small>Harga rata-rata</small><b>{formatMoney(featured.avgTicket)}</b></div>
+          </div>
+          <Link href={`/usaha/${featured.slug}`}>Buka simulasi lengkap <ArrowUpRight size={17} aria-hidden="true" /></Link>
         </div>
       </section>
 
-      <section className="workflow-stage business-ledger" id="pilih-usaha" aria-labelledby="business-ledger-title">
-        <header className="stage-heading">
-          <p><span>1.0</span> Pilih usaha</p>
-          <div>
-            <h2 id="business-ledger-title">Bandingkan sebelum memilih.</h2>
-            <p>Tujuh model usaha dengan modal awal dan target omzet yang bisa langsung dibuka analisisnya.</p>
-          </div>
+      <section className="business-browser" id="pilih-usaha" aria-labelledby="business-browser-title">
+        <header className="workbench-section-heading">
+          <div><p>PILIH MODEL USAHA</p><h2 id="business-browser-title">Mulai dari usaha yang kamu pahami.</h2></div>
+          <p>Setiap analisis berisi tiga skala modal, simulasi kota, daftar alat lengkap, dan rencana yang bisa diunduh.</p>
         </header>
 
-        <div className="ledger-head" aria-hidden="true">
-          <span>Usaha</span><span>Modal awal</span><span>Target omzet</span><span>Aksi</span>
-        </div>
-        <div className="ledger-body">
+        <div className="business-browser__grid">
           {businesses.map((business, index) => (
-            <article className="ledger-row" key={business.id}>
-              <div className="ledger-business">
-                <span className="ledger-number">{String(index + 1).padStart(2, "0")}</span>
-                <Image
-                  src={`/businesses/${business.slug}.jpg`}
-                  alt={`Contoh ${business.name} di Indonesia`}
-                  width={240}
-                  height={160}
-                  unoptimized
-                />
-                <div>
-                  <small>{business.category}</small>
-                  <h3>{business.name}</h3>
-                  <p>{business.oneLine}</p>
+            <article className={`business-browser__item ${index === 0 || index === 4 ? "is-wide" : ""}`} key={business.id}>
+              <Link href={`/usaha/${business.slug}`} aria-label={`Buka analisis ${business.name}`}>
+                <div className="business-browser__media">
+                  <Image src={`/businesses/${business.slug}.jpg`} alt={`Contoh nyata ${business.name} di Indonesia`} width={720} height={480} unoptimized />
+                  <span><BusinessIcon id={business.id} size={18} /> {business.category}</span>
                 </div>
-              </div>
-              <div className="ledger-metric"><small>Modal awal</small><strong>{formatMoney(business.capex[0], 0)}+</strong></div>
-              <div className="ledger-metric"><small>Target omzet</small><strong>{formatMoney(business.targetRevenue, 0)}/bln</strong></div>
-              <Link className="ledger-action" href={`/usaha/${business.slug}`} aria-label={`Buka analisis ${business.name}`}>
-                Buka analisis <ArrowUpRight size={17} aria-hidden="true" />
+                <div className="business-browser__body">
+                  <div><h3>{business.name}</h3><p>{business.oneLine}</p></div>
+                  <dl>
+                    <div><dt>Modal mulai</dt><dd>{formatMoney(business.capex[0], 0)}</dd></div>
+                    <div><dt>Target omzet</dt><dd>{formatMoney(business.targetRevenue, 0)}/bln</dd></div>
+                  </dl>
+                  <span className="business-browser__action">Analisis usaha <ArrowUpRight size={17} aria-hidden="true" /></span>
+                </div>
               </Link>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="workflow-stage analysis-stage" id="cara-kerja" aria-labelledby="analysis-stage-title">
-        <header className="stage-heading stage-heading--dark">
-          <p><span>2.0</span> Baca angka</p>
-          <div>
-            <h2 id="analysis-stage-title">Tahu apa yang harus dicapai.</h2>
-            <p>Setiap usaha diringkas menjadi empat keputusan utama, bukan laporan yang panjang.</p>
-          </div>
-        </header>
+      <section className="decision-workspace" aria-labelledby="decision-workspace-title">
+        <div className="decision-workspace__copy">
+          <p>ANGKA YANG DIPAKAI</p>
+          <h2 id="decision-workspace-title">Satu layar untuk keputusan utama.</h2>
+          <p>Tidak perlu membaca laporan panjang. Fokus pada empat hal yang menentukan usaha bisa bertahan.</p>
+          <ul>
+            <li><Check size={17} aria-hidden="true" /><span><b>Modal awal</b> — alat, renovasi, stok, dan pembukaan.</span></li>
+            <li><Check size={17} aria-hidden="true" /><span><b>Biaya bulanan</b> — sewa, gaji, utilitas, dan bahan.</span></li>
+            <li><Check size={17} aria-hidden="true" /><span><b>Omzet BEP</b> — target minimum agar biaya tertutup.</span></li>
+            <li><Check size={17} aria-hidden="true" /><span><b>Risiko lokasi</b> — permintaan, pesaing, dan akses.</span></li>
+          </ul>
+        </div>
+        <figure className="decision-workspace__tour">
+          <BusinessTour />
+          <figcaption>Preview contoh tujuh format usaha.</figcaption>
+        </figure>
+      </section>
 
-        <div className="analysis-layout">
-          <div className="analysis-checklist">
-            <div><span>01</span><strong>Modal awal</strong><p>Peralatan, renovasi, stok, dan biaya pembukaan.</p></div>
-            <div><span>02</span><strong>Biaya bulanan</strong><p>Sewa, tenaga kerja, utilitas, dan biaya variabel.</p></div>
-            <div><span>03</span><strong>Batas BEP</strong><p>Omzet dan pelanggan minimum agar biaya tertutup.</p></div>
-            <div><span>04</span><strong>Risiko lokasi</strong><p>Permintaan, biaya kota, dan pesaing di sekitar titik.</p></div>
-          </div>
-          <figure className="analysis-tour">
-            <BusinessTour />
-            <figcaption>Preview nyata tujuh model usaha Indonesia.</figcaption>
-          </figure>
+      <section className="map-workspace" aria-labelledby="map-workspace-title">
+        <div className="map-workspace__panel">
+          <div className="map-workspace__mesh" aria-hidden="true" />
+          <MapPinned size={72} aria-hidden="true" />
+          {mapPlaces.map((place, index) => place && <span className={`map-workspace__pin map-workspace__pin--${["one", "two", "three"][index]}`} key={place.id}>{place.name} <b>{scorePlaceForBusiness(place, featured.id)}</b></span>)}
+        </div>
+        <div className="map-workspace__copy">
+          <p>PETA USAHA INDONESIA</p>
+          <h2 id="map-workspace-title">Kota yang berbeda, hasilnya berbeda.</h2>
+          <p>Cari kota atau klik titik di peta. Sistem membaca populasi, peran kota, pesaing, pemicu ramai, bangunan, dan akses dari GeoNames serta OpenStreetMap.</p>
+          <dl><div><dt>Wilayah tersedia</dt><dd>{placesMeta.count}</dd></div><div><dt>Radius titik</dt><dd>500 m–1,5 km</dd></div></dl>
+          <Link className="workbench-button workbench-button--primary" href="/survei-lokasi">Jalankan survei lokasi <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
       </section>
 
-      <section className="workflow-stage location-stage" id="lokasi" aria-labelledby="location-stage-title">
-        <header className="stage-heading">
-          <p><span>3.0</span> Survei seluruh Indonesia</p>
-          <div>
-            <h2 id="location-stage-title">Lokasi mengubah hasil.</h2>
-            <p>Pilih kota atau titik usaha, lalu lihat skor peluang, pesaing sekitar, dan estimasi omzetnya.</p>
-          </div>
+      <section className="download-workspace" aria-labelledby="download-workspace-title">
+        <header className="workbench-section-heading">
+          <div><p>BAWA HASILNYA</p><h2 id="download-workspace-title">Panduan siap survei.</h2></div>
+          <p>Pilih usaha terlebih dahulu. Dua file tersedia langsung dari halaman analisis.</p>
         </header>
-
-        <div className="location-layout">
-          <div className="location-map" aria-hidden="true">
-            <div className="location-map__grid" />
-            <Map size={250} strokeWidth={0.7} />
-            <span className="location-pin location-pin--kediri"><i /> Kediri</span>
-            <span className="location-pin location-pin--medan"><i /> Medan</span>
-            <span className="location-pin location-pin--makassar"><i /> Makassar</span>
-          </div>
-          <div className="location-brief">
-            <strong>{placesMeta.count}</strong>
-            <p>kota dan kabupaten tersedia untuk dibandingkan.</p>
-            <ul>
-              <li><Check size={17} aria-hidden="true" /> Top usaha dan skor setiap kota</li>
-              <li><Check size={17} aria-hidden="true" /> Pesaing sekitar dari OpenStreetMap</li>
-              <li><Check size={17} aria-hidden="true" /> Estimasi omzet berdasarkan lokasi</li>
-            </ul>
-            <Link className="decision-secondary" href="/survei-lokasi">
-              Buka peta Indonesia <ArrowRight size={18} aria-hidden="true" />
-            </Link>
-          </div>
+        <div className="download-workspace__rows">
+          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · 3 HALAMAN</small><h3>Panduan usaha lengkap</h3><p>Modal, alat, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
+          <article><ImageDown size={24} aria-hidden="true" /><div><small>PNG · PREVIEW</small><h3>Kartu angka utama</h3><p>Modal, omzet, BEP, dan traffic minimum dalam satu gambar.</p></div><span>Tersedia per usaha</span></article>
         </div>
       </section>
 
-      <section className="workflow-stage download-stage" id="simpan-rencana" aria-labelledby="download-stage-title">
-        <header className="stage-heading">
-          <p><span>4.0</span> Simpan rencana</p>
-          <div>
-            <h2 id="download-stage-title">Bawa hasilnya saat survei.</h2>
-            <p>Pilih usaha terlebih dahulu. Setiap halaman analisis menyediakan dua file siap unduh.</p>
-          </div>
-        </header>
-
-        <div className="download-list">
-          <article>
-            <FileText size={28} aria-hidden="true" />
-            <div><small>PDF · 3 HALAMAN</small><h3>Panduan usaha</h3><p>Angka, alat, operasi, risiko, dan rencana 90 hari.</p></div>
-            <span>Tersedia per usaha</span>
-          </article>
-          <article>
-            <ImageDown size={28} aria-hidden="true" />
-            <div><small>PNG · PREVIEW</small><h3>Kartu ringkas</h3><p>Modal, BEP, omzet, dan traffic minimum.</p></div>
-            <span>Tersedia per usaha</span>
-          </article>
+      <section className="data-workspace" id="data" aria-labelledby="data-workspace-title">
+        <div>
+          <ShieldCheck size={28} aria-hidden="true" />
+          <p>DASAR DATA</p>
+          <h2 id="data-workspace-title">Bisa dicek. Tetap perlu survei.</h2>
+          <span>Estimasi adalah alat screening awal, bukan jaminan keuntungan.</span>
         </div>
-        <Link className="download-next" href="#pilih-usaha">Pilih usaha untuk mengunduh <ArrowRight size={18} aria-hidden="true" /></Link>
-      </section>
-
-      <section className="evidence-section" id="data" aria-labelledby="evidence-title">
-        <div className="evidence-intro">
-          <p>Dasar data</p>
-          <h2 id="evidence-title">Bisa dicek. Tetap perlu survei.</h2>
-          <p><ShieldAlert size={18} aria-hidden="true" /> Estimasi awal bukan jaminan untung.</p>
-        </div>
-        <div className="evidence-links">
+        <nav aria-label="Sumber data utama">
           {businessData.sources.slice(0, 5).map((source) => (
             <a href={source.url} target="_blank" rel="noreferrer" key={source.id}>
-              <Check size={15} aria-hidden="true" />
-              <span><b>{source.title}</b><small>{source.note}</small></span>
-              <ArrowUpRight size={16} aria-hidden="true" />
+              <span><b>{source.title}</b><small>{source.note}</small></span><ArrowUpRight size={16} aria-hidden="true" />
             </a>
           ))}
-          <a href={placesMeta.sourceUrl} target="_blank" rel="noreferrer">
-            <Check size={15} aria-hidden="true" />
-            <span><b>GeoNames Indonesia</b><small>{placesMeta.count} kota/kabupaten · {placesMeta.license}</small></span>
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
-        </div>
+          <a href={placesMeta.sourceUrl} target="_blank" rel="noreferrer"><span><b>GeoNames Indonesia</b><small>{placesMeta.count} kota dan kabupaten · {placesMeta.license}</small></span><ArrowUpRight size={16} /></a>
+        </nav>
       </section>
 
-      <section className="decision-closing" aria-labelledby="closing-title">
-        <p>Mulai dari satu pilihan.</p>
-        <h2 id="closing-title">Hitung dulu.<br />Baru buka.</h2>
-        <Link className="decision-primary decision-primary--light" href="#pilih-usaha">
-          Mulai analisis usaha <ArrowRight size={19} aria-hidden="true" />
-        </Link>
+      <section className="workbench-closing" aria-labelledby="workbench-closing-title">
+        <p>Pilih satu usaha. Uji angkanya.</p>
+        <h2 id="workbench-closing-title">Hitung dulu.<br />Baru buka.</h2>
+        <Link className="workbench-button workbench-button--light" href="#pilih-usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
       </section>
 
-      <footer className="decision-footer">
-        <BrandLogo />
-        <p>Estimasi awal UMKM Indonesia. Bukan jaminan untung.</p>
-        <div><Link href="/survei-lokasi">Survei lokasi</Link><a href="#data">Dasar data</a><span>© 2026</span></div>
-      </footer>
-
-      <aside className="mobile-analysis-cta" aria-label="Mulai analisis usaha">
-        <span>Pilih satu usaha untuk mulai.</span>
-        <a href="#pilih-usaha">Mulai analisis <ArrowRight size={17} aria-hidden="true" /></a>
-      </aside>
+      <SiteFooter />
+      <aside className="workbench-mobile-cta" aria-label="Mulai analisis usaha"><span>Pilih usaha untuk mulai.</span><a href="#pilih-usaha">Mulai analisis <ArrowRight size={17} /></a></aside>
     </main>
   );
 }

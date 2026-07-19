@@ -1,30 +1,30 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Menu } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 
 export function SiteHeader({ landing = false }: { landing?: boolean }) {
-  if (landing) {
-    return (
-      <header className="site-header site-header--landing">
-        <BrandLogo />
-        <Link className="landing-header-action" href="#pilih-usaha">
-          Mulai analisis <ArrowRight size={17} aria-hidden="true" />
-        </Link>
-      </header>
-    );
-  }
-
   return (
-    <header className="site-header">
-      <BrandLogo />
-      <nav className="site-nav" aria-label="Navigasi utama">
-        <Link href="/#pilih-usaha">Jenis usaha</Link>
-        <Link href="/survei-lokasi">Survei lokasi</Link>
-        <Link href="/#data">Dasar data</Link>
+    <header className="workbench-header">
+      <nav className="workbench-nav" aria-label="Navigasi utama">
+        <BrandLogo />
+        <div className="workbench-nav__links">
+          <Link href="/#pilih-usaha">Jenis usaha</Link>
+          <Link href="/survei-lokasi">Peta Indonesia</Link>
+          <Link href="/#data">Dasar data</Link>
+        </div>
+        <Link className="workbench-nav__action" href={landing ? "#pilih-usaha" : "/survei-lokasi"}>
+          {landing ? "Mulai analisis" : "Cek lokasi"} <ArrowRight size={17} aria-hidden="true" />
+        </Link>
+        <details className="workbench-nav__mobile">
+          <summary aria-label="Buka navigasi"><Menu size={20} aria-hidden="true" /></summary>
+          <div>
+            <Link href="/#pilih-usaha">Jenis usaha</Link>
+            <Link href="/survei-lokasi">Peta Indonesia</Link>
+            <Link href="/#data">Dasar data</Link>
+            <Link href={landing ? "#pilih-usaha" : "/survei-lokasi"}>{landing ? "Mulai analisis" : "Cek lokasi"} <ArrowRight size={16} /></Link>
+          </div>
+        </details>
       </nav>
-      <Link className="header-action" href="/survei-lokasi">
-        Cek lokasi <ArrowRight size={17} />
-      </Link>
     </header>
   );
 }

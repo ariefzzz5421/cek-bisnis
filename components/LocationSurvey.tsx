@@ -102,8 +102,8 @@ export function LocationSurvey({ business }: { business: Business }) {
         const recommendation = getPlaceRecommendation(place).top;
         const marker = L.circleMarker([place.lat, place.lng], {
           radius: Math.max(3, Math.min(8, 3 + (score - 55) / 10)),
-          color: score >= 82 ? "#456e25" : score >= 70 ? "#9a701a" : "#985449",
-          fillColor: score >= 82 ? "#B7F26C" : score >= 70 ? "#F4C95D" : "#FF8A77",
+          color: score >= 82 ? "var(--color-success)" : score >= 70 ? "var(--color-warning)" : "var(--color-danger)",
+          fillColor: score >= 82 ? "var(--color-success-soft)" : score >= 70 ? "var(--color-warning-soft)" : "var(--color-danger-soft)",
           fillOpacity: 0.72,
           weight: 1,
         });
@@ -127,14 +127,14 @@ export function LocationSurvey({ business }: { business: Business }) {
       const layer = L.layerGroup().addTo(mapRef.current);
       L.circle([selected.lat, selected.lng], {
         radius,
-        color: "#121617",
-        fillColor: "#B7F26C",
+        color: "var(--color-ink)",
+        fillColor: "var(--color-accent)",
         fillOpacity: 0.12,
         weight: 2,
       }).addTo(layer);
       L.circleMarker([selected.lat, selected.lng], {
         radius: 9,
-        color: "#121617",
+        color: "var(--color-ink)",
         fillColor: business.accent,
         fillOpacity: 1,
         weight: 3,
@@ -144,8 +144,8 @@ export function LocationSurvey({ business }: { business: Business }) {
         const competitor = poi.category === "competitor";
         L.circleMarker([poi.lat, poi.lng], {
           radius: competitor ? 6 : 4,
-          color: competitor ? "#7D2E2E" : "#135F66",
-          fillColor: competitor ? "#FF8A77" : "#5CE1E6",
+          color: competitor ? "var(--color-danger)" : "var(--color-accent-deep)",
+          fillColor: competitor ? "var(--color-danger-soft)" : "var(--color-accent-soft)",
           fillOpacity: 0.9,
           weight: 2,
         }).bindTooltip(`${poi.name} · ${Math.round(poi.distance * 1000)} m`).addTo(layer);

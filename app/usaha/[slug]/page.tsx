@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { BrandLogo } from "@/components/BrandLogo";
 import { BusinessDetailClient } from "@/components/BusinessDetailClient";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { businesses, cities, getBusiness, getBusinessSources } from "@/lib/business-data";
 
@@ -28,11 +28,7 @@ export default async function BusinessPage({ params }: PageProps) {
     <main className="business-detail-page">
       <SiteHeader />
       <BusinessDetailClient business={business} cities={cities} sources={getBusinessSources(business)} />
-      <footer>
-        <BrandLogo />
-        <p>Estimasi screening awal - bukan jaminan keuntungan.</p>
-        <span>© 2026</span>
-      </footer>
+      <SiteFooter compact />
     </main>
   );
 }

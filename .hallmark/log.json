@@ -1,6 +1,16 @@
 [
   {
     "date": "2026-07-19",
+    "macrostructure": "Workbench",
+    "theme": "Cobalt",
+    "enrichment": "seven generated equipment catalog atlases",
+    "nav": "N5 Floating nav pill",
+    "footer": "Ft2 Inline utilitarian",
+    "scope": "full-application",
+    "brief": "Cek Bisnis full responsive redesign with item-level equipment visuals and official vendor references"
+  },
+  {
+    "date": "2026-07-19",
     "macrostructure": "Narrative Workflow",
     "theme": "Almanac",
     "enrichment": "existing BusinessTour video",

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BrandLogo } from "@/components/BrandLogo";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SurveyPageClient } from "./SurveyPageClient";
 
@@ -13,11 +13,7 @@ export default function SurveyLocationPage() {
     <main>
       <SiteHeader />
       <SurveyPageClient />
-      <footer>
-        <BrandLogo />
-        <p>Skor lokasi awal. Tetap survei lapangan.</p>
-        <span>© 2026</span>
-      </footer>
+      <SiteFooter compact />
     </main>
   );
 }
