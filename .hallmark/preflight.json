@@ -1,0 +1,14 @@
+{
+  "scanned_at": "2026-07-19",
+  "framework": "Next.js 16 App Router via Vinext",
+  "font_stack": ["Geist", "Geist Mono", "Newsreader"],
+  "palette": "Existing paper, charcoal, lime, and cyan; landing uses Almanac OKLCH tokens",
+  "motion": "motion-cut; CSS transitions and one page-load entrance only",
+  "spacing": "4-point named scale",
+  "source_files": [
+    "package.json",
+    "app/layout.tsx",
+    "app/globals.css",
+    "app/page.tsx"
+  ]
+}

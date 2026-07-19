@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Newsreader } from "next/font/google";
 import "leaflet/dist/leaflet.css";
+import "../tokens.css";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const newsreader = Newsreader({ variable: "--font-newsreader", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://cek-bisnis.vercel.app"),
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="id" className={`${geistSans.variable} ${geistMono.variable} ${newsreader.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -2,7 +2,18 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 
-export function SiteHeader() {
+export function SiteHeader({ landing = false }: { landing?: boolean }) {
+  if (landing) {
+    return (
+      <header className="site-header site-header--landing">
+        <BrandLogo />
+        <Link className="landing-header-action" href="#pilih-usaha">
+          Mulai analisis <ArrowRight size={17} aria-hidden="true" />
+        </Link>
+      </header>
+    );
+  }
+
   return (
     <header className="site-header">
       <BrandLogo />

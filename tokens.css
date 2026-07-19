@@ -1,0 +1,73 @@
+/* Hallmark · genre: editorial · macrostructure: Narrative Workflow · theme: Almanac · enrichment: existing video · nav: N9 · footer: Ft1
+ * audience: Indonesian beginner entrepreneurs · use: evaluate a business before spending · tone: trustworthy, practical, modern, clear
+ * pre-emit critique: P5 H5 E4 S5 R5 V5
+ * contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48)
+ * responsive: pass (34, 49) · mobile: pass (34, 49, 50–57) · icons: pass (30) · slop-test: 58/58
+ */
+
+:root {
+  --color-paper: oklch(96% 0.012 105);
+  --color-paper-2: oklch(92% 0.016 105);
+  --color-paper-3: oklch(88% 0.018 105);
+  --color-ink: oklch(20% 0.018 150);
+  --color-ink-2: oklch(35% 0.018 150);
+  --color-neutral: oklch(46% 0.015 145);
+  --color-muted: oklch(38% 0.014 145);
+  --color-rule: oklch(78% 0.018 110);
+  --color-rule-strong: oklch(58% 0.022 125);
+  --color-accent: oklch(48% 0.13 140);
+  --color-accent-deep: oklch(35% 0.105 140);
+  --color-accent-ink: oklch(98% 0.008 105);
+  --color-signal: oklch(86% 0.18 125);
+  --color-dark: oklch(18% 0.018 150);
+  --color-dark-2: oklch(24% 0.02 150);
+  --color-dark-ink: oklch(95% 0.012 105);
+  --color-dark-muted: oklch(78% 0.014 120);
+  --color-focus: oklch(38% 0.16 225);
+
+  --font-display: "Newsreader", serif;
+  --font-body: var(--font-geist-sans), sans-serif;
+  --font-outlier: "Geist Mono", monospace;
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1.0625rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-3xl: 3.052rem;
+  --text-4xl: 3.815rem;
+  --text-display-s: clamp(2.6rem, 5vw, 4.25rem);
+  --text-display: clamp(3rem, 6.2vw, 5.25rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --rule-hair: 1px;
+  --rule-bold: 3px;
+  --radius-control: 0.25rem;
+  --radius-media: 0.5rem;
+  --radius-round: 999px;
+
+  --page-gutter: clamp(1rem, 4vw, 4.5rem);
+  --page-max: 88rem;
+  --z-base: 1;
+  --z-raised: 10;
+  --z-sticky: 200;
+}
