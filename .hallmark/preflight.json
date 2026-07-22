@@ -1,14 +1,19 @@
 {
-  "scanned_at": "2026-07-19",
+  "scanned_at": "2026-07-22",
   "framework": "Next.js 16 App Router via Vinext",
-  "font_stack": ["Geist", "Geist Mono", "Newsreader"],
-  "palette": "Existing paper, charcoal, lime, and cyan; landing uses Almanac OKLCH tokens",
-  "motion": "motion-cut; CSS transitions and one page-load entrance only",
+  "font_stack": ["Plus Jakarta Sans", "JetBrains Mono"],
+  "palette": "Studied Hum 07 DNA: warm cream with mint, pear, cyan, and one coral climax",
+  "motion": "N10 nav morph, physical button press, one gentle character pulse; reduced-motion fallback",
   "spacing": "4-point named scale",
   "source_files": [
     "package.json",
     "app/layout.tsx",
     "app/globals.css",
-    "app/page.tsx"
+    "app/page.tsx",
+    "app/workbench.css",
+    "components/SiteHeader.tsx",
+    "components/SiteFooter.tsx",
+    "tokens.css",
+    "design.md"
   ]
 }

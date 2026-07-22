@@ -1,167 +1,130 @@
 # Design — Cek Bisnis
 
-A locked design system for the complete Cek Bisnis application. Every route uses the same visual language; extend this file before adding page-specific styling.
+Locked design system for the complete Cek Bisnis application. Future Hallmark runs read this file first; routes defer to it.
 
-## Genre
+## System
 
-Modern-minimal with an Indonesian small-business workbench voice: precise, practical, calm, and readable for first-time entrepreneurs.
+- Genre · playful, trustworthy, practical.
+- Theme · studied DNA from Hallmark Hum 07, adapted for Indonesian UMKM decisions.
+- Axes · warm cream paper / rounded humanist sans / controlled multi-accent.
+- Marketing macrostructure · Narrative Workflow with H2 split hero and F4 numbered sequence.
+- Analysis routes · functional Workbench with F6 product catalogue; business logic remains visually primary.
+- Survey route · Map Diagram with the same type, colour, controls, and CTA voice.
+- Navigation · N10 floating-on-scroll morph.
+- Footer · Ft5 statement.
 
-## Macrostructure family
+## Provenance
 
-- Marketing page: Workbench with split proof and real business previews.
-- App pages: Workbench with tabular economics, responsive product catalogue, and live map panels.
-- Content/download sections: compact reference sheet with vertically stacked headings and inline actions.
+Extracted from `https://www.usehallmark.com/examples/hum-07/` as a public reference for the user's own Cek Bisnis brand on 2026-07-22. Tokens and fonts are exact from source CSS; the page composition is adapted rather than copied. Rhythm was verified against rendered Cek Bisnis pages because URL-only study cannot judge visual pacing.
 
 ## Theme
 
-Cobalt on a cool engineered paper. Blue is a signal, never a decorative flood.
-
-- `--color-paper`: `oklch(98.5% 0.004 250)`
-- `--color-paper-2`: `oklch(96% 0.007 250)`
-- `--color-paper-3`: `oklch(92% 0.010 250)`
-- `--color-ink`: `oklch(20% 0.020 258)`
-- `--color-ink-2`: `oklch(32% 0.018 257)`
-- `--color-rule`: `oklch(88% 0.010 250)`
-- `--color-rule-2`: `oklch(72% 0.014 252)`
-- `--color-accent`: `oklch(50% 0.200 256)`
-- `--color-focus`: `oklch(44% 0.190 256)`
-- `--color-graphite`: `oklch(20% 0.016 260)`
+- Cream is the default ground; never pure white.
+- Mint owns primary analysis actions.
+- Pear marks planning and scale selection.
+- Cyan marks data, links, and location work.
+- Coral appears once per page for the high-energy decision or closing moment.
+- Accents never blend into each other.
 
 ## Typography
 
-- Display: Space Grotesk, weight 600–700, roman.
-- Body: Inter, weight 400–600.
-- Outlier: JetBrains Mono is limited to the hero preview metrics; labels and coordinates use Inter.
-- Display tracking: `-0.035em`.
-- Type-scale anchor: `--text-display = clamp(3rem, 6vw, 5.25rem)`.
+- Display and body · Plus Jakarta Sans, weights 400–700.
+- Labels and tabular figures · JetBrains Mono, weights 400–500.
+- Display tracking · `-0.025em`; display line-height · `1.02–1.08`.
+- Body minimum · `1rem`; main interface body · `1.0625rem`.
+- No serif and no italic display emphasis.
 
-## Spacing
+## Spacing and shape
 
-The source values live in `tokens.css`. Use the named 4-point scale and logical properties. No page-level raw colour or font values.
-
-## Motion
-
-- Easings: `--ease-out`, `--ease-in`, and `--ease-in-out`.
-- Motion primitives: button press, inventory image reveal, and functional loading spinner.
-- Reduced motion: spatial movement removed; state changes remain visible within 150 ms.
-
-## Microinteractions stance
-
-- Focus rings appear instantly.
-- Hover effects always have focus and touch equivalents.
-- Loading preserves the action label and uses `aria-live` where results change.
-- Success is silent when the result is already visible.
+- Named 4-point scale from `--space-3xs` through `--space-4xl`.
+- One shared `78rem` content shell with identical section edges.
+- Cards · `20px`; inputs · `12px`; actions · full pill.
+- Touch targets · minimum `44px`; clickable labels never wrap.
 
 ## CTA voice
 
-- Primary: compact cobalt rectangle, 6 px radius, destination named in the label.
-- Secondary: ink text with arrow or a one-pixel ruled control.
-- Sticky mobile CTA appears only when the primary action would otherwise be far away.
+- Primary · mint or pear push button with a solid lower edge and a physical press.
+- Secondary · paper fill with one hairline and the same pill shape.
+- Labels name the destination: “Mulai analisis”, “Jalankan survei”, “Unduh GeoJSON”.
+
+## Motion stance
+
+- Three primitives only: N10 nav morph, physical button press, one gentle character pulse.
+- Cards may use one small lift with a focus equivalent.
+- No universal scroll reveals and no celebratory toast.
+- Reduced-motion removes spatial movement and resolves states within 150ms.
 
 ## Per-page allowances
 
-- Marketing may use existing business photography and the existing product-tour video.
-- Analysis pages may use generated catalogue imagery only to explain equipment.
-- Map pages use the real interactive map as their primary visual proof.
+- Landing may use the existing business photography and BusinessTour video.
+- Analysis routes use the seven generated equipment atlases to explain real purchases.
+- Survey routes use the Leaflet map as the primary proof; no decorative map substitute.
+- Functional status colours may use success, warning, and danger tokens with text/icon support.
 
-## What pages MUST share
+## What every route shares
 
 - Cek Bisnis logo and wordmark.
-- Cobalt signal colour below 5% of a viewport.
-- Space Grotesk, Inter, and JetBrains Mono roles.
-- Tight 6–10 px radii, ruled surfaces, and one dark graphite band per long page.
-- 44 px minimum touch targets and the same focus language.
+- Plus Jakarta Sans + JetBrains Mono roles.
+- Cream ground, controlled multi-accent meanings, rounded controls, dashed process seams.
+- N10 header, focus rings, 44px targets, and the same download/survey button physics.
+- Honest numbers only; estimates always retain their validation warning.
 
-## What pages MAY differ on
-
-- Landing uses split proof; detail routes use a business-photo diptych.
-- Inventory uses product catalogue cards; economics use tabular metrics.
-- Survey routes let the map dominate the workbench.
-
-## Exports
-
-### tokens.css
+## Tokens (canonical · `tokens.css` is the source of truth)
 
 ```css
 :root {
-  --color-paper: oklch(98.5% 0.004 250);
-  --color-paper-2: oklch(96% 0.007 250);
-  --color-paper-3: oklch(92% 0.010 250);
-  --color-rule: oklch(88% 0.010 250);
-  --color-rule-2: oklch(72% 0.014 252);
-  --color-muted: oklch(48% 0.015 256);
-  --color-neutral: oklch(39% 0.016 257);
-  --color-ink-2: oklch(32% 0.018 257);
-  --color-ink: oklch(20% 0.020 258);
-  --color-accent: oklch(50% 0.200 256);
-  --color-accent-ink: oklch(98.5% 0.004 250);
-  --color-focus: oklch(44% 0.190 256);
-  --color-graphite: oklch(20% 0.016 260);
-  --font-display: var(--font-space-grotesk), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
-  --font-outlier: var(--font-jetbrains-mono), monospace;
-  --space-3xs: 0.125rem;
-  --space-2xs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2.5rem;
-  --space-2xl: 4rem;
-  --space-3xl: 6rem;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-md: 1.25rem;
-  --text-lg: 1.5625rem;
-  --text-xl: 1.953rem;
-  --text-2xl: 2.441rem;
-  --text-display: clamp(3rem, 6vw, 5.25rem);
+  --color-paper: oklch(97% 0.012 95);
+  --color-paper-2: oklch(94% 0.016 95);
+  --color-paper-3: oklch(91% 0.020 95);
+  --color-ink: oklch(20% 0.012 250);
+  --color-ink-2: oklch(28% 0.014 250);
+  --color-rule: oklch(86% 0.014 90);
+  --color-accent: oklch(80% 0.16 150);
+  --color-accent-ink: oklch(20% 0.012 250);
+  --color-focus: oklch(50% 0.20 235);
+  --color-pear: oklch(86% 0.18 95);
+  --color-cyan: oklch(66% 0.18 235);
+  --color-coral: oklch(68% 0.24 18);
+  --font-display: var(--font-plus-jakarta), sans-serif;
+  --font-body: var(--font-plus-jakarta), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --dur-micro: 120ms;
   --dur-short: 220ms;
   --dur-long: 420ms;
-  --radius-card: 0.625rem;
+  --radius-card: 1.25rem;
   --radius-pill: 999px;
-  --radius-input: 0.375rem;
+  --radius-input: 0.75rem;
 }
 ```
+
+## Exports
 
 ### Tailwind v4 `@theme`
 
 ```css
 @theme {
-  --color-paper: oklch(98.5% 0.004 250);
-  --color-paper-2: oklch(96% 0.007 250);
-  --color-paper-3: oklch(92% 0.010 250);
-  --color-rule: oklch(88% 0.010 250);
-  --color-rule-2: oklch(72% 0.014 252);
-  --color-muted: oklch(48% 0.015 256);
-  --color-neutral: oklch(39% 0.016 257);
-  --color-ink-2: oklch(32% 0.018 257);
-  --color-ink: oklch(20% 0.020 258);
-  --color-accent: oklch(50% 0.200 256);
-  --color-focus: oklch(44% 0.190 256);
-  --font-display: var(--font-space-grotesk), sans-serif;
-  --font-body: var(--font-inter), sans-serif;
-  --font-outlier: var(--font-jetbrains-mono), monospace;
-  --spacing-xs: 0.5rem;
+  --color-paper: oklch(97% 0.012 95);
+  --color-paper-2: oklch(94% 0.016 95);
+  --color-paper-3: oklch(91% 0.020 95);
+  --color-ink: oklch(20% 0.012 250);
+  --color-ink-2: oklch(28% 0.014 250);
+  --color-rule: oklch(86% 0.014 90);
+  --color-accent: oklch(80% 0.16 150);
+  --color-pear: oklch(86% 0.18 95);
+  --color-cyan: oklch(66% 0.18 235);
+  --color-coral: oklch(68% 0.24 18);
+  --font-display: var(--font-plus-jakarta), sans-serif;
+  --font-body: var(--font-plus-jakarta), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
   --spacing-sm: 0.75rem;
   --spacing-md: 1rem;
   --spacing-lg: 1.5rem;
   --spacing-xl: 2.5rem;
   --spacing-2xl: 4rem;
-  --text-sm: 0.875rem;
-  --text-md: 1.25rem;
-  --text-lg: 1.5625rem;
-  --text-xl: 1.953rem;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
-  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --radius-card: 0.625rem;
-  --radius-input: 0.375rem;
+  --radius-card: 1.25rem;
+  --radius-input: 0.75rem;
 }
 ```
 
@@ -171,25 +134,24 @@ The source values live in `tokens.css`. Use the named 4-point scale and logical 
 {
   "$schema": "https://design-tokens.github.io/community-group/format/",
   "color": {
-    "paper": { "$value": "oklch(98.5% 0.004 250)", "$type": "color" },
-    "paper-2": { "$value": "oklch(96% 0.007 250)", "$type": "color" },
-    "ink": { "$value": "oklch(20% 0.020 258)", "$type": "color" },
-    "ink-2": { "$value": "oklch(32% 0.018 257)", "$type": "color" },
-    "rule": { "$value": "oklch(88% 0.010 250)", "$type": "color" },
-    "accent": { "$value": "oklch(50% 0.200 256)", "$type": "color" },
-    "focus": { "$value": "oklch(44% 0.190 256)", "$type": "color" }
+    "paper": { "$value": "oklch(97% 0.012 95)", "$type": "color" },
+    "paper-2": { "$value": "oklch(94% 0.016 95)", "$type": "color" },
+    "ink": { "$value": "oklch(20% 0.012 250)", "$type": "color" },
+    "ink-2": { "$value": "oklch(28% 0.014 250)", "$type": "color" },
+    "accent": { "$value": "oklch(80% 0.16 150)", "$type": "color" },
+    "pear": { "$value": "oklch(86% 0.18 95)", "$type": "color" },
+    "cyan": { "$value": "oklch(66% 0.18 235)", "$type": "color" },
+    "coral": { "$value": "oklch(68% 0.24 18)", "$type": "color" }
   },
   "font": {
-    "display": { "$value": "Space Grotesk, sans-serif", "$type": "fontFamily" },
-    "body": { "$value": "Inter, sans-serif", "$type": "fontFamily" },
-    "outlier": { "$value": "JetBrains Mono, monospace", "$type": "fontFamily" }
+    "display": { "$value": "Plus Jakarta Sans, sans-serif", "$type": "fontFamily" },
+    "body": { "$value": "Plus Jakarta Sans, sans-serif", "$type": "fontFamily" },
+    "mono": { "$value": "JetBrains Mono, monospace", "$type": "fontFamily" }
   },
   "space": {
-    "sm": { "$value": "0.75rem", "$type": "dimension" },
     "md": { "$value": "1rem", "$type": "dimension" },
     "lg": { "$value": "1.5rem", "$type": "dimension" },
-    "xl": { "$value": "2.5rem", "$type": "dimension" },
-    "2xl": { "$value": "4rem", "$type": "dimension" }
+    "xl": { "$value": "2.5rem", "$type": "dimension" }
   },
   "duration": {
     "micro": { "$value": "120ms", "$type": "duration" },
@@ -203,25 +165,29 @@ The source values live in `tokens.css`. Use the named 4-point scale and logical 
 
 ```css
 :root {
-  --background: 98.5% 0.004 250;
-  --foreground: 20% 0.020 258;
-  --card: 96% 0.007 250;
-  --card-foreground: 20% 0.020 258;
-  --popover: 98.5% 0.004 250;
-  --popover-foreground: 20% 0.020 258;
-  --primary: 50% 0.200 256;
-  --primary-foreground: 98.5% 0.004 250;
-  --secondary: 92% 0.010 250;
-  --secondary-foreground: 32% 0.018 257;
-  --muted: 88% 0.010 250;
-  --muted-foreground: 48% 0.015 256;
-  --accent: 50% 0.200 256;
-  --accent-foreground: 98.5% 0.004 250;
-  --destructive: 52% 0.190 25;
-  --destructive-foreground: 98.5% 0.004 250;
-  --border: 88% 0.010 250;
-  --input: 88% 0.010 250;
-  --ring: 44% 0.190 256;
-  --radius: 0.625rem;
+  --background: 97% 0.012 95;
+  --foreground: 20% 0.012 250;
+  --card: 94% 0.016 95;
+  --card-foreground: 20% 0.012 250;
+  --popover: 97% 0.012 95;
+  --popover-foreground: 20% 0.012 250;
+  --primary: 80% 0.16 150;
+  --primary-foreground: 20% 0.012 250;
+  --secondary: 91% 0.020 95;
+  --secondary-foreground: 28% 0.014 250;
+  --muted: 86% 0.014 90;
+  --muted-foreground: 43% 0.014 90;
+  --accent: 86% 0.18 95;
+  --accent-foreground: 20% 0.012 250;
+  --destructive: 48% 0.18 25;
+  --destructive-foreground: 97% 0.012 95;
+  --border: 86% 0.014 90;
+  --input: 86% 0.014 90;
+  --ring: 50% 0.20 235;
+  --radius: 1.25rem;
 }
 ```
+
+## Notes
+
+Do not carry over the source’s bread imagery, testimonials, pricing, or decorative star-burst. Avoid centred hero stacks, repeated decorative eyebrows, three generic feature cards, accent gradients, raw colours outside tokens, and motion on every section.

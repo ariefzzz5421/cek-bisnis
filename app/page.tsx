@@ -18,12 +18,18 @@ export default function Home() {
 
       <section className="workbench-hero" aria-labelledby="workbench-title">
         <div className="workbench-hero__copy">
+          <div className="hum-process" aria-label="Alur analisis Cek Bisnis">
+            <span><i />01 Pilih</span><b />
+            <span><i />02 Hitung</span><b />
+            <span><i />03 Lokasi</span><b />
+            <span><i />04 Rencana</span>
+          </div>
           <p className="workbench-kicker"><span aria-hidden="true" /> Data Indonesia · diperbarui {businessData.updatedAt}</p>
           <h1 id="workbench-title">Sebelum buka usaha,<br />buka angkanya.</h1>
           <p>Bandingkan modal, biaya bulanan, omzet BEP, alat, dan lokasi untuk tujuh model UMKM Indonesia.</p>
           <div className="workbench-hero__actions">
             <Link className="workbench-button workbench-button--primary" href="#pilih-usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
-            <Link className="workbench-button workbench-button--quiet" href="/survei-lokasi"><MapPinned size={18} aria-hidden="true" /> Buka peta Indonesia</Link>
+            <Link className="workbench-button workbench-button--quiet" href="/survei-lokasi"><MapPinned size={18} aria-hidden="true" /> Peta usaha Indonesia</Link>
           </div>
           <dl className="workbench-proof">
             <div><dt>Model usaha</dt><dd>{businesses.length}</dd></div>
@@ -33,6 +39,7 @@ export default function Home() {
         </div>
 
         <div className="workbench-preview" aria-label="Contoh ringkasan analisis Laundry Kiloan">
+          <div className="hum-character" aria-hidden="true"><i /><i /><i /></div>
           <div className="workbench-preview__bar"><span>Ringkasan keputusan</span><i>Siap dihitung</i></div>
           <div className="workbench-preview__business">
             <Image src={`/businesses/${featured.slug}.jpg`} alt={`Contoh ${featured.name}`} width={640} height={420} priority unoptimized />
@@ -49,7 +56,7 @@ export default function Home() {
 
       <section className="business-browser" id="pilih-usaha" aria-labelledby="business-browser-title">
         <header className="workbench-section-heading">
-          <div><p>PILIH MODEL USAHA</p><h2 id="business-browser-title">Mulai dari usaha yang kamu pahami.</h2></div>
+          <div><p>1.0 · PILIH MODEL USAHA</p><h2 id="business-browser-title">Mulai dari usaha yang kamu pahami.</h2></div>
           <p>Setiap analisis berisi tiga skala modal, simulasi kota, daftar alat lengkap, dan rencana yang bisa diunduh.</p>
         </header>
 
@@ -77,7 +84,7 @@ export default function Home() {
 
       <section className="decision-workspace" aria-labelledby="decision-workspace-title">
         <div className="decision-workspace__copy">
-          <p>ANGKA YANG DIPAKAI</p>
+          <p>2.0 · HITUNG ANGKA</p>
           <h2 id="decision-workspace-title">Satu layar untuk keputusan utama.</h2>
           <p>Tidak perlu membaca laporan panjang. Fokus pada empat hal yang menentukan usaha bisa bertahan.</p>
           <ul>
@@ -100,7 +107,7 @@ export default function Home() {
           {mapPlaces.map((place, index) => place && <span className={`map-workspace__pin map-workspace__pin--${["one", "two", "three"][index]}`} key={place.id}>{place.name} <b>{scorePlaceForBusiness(place, featured.id)}</b></span>)}
         </div>
         <div className="map-workspace__copy">
-          <p>PETA USAHA INDONESIA</p>
+          <p>3.0 · UJI LOKASI</p>
           <h2 id="map-workspace-title">Kota yang berbeda, hasilnya berbeda.</h2>
           <p>Cari kota atau klik titik di peta. Sistem membaca populasi, peran kota, pesaing, pemicu ramai, bangunan, dan akses dari GeoNames serta OpenStreetMap.</p>
           <dl><div><dt>Wilayah tersedia</dt><dd>{placesMeta.count}</dd></div><div><dt>Radius titik</dt><dd>500 m–1,5 km</dd></div></dl>
@@ -110,7 +117,7 @@ export default function Home() {
 
       <section className="download-workspace" aria-labelledby="download-workspace-title">
         <header className="workbench-section-heading">
-          <div><p>BAWA HASILNYA</p><h2 id="download-workspace-title">Panduan siap survei.</h2></div>
+          <div><p>4.0 · AMBIL RENCANA</p><h2 id="download-workspace-title">Panduan siap survei.</h2></div>
           <p>Pilih usaha terlebih dahulu. Dua file tersedia langsung dari halaman analisis.</p>
         </header>
         <div className="download-workspace__rows">

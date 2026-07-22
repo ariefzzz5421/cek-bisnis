@@ -5,8 +5,9 @@ import { BrandLogo } from "@/components/BrandLogo";
 export function SiteFooter({ compact = false }: { compact?: boolean }) {
   return (
     <footer className={`workbench-footer ${compact ? "workbench-footer--compact" : ""}`}>
+      {!compact && <p className="workbench-footer__statement">Usaha yang baik dimulai dari angka yang masuk akal.</p>}
       <BrandLogo />
-      <p>Estimasi awal UMKM Indonesia. Validasi harga dan traffic sebelum membuka usaha.</p>
+      <p>Estimasi awal UMKM Indonesia. Validasi harga dan arus pengunjung sebelum membuka usaha.</p>
       <nav aria-label="Navigasi footer">
         <Link href="/#pilih-usaha">Jenis usaha</Link>
         <Link href="/survei-lokasi">Survei lokasi</Link>
