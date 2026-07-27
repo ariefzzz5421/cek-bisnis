@@ -5,7 +5,7 @@ import { BusinessIcon } from "@/components/BusinessIcon";
 import { BusinessTour } from "@/components/BusinessTour";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { businessData, businesses, formatMoney } from "@/lib/business-data";
+import { businessData, businesses, formatMoney, formatTicket } from "@/lib/business-data";
 import { indonesiaPlaces, placesMeta, scorePlaceForBusiness } from "@/lib/location-survey";
 
 const featured = businesses[0];
@@ -48,7 +48,7 @@ export default function Home() {
           <div className="workbench-preview__metrics">
             <div><small>Modal awal</small><b>{formatMoney(featured.capex[0], 0)}-{formatMoney(featured.capex[1], 0).replace("Rp", "")}</b></div>
             <div><small>Target omzet</small><b>{formatMoney(featured.targetRevenue, 0)}/bln</b></div>
-            <div><small>Harga rata-rata</small><b>{formatMoney(featured.avgTicket)}</b></div>
+            <div><small>Harga rata-rata</small><b>{formatTicket(featured.avgTicket)}</b></div>
           </div>
           <Link href={`/usaha/${featured.slug}`}>Buka simulasi lengkap <ArrowUpRight size={17} aria-hidden="true" /></Link>
         </div>
@@ -121,7 +121,7 @@ export default function Home() {
           <p>Pilih usaha terlebih dahulu. Dua file tersedia langsung dari halaman analisis.</p>
         </header>
         <div className="download-workspace__rows">
-          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · 3 HALAMAN</small><h3>Panduan usaha lengkap</h3><p>Modal, alat, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
+          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · 4 HALAMAN</small><h3>Panduan usaha lengkap</h3><p>Modal, daftar alat berfoto dengan tautan marketplace, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
           <article><ImageDown size={24} aria-hidden="true" /><div><small>PNG · PREVIEW</small><h3>Kartu angka utama</h3><p>Modal, omzet, BEP, dan traffic minimum dalam satu gambar.</p></div><span>Tersedia per usaha</span></article>
         </div>
       </section>

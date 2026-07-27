@@ -4,6 +4,7 @@ import "leaflet/dist/leaflet.css";
 import "../tokens.css";
 import "./globals.css";
 import "./workbench.css";
+import "./brutal.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({ variable: "--font-plus-jakarta", subsets: ["latin"], display: "swap" });
 const jetBrainsMono = JetBrains_Mono({ variable: "--font-jetbrains-mono", subsets: ["latin"], display: "swap" });

@@ -73,7 +73,7 @@ export function BusinessDetailClient({ business, cities, sources }: { business: 
             <div><small>Omzet BEP</small><b>{formatMoney(metrics.breakEvenRevenue)}</b></div>
           </div>
           <div className="detail-quick-tags"><span><Users size={16} />{selectedScale.staff}</span><span><Target size={16} />{selectedScale.capacity}</span></div>
-          <a className="quick-pdf" href={`/downloads/cek-bisnis-${business.slug}-guide.pdf`} download><FileText size={18} /> Unduh panduan 3 halaman <Download size={17} /></a>
+          <a className="quick-pdf" href={`/downloads/cek-bisnis-${business.slug}-guide.pdf`} download><FileText size={18} /> Unduh panduan 4 halaman <Download size={17} /></a>
         </div>
       </section>
 
@@ -138,7 +138,7 @@ export function BusinessDetailClient({ business, cities, sources }: { business: 
 
       <section className="simple-business-download" id="download">
         <Image src={`/previews/${business.slug}.png`} alt={`Preview ${business.name}`} width={1200} height={1500} unoptimized />
-        <div><span>UNDUH RENCANA</span><h2>Bawa saat survei.</h2><a href={`/downloads/cek-bisnis-${business.slug}-guide.pdf`} download><FileText size={22} /><b>PDF panduan 3 halaman</b><Download size={18} /></a><a href={`/previews/${business.slug}.png`} download><ImageDown size={22} /><b>PNG preview usaha</b><Download size={18} /></a></div>
+        <div><span>UNDUH RENCANA</span><h2>Bawa saat survei.</h2><a href={`/downloads/cek-bisnis-${business.slug}-guide.pdf`} download><FileText size={22} /><b>PDF panduan 4 halaman</b><Download size={18} /></a><a href={`/previews/${business.slug}.png`} download><ImageDown size={22} /><b>PNG preview usaha</b><Download size={18} /></a></div>
       </section>
 
       <section className="compact-sources"><span>SUMBER UTAMA</span><div>{sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><b>{source.title}</b><ArrowUpRight size={15} /></a>)}</div><p><ShieldAlert size={16} /> Harga dan permintaan dapat berbeda di setiap titik. Minta quotation dan hitung traffic 7 hari.</p></section>

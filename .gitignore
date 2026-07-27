@@ -42,3 +42,8 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+/artifacts/
+
+# scratch HTML dari scripts/build-guides.mjs
+/.guide-build/
+tsconfig.tsbuildinfo

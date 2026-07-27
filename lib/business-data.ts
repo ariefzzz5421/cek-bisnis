@@ -100,6 +100,13 @@ export const formatMoney = (value: number, decimals = 1) => {
   return `Rp${rounded.toLocaleString("id-ID")} jt`;
 };
 
+/**
+ * Harga satuan disimpan dalam juta rupiah, jadi nilainya kecil (mis. 0,042).
+ * formatMoney() akan membulatkannya jadi "Rp0 jt", karena itu harga jual selalu
+ * ditampilkan sebagai rupiah penuh.
+ */
+export const formatTicket = (juta: number) => `Rp${Math.round(juta * 1_000_000).toLocaleString("id-ID")}`;
+
 export const calculateMetrics = (
   business: Business,
   city: City,

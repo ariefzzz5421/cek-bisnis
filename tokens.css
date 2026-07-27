@@ -1,53 +1,67 @@
-/* Hallmark · genre: playful · macrostructure: Narrative Workflow · theme: studied-DNA
- * source: https://www.usehallmark.com/examples/hum-07/ · studied: yes · designed-as-app
- * paper oklch(97% 0.012 95) · lead accent mint oklch(80% 0.16 150)
- * display/body: Plus Jakarta Sans · labels: JetBrains Mono · nav: N10 · footer: Ft5
+/* Cek Bisnis · design tokens
+ * Arah: neo-brutalis terang — kertas hangat, garis hitam tebal, bayangan keras tanpa blur,
+ * blok warna lime/kuning/sian, label monospace. Semua sudut kotak; kelengkungan hanya
+ * dipakai untuk titik indikator yang memang harus bulat.
+ *
+ * Display/body: Plus Jakarta Sans · label & angka: JetBrains Mono
  */
 
 :root {
-  --color-paper: oklch(97% 0.012 95);
-  --color-paper-2: oklch(94% 0.016 95);
-  --color-paper-3: oklch(91% 0.02 95);
-  --color-ink: oklch(20% 0.012 250);
-  --color-ink-2: oklch(28% 0.014 250);
-  --color-neutral: oklch(38% 0.014 100);
-  --color-muted: oklch(43% 0.014 90);
-  --color-rule: oklch(86% 0.014 90);
-  --color-rule-strong: oklch(70% 0.018 85);
-  --color-accent: oklch(80% 0.16 150);
-  --color-accent-deep: oklch(50% 0.17 150);
-  --color-accent-soft: oklch(94% 0.055 150);
-  --color-accent-ink: oklch(20% 0.012 250);
-  --color-focus: oklch(50% 0.2 235);
-  --color-pear: oklch(86% 0.18 95);
-  --color-pear-deep: oklch(68% 0.18 95);
-  --color-pear-soft: oklch(95% 0.05 95);
-  --color-cyan: oklch(66% 0.18 235);
-  --color-cyan-deep: oklch(50% 0.18 235);
-  --color-cyan-soft: oklch(94% 0.045 235);
-  --color-coral: oklch(68% 0.24 18);
-  --color-coral-deep: oklch(52% 0.22 18);
-  --color-coral-soft: oklch(95% 0.045 18);
-  --color-lavender: oklch(74% 0.16 305);
-  --color-dark: oklch(20% 0.012 250);
-  --color-dark-2: oklch(25% 0.014 250);
-  --color-dark-3: oklch(31% 0.014 250);
-  --color-dark-ink: oklch(97% 0.012 95);
-  --color-dark-muted: oklch(80% 0.016 95);
-  --color-success: oklch(42% 0.14 145);
-  --color-success-soft: oklch(94% 0.045 145);
-  --color-warning: oklch(42% 0.13 80);
-  --color-warning-soft: oklch(94% 0.05 80);
-  --color-danger: oklch(48% 0.18 25);
-  --color-danger-soft: oklch(94% 0.045 25);
-  --color-signal: var(--color-pear);
-  --color-overlay: oklch(12% 0.012 250 / 0.64);
-  --color-shadow: oklch(20% 0.012 250 / 0.12);
-  --color-paper-glass: oklch(97% 0.012 95 / 0.88);
-  --color-paper-glass-strong: oklch(97% 0.012 95 / 0.95);
-  --color-dark-glass: oklch(20% 0.012 250 / 0.88);
+  /* --- kertas & tinta ------------------------------------------------- */
+  --color-paper: #f5f1e4;
+  --color-paper-2: #ffffff;
+  --color-paper-3: #e9e2cf;
+  --color-ink: #0d0d0d;
+  --color-ink-2: #1f1f1f;
+  --color-neutral: #3d3d38;
+  --color-muted: #5f5f56;
 
-  --font-display: var(--font-plus-jakarta), sans-serif;
+  /* Garis selalu hitam penuh: itu ciri utama gaya ini. */
+  --color-rule: #0d0d0d;
+  --color-rule-soft: rgba(13, 13, 13, 0.18);
+  --color-rule-strong: #0d0d0d;
+
+  /* --- warna blok ------------------------------------------------------ */
+  --color-accent: #c9f531;
+  --color-accent-deep: #46610a;
+  --color-accent-soft: #eafdb8;
+  --color-accent-ink: #0d0d0d;
+  --color-focus: #1f5fff;
+  --color-pear: #ffd93d;
+  --color-pear-deep: #7a5c00;
+  --color-pear-soft: #fff3c4;
+  --color-cyan: #7de8ef;
+  --color-cyan-deep: #0b5f66;
+  --color-cyan-soft: #d9fafc;
+  --color-coral: #ff7a5c;
+  --color-coral-deep: #9c2a10;
+  --color-coral-soft: #ffe2da;
+  --color-lavender: #c9a6ff;
+
+  /* --- permukaan gelap -------------------------------------------------- */
+  --color-dark: #0d0d0d;
+  --color-dark-2: #171717;
+  --color-dark-3: #2a2a2a;
+  --color-dark-ink: #f5f1e4;
+  --color-dark-muted: #a5a59a;
+
+  /* --- status ----------------------------------------------------------- */
+  --color-success: #2c6e1f;
+  --color-success-soft: #d8f5cf;
+  --color-warning: #7a5c00;
+  --color-warning-soft: #fff3c4;
+  --color-danger: #b32a10;
+  --color-danger-soft: #ffe2da;
+  --color-signal: var(--color-pear);
+
+  --color-overlay: rgba(13, 13, 13, 0.62);
+  --color-shadow: #0d0d0d;
+  --color-paper-glass: #f5f1e4;
+  --color-paper-glass-strong: #ffffff;
+  --color-dark-glass: #0d0d0d;
+
+  /* --- tipografi -------------------------------------------------------- */
+  --font-display: var(--font-plus-jakarta), "Arial Black", sans-serif;
   --font-body: var(--font-plus-jakarta), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
   --font-outlier: var(--font-jetbrains-mono), monospace;
@@ -78,22 +92,34 @@
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --dur-micro: 120ms;
-  --dur-short: 220ms;
-  --dur-long: 420ms;
+  /* Gaya ini mengandalkan gerak pendek dan tegas, bukan easing yang lembut. */
+  --dur-micro: 90ms;
+  --dur-short: 140ms;
+  --dur-long: 260ms;
 
-  --radius-xs: 0.5rem;
-  --radius-sm: 0.75rem;
-  --radius-md: 1.25rem;
-  --radius-lg: 1.75rem;
-  --radius-control: 0.75rem;
-  --radius-media: 1.25rem;
-  --radius-card: 1.25rem;
-  --radius-input: 0.75rem;
+  /* --- sudut: semuanya kotak ------------------------------------------- */
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-control: 0;
+  --radius-media: 0;
+  --radius-card: 0;
+  --radius-input: 0;
   --radius-round: 999px;
 
-  --rule-hair: 1px;
-  --rule-bold: 2px;
+  /* --- garis & bayangan keras ------------------------------------------ */
+  --rule-hair: 2px;
+  --rule-bold: 3px;
+  --edge: 2px solid var(--color-ink);
+  --edge-thick: 3px solid var(--color-ink);
+  --shadow-hard-xs: 3px 3px 0 var(--color-ink);
+  --shadow-hard-sm: 4px 4px 0 var(--color-ink);
+  --shadow-hard: 6px 6px 0 var(--color-ink);
+  --shadow-hard-lg: 10px 10px 0 var(--color-ink);
+  --shadow-hard-accent: 6px 6px 0 var(--color-accent);
+  --shadow-hard-paper: 6px 6px 0 var(--color-paper);
+
   --page-gutter: clamp(1rem, 4vw, 3rem);
   --page-max: 78rem;
   --content-max: 72rem;

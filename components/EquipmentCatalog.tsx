@@ -1,6 +1,6 @@
-import { ArrowUpRight, Info, PackageCheck, Store } from "lucide-react";
+import { ArrowUpRight, Info, Lightbulb, PackageCheck } from "lucide-react";
 import { formatMoney, type Business } from "@/lib/business-data";
-import { getBusinessDetail, getEquipmentSupplier } from "@/lib/business-details";
+import { getBusinessDetail, getEquipmentSources } from "@/lib/business-details";
 
 const xPositions = ["0%", "33.333%", "66.667%", "100%"];
 
@@ -11,12 +11,12 @@ export function EquipmentCatalog({ business }: { business: Business }) {
     <div className="equipment-catalog">
       <div className="equipment-catalog__note">
         <Info size={17} aria-hidden="true" />
-        <p><b>Harga adalah estimasi Cek Bisnis.</b> Buka vendor untuk cek spesifikasi, garansi, ongkir, dan quotation terbaru.</p>
+        <p><b>Harga adalah estimasi Cek Bisnis.</b> Tautan marketplace membuka hasil pencarian terbaru, jadi harga, stok, dan ongkir selalu mengikuti kondisi hari ini.</p>
       </div>
 
       <div className="equipment-product-grid">
         {detail.equipment.map((item, index) => {
-          const supplier = getEquipmentSupplier(business.id, index);
+          const sources = getEquipmentSources(item);
           const position = `${xPositions[index % 4]} ${index < 4 ? "0%" : "100%"}`;
 
           return (
@@ -44,11 +44,27 @@ export function EquipmentCatalog({ business }: { business: Business }) {
                   <div><dt>Harga / unit</dt><dd>{item.unitCost}</dd></div>
                   <div className="equipment-product__subtotal"><dt>Subtotal</dt><dd>{formatMoney(item.subtotal[0])}-{formatMoney(item.subtotal[1]).replace("Rp", "")}</dd></div>
                 </dl>
-                <a href={supplier.url} target="_blank" rel="noreferrer" aria-label={`Buka ${supplier.label.toLowerCase()} ${supplier.name} untuk ${item.item}`}>
-                  <Store size={17} aria-hidden="true" />
-                  <span><small>{supplier.label}</small><b>{supplier.name}</b></span>
-                  <ArrowUpRight size={17} aria-hidden="true" />
-                </a>
+
+                <p className="equipment-product__tip"><Lightbulb size={15} aria-hidden="true" />{item.buyingTip}</p>
+
+                <div className="equipment-product__sources">
+                  <small>Cari “{item.query}” di</small>
+                  <div>
+                    {sources.map((source) => (
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noreferrer nofollow"
+                        key={source.id}
+                        data-store={source.id}
+                        aria-label={`Cari ${item.item} di ${source.name}`}
+                      >
+                        {source.name}
+                        <ArrowUpRight size={14} aria-hidden="true" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </div>
             </article>
           );

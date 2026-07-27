@@ -1,0 +1,955 @@
+/* Cek Bisnis · lapisan tampilan neo-brutalis
+ *
+ * File ini sengaja dimuat paling akhir dan hanya menimpa lapisan visual —
+ * garis, sudut, bayangan, warna blok, dan tipografi. Struktur grid dan
+ * perilaku responsif tetap ditangani globals.css + workbench.css, sehingga
+ * tata letak tidak perlu diturunkan ulang saat gaya berubah.
+ *
+ * Aturan main:
+ *   1. Semua sudut kotak.
+ *   2. Setiap permukaan punya garis hitam 2-3 px.
+ *   3. Bayangan selalu keras (offset tanpa blur), tidak pernah lembut.
+ *   4. Label memakai monospace kapital di dalam blok warna.
+ *   5. Interaksi memakai gerak "tertekan": elemen bergeser, bayangan mengecil.
+ */
+
+/* ====================================================================== */
+/* 1 · Dasar                                                              */
+/* ====================================================================== */
+
+html,
+body {
+  background: var(--color-paper);
+  /* Kisi halus supaya bidang kosong tetap terasa seperti kertas kerja. */
+  background-image:
+    linear-gradient(var(--color-rule-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-rule-soft) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  background-attachment: fixed;
+}
+
+main,
+.workbench-page,
+.business-detail-page {
+  background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  /* `anywhere` ikut mengecilkan ukuran min-content, sehingga judul di dalam grid
+   * fit-content menyusut dan memotong kata di tengah ("sebelu / m"). `break-word`
+   * tetap memecah kata yang benar-benar kepanjangan tanpa efek samping itu. */
+  overflow-wrap: break-word;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+/* Kontrol form apa pun ikut dikotakkan, termasuk yang dirender komponen survei. */
+input,
+select,
+textarea,
+button {
+  border-radius: 0;
+}
+
+/* workbench.css memasang `white-space: nowrap` pada SEMUA <a> supaya label tombol
+ * tidak patah. Tetapi satu kartu usaha adalah satu anchor besar, sehingga judul,
+ * deskripsi, dan angkanya ikut menolak wrap lalu meluber keluar kartu di layar
+ * sempit. Konten blok di dalam anchor dikembalikan ke perilaku normal. */
+a p,
+a h1,
+a h2,
+a h3,
+a h4,
+a dt,
+a dd,
+.business-browser__body,
+.business-browser__body *,
+.data-workspace nav a,
+.data-workspace nav a *,
+.compact-sources a,
+.compact-sources a * {
+  white-space: normal;
+}
+
+/* Blok warna penuh harus dibingkai, bukan dibiarkan mengambang. */
+.decision-workspace,
+.map-workspace,
+.download-workspace,
+.data-workspace,
+.business-browser,
+.workbench-closing,
+.workbench-footer {
+  border-top: var(--edge-thick);
+}
+
+/* ====================================================================== */
+/* 2 · Label monospace                                                    */
+/* ====================================================================== */
+
+.workbench-kicker,
+.workbench-section-heading > div > p,
+.decision-workspace__copy > p:first-child,
+.map-workspace__copy > p:first-child,
+.real-section-head span,
+.simple-business-download > div > span,
+.survey-workbench-hero__copy > span,
+.survey-business-picker > span,
+.section-kicker,
+.selected-place > span,
+.competitor-list > span,
+.compact-sources > span,
+.data-workspace > div > p {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  width: fit-content;
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--edge);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.workbench-kicker > span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid var(--color-ink);
+  background: var(--color-ink);
+}
+
+.decision-workspace__copy > p:first-child { background: var(--color-paper-2); }
+.map-workspace__copy > p:first-child { background: var(--color-coral); }
+.download-workspace .workbench-section-heading > div > p { background: var(--color-cyan); }
+.data-workspace > div > p { background: var(--color-lavender); }
+
+/* ====================================================================== */
+/* 3 · Tombol                                                             */
+/* ====================================================================== */
+
+.workbench-nav__action,
+.workbench-button,
+.quick-pdf,
+.survey-run,
+.map-download,
+.simple-business-download a,
+.detail-next-business > a,
+.workbench-mobile-cta a {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--btn-face);
+  box-shadow: var(--shadow-hard-sm);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  transition:
+    transform var(--dur-micro) linear,
+    box-shadow var(--dur-micro) linear,
+    background-color var(--dur-micro) linear;
+}
+
+.workbench-nav__action:hover,
+.workbench-button:hover,
+.quick-pdf:hover,
+.survey-run:hover:not(:disabled),
+.map-download:hover,
+.simple-business-download a:hover,
+.detail-next-business > a:hover,
+.workbench-mobile-cta a:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-hard-xs);
+}
+
+.workbench-nav__action:active,
+.workbench-button:active,
+.quick-pdf:active,
+.survey-run:active:not(:disabled),
+.map-download:active,
+.simple-business-download a:active,
+.detail-next-business > a:active,
+.workbench-mobile-cta a:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.workbench-button--primary { --btn-face: var(--color-accent); }
+.workbench-button--quiet { --btn-face: var(--color-paper-2); border: var(--edge); box-shadow: var(--shadow-hard-sm); }
+.workbench-button--light { --btn-face: var(--color-paper); --btn-ink: var(--color-ink); }
+.workbench-closing .workbench-button--light { box-shadow: 4px 4px 0 var(--color-ink); }
+
+/* ====================================================================== */
+/* 4 · Header                                                             */
+/* ====================================================================== */
+
+.workbench-header {
+  border-bottom: var(--edge-thick);
+  background: var(--color-paper-2);
+  backdrop-filter: none;
+}
+
+.workbench-header.is-floating {
+  border-bottom-color: transparent;
+  background: transparent;
+}
+
+.workbench-header.is-floating .workbench-nav {
+  max-width: min(66rem, calc(100% - 1.5rem));
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard);
+}
+
+.workbench-nav .brand-mark {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-accent);
+}
+
+.workbench-nav .brand-wordmark {
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+
+.workbench-nav__links a {
+  border: 2px solid transparent;
+  border-radius: 0;
+  font-weight: 700;
+}
+
+.workbench-nav__links a:hover {
+  border-color: var(--color-ink);
+  background: var(--color-accent);
+}
+
+.workbench-nav__mobile summary,
+.workbench-nav__mobile > div {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.workbench-nav__mobile a { border-radius: 0; font-weight: 700; }
+.workbench-nav__mobile a:hover { background: var(--color-accent-soft); }
+.workbench-nav__mobile a:last-child { border: var(--edge); background: var(--color-accent); }
+
+/* ====================================================================== */
+/* 5 · Hero                                                               */
+/* ====================================================================== */
+
+.hum-process span {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  font-weight: 700;
+}
+
+.hum-process span i { border-radius: 0; }
+.hum-process > b { background: var(--color-ink); }
+
+.workbench-hero__copy h1 {
+  max-width: 14ch;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+  text-transform: uppercase;
+}
+
+.workbench-proof > div {
+  padding: var(--space-md);
+  border: var(--edge);
+  border-top: var(--edge);
+  background: var(--color-paper-2);
+}
+
+.workbench-proof > div + div { margin-left: -2px; }
+.workbench-proof dt { color: var(--color-ink-2); font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; }
+.workbench-proof dd { font-family: var(--font-mono); font-weight: 800; letter-spacing: -0.04em; }
+
+.workbench-preview {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.workbench-preview__bar {
+  border-bottom: var(--edge);
+  border-radius: 0;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-weight: 700;
+}
+
+.workbench-preview__bar i { border: 2px solid var(--color-ink); border-radius: 0; background: var(--color-accent); font-weight: 800; }
+.workbench-preview__business img { border-bottom: var(--edge); }
+.workbench-preview__business small { color: var(--color-ink); font-weight: 700; }
+.workbench-preview__metrics { border-top: var(--edge); }
+.workbench-preview__metrics > div + div { border-left: var(--edge); }
+.workbench-preview__metrics b { font-weight: 800; }
+.workbench-preview > a { border-top: var(--edge); background: var(--color-accent); color: var(--color-ink); font-weight: 800; }
+.workbench-preview > a:hover { background: var(--color-ink); color: var(--color-accent); }
+
+/* Maskot Hum tidak cocok dengan bahasa kotak ini. */
+.hum-character { display: none; }
+
+/* ====================================================================== */
+/* 6 · Judul bagian                                                       */
+/* ====================================================================== */
+
+.workbench-section-heading h2,
+.decision-workspace__copy h2,
+.map-workspace__copy h2,
+.data-workspace h2,
+.real-section-head h2 {
+  max-width: 20ch;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-transform: uppercase;
+}
+
+/* Judul di dalam blok teks berbasis flex akan menyusut ke lebar kontennya dan
+ * memotong kata di tengah. Paksa mengisi kolom, lalu batasi panjang baris via ch. */
+.workbench-hero__copy h1,
+.survey-workbench-hero__copy h1,
+.photo-detail-copy h1,
+.workbench-section-heading h2,
+.decision-workspace__copy h2,
+.map-workspace__copy h2,
+.data-workspace h2,
+.real-section-head h2,
+.workbench-closing h2 {
+  align-self: stretch;
+  width: 100%;
+}
+
+/* ====================================================================== */
+/* 7 · Katalog usaha                                                      */
+/* ====================================================================== */
+
+.business-browser__item,
+.business-browser__item.is-wide {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard);
+  transition: transform var(--dur-short) linear, box-shadow var(--dur-short) linear;
+}
+
+.business-browser__item:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.business-browser__item:nth-child(4n + 2) { background: var(--color-cyan-soft); }
+.business-browser__item:nth-child(4n + 3) { background: var(--color-pear-soft); }
+.business-browser__item:nth-child(4n) { background: var(--color-coral-soft); }
+
+.business-browser__media { border-bottom: var(--edge); }
+
+.business-browser__media > span {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.business-browser__body h3 { font-weight: 800; letter-spacing: -0.035em; }
+.business-browser__body dl { border-top: var(--edge); }
+.business-browser__body dt { font-family: var(--font-mono); text-transform: uppercase; }
+.business-browser__body dd { font-weight: 800; letter-spacing: -0.03em; }
+
+.business-browser__action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  width: fit-content;
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--edge);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-weight: 800;
+}
+
+.business-browser__item:hover .business-browser__action { background: var(--color-ink); color: var(--color-accent); }
+
+/* ====================================================================== */
+/* 8 · Bagian bercerita                                                   */
+/* ====================================================================== */
+
+.decision-workspace__copy ul,
+.decision-workspace__copy li,
+.map-workspace__copy dl {
+  border-style: solid;
+  border-color: var(--color-ink);
+}
+
+.decision-workspace__copy ul { border-top-width: 2px; }
+.decision-workspace__copy li { border-bottom-width: 2px; }
+.decision-workspace__copy li svg { color: var(--color-ink); }
+.decision-workspace__copy li b { font-weight: 800; }
+
+.decision-workspace__tour > div,
+.decision-workspace__tour video {
+  border: var(--edge-thick);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard);
+}
+
+.map-workspace__panel {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard);
+}
+
+.map-workspace__panel > svg { color: var(--color-ink); opacity: 0.28; }
+
+.map-workspace__pin {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-accent);
+  box-shadow: var(--shadow-hard-xs);
+  font-weight: 700;
+}
+
+.map-workspace__pin b { color: var(--color-ink); font-weight: 800; }
+.map-workspace__copy dl { border-block-width: 2px; }
+.map-workspace__copy dd { font-weight: 800; }
+
+.download-workspace__rows article {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard);
+}
+
+.download-workspace__rows article > svg { color: var(--color-ink); }
+.download-workspace__rows h3 { font-weight: 800; }
+
+.download-workspace__rows article > span {
+  width: fit-content;
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--edge);
+  background: var(--color-cyan);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.data-workspace { background: var(--color-paper-3); }
+.data-workspace > div > svg { color: var(--color-ink); }
+.data-workspace nav { border-top: var(--edge); }
+.data-workspace nav a { border-bottom: var(--edge); padding-inline: var(--space-sm); }
+.data-workspace nav a:hover { background: var(--color-accent); }
+.data-workspace nav b { font-weight: 800; }
+
+.workbench-closing { background: var(--color-accent); }
+.workbench-closing p { border: var(--edge); background: var(--color-paper-2); }
+.workbench-closing h2 { font-weight: 800; letter-spacing: -0.05em; text-transform: uppercase; }
+
+/* ====================================================================== */
+/* 9 · Footer                                                             */
+/* ====================================================================== */
+
+.workbench-footer {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.workbench-footer__statement { color: var(--color-paper); font-weight: 800; text-transform: uppercase; }
+
+.workbench-footer > .brand,
+.workbench-footer > p:not(.workbench-footer__statement),
+.workbench-footer > nav,
+.workbench-footer > span {
+  border-top: 2px solid var(--color-dark-3);
+}
+
+.workbench-footer .brand-mark { border: 2px solid var(--color-paper); border-radius: 0; background: var(--color-accent); }
+.workbench-footer .brand-wordmark { color: var(--color-paper); text-transform: uppercase; }
+.workbench-footer > p:not(.workbench-footer__statement) { color: var(--color-dark-muted); }
+.workbench-footer nav a { color: var(--color-paper); font-weight: 700; }
+.workbench-footer nav a:hover { color: var(--color-accent); }
+.workbench-footer > span { color: var(--color-dark-muted); }
+
+.workbench-mobile-cta {
+  border-top: var(--edge-thick);
+  background: var(--color-paper-2);
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.workbench-mobile-cta span { color: var(--color-ink); font-weight: 700; }
+
+/* ====================================================================== */
+/* 10 · Halaman analisis usaha                                            */
+/* ====================================================================== */
+
+.photo-detail-media,
+.photo-detail-media img {
+  border-radius: 0;
+}
+
+.photo-detail-media {
+  border: var(--edge-thick);
+  box-shadow: var(--shadow-hard);
+}
+
+.photo-detail-media > span {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.photo-detail-copy h1 { font-weight: 800; letter-spacing: -0.05em; text-transform: uppercase; }
+
+.photo-detail-copy > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  width: fit-content;
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--edge);
+  background: var(--color-paper-2);
+  font-weight: 700;
+}
+
+.photo-detail-copy > a:first-child:hover { background: var(--color-accent); }
+
+.detail-category {
+  width: fit-content;
+  padding: var(--space-2xs) var(--space-sm);
+  border: var(--edge);
+  background: var(--color-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-number-grid > div,
+.detail-quick-tags span {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+}
+
+.hero-number-grid > div { padding: var(--space-md); box-shadow: var(--shadow-hard-xs); }
+.hero-number-grid > div:nth-child(3) { background: var(--color-accent); }
+.hero-number-grid small { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; }
+.hero-number-grid b { font-family: var(--font-mono); font-weight: 800; letter-spacing: -0.04em; }
+.detail-quick-tags span { padding: var(--space-2xs) var(--space-sm); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; }
+
+/* --- pilih skala ------------------------------------------------------ */
+.scale-grid button {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear, background-color var(--dur-micro) linear;
+}
+
+/* Kartu skala adalah <button>, dan workbench.css memberi semua <button>
+ * `white-space: nowrap`. Isinya jadi tidak bisa menyusut, sehingga kartu meluber
+ * keluar kolom grid di lebar tablet. `min-width: 0` melengkapi perbaikannya
+ * karena ukuran minimum otomatis grid item mengikuti min-content. */
+.scale-grid > button,
+.scale-grid > button * {
+  min-width: 0;
+  white-space: normal;
+}
+
+.scale-grid button:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hard); }
+.scale-grid button > span { font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; }
+.scale-grid button strong { font-family: var(--font-mono); font-weight: 800; letter-spacing: -0.04em; }
+.scale-grid > button > div { border-top: var(--edge); }
+
+/* Kartu aktif memakai blok lime dengan teks hitam, bukan kartu gelap seperti desain lama. */
+.scale-grid > button.active {
+  background: var(--color-accent);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-hard);
+}
+
+.scale-grid > button.active > span,
+.scale-grid > button.active small { color: var(--color-ink-2); }
+.scale-grid > button.active > div { border-color: var(--color-ink); }
+
+.scale-grid footer { margin-top: auto; }
+
+.scale-grid footer em,
+.scale-grid > button.active footer em {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* --- simulasi angka --------------------------------------------------- */
+.compact-metric-grid article,
+.compact-verdict {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+}
+
+/* Panel skenario tetap blok hitam (teks terangnya diwarisi dari workbench.css);
+ * mengecatnya putih membuat semua labelnya tak terbaca. */
+.scenario-panel {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-ink);
+  box-shadow: var(--shadow-hard-accent);
+}
+
+.scenario-panel label { font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-paper); }
+/* Selector ganda mengalahkan `.compact-economics .scenario-panel select` warisan
+ * yang masih mengecat select ini putih dengan sudut membulat. */
+.scenario-panel select,
+.compact-economics .scenario-panel select {
+  border: 2px solid var(--color-paper);
+  border-radius: 0;
+  background: var(--color-dark-2);
+  color: var(--color-paper);
+  font-weight: 700;
+}
+
+/* Track slider lama memakai gradasi tinta-di-atas-tinta; buat terlihat di panel hitam. */
+.scenario-panel input[type="range"] {
+  background: linear-gradient(90deg, var(--color-accent) var(--range-progress, 50%), var(--color-dark-3) var(--range-progress, 50%));
+  border-radius: 0;
+}
+
+.scenario-panel input[type="range"]::-webkit-slider-thumb {
+  border-radius: 0;
+  border: 2px solid var(--color-paper);
+  background: var(--color-accent);
+  box-shadow: none;
+}
+.scenario-assumptions { border-top: 2px dashed var(--color-dark-3); }
+.scenario-assumptions span { color: var(--color-dark-muted); }
+.scenario-assumptions b { font-family: var(--font-mono); font-weight: 800; color: var(--color-accent); }
+
+.scenario-panel input[type="range"] { accent-color: var(--color-accent); }
+
+.compact-metric-grid article { padding: var(--space-md); box-shadow: var(--shadow-hard-xs); }
+.compact-metric-grid article > svg { color: var(--color-ink); }
+.compact-metric-grid small { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; }
+.compact-metric-grid b { font-family: var(--font-mono); font-weight: 800; letter-spacing: -0.04em; }
+.metric-accent { background: var(--color-accent); }
+
+.compact-verdict { box-shadow: var(--shadow-hard-xs); font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; }
+.compact-verdict i { border-radius: 0; }
+.verdict-sehat { background: var(--color-success-soft); }
+.verdict-tipis { background: var(--color-warning-soft); }
+.verdict-rugi { background: var(--color-danger-soft); }
+
+/* --- katalog alat ----------------------------------------------------- */
+.equipment-catalog__note {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-pear);
+  box-shadow: var(--shadow-hard-xs);
+}
+
+.equipment-product {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform var(--dur-short) linear, box-shadow var(--dur-short) linear;
+}
+
+.equipment-product:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--color-ink);
+  box-shadow: var(--shadow-hard);
+}
+
+.equipment-product__media { border-bottom: var(--edge); }
+
+.equipment-product__media > span,
+.equipment-product__media > i {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.equipment-product__media > i.is-required { background: var(--color-accent); color: var(--color-ink); }
+.equipment-product__title svg { color: var(--color-ink); }
+.equipment-product__title h3 { font-weight: 800; }
+.equipment-product dl { border-top: var(--edge); }
+.equipment-product dl > div { border-bottom: 1px solid var(--color-rule-soft); }
+.equipment-product dl > div:last-child { border-bottom: 0; }
+.equipment-product dt { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; }
+.equipment-product dd { font-weight: 800; }
+.equipment-product__subtotal { background: var(--color-accent-soft); }
+.equipment-product__subtotal dd { color: var(--color-ink); }
+
+.equipment-product__tip {
+  display: flex;
+  gap: var(--space-xs);
+  margin: var(--space-sm) 0 0;
+  padding: var(--space-sm);
+  border: 2px dashed var(--color-ink);
+  color: var(--color-ink-2);
+  font-size: var(--text-xs);
+  line-height: 1.45;
+}
+
+.equipment-product__tip svg { flex: 0 0 auto; margin-top: 0.15rem; }
+
+.equipment-product__sources { margin-top: var(--space-sm); }
+
+.equipment-product__sources > small {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.equipment-product__sources > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+}
+
+.equipment-product__sources a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: var(--space-2xs) var(--space-xs);
+  border: var(--edge);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+
+.equipment-product__sources a[data-store="tokopedia"] { background: var(--color-accent); }
+.equipment-product__sources a[data-store="shopee"] { background: var(--color-coral); }
+.equipment-product__sources a[data-store="blibli"] { background: var(--color-cyan); }
+.equipment-product__sources a[data-store="bukalapak"] { background: var(--color-lavender); }
+
+.equipment-product__sources a:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-hard-xs);
+}
+
+/* --- panduan operasi -------------------------------------------------- */
+.guide-columns article,
+.plan-steps article {
+  border: var(--edge-thick);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.guide-title { border-bottom: var(--edge); }
+.guide-title svg { color: var(--color-ink); }
+.guide-title h3 { font-weight: 800; text-transform: uppercase; }
+.guide-row span { border: var(--edge); border-radius: 0; background: var(--color-accent); font-family: var(--font-mono); font-weight: 800; }
+.risk-guide { background: var(--color-coral-soft); }
+.risk-guide .guide-row svg { color: var(--color-danger); }
+
+.plan-steps article > span { border: var(--edge); border-radius: 0; background: var(--color-ink); color: var(--color-paper); font-family: var(--font-mono); font-weight: 800; }
+.plan-steps article small { font-family: var(--font-mono); text-transform: uppercase; }
+.plan-steps article h3 { font-weight: 800; }
+.plan-steps article p svg { color: var(--color-ink); }
+
+.simple-business-download { border-top: var(--edge-thick); background: var(--color-cyan-soft); }
+.simple-business-download img { border: var(--edge-thick); border-radius: 0; box-shadow: var(--shadow-hard); }
+.simple-business-download a { justify-content: flex-start; width: 100%; }
+
+.compact-sources a {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  font-weight: 700;
+}
+
+.compact-sources a:hover { background: var(--color-accent); }
+.compact-sources > p { border: 2px dashed var(--color-ink); border-radius: 0; background: var(--color-pear-soft); }
+
+.detail-next-business { border-top: var(--edge-thick); background: var(--color-accent); }
+.detail-next-business h2 { font-weight: 800; text-transform: uppercase; }
+
+/* ====================================================================== */
+/* 11 · Survei lokasi                                                     */
+/* ====================================================================== */
+
+.survey-workbench-hero {
+  border: var(--edge-thick);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard);
+}
+
+/* Kolom teks hero ini hanya ~500 px, sedangkan padding lama memakan 172 px dan
+ * judulnya di-set 5,5rem — kata seperti "membayar" jadi terpotong di tengah.
+ * Padding dikecilkan dan skala judul disesuaikan dengan lebar kolom nyata. */
+.survey-workbench-hero .survey-workbench-hero__copy { padding: clamp(1.5rem, 3vw, 2.75rem); }
+.survey-workbench-hero__copy h1 { font-size: clamp(2.25rem, 3.6vw, 3.25rem); letter-spacing: -0.05em; }
+
+.survey-shell,
+.survey-map-wrap,
+.survey-result,
+.selected-place,
+.competitor-list,
+.survey-metrics > div,
+.survey-components > div,
+.place-results,
+.survey-coverage,
+.survey-empty,
+.survey-error {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+}
+
+.survey-shell,
+.survey-map-wrap,
+.survey-result { box-shadow: var(--shadow-hard-sm); }
+
+.place-search,
+.place-search input,
+.survey-business-picker select,
+.survey-controls select,
+.survey-controls input {
+  border-radius: 0;
+  background: var(--color-paper-2);
+  font-weight: 600;
+}
+
+.place-search,
+.survey-controls select,
+.survey-controls input { border: var(--edge); }
+.place-search input { border: 0; }
+
+/* Pemilih usaha: tombol kotak, aktif jadi blok lime. */
+.survey-business-picker > div button {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  font-weight: 700;
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+
+.survey-business-picker > div button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hard-xs);
+}
+
+.survey-business-picker > div button.active {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-hard-xs);
+}
+
+.survey-workbench-hero__media > span {
+  border: var(--edge);
+  border-radius: 0;
+  background: var(--color-paper-2);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.place-results button:hover,
+.place-results button:focus-visible { background: var(--color-accent); }
+
+.survey-score { border: var(--edge-thick); border-radius: 0; background: var(--color-accent); box-shadow: var(--shadow-hard-sm); }
+.survey-score b { font-family: var(--font-mono); font-weight: 800; letter-spacing: -0.05em; }
+.survey-metrics small,
+.survey-components small { font-family: var(--font-mono); font-size: 0.66rem; text-transform: uppercase; }
+.survey-metrics b,
+.survey-components b { font-family: var(--font-mono); font-weight: 800; }
+.survey-source-pill { border: var(--edge); border-radius: 0; background: var(--color-cyan); font-weight: 700; }
+.survey-map-hint { border: var(--edge); border-radius: 0; background: var(--color-paper-2); box-shadow: var(--shadow-hard-xs); font-family: var(--font-mono); }
+.survey-topbar { border-bottom: var(--edge); }
+.survey-error { background: var(--color-danger-soft); }
+
+/* Leaflet memaksakan gayanya sendiri, jadi kontrolnya ikut dikotakkan. */
+.leaflet-container { border-radius: 0 !important; font-family: var(--font-body) !important; }
+.leaflet-control-zoom a,
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip { border-radius: 0 !important; border: 2px solid var(--color-ink) !important; }
+
+/* ====================================================================== */
+/* 12 · Tur video                                                         */
+/* ====================================================================== */
+
+.business-tour { border: var(--edge-thick); border-radius: 0; box-shadow: var(--shadow-hard); }
+.tour-label { border: var(--edge); border-radius: 0; background: var(--color-accent); color: var(--color-ink); font-family: var(--font-mono); font-weight: 700; }
+.tour-controls button { border: var(--edge); border-radius: 0; background: var(--color-paper-2); }
+.tour-controls button:hover { background: var(--color-accent); }
+.tour-progress { border-radius: 0; }
+.tour-progress > i { border-radius: 0; background: var(--color-accent); }
+
+/* ====================================================================== */
+/* 13 · Gerak                                                             */
+/* ====================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .workbench-nav__action,
+  .workbench-button,
+  .quick-pdf,
+  .survey-run,
+  .map-download,
+  .business-browser__item,
+  .equipment-product,
+  .scale-grid button,
+  .equipment-product__sources a {
+    transition: none;
+  }
+
+  .workbench-nav__action:hover,
+  .workbench-button:hover,
+  .business-browser__item:hover,
+  .equipment-product:hover,
+  .scale-grid button:hover,
+  .equipment-product__sources a:hover {
+    transform: none;
+  }
+}
