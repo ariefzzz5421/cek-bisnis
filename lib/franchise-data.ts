@@ -1,3 +1,4 @@
+import rawArticles from "@/data/franchise-articles.json";
 import rawData from "@/data/franchise-data.json";
 
 export type FranchiseCategoryId = "minimarket" | "minuman" | "makanan" | "jasa" | "kesehatan";
@@ -120,3 +121,34 @@ export const sortFranchises = (list: Franchise[], sort: FranchiseSort) => {
       return sorted.sort((a, b) => a.name.localeCompare(b.name, "id"));
   }
 };
+
+/* ------------------------------------------------------------- artikel */
+
+export type FranchiseArticleSection = { heading: string; body: string };
+export type FranchiseCostRow = { item: string; amount: string; note: string };
+export type FranchiseSchemeDoc = { label: string; url: string; kind: "page" | "pdf" };
+
+export type FranchiseArticle = {
+  lede: string;
+  sections: FranchiseArticleSection[];
+  costBreakdown: FranchiseCostRow[];
+  /**
+   * Halaman kemitraan resmi. Prospektus penawaran waralaba wajib diberikan
+   * franchisor ke calon mitra tetapi umumnya bukan berkas unduhan publik, jadi
+   * yang ditautkan adalah halaman tempat memintanya.
+   */
+  schemeDocs: FranchiseSchemeDoc[];
+  verdict: string;
+};
+
+type ArticleFile = {
+  note: string;
+  prospectusNote: string;
+  articles: Record<string, FranchiseArticle>;
+};
+
+export const franchiseArticleFile = rawArticles as ArticleFile;
+
+export const getFranchise = (id: string) => franchises.find((franchise) => franchise.id === id);
+export const getFranchiseArticle = (id: string): FranchiseArticle | undefined =>
+  franchiseArticleFile.articles[id];

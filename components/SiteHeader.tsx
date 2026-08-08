@@ -31,6 +31,7 @@ export function SiteHeader({ landing = false }: { landing?: boolean }) {
         <div className="workbench-nav__links">
           <Link href="/#pilih-usaha">Jenis usaha</Link>
           <Link href="/franchise">Franchise</Link>
+          <Link href="/peringkat">Peringkat</Link>
           <Link href="/survei-lokasi">Peta Indonesia</Link>
           <Link href="/#data">Dasar data</Link>
         </div>
@@ -42,6 +43,7 @@ export function SiteHeader({ landing = false }: { landing?: boolean }) {
           <div>
             <Link href="/#pilih-usaha">Jenis usaha</Link>
             <Link href="/franchise">Franchise</Link>
+            <Link href="/peringkat">Peringkat</Link>
             <Link href="/survei-lokasi">Peta Indonesia</Link>
             <Link href="/#data">Dasar data</Link>
             <Link href={landing ? "#pilih-usaha" : "/survei-lokasi"}>{landing ? "Mulai analisis" : "Cek lokasi"} <ArrowRight size={16} /></Link>

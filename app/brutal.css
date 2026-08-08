@@ -1155,3 +1155,102 @@ a dd,
 }
 
 .survey-ai__buttons button:hover { transform: translate(2px, 2px); box-shadow: none; }
+
+/* Badge angka pada kolom panduan: kotak penuh, bukan label kecil. */
+.guide-row.compact > span {
+  border: var(--edge);
+  background: var(--color-accent);
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.risk-guide .guide-row.compact > svg { width: 1.5rem; height: 1.5rem; }
+
+.marketplace-mark { border: 2px solid var(--color-ink); border-radius: 0; }
+/* Ubin merek sudah membawa warna masing-masing, jadi tombolnya dinetralkan
+ * supaya dua warna tidak bertabrakan dalam satu pil. */
+.equipment-product__sources a[data-store] { background: var(--color-paper-2); }
+.equipment-product__sources a:hover { background: var(--color-accent); }
+
+/* ====================================================================== */
+/* 18 · Halaman detail waralaba                                           */
+/* ====================================================================== */
+
+.franchise-detail-hero { border-top: var(--edge-thick); border-bottom: var(--edge-thick); }
+.franchise-detail-hero .franchise-logo { box-shadow: var(--shadow-hard-sm); }
+.franchise-detail-lockup h1 { font-weight: 800; letter-spacing: -0.05em; }
+.franchise-detail-numbers { border-top: var(--edge); }
+.franchise-detail-numbers dd { font-weight: 800; }
+
+.franchise-article__body h2 { font-weight: 800; }
+.franchise-cost-table { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+.franchise-cost-table thead th { border-bottom: var(--edge); }
+.franchise-verdict { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+
+.franchise-side-card { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+.franchise-side-card h3 { font-weight: 800; }
+.franchise-doc-links a {
+  border: var(--edge);
+  box-shadow: var(--shadow-hard-xs);
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+.franchise-doc-links a:hover { transform: translate(2px, 2px); box-shadow: none; }
+
+.franchise-related { border-top: var(--edge-thick); }
+.franchise-related__grid a {
+  border: var(--edge-thick);
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+.franchise-related__grid a:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hard); }
+
+.franchise-card__more {
+  border: var(--edge);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard-xs);
+  font-weight: 800;
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+.franchise-card__more:hover { transform: translate(2px, 2px); box-shadow: none; }
+.franchise-table__brand { color: var(--color-ink); text-decoration: underline; }
+
+/* ====================================================================== */
+/* 19 · Halaman peringkat                                                 */
+/* ====================================================================== */
+
+.rank-hero,
+.rank-boards,
+.rank-cities { border-top: var(--edge-thick); }
+.rank-hero h1 { font-weight: 800; letter-spacing: -0.05em; }
+.rank-hero__note { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+
+.rank-board { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+.rank-board h3 { font-weight: 800; text-transform: uppercase; }
+.rank-board__pos { border: var(--edge); }
+.rank-board li em { font-weight: 800; }
+
+.rank-city-list li { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+.rank-city-list li > a {
+  border: var(--edge);
+  box-shadow: var(--shadow-hard-xs);
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+.rank-city-list li > a:hover { transform: translate(2px, 2px); box-shadow: none; }
+
+/* workbench.css memasang `white-space: nowrap` pada semua <a>. Baris peringkat
+ * adalah anchor berisi teks panjang, jadi tanpa reset ini detailnya menolak
+ * wrap dan menyelinap ke bawah kolom nilai di sebelah kanan. */
+.rank-board li a,
+.rank-board li a *,
+.rank-city-list a,
+.franchise-related__grid a,
+.franchise-related__grid a * {
+  white-space: normal;
+}
+
+/* Nilai peringkat tetap satu baris supaya kolomnya rata. */
+.rank-board li em,
+.rank-city-list em { white-space: nowrap; }

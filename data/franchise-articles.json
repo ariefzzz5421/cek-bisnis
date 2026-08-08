@@ -1,0 +1,1081 @@
+{
+  "note": "Artikel disusun Cek Bisnis dari rangkuman riset publik yang tercantum di data/franchise-data.json. Bukan materi resmi dari pemegang merek.",
+  "prospectusNote": "Prospektus penawaran waralaba wajib diberikan franchisor kepada calon mitra paling lambat dua minggu sebelum penandatanganan (PP 42/2007 jo. Permendag 71/2019). Dokumen itu umumnya tidak diunduh bebas, jadi tautan di bawah mengarah ke halaman kemitraan resmi tempat kamu bisa memintanya.",
+  "articles": {
+    "alfamart": {
+      "lede": "Alfamart menjual sistem ritel yang sudah matang: pasokan, harga, tata letak rak, dan sistem kasir semuanya datang dari pusat. Yang kamu sediakan adalah lokasi, modal, dan kesabaran menunggu gerai matang.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Mitra membayar franchise fee Rp45 juta untuk lisensi lima tahun, lalu menanggung renovasi, peralatan, instalasi listrik, dan perizinan gerai. Pusat mengelola pasokan barang dan sistem, mitra memegang kepemilikan gerai. Royalti dipungut progresif dari penjualan bersih dan baru mulai berjalan setelah omzet melewati Rp150 juta per bulan."
+        },
+        {
+          "heading": "Kenapa royaltinya berjenjang",
+          "body": "Skema 0-4% itu sebenarnya bantalan untuk gerai baru. Di bulan-bulan awal ketika penjualan masih di bawah Rp150 juta, mitra tidak membayar royalti sama sekali. Konsekuensinya, begitu gerai ramai, potongan naik ke 4% dan menggerus margin yang sudah tipis di bisnis ritel."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Lokasi, bukan operasional. Minimarket adalah bisnis lalu lintas: yang menentukan bukan seberapa rapi kamu menata rak, melainkan berapa orang yang lewat depan gerai setiap hari. Alfamart melakukan survei kelayakan sendiri, dan penolakan lokasi adalah hal biasa."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Balik modal minimarket dihitung tahun, bukan bulan. Dengan investasi Rp300-500 juta dan laba bersih gerai yang sehat di kisaran Rp8-15 juta per bulan, tiga sampai lima tahun adalah rentang yang realistis. Biaya properti berada di luar angka investasi, dan itu sering menjadi komponen terbesar yang lupa dihitung."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Franchise fee 5 tahun",
+          "amount": "Rp45 jt",
+          "note": "Sekali bayar di awal kontrak"
+        },
+        {
+          "item": "Renovasi dan instalasi listrik",
+          "amount": "Rp90-160 jt",
+          "note": "Termasuk penambahan daya"
+        },
+        {
+          "item": "Peralatan gerai, rak, dan AC",
+          "amount": "Rp80-140 jt",
+          "note": "Mengikuti tipe gerai 9-45 rak"
+        },
+        {
+          "item": "Cash register dan sistem ritel",
+          "amount": "Rp35-60 jt",
+          "note": "Wajib dari pusat"
+        },
+        {
+          "item": "Shop sign, pole sign, perizinan",
+          "amount": "Rp25-50 jt",
+          "note": "Termasuk promosi pembukaan"
+        },
+        {
+          "item": "Stok awal dan modal kerja",
+          "amount": "Rp25-45 jt",
+          "note": "Di luar biaya sewa properti"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman waralaba resmi Alfamart",
+          "url": "https://waralaba.alfamart.co.id/about/memiliki-alfamart",
+          "kind": "page"
+        },
+        {
+          "label": "Formulir pengajuan kemitraan",
+          "url": "https://waralaba.alfamart.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Cocok untuk pemilik lahan strategis yang punya modal besar dan horizon panjang. Bukan jalan cepat."
+    },
+    "indomaret": {
+      "lede": "Pesaing langsung Alfamart dengan struktur biaya yang mirip dan perbedaan yang tipis. Pilihan antara keduanya biasanya ditentukan oleh siapa yang lebih dulu menyetujui lokasimu.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket investasi rata-rata Rp494 juta mencakup franchise fee Rp36 juta untuk lima tahun, renovasi, penambahan daya listrik, peralatan gerai, dan persiapan pembukaan. Sama seperti pesaingnya, angka ini tidak termasuk sewa atau pembelian bangunan."
+        },
+        {
+          "heading": "Ambang royalti yang lebih longgar",
+          "body": "Royalti Indomaret baru aktif setelah penjualan melewati Rp175 juta per bulan, sedikit lebih tinggi dari ambang Alfamart. Untuk gerai di kota kecil yang omzetnya berada di kisaran Rp150-175 juta, selisih ini berarti nol royalti selama bertahun-tahun."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Ketersediaan barang. Gerai yang sering kehabisan SKU inti kehilangan pelanggan tetap, dan pelanggan minimarket tidak memberi kesempatan kedua karena ada gerai lain 300 meter dari situ. Pantau ketersediaan di atas 95% dan selisih stok opname di bawah 0,3%."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Kanibalisasi. Jaringan minimarket tumbuh agresif, dan gerai baru milik jaringan yang sama bisa dibuka relatif dekat dari gerai kamu. Tanyakan kebijakan jarak antar gerai secara tertulis sebelum menandatangani."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Franchise fee 5 tahun",
+          "amount": "Rp36 jt",
+          "note": "Sekali bayar di awal kontrak"
+        },
+        {
+          "item": "Renovasi bangunan",
+          "amount": "Rp120-180 jt",
+          "note": "Menyesuaikan kondisi awal ruko"
+        },
+        {
+          "item": "Peralatan dan rak gerai",
+          "amount": "Rp90-150 jt",
+          "note": "Termasuk pendingin dan AC"
+        },
+        {
+          "item": "Sistem kasir dan IT ritel",
+          "amount": "Rp40-65 jt",
+          "note": "Terhubung ke pusat"
+        },
+        {
+          "item": "Perizinan dan promosi buka",
+          "amount": "Rp20-40 jt",
+          "note": "Termasuk signage"
+        },
+        {
+          "item": "Stok awal dan modal kerja",
+          "amount": "Rp30-60 jt",
+          "note": "Di luar sewa bangunan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman waralaba resmi Indomaret",
+          "url": "https://www.indomaret.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Setara dengan Alfamart. Bandingkan hasil survei lokasi dari keduanya, lalu pilih yang menyetujui titikmu."
+    },
+    "mixue": {
+      "lede": "Mixue tumbuh sangat cepat di Indonesia dengan harga jual rendah dan volume tinggi. Yang membedakannya dari waralaba lain di daftar ini: pusat tidak memotong omzet, melainkan mengunci keuntungan lewat rantai pasok.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Tidak ada royalti persentase bulanan. Sebagai gantinya, seluruh bahan baku, kemasan, dan bahan pendukung wajib dibeli dari gudang pusat. Mitra membayar deposit kemitraan sekitar Rp40 juta, biaya manajemen tahunan Rp18-24 juta, dan biaya survei lokasi."
+        },
+        {
+          "heading": "Ke mana uang Rp800 juta sampai Rp1,5 miliar itu pergi",
+          "body": "Komponen terbesar justru bukan lisensi: konstruksi dan renovasi menyerap Rp200-350 juta, mesin dan perlengkapan sekitar Rp170 juta, stok bahan awal sekitar Rp100 juta, dan sewa ruko Rp75-150 juta tergantung lokasi. Karena itu angka yang beredar di internet berbeda-beda jauh: sebagian menghitung paket inti saja, sebagian all-in."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Volume harian. Dengan harga jual yang sengaja ditekan rendah, margin per cup tipis dan hanya masuk akal di titik dengan lalu lalang pejalan kaki yang padat. Target 300 cup per hari adalah patokan yang wajar untuk gerai yang sehat."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Kepadatan gerai. Pertumbuhan yang sangat cepat membuat jarak antar gerai menyempit di banyak kota, dan omzet per gerai ikut turun. Cek berapa gerai Mixue yang sudah ada dalam radius 2 km sebelum mengambil titik."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Deposit kemitraan",
+          "amount": "±Rp40 jt",
+          "note": "Dikembalikan sesuai perjanjian"
+        },
+        {
+          "item": "Biaya manajemen tahunan",
+          "amount": "Rp18-24 jt",
+          "note": "Dibayar tiap tahun"
+        },
+        {
+          "item": "Mesin dan perlengkapan",
+          "amount": "±Rp170 jt",
+          "note": "Wajib dari pusat"
+        },
+        {
+          "item": "Konstruksi dan renovasi",
+          "amount": "Rp200-350 jt",
+          "note": "Komponen terbesar"
+        },
+        {
+          "item": "Stok bahan baku awal",
+          "amount": "±Rp100 jt",
+          "note": "Dari gudang regional"
+        },
+        {
+          "item": "Sewa ruko tahun pertama",
+          "amount": "Rp75-150 jt",
+          "note": "Sangat bergantung kota"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Mixue Indonesia",
+          "url": "https://mixue.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Modal besar dengan margin tipis per cup. Hanya masuk akal di titik yang benar-benar ramai pejalan kaki."
+    },
+    "es-teh-indonesia": {
+      "lede": "Merek minuman teh kekinian dengan lisensi yang diperbarui tahunan, bukan lima tahunan seperti kebanyakan waralaba F&B.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Biaya lisensi sekitar Rp130 juta sudah mencakup peralatan, bahan baku awal, dan pelatihan karyawan. Di atas itu, mitra menyiapkan Rp200-250 juta untuk booth atau ruko. Bahan baku dibeli dari pusat, sehingga margin mitra ditentukan volume."
+        },
+        {
+          "heading": "Konsekuensi lisensi tahunan",
+          "body": "Lisensi yang diperbarui tiap tahun memberi fleksibilitas keluar lebih cepat, tetapi juga berarti biaya perpanjangan berulang dan posisi tawar yang lebih lemah jika pusat mengubah syarat. Tanyakan besaran perpanjangan secara tertulis sejak awal."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Titik dan jam. Penjualan minuman kekinian menumpuk di sore sampai malam dan sangat bergantung pada keramaian anak muda. Kontribusi pukul 15.00-21.00 di atas 55% adalah pola yang sehat; kalau lebih rata sepanjang hari, biasanya volumenya memang rendah."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Umur tren. Kategori minuman kekinian bergerak cepat dan merek yang panas hari ini bisa dingin dalam dua tahun. Hitung balik modal dengan asumsi umur tren pendek, bukan kontrak panjang."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Lisensi merek tahunan",
+          "amount": "±Rp130 jt",
+          "note": "Termasuk peralatan dan pelatihan"
+        },
+        {
+          "item": "Booth atau renovasi ruko",
+          "amount": "Rp120-180 jt",
+          "note": "Menyesuaikan format"
+        },
+        {
+          "item": "Perlengkapan tambahan",
+          "amount": "Rp30-50 jt",
+          "note": "Kursi, signage, pendingin"
+        },
+        {
+          "item": "Stok bahan awal",
+          "amount": "Rp20-35 jt",
+          "note": "Dari pusat"
+        },
+        {
+          "item": "Sewa dan perizinan",
+          "amount": "Rp30-70 jt",
+          "note": "Sangat bergantung titik"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Es Teh Indonesia",
+          "url": "https://esteh.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Modal menengah untuk kategori yang bergerak cepat. Kejar balik modal di bawah dua tahun."
+    },
+    "teh-poci": {
+      "lede": "Modal masuk paling kecil di seluruh daftar ini. Teh Poci adalah cara paling murah menguji apakah sebuah titik benar-benar ramai sebelum menaruh modal besar di situ.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Mitra membeli paket booth sekali bayar, umumnya Rp7-20 juta lengkap dengan peralatan dan bahan baku awal. Tidak ada royalti bulanan. Keuntungan datang dari selisih harga bahan baku yang dibeli dari distributor resmi."
+        },
+        {
+          "heading": "Kenapa modal sekecil ini masuk akal",
+          "body": "Karena risikonya juga kecil. Dengan Rp7-20 juta, kesalahan memilih titik tidak menghancurkan keuangan siapa pun. Banyak pedagang memakai format ini untuk menguji dua atau tiga lokasi sebelum memutuskan mana yang layak ditingkatkan."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Lalu lalang pejalan kaki. Booth 2-4 m2 tidak punya daya tarik sendiri; yang menjual adalah posisi. Depan sekolah, pasar, terminal, dan pintu keluar pabrik adalah titik klasik yang bekerja."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Ketergantungan cuaca dan penertiban. Booth di trotoar bisa diminta pindah sewaktu-waktu, dan satu minggu hujan memangkas omzet bulanan secara nyata. Pastikan izin lapak jelas sejak hari pertama."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket booth lengkap",
+          "amount": "Rp7-20 jt",
+          "note": "Termasuk peralatan dan bahan awal"
+        },
+        {
+          "item": "Sewa lapak bulanan",
+          "amount": "Rp0,3-1,5 jt",
+          "note": "Sangat bergantung titik"
+        },
+        {
+          "item": "Modal kerja harian",
+          "amount": "Rp1-2 jt",
+          "note": "Belanja bahan dan es"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Program kemitraan Es Teh Poci",
+          "url": "https://estehpoci.id/jadi-juragan",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Titik masuk termurah untuk menguji lokasi. Risiko kecil, tetapi juga bukan sumber penghasilan utama."
+    },
+    "janji-jiwa": {
+      "lede": "Salah satu jaringan kopi lokal terbesar di Indonesia, dengan dua pintu masuk: gerai penuh bermodal ratusan juta, atau kopi keliling bermodal puluhan juta.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Model waralaba penuh: franchise fee Rp85-150 juta di depan, ditambah renovasi dan peralatan Rp100-200 juta serta stok awal Rp20-30 juta. Berbeda dengan Mixue, di sini ada royalti berjalan sekitar 5-10% dari omzet bulanan."
+        },
+        {
+          "heading": "Dua royalti yang harus dijumlahkan",
+          "body": "Menghitung royalti saja tidak cukup. Tambahkan biaya bahan baku yang wajib dibeli dari pusat, lalu jaga totalnya di bawah 48% omzet. Kalau lebih, laba mitra habis sebelum biaya sewa dan gaji dihitung."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Volume dan harga rata-rata struk. 120 cup per hari adalah patokan gerai sehat. Menaikkan rata-rata struk lewat bundling makanan lebih efektif daripada menaikkan harga kopi, yang langsung terasa oleh pelanggan harian."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Kontrak lima tahun di kategori yang persaingannya sangat padat. Kedai kopi baru bermunculan terus, dan kamu terikat pada satu merek selama periode itu. Baca klausul pengakhiran sebelum menandatangani."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Franchise fee",
+          "amount": "Rp85-150 jt",
+          "note": "Sekali bayar di awal"
+        },
+        {
+          "item": "Renovasi dan peralatan",
+          "amount": "Rp100-200 jt",
+          "note": "Termasuk mesin kopi"
+        },
+        {
+          "item": "Stok bahan awal",
+          "amount": "Rp20-30 jt",
+          "note": "Dari pusat"
+        },
+        {
+          "item": "Izin, promosi, pelatihan",
+          "amount": "Rp30-50 jt",
+          "note": "Persiapan pembukaan"
+        },
+        {
+          "item": "Royalti berjalan",
+          "amount": "5-10% omzet",
+          "note": "Dibayar bulanan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Janji Jiwa",
+          "url": "https://janjijiwa.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Merek kuat dengan biaya berjalan yang nyata. Hitung royalti dan bahan baku sekaligus, bukan terpisah."
+    },
+    "point-coffee": {
+      "lede": "Kedai kopi yang menempel pada gerai Indomaret. Model ini memecahkan masalah termahal di bisnis kopi: mendatangkan orang.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Kemitraan Point Coffee umumnya menyatu dengan gerai Indomaret, sehingga biaya sewa terpisah bisa ditekan atau hilang sama sekali. Investasi berada di kisaran Rp150-250 juta, mengikuti skema kemitraan induknya."
+        },
+        {
+          "heading": "Kenapa biaya akuisisi pelanggannya hampir nol",
+          "body": "Pembeli sudah berada di dalam gerai untuk keperluan lain. Kopi menjadi pembelian tambahan, bukan tujuan perjalanan. Konsekuensinya: tiket rata-rata lebih rendah dari kedai mandiri, tetapi jumlah orang yang lewat jauh lebih besar dan stabil."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Attachment rate, yaitu berapa persen pengunjung gerai yang akhirnya membeli kopi. Angka 6% ke atas sudah sehat. Ini metrik yang berbeda dari kedai biasa, dan menaikkannya lebih soal penempatan serta kecepatan saji daripada rasa."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Ketergantungan penuh pada performa gerai induk. Kalau traffic minimarketnya turun, tidak banyak yang bisa kamu lakukan dari sisi kedai kopi."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan dan peralatan",
+          "amount": "Rp110-180 jt",
+          "note": "Termasuk mesin kopi"
+        },
+        {
+          "item": "Renovasi area kedai",
+          "amount": "Rp25-45 jt",
+          "note": "Menyatu dengan gerai"
+        },
+        {
+          "item": "Stok dan modal kerja",
+          "amount": "Rp15-25 jt",
+          "note": "Dari pusat"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman resmi Indomaret",
+          "url": "https://www.indomaret.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Cara paling aman masuk bisnis kopi, dengan imbalan tiket rata-rata yang lebih rendah."
+    },
+    "fore-coffee": {
+      "lede": "Merek kopi yang dibangun di atas aplikasi dan layanan antar sejak awal, bukan di atas ruang duduk.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Investasi awal sekitar Rp250 juta untuk format kios, lebih besar untuk format kafe. Mitra membeli akses ke sistem pemesanan dan basis pelanggan aplikasi yang sudah terbentuk, dengan royalti persentase omzet sesuai perjanjian."
+        },
+        {
+          "heading": "Kenapa porsi aplikasi menentukan",
+          "body": "Sebagian besar transaksi datang dari aplikasi dan layanan antar. Ini mengubah kalkulasi lokasi: kamu tidak membayar mahal untuk etalase yang terlihat, melainkan untuk berada di dalam radius antar yang padat permintaan."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Rating layanan antar dan kecepatan. Di kanal aplikasi, rating di bawah 4,7 langsung memangkas visibilitas dan pesanan. Konsistensi resep dan waktu siap lebih menentukan daripada suasana gerai."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Ketergantungan pada promo. Volume di kanal aplikasi sering ditopang diskon, dan margin ikut tergerus. Tanyakan siapa yang menanggung biaya promo, pusat atau mitra."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket investasi awal",
+          "amount": "±Rp250 jt",
+          "note": "Format kios"
+        },
+        {
+          "item": "Renovasi dan peralatan",
+          "amount": "Rp80-150 jt",
+          "note": "Termasuk mesin dan grinder"
+        },
+        {
+          "item": "Stok awal dan pelatihan",
+          "amount": "Rp20-40 jt",
+          "note": "Dari pusat"
+        },
+        {
+          "item": "Royalti berjalan",
+          "amount": "Persentase omzet",
+          "note": "Sesuai perjanjian kemitraan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Fore Coffee",
+          "url": "https://fore.coffee/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Pilihan bagi yang nyaman mengelola kanal digital. Pastikan pembagian biaya promo jelas."
+    },
+    "rocket-chicken": {
+      "lede": "Ayam goreng cepat saji yang mengambil posisi harga di bawah merek global dan menyasar kota lapis dua dan tiga.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket Rp300-400 juta untuk Pulau Jawa dan mulai Rp250 juta untuk luar Jawa, sudah termasuk peralatan, bahan baku awal, pelatihan, dan perizinan. Tidak ada royalti persentase; pusat mengambil marginnya dari pasokan bahan baku."
+        },
+        {
+          "heading": "Kenapa posisinya bertahan",
+          "body": "Merek global memilih kota besar dan pusat perbelanjaan. Rocket Chicken mengisi ruang di kota kabupaten dengan harga yang masuk akal untuk daya beli setempat. Persaingan langsungnya lebih sering warung ayam lokal, bukan jaringan besar."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Volume porsi harian dan rasio sewa. 200 porsi per hari adalah patokan gerai sehat, dengan HPP maksimal 45% omzet dan rasio sewa di bawah 12%. Di luar itu, laba habis oleh biaya tetap."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Properti tidak termasuk paket. Untuk gerai dengan area makan 60-100 m2, sewa bisa menjadi komponen bulanan terbesar dan tidak pernah muncul di brosur investasi."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan lengkap",
+          "amount": "Rp250-400 jt",
+          "note": "Jawa lebih tinggi dari luar Jawa"
+        },
+        {
+          "item": "Peralatan dapur dan gerai",
+          "amount": "Termasuk paket",
+          "note": "Fryer, chiller, meja kursi"
+        },
+        {
+          "item": "Bahan baku awal",
+          "amount": "Termasuk paket",
+          "note": "Dari pusat"
+        },
+        {
+          "item": "Sewa dan renovasi",
+          "amount": "Di luar paket",
+          "note": "Komponen bulanan terbesar"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Rocket Chicken",
+          "url": "https://rocketchicken.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Salah satu paket F&B paling lengkap di rentang harga ini. Hitung sewa terpisah sejak awal."
+    },
+    "sabana": {
+      "lede": "Booth ayam goreng bersertifikat halal dengan modal masuk paling rendah di kategori fast food.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Biaya pendaftaran Rp5 juta, paket booth mulai sekitar Rp23 juta. Tidak ada royalti bulanan, tetapi ayam dan bumbu wajib diambil dari depot resmi. Total realistis sampai Rp75 juta setelah sewa lapak dan modal kerja."
+        },
+        {
+          "heading": "Margin tipis, perputaran cepat",
+          "body": "Dengan harga jual Rp10.000-15.000 per porsi, margin per porsi kecil. Yang membuat model ini bekerja adalah perputaran: booth di titik ramai bisa menjual 80-150 porsi per hari dengan biaya tetap yang sangat rendah."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Konsistensi pasokan dan kebersihan. Karena bahan datang dari depot, keterlambatan pasokan langsung berarti tidak bisa jualan. Pastikan ada depot yang dekat sebelum mengambil titik."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Jumlah gerai yang sangat banyak membuat jarak antar booth sering berdekatan. Cek berapa booth merek yang sama dalam radius 1 km sebelum memutuskan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Biaya pendaftaran",
+          "amount": "Rp5 jt",
+          "note": "Sekali bayar"
+        },
+        {
+          "item": "Paket booth dan peralatan",
+          "amount": "Rp18-40 jt",
+          "note": "Menyesuaikan ukuran"
+        },
+        {
+          "item": "Sewa lapak dan perizinan",
+          "amount": "Rp3-20 jt",
+          "note": "Sangat bergantung titik"
+        },
+        {
+          "item": "Modal kerja awal",
+          "amount": "Rp2-10 jt",
+          "note": "Belanja dari depot"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Sabana Fried Chicken",
+          "url": "https://sabanafriedchicken.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Modal masuk paling rendah di kategori ayam goreng. Kelayakannya murni soal volume harian."
+    },
+    "geprek-bensu": {
+      "lede": "Merek yang menjual daya tarik selebritas dengan menu sempit dan penyajian cepat.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket kemitraan mencakup lisensi merek, pelatihan, desain gerai, peralatan, dan sistem kasir. Franchise fee sekitar 5% dari nilai paket, ditambah royalti tahunan, misalnya Rp14 juta untuk paket senilai Rp400 juta."
+        },
+        {
+          "heading": "Biaya siklus penuh, bukan tahun pertama",
+          "body": "Perpanjangan kontrak dikenakan 85-90% dari biaya awal. Artinya, biaya sebenarnya dari model ini bukan hanya investasi pertama melainkan juga pembayaran besar di akhir periode. Masukkan itu ke perhitungan sebelum menandatangani."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kecepatan saji dan HPP. Menu yang sempit memudahkan konsistensi, tetapi juga berarti tidak ada penopang lain kalau tren menu utama melemah. Jaga HPP di bawah 42% omzet."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Merek yang bersandar pada figur publik ikut naik turun bersama figur itu. Ini risiko yang tidak bisa kamu kendalikan sama sekali dari sisi gerai."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Lisensi merek",
+          "amount": "±5% nilai paket",
+          "note": "Sekali bayar di awal"
+        },
+        {
+          "item": "Desain dan renovasi gerai",
+          "amount": "Rp120-220 jt",
+          "note": "Standar pusat"
+        },
+        {
+          "item": "Peralatan dapur dan POS",
+          "amount": "Rp90-160 jt",
+          "note": "Termasuk pelatihan"
+        },
+        {
+          "item": "Royalti tahunan",
+          "amount": "Rp14 jt / paket Rp400 jt",
+          "note": "Dibayar tiap tahun"
+        },
+        {
+          "item": "Biaya perpanjangan kontrak",
+          "amount": "85-90% biaya awal",
+          "note": "Di akhir periode"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Geprek Bensu",
+          "url": "https://geprekbensu.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Perhatikan biaya perpanjangan. Itu yang paling sering luput dari perhitungan calon mitra."
+    },
+    "baba-rafi": {
+      "lede": "Rentang paket paling lebar di daftar ini, dari gerobak Rp15 juta sampai kafe Rp200 juta. Cocok untuk naik kelas bertahap.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket gerobak dan booth mulai Rp15-20 juta, paket kontainer dan kafe sampai Rp200 juta. Pada paket tertentu berlaku bagi hasil 60% mitra dan 40% franchisor, sehingga penting membaca skema mana yang ditawarkan untuk paketmu."
+        },
+        {
+          "heading": "Kenapa naik kelas bertahap masuk akal",
+          "body": "Kamu bisa membuka booth lebih dulu, mengumpulkan data penjualan nyata selama enam bulan, lalu memutuskan apakah titik itu layak ditingkatkan ke format yang lebih besar. Itu jauh lebih murah daripada menebak sejak awal."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Jam malam dan lalu lalang. Kebab adalah pembelian impulsif; penjualan menumpuk pada malam hari di titik yang ramai. 60 porsi per hari sudah cukup untuk format booth."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Skema bagi hasil pada paket tertentu berarti pendapatanmu dipotong terus-menerus, bukan sekali di depan. Bandingkan total biaya lima tahun antara paket bagi hasil dan paket beli putus."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket gerobak atau booth",
+          "amount": "Rp15-20 jt",
+          "note": "Titik masuk termurah"
+        },
+        {
+          "item": "Paket kontainer atau kafe",
+          "amount": "Rp80-200 jt",
+          "note": "Format lebih besar"
+        },
+        {
+          "item": "Bahan baku awal",
+          "amount": "Termasuk paket",
+          "note": "Dari jaringan resmi"
+        },
+        {
+          "item": "Bagi hasil",
+          "amount": "60:40 pada paket tertentu",
+          "note": "Baca skema paketmu"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Anggaran dan paket franchise Baba Rafi",
+          "url": "https://www.babarafi.com/franchisebudget",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Fleksibel dan bisa dimulai kecil. Pastikan kamu tahu paketmu beli putus atau bagi hasil."
+    },
+    "mie-gacoan": {
+      "lede": "Harga per porsi sangat rendah dengan volume sangat tinggi. Model ini menuntut kapasitas, bukan sekadar titik ramai.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal awal dilaporkan mulai Rp125 juta, tetapi skala resto penuh jauh lebih besar. Informasi kemitraan Mie Gacoan tidak seterbuka merek lain di daftar ini, jadi verifikasi langsung ke pusat adalah langkah wajib sebelum mengirim uang."
+        },
+        {
+          "heading": "Kenapa kapasitas lebih penting dari lokasi",
+          "body": "Antrean panjang di jam makan adalah ciri khas merek ini. Kalau dapur dan tempat duduk tidak sanggup memutar meja empat kali per jam sibuk, permintaan yang datang justru hilang. Ini masalah kapasitas, bukan pemasaran."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Waktu saji dan perputaran meja. Target di bawah 10 menit dari pesan ke sajian, dengan area parkir yang memadai. Resto tanpa parkir kehilangan sebagian besar pelanggan rombongan."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Penawaran kemitraan palsu. Karena mereknya populer dan informasi resminya terbatas, penipuan yang mengatasnamakan Mie Gacoan cukup sering terjadi. Jangan pernah mentransfer ke rekening pribadi."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Modal awal dilaporkan",
+          "amount": "Mulai Rp125 jt",
+          "note": "Verifikasi ke pusat"
+        },
+        {
+          "item": "Renovasi dan tempat duduk",
+          "amount": "Rp100-250 jt",
+          "note": "Skala resto"
+        },
+        {
+          "item": "Peralatan dapur",
+          "amount": "Rp60-140 jt",
+          "note": "Kapasitas tinggi"
+        },
+        {
+          "item": "Sewa dan parkir",
+          "amount": "Di luar paket",
+          "note": "Menentukan kelayakan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Mie Gacoan",
+          "url": "https://miegacoan.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Verifikasi penawaran langsung ke pusat. Jangan bertransaksi lewat perantara."
+    },
+    "apotek-k24": {
+      "lede": "Apotek 24 jam dengan harga sama siang dan malam. Modal terbesarnya bukan renovasi, melainkan stok obat.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Franchise fee Rp132 juta untuk enam tahun, royalti 1,8% dari omzet bulanan, dengan total setup sekitar Rp1,2 miliar termasuk stok obat. Usaha ini terikat regulasi dan wajib punya apoteker penanggung jawab berizin."
+        },
+        {
+          "heading": "Kenapa stok menyerap modal terbesar",
+          "body": "Apotek harus menyediakan ribuan SKU dengan perputaran yang berbeda-beda. Obat yang jarang dicari tetap harus ada, dan itu adalah kas yang mengendap di rak. Ketersediaan obat inti di atas 90% adalah standar yang harus dijaga."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kepatuhan dan kepercayaan. Berbeda dari F&B, apotek diawasi dinas kesehatan dan kesalahan administratif bisa menutup usaha. Apoteker penanggung jawab bukan formalitas, melainkan syarat operasional harian."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Balik modal tiga sampai empat tahun adalah rentang yang wajar, jauh lebih panjang dari F&B. Ini usaha jangka panjang dengan arus kas stabil, bukan usaha yang cepat menghasilkan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Franchise fee 6 tahun",
+          "amount": "Rp132 jt",
+          "note": "Sekali bayar"
+        },
+        {
+          "item": "Renovasi dan interior apotek",
+          "amount": "Rp150-250 jt",
+          "note": "Standar pusat"
+        },
+        {
+          "item": "Stok obat awal",
+          "amount": "Rp600-800 jt",
+          "note": "Komponen terbesar"
+        },
+        {
+          "item": "Sistem IT dan peralatan",
+          "amount": "Rp60-120 jt",
+          "note": "Termasuk pendingin obat"
+        },
+        {
+          "item": "Royalti berjalan",
+          "amount": "1,8% omzet",
+          "note": "Dibayar bulanan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Peluang usaha waralaba Apotek K-24",
+          "url": "https://www.apotek-k24.com/berita/110/Peluang-Usaha-Franchise-Apotek-K-24",
+          "kind": "page"
+        },
+        {
+          "label": "Situs resmi Apotek K-24",
+          "url": "https://www.apotek-k24.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Modal besar dan horizon panjang, tetapi permintaannya tidak mengikuti tren."
+    },
+    "jnt": {
+      "lede": "Mitra tidak menjual barang, melainkan mendapat komisi dari setiap paket yang masuk. Modal ringan, tetapi pendapatannya terikat langsung pada kepadatan penjual online di sekitar titik.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Dua pilihan paket: Rp10 juta berisi neon box, timbangan digital 30 kg, seragam, sistem, dan media promosi; Rp20 juta menambahkan laptop dan printer. Mitra menerima komisi 20% dari pendapatan pengiriman."
+        },
+        {
+          "heading": "Kenapa lokasi menentukan segalanya",
+          "body": "Penghasilan dihitung per paket. Kalau tidak ada penjual online di sekitar titik, tidak ada paket, dan tidak ada komisi. Hitung dulu berapa banyak toko online yang beroperasi dalam radius satu kilometer sebelum mengambil paket."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Volume paket harian dan konsistensi jam buka. 100 paket per hari adalah patokan agen yang sehat. Agen yang sering tutup kehilangan penjual langganan dengan cepat karena mereka butuh kepastian setiap hari."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Persaingan antar agen dari jaringan yang sama sangat ketat di kota besar, dan komisi per paket kecil. Ini usaha volume dengan margin tipis, bukan sumber penghasilan besar dari satu titik."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket dasar",
+          "amount": "Rp10 jt",
+          "note": "Neon box, timbangan, sistem"
+        },
+        {
+          "item": "Paket lengkap",
+          "amount": "Rp20 jt",
+          "note": "Menambah laptop dan printer"
+        },
+        {
+          "item": "Sewa ruang depan",
+          "amount": "Rp0,5-2,5 jt/bln",
+          "note": "Minimal 3x3 m"
+        },
+        {
+          "item": "Komisi mitra",
+          "amount": "20% pendapatan",
+          "note": "Dibayar berkala"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi J&T Express",
+          "url": "https://www.jet.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Modal ringan dan cocok sebagai usaha tambahan. Hitung kepadatan penjual online lebih dulu."
+    },
+    "sicepat": {
+      "lede": "Modal masuk paling ringan di seluruh daftar. Kelayakannya murni aritmatika: berapa paket per hari dikali komisi per paket.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Tiga pilihan paket menyesuaikan anggaran, mulai dari kisaran Rp3 jutaan. Komisi sekitar Rp2.500 per paket. Dengan target 50 paket per hari, penghasilan berada di kisaran Rp3,75 juta per bulan."
+        },
+        {
+          "heading": "Aritmatika yang perlu dijujuri",
+          "body": "Rp2.500 per paket berarti kamu butuh volume nyata untuk menghasilkan pendapatan yang berarti. 50 paket per hari terdengar mudah, tetapi itu satu paket setiap sepuluh menit sepanjang jam kerja. Ukur dulu potensi titikmu."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kedekatan dengan penjual online dan konsistensi. Karena komisinya kecil, tidak ada ruang untuk hari-hari sepi. Jam buka yang bisa diandalkan lebih berharga daripada lokasi yang mentereng."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Paket hilang atau rusak menjadi tanggung jawab yang bisa menghapus komisi berhari-hari. Sistem pencatatan serah terima yang rapi bukan opsional."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan",
+          "amount": "Mulai Rp3 jt",
+          "note": "Tiga pilihan paket"
+        },
+        {
+          "item": "Timbangan dan komputer",
+          "amount": "Rp2-6 jt",
+          "note": "Kalau belum termasuk"
+        },
+        {
+          "item": "Sewa ruang kecil",
+          "amount": "Rp0,3-1,5 jt/bln",
+          "note": "Lokasi mudah dijangkau"
+        },
+        {
+          "item": "Komisi mitra",
+          "amount": "±Rp2.500 / paket",
+          "note": "Dibayar berkala"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi SiCepat Ekspres",
+          "url": "https://sicepat.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Titik masuk termurah di daftar ini, dengan penghasilan yang juga paling kecil per titik."
+    },
+    "simply-fresh": {
+      "lede": "Jaringan laundry kiloan besar yang menjual mesin, sistem, dan merek sekaligus. Bedanya dengan laundry mandiri bukan pada harga mesin.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Dua skema tersedia: business opportunity mulai Rp55 juta tanpa royalti, dan franchise penuh sampai Rp115 juta. Keduanya mencakup mesin, sistem operasional, dan pelatihan."
+        },
+        {
+          "heading": "Apa yang sebenarnya kamu beli",
+          "body": "Mesin cuci komersial bisa dibeli sendiri lebih murah. Yang dijual di sini adalah SOP, sistem pencatatan, dan merek yang sudah dikenal, yang memangkas waktu belajar di enam bulan pertama. Nilai itu nyata, tetapi terbatas."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Volume kilogram harian dan pelanggan berulang. 70 kg per hari dengan repeat rate di atas 60% adalah pola outlet yang sehat. Turnaround maksimal 24 jam adalah janji yang paling sering dilanggar dan paling cepat menghilangkan pelanggan."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Daya listrik. Persyaratan 3.500 watt terlihat sepele sampai kamu menemukan bahwa penambahan daya di ruko incaranmu memakan waktu dan biaya yang tidak dianggarkan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket business opportunity",
+          "amount": "Mulai Rp55 jt",
+          "note": "Tanpa royalti"
+        },
+        {
+          "item": "Paket franchise penuh",
+          "amount": "Sampai Rp115 jt",
+          "note": "Dengan dukungan penuh"
+        },
+        {
+          "item": "Mesin cuci dan pengering",
+          "amount": "Termasuk paket",
+          "note": "Komersial"
+        },
+        {
+          "item": "Penambahan daya listrik",
+          "amount": "Di luar paket",
+          "note": "Minimal 3.500 watt"
+        },
+        {
+          "item": "Sewa tempat",
+          "amount": "Di luar paket",
+          "note": "Minimal 20 m2"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Paket franchise Simply Fresh Laundry",
+          "url": "https://www.simplyfreshlaundry.com/franchiselaundry/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Masuk akal kalau kamu menghargai SOP dan merek. Kalau tidak, laundry mandiri lebih murah."
+    },
+    "laundryklin": {
+      "lede": "Laundry dengan perangkat lunak sebagai nilai jual utamanya: pesanan, pelacakan, dan pembayaran berjalan lewat aplikasi.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket Rp35-75 juta mencakup mesin, akses sistem aplikasi, dan pelatihan, dengan biaya sistem bulanan yang berjalan. Jaringannya tersebar di belasan kota besar."
+        },
+        {
+          "heading": "Untuk siapa model ini",
+          "body": "Pemilik yang tidak ingin menunggui kasir setiap hari. Karena pesanan dan pembayaran tercatat di aplikasi, pengawasan bisa dilakukan dari jauh dan kebocoran kas jauh lebih sulit terjadi dibanding pencatatan manual."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Porsi pesanan yang benar-benar masuk lewat aplikasi. Kalau pelanggan tetap datang langsung dan membayar tunai, kamu membayar biaya sistem tanpa mendapat manfaat utamanya. Targetkan 40% ke atas."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Biaya sistem bulanan berjalan terus, ramai atau sepi. Pastikan volume outletmu cukup untuk menanggungnya sebelum berkomitmen."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan",
+          "amount": "Rp35-75 jt",
+          "note": "Termasuk mesin dan sistem"
+        },
+        {
+          "item": "Biaya sistem aplikasi",
+          "amount": "Bulanan",
+          "note": "Berjalan terus"
+        },
+        {
+          "item": "Sewa tempat",
+          "amount": "Di luar paket",
+          "note": "Minimal 20 m2"
+        },
+        {
+          "item": "Modal kerja awal",
+          "amount": "Rp3-8 jt",
+          "note": "Deterjen dan operasional"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi LaundryKlin",
+          "url": "https://laundryklin.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Pilihan terbaik kalau kamu ingin mengawasi dari jauh. Pastikan volumenya menutup biaya sistem."
+    },
+    "mrklin": {
+      "lede": "Berjenjang dari paket kecil sampai skala pabrik cuci, dengan paket atas yang menyasar pasar korporat.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket Bronze mulai Rp56,87 juta sampai Platinum Rp298 juta. Semakin tinggi paketnya, semakin besar kapasitas mesin dan semakin serius sasaran pasarnya."
+        },
+        {
+          "heading": "Kenapa paket atas menyasar korporat",
+          "body": "Hotel, rumah sakit, dan restoran memberi volume yang jauh lebih stabil daripada pelanggan ritel. Satu kontrak korporat bisa menutup sebagian besar biaya tetap, sehingga pelanggan ritel menjadi tambahan, bukan tumpuan."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kapasitas mesin harus cocok dengan pasar yang kamu incar. Mengambil paket besar tanpa kontrak korporat berarti membayar mesin yang menganggur; mengambil paket kecil lalu mendapat kontrak hotel berarti gagal memenuhi tenggat."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Biaya utilitas pada skala besar. Jaga di bawah 12% omzet; di atas itu, mesin berkapasitas besar justru menggerus laba."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket Bronze",
+          "amount": "Rp56,87 jt",
+          "note": "Skala kecil"
+        },
+        {
+          "item": "Paket menengah",
+          "amount": "Rp90-180 jt",
+          "note": "Kapasitas lebih besar"
+        },
+        {
+          "item": "Paket Platinum",
+          "amount": "Rp298 jt",
+          "note": "Skala korporat"
+        },
+        {
+          "item": "Utilitas bulanan",
+          "amount": "Maks 12% omzet",
+          "note": "Air, listrik, gas"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Mr Klin Laundry",
+          "url": "https://mrklin.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Pilih paket berdasarkan pasar yang sudah kamu pegang, bukan yang kamu harapkan."
+    },
+    "miniso": {
+      "lede": "Investasi terbesar di daftar ini. Retail gaya hidup dengan perputaran produk sangat cepat dan koleksi yang terus berganti.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Investasi Rp2-4 miliar dengan bagi hasil dari penjualan harian. Mitra praktis menyediakan lokasi dan modal, sementara pusat mengendalikan kurasi produk, harga, dan tata letak."
+        },
+        {
+          "heading": "Kenapa kurasi dipegang pusat",
+          "body": "Model ini hidup dari koleksi yang terus berganti dan harga yang konsisten di semua gerai. Kalau mitra bisa memilih barang sendiri, keunggulan itu hilang. Konsekuensinya, kendali operasional mitra sangat terbatas."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kelas dan traffic mal. Gerai ini dirancang untuk pusat perbelanjaan kelas menengah ke atas dengan pengunjung tinggi. Di lokasi yang salah, biaya sewa besar tidak akan tertutup."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Periode ramp-up. Dengan modal miliaran dan ROI 24-36 bulan, kamu harus sanggup menanggung arus kas negatif cukup lama sebelum gerai matang."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi total",
+          "amount": "Rp2-4 M",
+          "note": "Terbesar di daftar ini"
+        },
+        {
+          "item": "Sewa mal",
+          "amount": "Di luar paket",
+          "note": "150-300 m2"
+        },
+        {
+          "item": "Stok awal",
+          "amount": "Ratusan juta",
+          "note": "Kurasi dari pusat"
+        },
+        {
+          "item": "Bagi hasil",
+          "amount": "Dari penjualan harian",
+          "note": "Sesuai perjanjian"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Miniso",
+          "url": "https://www.miniso.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Hanya untuk pemodal besar dengan akses lokasi mal yang baik dan napas panjang."
+    }
+  }
+}

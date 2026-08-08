@@ -170,10 +170,10 @@ export function FranchiseBrowser() {
               {visible.map((franchise) => (
                 <tr key={franchise.id}>
                   <th scope="row">
-                    <span className="franchise-table__brand">
+                    <Link className="franchise-table__brand" href={`/franchise/${franchise.id}`}>
                       <FranchiseLogo franchise={franchise} size={30} />
                       {franchise.name}
-                    </span>
+                    </Link>
                   </th>
                   <td>{franchiseCategoryName(franchise.category)}</td>
                   <td className="num">{formatInvestmentRange(franchise.investment)}</td>
@@ -232,10 +232,14 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
         Perkiraan omzet <b>{formatInvestmentRange(franchise.monthlyRevenue)}</b> per bulan
       </p>
 
-      <button type="button" className="franchise-card__toggle" onClick={onToggle} aria-expanded={open}>
-        {open ? "Tutup detail" : "Lihat skema & KPI"}
-        <ArrowRight size={16} aria-hidden="true" />
-      </button>
+      <div className="franchise-card__actions">
+        <button type="button" className="franchise-card__toggle" onClick={onToggle} aria-expanded={open}>
+          {open ? "Tutup ringkas" : "Lihat ringkas"}
+        </button>
+        <Link className="franchise-card__more" href={`/franchise/${franchise.id}`}>
+          Artikel lengkap <ArrowRight size={16} aria-hidden="true" />
+        </Link>
+      </div>
 
       {open && (
         <div className="franchise-card__detail">
@@ -254,8 +258,8 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
           </ul>
 
           <div className="franchise-card__foot">
+            <Link href={`/franchise/${franchise.id}`}>Baca artikel lengkap <ArrowRight size={14} aria-hidden="true" /></Link>
             <a href={franchise.officialUrl} target="_blank" rel="noreferrer">Situs resmi <ArrowUpRight size={14} aria-hidden="true" /></a>
-            <span>Kontrak {franchise.contractYears} tahun</span>
           </div>
 
           {sources.length > 0 && (

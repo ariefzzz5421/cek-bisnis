@@ -1,5 +1,6 @@
 import {
   Coffee,
+  CookingPot,
   Dumbbell,
   Gamepad2,
   Scissors,
@@ -17,6 +18,7 @@ const iconMap = {
   gym: Dumbbell,
   coffee: Coffee,
   barber: Scissors,
+  angkringan: CookingPot,
 };
 
 export function BusinessIcon({ id, size = 24 }: { id: BusinessId; size?: number }) {
