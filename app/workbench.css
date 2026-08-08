@@ -1404,7 +1404,7 @@ select:focus-visible {
   justify-content: center;
 }
 
-.survey-workbench-hero__copy h1 { margin: var(--space-md) 0; font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 0.94; letter-spacing: -0.065em; }
+.survey-workbench-hero__copy h1 { margin: var(--space-md) 0; font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 5.5rem); line-height: 1; letter-spacing: -0.065em; }
 .survey-workbench-hero__copy > p { max-width: 38rem; margin: 0; color: var(--color-muted); font-size: var(--text-md); }
 .survey-workbench-hero__copy dl { display: grid; margin: var(--space-xl) 0 0; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--color-rule); }
 .survey-workbench-hero__copy dl > div { display: grid; padding: var(--space-md) var(--space-sm) 0 0; gap: var(--space-xs); }

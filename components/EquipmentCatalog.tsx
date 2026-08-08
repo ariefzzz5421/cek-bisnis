@@ -4,7 +4,6 @@ import { formatMoney, type Business } from "@/lib/business-data";
 import { getBusinessDetail, getEquipmentSources } from "@/lib/business-details";
 
 const xPositions = ["0%", "33.333%", "66.667%", "100%"];
-
 export function EquipmentCatalog({ business }: { business: Business }) {
   const detail = getBusinessDetail(business.id);
 

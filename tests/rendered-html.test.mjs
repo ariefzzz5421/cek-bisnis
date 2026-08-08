@@ -29,6 +29,8 @@ test("server-renders the Cek Bisnis landing page", async () => {
   assert.match(html, /Peta usaha Indonesia/i);
   assert.match(html, /497/i);
   assert.match(html, /PDF · 5 halaman/i);
+  assert.match(html, /Ranking franchise/i);
+  assert.equal((html.match(/class="franchise-rank"/g) ?? []).length, 10);
 });
 
 test("server-renders the all-Indonesia location survey", async () => {
@@ -52,10 +54,20 @@ test("every business has a working routed analysis page", async () => {
     assert.match(html, /HITUNG ANGKA/i);
     assert.match(html, /SURVEI LOKASI/i);
     assert.match(html, /PDF panduan 5 halaman/i);
+    assert.match(html, /SECOND OPINION AI/i);
     assert.match(html, new RegExp(`/equipment/${business.slug}-atlas\\.webp`));
     assert.equal((html.match(/class="equipment-product"/g) ?? []).length, 8, `${business.slug} equipment card count`);
     assert.equal((html.match(/class="equipment-product__body"/g) ?? []).length, 8, `${business.slug} supplier link count`);
   }
+});
+
+test("AI provider status is public but API keys stay server-side", async () => {
+  const response = await render("/api/ai-providers");
+  assert.equal(response.status, 200);
+  const body = await response.json();
+  assert.equal(body.providers.length, 4);
+  assert.deepEqual(body.providers.map((provider) => provider.id), ["openai", "anthropic", "gemini", "deepseek"]);
+  assert.ok(body.providers.every((provider) => !("apiKey" in provider) && !("model" in provider)));
 });
 
 test("every business ships a PDF guide and PNG preview", async () => {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, FileText, ImageDown, MapPinned, ShieldCheck, Store } from "lucide-react";
 import { BusinessIcon } from "@/components/BusinessIcon";
 import { BusinessTour } from "@/components/BusinessTour";
+import { FranchiseLeaderboard } from "@/components/FranchiseLeaderboard";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { businessData, businesses, formatMoney, formatTicket } from "@/lib/business-data";
@@ -106,9 +107,11 @@ export default function Home() {
         </div>
       </section>
 
+      <FranchiseLeaderboard />
+
       <section className="decision-workspace" aria-labelledby="decision-workspace-title">
         <div className="decision-workspace__copy">
-          <p>2.0 · HITUNG ANGKA</p>
+          <p>3.0 · HITUNG ANGKA</p>
           <h2 id="decision-workspace-title">Satu layar untuk keputusan utama.</h2>
           <p>Tidak perlu membaca laporan panjang. Fokus pada empat hal yang menentukan usaha bisa bertahan.</p>
           <ul>
@@ -131,7 +134,7 @@ export default function Home() {
           {mapPlaces.map((place, index) => place && <span className={`map-workspace__pin map-workspace__pin--${["one", "two", "three"][index]}`} key={place.id}>{place.name} <b>{scorePlaceForBusiness(place, featured.id)}</b></span>)}
         </div>
         <div className="map-workspace__copy">
-          <p>3.0 · UJI LOKASI</p>
+          <p>4.0 · UJI LOKASI</p>
           <h2 id="map-workspace-title">Kota yang berbeda, hasilnya berbeda.</h2>
           <p>Cari kota atau klik titik di peta. Sistem membaca populasi, peran kota, pesaing, pemicu ramai, bangunan, dan akses dari GeoNames serta OpenStreetMap.</p>
           <dl><div><dt>Wilayah tersedia</dt><dd>{placesMeta.count}</dd></div><div><dt>Radius titik</dt><dd>500 m–1,5 km</dd></div></dl>
@@ -141,7 +144,7 @@ export default function Home() {
 
       <section className="download-workspace" aria-labelledby="download-workspace-title">
         <header className="workbench-section-heading">
-          <div><p>4.0 · AMBIL RENCANA</p><h2 id="download-workspace-title">Panduan siap survei.</h2></div>
+          <div><p>5.0 · AMBIL RENCANA</p><h2 id="download-workspace-title">Panduan siap survei.</h2></div>
           <p>Pilih usaha terlebih dahulu. Dua file tersedia langsung dari halaman analisis.</p>
         </header>
         <div className="download-workspace__rows">

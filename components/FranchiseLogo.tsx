@@ -2,15 +2,8 @@ import Image from "next/image";
 import { readableInkOn, type Franchise } from "@/lib/franchise-data";
 
 /**
- * Ubin identitas merek.
- *
- * Berkas logo resmi tidak ikut dibundel: aset itu milik masing-masing pemegang
- * merek dan tidak bebas didistribusikan ulang. Sebagai gantinya ubin ini memakai
- * warna resmi merek plus monogram, lalu menautkan ke situs waralaba resminya.
- *
- * Kalau nanti kamu sudah mengantongi izin pemakaian logo, taruh berkasnya di
- * `public/brand/franchise/<id>.svg` dan isi `logoFile` pada data franchise —
- * komponen ini otomatis memakainya tanpa perubahan kode lain.
+ * Ubin identitas merek. Logo yang berhasil diambil dari situs brand disimpan
+ * lokal; URL resmi atau monogram menjadi fallback saat sumber membatasi unduhan.
  */
 /**
  * Ubin yang lebih kecil dari ini hanya menampilkan blok warna.
@@ -24,7 +17,9 @@ import { readableInkOn, type Franchise } from "@/lib/franchise-data";
 const MONOGRAM_MIN_TILE = 44;
 
 export function FranchiseLogo({ franchise, size = 56 }: { franchise: Franchise; size?: number }) {
-  const logoFile = (franchise as Franchise & { logoFile?: string }).logoFile;
+  const logoSource = franchise.logoFile
+    ? `/brands/franchises/${franchise.logoFile}`
+    : franchise.logoUrl;
 
   return (
     <span
@@ -39,8 +34,8 @@ export function FranchiseLogo({ franchise, size = 56 }: { franchise: Franchise; 
       } as React.CSSProperties}
       aria-hidden="true"
     >
-      {logoFile
-        ? <Image src={`/brand/franchise/${logoFile}`} alt="" width={size} height={size} unoptimized />
+      {logoSource
+        ? <Image src={logoSource} alt="" width={size} height={size} unoptimized />
         : size >= MONOGRAM_MIN_TILE
           ? <b>{franchise.initials}</b>
           : null}

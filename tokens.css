@@ -9,7 +9,7 @@
 :root {
   /* --- kertas & tinta ------------------------------------------------- */
   --color-paper: #f5f1e4;
-  --color-paper-2: #ffffff;
+  --color-paper-2: #fffdf7;
   --color-paper-3: #e9e2cf;
   --color-ink: #0d0d0d;
   --color-ink-2: #1f1f1f;
@@ -57,7 +57,7 @@
   --color-overlay: rgba(13, 13, 13, 0.62);
   --color-shadow: #0d0d0d;
   --color-paper-glass: #f5f1e4;
-  --color-paper-glass-strong: #ffffff;
+  --color-paper-glass-strong: #fffdf7;
   --color-dark-glass: #0d0d0d;
 
   /* --- tipografi -------------------------------------------------------- */

@@ -2,7 +2,19 @@
 
 Locked design system for the complete Cek Bisnis application. Future Hallmark runs read this file first; routes defer to it.
 
-## System
+## Current surface amendment · 2026-08-09
+
+This amendment supersedes any conflicting rounded/soft-surface statements below. The Hum 07 information remains the composition provenance; the current Cek Bisnis product surface is a **neo-brutalist utility press**: warm cream paper, square black rules, hard offset shadows, lime/yellow/cyan/coral blocks, Plus Jakarta Sans, and JetBrains Mono labels.
+
+- Macrostructure remains Narrative Workflow on the landing page and Workbench on analysis routes.
+- Cards and controls are square; only status dots may be circular.
+- Primary actions use a physical 2–4px press and hard shadow, with no blur or glass.
+- Dense comparisons use a desktop table that becomes one readable card per item below 1000px.
+- Official franchise, AI-provider, and marketplace marks are height-aligned inside bordered white/ink tiles; text labels remain visible when a remote mark fails.
+- AI analysis sits after the deterministic economics calculator. It is a second opinion, never the primary source of financial truth.
+- `tokens.css` is the canonical token source; `app/brutal.css` is the final visual layer.
+
+## Original Hum composition provenance
 
 - Genre · playful, trustworthy, practical.
 - Theme · studied DNA from Hallmark Hum 07, adapted for Indonesian UMKM decisions.

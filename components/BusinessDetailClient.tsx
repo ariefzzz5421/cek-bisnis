@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { BusinessIcon } from "@/components/BusinessIcon";
+import { AIAnalysisPanel } from "@/components/AIAnalysisPanel";
 import { EquipmentCatalog } from "@/components/EquipmentCatalog";
 import { LocationSurvey } from "@/components/LocationSurvey";
 import {
@@ -269,6 +270,24 @@ export function BusinessDetailClient({ business, cities, sources }: { business: 
           </div>
         </div>
       </section>
+
+      <AIAnalysisPanel scenario={{
+        business: business.name,
+        category: business.category,
+        city: city.name,
+        province: city.province,
+        scale: selectedScale.name,
+        capexLow: metrics.capexLow,
+        capexHigh: metrics.capexHigh,
+        monthlyRevenue: metrics.monthlyRevenue,
+        monthlyOpex: metrics.opex,
+        monthlyProfit: metrics.profit,
+        breakEvenRevenue: metrics.breakEvenRevenue,
+        paybackMonths: Number.isFinite(metrics.payback) ? Math.ceil(metrics.payback) : null,
+        trafficTarget: metrics.traffic,
+        trafficLabel: business.trafficLabel,
+        risks: business.risks,
+      }} />
 
       <section className="detail-live-survey" id="lokasi"><LocationSurvey business={business} /></section>
 
