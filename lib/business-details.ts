@@ -40,9 +40,12 @@ export type Marketplace = {
   tag: string;
   /** Template URL pencarian; `{q}` diganti kata kunci yang sudah di-encode. */
   searchUrl: string;
-  /** Warna merek resmi untuk ubin identifikasi; tidak ada berkas logo yang dibundel. */
+  /** Warna merek resmi untuk ubin identifikasi. */
   brandColor: string;
+  /** Monogram cadangan ketika berkas logo belum tersedia. */
   initials: string;
+  /** Nama berkas di `public/brand/marketplace/`; lihat README di folder itu. */
+  logoFile?: string;
 };
 
 type DetailsFile = {

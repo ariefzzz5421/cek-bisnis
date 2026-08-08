@@ -3059,7 +3059,16 @@ summary {
 }
 
 .marketplace-mark b { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 800; letter-spacing: -0.03em; }
-.marketplace-mark img { width: 100%; height: 100%; object-fit: contain; }
+/* Siluet logo diwarnai lewat mask, bukan dipasang sebagai gambar: berkas
+ * simple-icons tidak punya atribut fill sehingga selalu hitam kalau di-<img>. */
+.marketplace-mark__glyph {
+  display: block;
+  width: 66%;
+  height: 66%;
+  background: var(--brand-ink);
+  -webkit-mask: var(--glyph) center / contain no-repeat;
+  mask: var(--glyph) center / contain no-repeat;
+}
 
 /* ====================================================================== */
 /* Halaman detail waralaba                                                */

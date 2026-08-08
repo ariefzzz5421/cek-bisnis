@@ -13,21 +13,24 @@
       "tag": "SHP",
       "searchUrl": "https://shopee.co.id/search?keyword={q}",
       "brandColor": "#EE4D2D",
-      "initials": "SP"
+      "initials": "SP",
+      "logoFile": "shopee.svg"
     },
     "blibli": {
       "name": "Blibli",
       "tag": "BLI",
       "searchUrl": "https://www.blibli.com/cari/{q}",
       "brandColor": "#0095DA",
-      "initials": "BL"
+      "initials": "BL",
+      "logoFile": "blibli.svg"
     },
     "bukalapak": {
       "name": "Bukalapak",
       "tag": "BKL",
       "searchUrl": "https://www.bukalapak.com/products?search%5Bkeywords%5D={q}",
       "brandColor": "#E31E52",
-      "initials": "BP"
+      "initials": "BP",
+      "logoFile": "bukalapak.svg"
     }
   },
   "details": {
