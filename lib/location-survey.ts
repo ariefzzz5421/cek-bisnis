@@ -90,6 +90,9 @@ export const scorePlaceForBusiness = (place: IndonesiaPlace, businessId: Busines
     gym: largeMarket + capitalBonus + visitorEconomy,
     coffee: largeMarket + capitalBonus + visitorEconomy,
     barber: 7 + (population >= 100_000 ? 3 : 0),
+    // Angkringan paling kuat di kota pelajar dan kota menengah, bukan di
+    // metropolitan tempat biaya lapak dan penertiban paling berat.
+    angkringan: (population >= 80_000 && population <= 1_500_000 ? 8 : 3) + visitorEconomy,
   };
   return clampScore(market + fit[businessId]);
 };
@@ -134,6 +137,8 @@ const competitorMatchers: Record<BusinessId, (tags: Record<string, string>) => b
   gym: (tags) => ["fitness_centre", "sports_centre"].includes(tags.leisure ?? ""),
   coffee: (tags) => tags.amenity === "cafe",
   barber: (tags) => tags.shop === "hairdresser",
+  angkringan: (tags) => ["fast_food", "restaurant", "cafe"].includes(tags.amenity ?? "")
+    || tags.shop === "convenience",
 };
 
 const anchorMatchers: Record<BusinessId, (tags: Record<string, string>) => boolean> = {
@@ -154,6 +159,9 @@ const anchorMatchers: Record<BusinessId, (tags: Record<string, string>) => boole
   barber: (tags) => ["school", "college", "marketplace"].includes(tags.amenity ?? "")
     || ["apartments", "residential", "commercial"].includes(tags.building ?? "")
     || Boolean(tags.office),
+  angkringan: (tags) => ["college", "university", "marketplace"].includes(tags.amenity ?? "")
+    || ["dormitory", "apartments", "residential"].includes(tags.building ?? "")
+    || Boolean(tags.public_transport),
 };
 
 const elementCoordinates = (element: OsmElement) => {
@@ -247,7 +255,7 @@ export const analyzeOsmSurvey = ({
 export const buildOverpassQuery = (lat: number, lng: number, radius: number) =>
   `[out:json][timeout:20][maxsize:20971520];(`
   + `nwr(around:${radius},${lat},${lng})["shop"~"^(laundry|convenience|supermarket|general|beverages|hairdresser|video_games)$"];`
-  + `nwr(around:${radius},${lat},${lng})["amenity"~"^(school|college|university|marketplace|hospital|clinic|fast_food|cafe|internet_cafe)$"];`
+  + `nwr(around:${radius},${lat},${lng})["amenity"~"^(school|college|university|marketplace|hospital|clinic|fast_food|cafe|restaurant|internet_cafe)$"];`
   + `nwr(around:${radius},${lat},${lng})["leisure"~"^(amusement_arcade|fitness_centre|sports_centre)$"];`
   + `nwr(around:${radius},${lat},${lng})["craft"="laundry"];`
   + `nwr(around:${radius},${lat},${lng})["office"];`

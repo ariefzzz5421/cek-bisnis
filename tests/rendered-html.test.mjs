@@ -41,7 +41,7 @@ test("server-renders the all-Indonesia location survey", async () => {
 });
 
 test("every business has a working routed analysis page", async () => {
-  assert.equal(businessData.businesses.length, 7);
+  assert.equal(businessData.businesses.length, 8);
   assert.equal(businessData.cities.length, 12);
 
   for (const business of businessData.businesses) {

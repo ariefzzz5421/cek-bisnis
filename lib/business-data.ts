@@ -7,7 +7,8 @@ export type BusinessId =
   | "game"
   | "gym"
   | "coffee"
-  | "barber";
+  | "barber"
+  | "angkringan";
 
 export type Source = {
   id: string;

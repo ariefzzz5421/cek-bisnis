@@ -1,4 +1,5 @@
 import { ArrowUpRight, Info, Lightbulb, PackageCheck } from "lucide-react";
+import { MarketplaceMark } from "@/components/MarketplaceMark";
 import { formatMoney, type Business } from "@/lib/business-data";
 import { getBusinessDetail, getEquipmentSources } from "@/lib/business-details";
 
@@ -59,6 +60,7 @@ export function EquipmentCatalog({ business }: { business: Business }) {
                         data-store={source.id}
                         aria-label={`Cari ${item.item} di ${source.name}`}
                       >
+                        <MarketplaceMark id={source.id} />
                         {source.name}
                         <ArrowUpRight size={14} aria-hidden="true" />
                       </a>

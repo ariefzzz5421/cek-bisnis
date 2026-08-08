@@ -1336,6 +1336,205 @@
           "units": 30
         }
       ]
+    },
+    {
+      "id": "angkringan",
+      "slug": "angkringan",
+      "name": "Angkringan Gerobak",
+      "short": "Angkringan",
+      "category": "Kuliner kaki lima",
+      "accent": "#F4B860",
+      "oneLine": "Modal paling ringan di situs ini; menang dari lokasi, jam buka, dan pelanggan langganan.",
+      "description": "Gerobak atau lapak yang buka sore sampai tengah malam dengan nasi kucing, aneka sate tusuk, gorengan, dan minuman hangat. Harga per item sangat rendah, jadi yang menentukan bukan margin per porsi melainkan jumlah orang yang duduk dan berapa lama mereka bertahan.",
+      "idealFor": "Pemilik yang siap kerja malam dan mau menjaga konsistensi rasa serta kebersihan setiap hari.",
+      "format": "Gerobak plus lapak 12-20 m2, tikar dan kursi panjang, 1 pembantu, buka 16.00-24.00.",
+      "capex": [
+        7,
+        28
+      ],
+      "fixedBase": 3.5,
+      "rentBase": 0.9,
+      "staffCount": 1,
+      "staffCostBase": 2.0,
+      "variableRate": 0.55,
+      "avgTicket": 0.012,
+      "targetRevenue": 15,
+      "trafficMode": "daily",
+      "trafficLabel": "pembeli per malam",
+      "marginLabel": "Margin kontribusi 45%",
+      "idealRadius": "300-800 m",
+      "locationSignal": "Kos, kampus, terminal, pasar malam, jalur pulang kerja, trotoar lebar",
+      "equipment": [
+        {
+          "item": "Gerobak kayu atau besi",
+          "range": "Rp3-7 jt",
+          "note": "Komponen terbesar; pilih yang atapnya benar-benar tahan hujan."
+        },
+        {
+          "item": "Tikar, kursi panjang, meja lipat",
+          "range": "Rp1,5-4 jt",
+          "note": "Kapasitas duduk menentukan omzet, bukan ukuran gerobak."
+        },
+        {
+          "item": "Peralatan masak dan bakar",
+          "range": "Rp1,5-3 jt",
+          "note": "Anglo arang plus kompor gas cadangan saat hujan."
+        },
+        {
+          "item": "Termos, teko, gelas, piring",
+          "range": "Rp1-2,5 jt",
+          "note": "Beli lebih agar tidak berhenti mencuci saat ramai."
+        },
+        {
+          "item": "Terpal, lampu, genset kecil",
+          "range": "Rp1,5-4 jt",
+          "note": "Penerangan terang menaikkan rasa aman dan lama duduk."
+        },
+        {
+          "item": "Stok bahan awal",
+          "range": "Rp1,5-3 jt",
+          "note": "Belanja harian, bukan mingguan, supaya tidak ada sisa."
+        },
+        {
+          "item": "Izin lapak dan retribusi awal",
+          "range": "Rp0,5-2 jt",
+          "note": "Urus ke RT, RW, dan pengelola lahan sebelum menata."
+        },
+        {
+          "item": "Kas operasional 1 bulan",
+          "range": "Rp2-4 jt",
+          "note": "Cuaca buruk seminggu bisa menghabiskan kas tipis."
+        }
+      ],
+      "dailyOps": [
+        "Belanja bahan pagi dan cek harga",
+        "Siapkan nasi kucing dan tusukan",
+        "Tata lapak dan nyalakan anglo",
+        "Layani dan jaga kebersihan meja",
+        "Hitung sisa dagangan dan setoran"
+      ],
+      "checklist": [
+        "Hitung kursi terisi jam 19.00-21.00",
+        "Cek izin lahan dan retribusi",
+        "Audit harga 10 angkringan sekitar",
+        "Pastikan akses air dan pembuangan",
+        "Siapkan rencana saat hujan"
+      ],
+      "risks": [
+        "Hujan memangkas omzet satu malam penuh",
+        "Penertiban lapak dan sengketa lahan",
+        "Sisa dagangan basi jika belanja berlebih",
+        "Ketergantungan pada satu juru masak"
+      ],
+      "plan90": [
+        {
+          "phase": "Hari 1-14",
+          "title": "Kunci titik dan izin",
+          "actions": [
+            "Survei 3 titik jam 19.00",
+            "Urus izin RT dan lahan",
+            "Uji 15 menu inti"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Buka dan rapikan porsi",
+          "actions": [
+            "Buka 6 malam seminggu",
+            "Catat sisa tiap malam",
+            "Kunci 3 pemasok tetap"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Naikkan lama duduk",
+          "actions": [
+            "Tambah kursi dan lampu",
+            "Paket hemat jam sepi",
+            "Uji buka lebih awal"
+          ]
+        }
+      ],
+      "permits": [
+        "Izin lokasi dari RT, RW, atau pengelola lahan",
+        "Retribusi pedagang kaki lima daerah",
+        "NIB lewat OSS untuk usaha mikro",
+        "Sertifikat penyuluhan keamanan pangan"
+      ],
+      "sourceIds": [
+        "bps-imk",
+        "bi-retail",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Kaki lima margin per porsi kecil, hidup dari volume dan lama duduk",
+        "priceBasis": "Rp2.000-6.000 per item; rata-rata Rp12.000 per pembeli",
+        "cashCycle": "Tunai penuh setiap malam, belanja bahan tunai setiap pagi.",
+        "streams": [
+          {
+            "name": "Nasi kucing dan lauk bungkus",
+            "share": 38
+          },
+          {
+            "name": "Sate tusuk dan gorengan",
+            "share": 37
+          },
+          {
+            "name": "Minuman hangat dan sachet",
+            "share": 25
+          }
+        ],
+        "costDrivers": [
+          "Belanja bahan harian",
+          "Arang, gas, dan es",
+          "Retribusi dan sewa lapak"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Pembeli per malam",
+          "target": "45+ orang",
+          "note": "Di bawah 25 orang lapak tidak menutup biaya."
+        },
+        {
+          "label": "Rata-rata belanja",
+          "target": "Rp12.000+",
+          "note": "Naikkan lewat gorengan dan minuman, bukan harga nasi."
+        },
+        {
+          "label": "Sisa dagangan",
+          "target": "di bawah 8%",
+          "note": "Belanja harian, bukan mingguan."
+        },
+        {
+          "label": "Kursi terisi jam sibuk",
+          "target": "70%+ pukul 19.00-21.00",
+          "note": "Ukur tiga malam berturut-turut sebelum menambah kursi."
+        },
+        {
+          "label": "Malam buka per bulan",
+          "target": "26 malam",
+          "note": "Hujan dan libur memangkas omzet paling cepat."
+        }
+      ],
+      "bepMonths": [
+        3,
+        9
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 25
+        },
+        {
+          "name": "Realistis",
+          "units": 42
+        },
+        {
+          "name": "Agresif",
+          "units": 62
+        }
+      ]
     }
   ],
   "cities": [
@@ -1364,7 +1563,8 @@
         "game": 78,
         "gym": 67,
         "coffee": 73,
-        "barber": 82
+        "barber": 82,
+        "angkringan": 86
       }
     },
     {
@@ -1392,7 +1592,8 @@
         "game": 83,
         "gym": 86,
         "coffee": 86,
-        "barber": 81
+        "barber": 81,
+        "angkringan": 82
       }
     },
     {
@@ -1420,7 +1621,8 @@
         "game": 78,
         "gym": 88,
         "coffee": 84,
-        "barber": 82
+        "barber": 82,
+        "angkringan": 71
       }
     },
     {
@@ -1448,7 +1650,8 @@
         "game": 87,
         "gym": 85,
         "coffee": 90,
-        "barber": 84
+        "barber": 84,
+        "angkringan": 84
       }
     },
     {
@@ -1476,7 +1679,8 @@
         "game": 90,
         "gym": 78,
         "coffee": 88,
-        "barber": 83
+        "barber": 83,
+        "angkringan": 93
       }
     },
     {
@@ -1504,7 +1708,8 @@
         "game": 89,
         "gym": 80,
         "coffee": 86,
-        "barber": 84
+        "barber": 84,
+        "angkringan": 90
       }
     },
     {
@@ -1532,7 +1737,8 @@
         "game": 80,
         "gym": 82,
         "coffee": 81,
-        "barber": 83
+        "barber": 83,
+        "angkringan": 85
       }
     },
     {
@@ -1560,7 +1766,8 @@
         "game": 81,
         "gym": 72,
         "coffee": 79,
-        "barber": 84
+        "barber": 84,
+        "angkringan": 92
       }
     },
     {
@@ -1588,7 +1795,8 @@
         "game": 82,
         "gym": 83,
         "coffee": 85,
-        "barber": 86
+        "barber": 86,
+        "angkringan": 76
       }
     },
     {
@@ -1616,7 +1824,8 @@
         "game": 81,
         "gym": 84,
         "coffee": 84,
-        "barber": 85
+        "barber": 85,
+        "angkringan": 78
       }
     },
     {
@@ -1644,7 +1853,8 @@
         "game": 74,
         "gym": 89,
         "coffee": 91,
-        "barber": 86
+        "barber": 86,
+        "angkringan": 72
       }
     },
     {
@@ -1672,7 +1882,8 @@
         "game": 82,
         "gym": 87,
         "coffee": 85,
-        "barber": 84
+        "barber": 84,
+        "angkringan": 74
       }
     }
   ]

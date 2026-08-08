@@ -3009,3 +3009,200 @@ summary {
 .download-note { margin: var(--space-md) 0 0; color: var(--color-ink-2); font-size: var(--text-xs); }
 .download-error { display: flex; margin: var(--space-sm) 0 0; gap: var(--space-2xs); color: var(--color-danger); font-size: var(--text-xs); }
 .download-error svg { flex: 0 0 auto; margin-top: 0.15rem; }
+
+/* ====================================================================== */
+/* Kolom panduan: angka dan teks diperbesar agar terbaca sekilas          */
+/* ====================================================================== */
+
+.guide-columns { gap: var(--space-xl); }
+.guide-columns > article { min-width: 0; }
+
+.guide-title { padding: var(--space-xl) var(--space-xl) var(--space-lg); align-items: center; gap: var(--space-sm); }
+.guide-title svg { width: 1.5rem; height: 1.5rem; flex: 0 0 auto; }
+/* `--text-xl` memaksa judul pecah dua baris di kolom selebar ini; `--text-lg`
+ * sudah lebih besar dari sebelumnya dan tetap muat satu baris. */
+.guide-title h3 { font-size: var(--text-lg); letter-spacing: -0.03em; }
+
+/* Baris memakai kolom tetap untuk badge angka supaya seluruh teks rata kiri
+ * pada satu garis, berapa pun jumlah digitnya. */
+.guide-row.compact {
+  display: grid;
+  grid-template-columns: 2.25rem minmax(0, 1fr);
+  min-height: 4.25rem;
+  padding: var(--space-lg) var(--space-xl);
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--text-base);
+}
+
+.guide-row.compact > span,
+.guide-row.compact > svg {
+  display: grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  font-size: var(--text-sm);
+}
+
+.guide-row.compact > svg { width: 1.35rem; height: 1.35rem; }
+/* globals.css memasang `font-size: 11px` pada `.guide-row b`, jadi ukurannya
+ * harus dinyatakan ulang di sini — mewarisi dari baris saja tidak cukup. */
+.guide-row.compact b { font-size: var(--text-base); font-weight: 600; line-height: 1.4; }
+
+/* Ubin identitas marketplace di tautan belanja alat. */
+.marketplace-mark {
+  display: inline-grid;
+  flex: 0 0 auto;
+  place-items: center;
+  background: var(--brand);
+  color: var(--brand-ink);
+}
+
+.marketplace-mark b { font-family: var(--font-mono); font-size: 0.6rem; font-weight: 800; letter-spacing: -0.03em; }
+.marketplace-mark img { width: 100%; height: 100%; object-fit: contain; }
+
+/* ====================================================================== */
+/* Halaman detail waralaba                                                */
+/* ====================================================================== */
+
+.franchise-detail-hero { padding: var(--space-2xl) clamp(1.5rem, 6vw, 6rem) var(--space-3xl); background: var(--color-paper-2); }
+.franchise-detail-back { display: inline-flex; align-items: center; gap: var(--space-2xs); color: var(--color-muted); font-size: var(--text-sm); font-weight: 650; }
+.franchise-detail-back:hover { color: var(--color-ink); }
+
+.franchise-detail-lockup { display: flex; align-items: center; margin-top: var(--space-lg); gap: var(--space-md); }
+.franchise-detail-lockup > div { min-width: 0; }
+.franchise-detail-lockup p { margin: 0; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.06em; text-transform: uppercase; }
+.franchise-detail-lockup h1 { margin: var(--space-2xs) 0 0; font-size: clamp(2.25rem, 6vw, 3.75rem); letter-spacing: -0.045em; line-height: 1.02; }
+.franchise-detail-lede { max-width: 62ch; margin: var(--space-lg) 0 0; color: var(--color-ink-2); font-size: var(--text-md); }
+
+.franchise-detail-numbers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: var(--space-xl) 0 0; border-top: var(--rule-hair) solid var(--color-rule); }
+.franchise-detail-numbers > div { min-width: 0; padding: var(--space-md) 0; border-bottom: var(--rule-hair) dashed var(--color-rule); }
+.franchise-detail-numbers > div:nth-child(odd) { padding-right: var(--space-md); border-right: var(--rule-hair) dashed var(--color-rule); }
+.franchise-detail-numbers > div:nth-child(even) { padding-left: var(--space-md); }
+.franchise-detail-numbers dt { display: flex; align-items: center; gap: var(--space-2xs); color: var(--color-muted); font-size: var(--text-xs); }
+.franchise-detail-numbers dt svg { flex: 0 0 auto; color: var(--color-cyan-deep); }
+.franchise-detail-numbers dd { margin: var(--space-2xs) 0 0; color: var(--color-ink); font-family: var(--font-mono); font-size: var(--text-base); font-weight: 800; letter-spacing: -0.03em; overflow-wrap: anywhere; }
+
+.franchise-article { display: grid; grid-template-columns: minmax(0, 1fr); padding: var(--space-3xl) clamp(1.5rem, 6vw, 6rem); gap: var(--space-2xl); background: var(--color-paper); }
+.franchise-article__body { min-width: 0; }
+.franchise-article__body > section { margin-bottom: var(--space-2xl); }
+.franchise-article__body h2 { margin: 0 0 var(--space-sm); font-size: var(--text-xl); letter-spacing: -0.03em; }
+.franchise-article__body p { max-width: 68ch; margin: 0; color: var(--color-ink-2); font-size: var(--text-md); line-height: 1.65; }
+.franchise-article__note { display: flex; margin-top: var(--space-md) !important; gap: var(--space-2xs); color: var(--color-muted) !important; font-size: var(--text-sm) !important; }
+.franchise-article__note svg { flex: 0 0 auto; margin-top: 0.2rem; }
+
+.franchise-cost-table { margin-top: var(--space-md); overflow-x: auto; background: var(--color-paper-2); }
+.franchise-cost-table table { width: 100%; border-collapse: collapse; font-size: var(--text-sm); }
+.franchise-cost-table th,
+.franchise-cost-table td { padding: var(--space-sm) var(--space-md); border-bottom: var(--rule-hair) dashed var(--color-rule); text-align: left; vertical-align: top; }
+.franchise-cost-table thead th { background: var(--color-ink); color: var(--color-paper); font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.franchise-cost-table tbody th { color: var(--color-ink); font-weight: 700; }
+.franchise-cost-table td { color: var(--color-ink-2); }
+.franchise-cost-table td.num { color: var(--color-ink); font-family: var(--font-mono); font-weight: 800; white-space: nowrap; }
+
+.franchise-verdict { padding: var(--space-lg); background: var(--color-accent-soft); }
+.franchise-verdict h2 { font-size: var(--text-lg); }
+
+.franchise-article__side { display: grid; align-content: start; min-width: 0; gap: var(--space-lg); }
+.franchise-side-card { padding: var(--space-lg); background: var(--color-paper-2); }
+.franchise-side-card h3 { display: flex; align-items: center; margin: 0 0 var(--space-sm); padding-bottom: var(--space-sm); gap: var(--space-2xs); border-bottom: var(--rule-hair) solid var(--color-rule); color: var(--color-ink); font-size: var(--text-base); text-transform: uppercase; }
+.franchise-side-card h3 svg { flex: 0 0 auto; color: var(--color-cyan-deep); }
+.franchise-side-card ul { margin: 0; padding: 0; list-style: none; }
+.franchise-side-card li { display: flex; align-items: flex-start; padding: var(--space-2xs) 0; gap: var(--space-2xs); color: var(--color-ink-2); font-size: var(--text-sm); }
+.franchise-side-card li svg { flex: 0 0 auto; margin-top: 0.2rem; color: var(--color-success); }
+.franchise-side-card p { margin: 0; color: var(--color-muted); font-size: var(--text-xs); line-height: 1.55; }
+.franchise-side-card a { color: var(--color-ink); text-decoration: underline; }
+
+.franchise-side-card--docs { background: var(--color-cyan-soft); }
+.franchise-doc-links { display: grid; margin-top: var(--space-md); gap: var(--space-2xs); }
+.franchise-doc-links a { display: flex; align-items: center; min-height: 2.75rem; padding: var(--space-xs) var(--space-sm); gap: var(--space-xs); border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); font-size: var(--text-sm); font-weight: 650; text-decoration: none; }
+.franchise-doc-links a:hover { background: var(--color-accent); }
+.franchise-doc-links svg { flex: 0 0 auto; color: var(--color-cyan-deep); }
+.franchise-side-card__disclaimer { margin-top: var(--space-md) !important; padding-top: var(--space-sm); border-top: var(--rule-hair) dashed var(--color-rule); }
+
+.franchise-related { padding: var(--space-3xl) clamp(1.5rem, 6vw, 6rem); background: var(--color-paper-2); }
+.franchise-related__grid { display: grid; grid-template-columns: minmax(0, 1fr); margin-top: var(--space-xl); gap: var(--space-md); }
+.franchise-related__grid a { display: flex; align-items: center; padding: var(--space-md); gap: var(--space-md); background: var(--color-paper); color: var(--color-ink); }
+.franchise-related__grid a > div { flex: 1; min-width: 0; }
+.franchise-related__grid b { display: block; font-size: var(--text-base); }
+.franchise-related__grid small { display: block; margin-top: var(--space-3xs, 0.15rem); color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs); }
+
+.franchise-card__actions { display: flex; margin-top: auto; gap: var(--space-2xs); }
+.franchise-card__actions .franchise-card__toggle { flex: 1; margin-top: 0; justify-content: center; }
+.franchise-card__more { display: inline-flex; align-items: center; justify-content: center; min-height: 2.75rem; padding: 0 var(--space-md); gap: var(--space-2xs); border: var(--rule-hair) solid var(--color-rule); background: var(--color-paper-2); color: var(--color-ink); font-size: var(--text-sm); font-weight: 700; white-space: nowrap; }
+.franchise-card__more:hover { background: var(--color-cyan); }
+
+@media (min-width: 64rem) {
+  .franchise-detail-numbers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .franchise-detail-numbers > div:nth-child(odd) { padding-right: var(--space-md); border-right: var(--rule-hair) dashed var(--color-rule); }
+  .franchise-detail-numbers > div:nth-child(3n) { border-right: 0; }
+  .franchise-article { grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.45fr); }
+  .franchise-related__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ====================================================================== */
+/* Halaman peringkat                                                      */
+/* ====================================================================== */
+
+.rank-hero { display: grid; grid-template-columns: minmax(0, 1fr); padding: var(--space-3xl) clamp(1.5rem, 6vw, 6rem); gap: var(--space-2xl); background: var(--color-paper); }
+.rank-hero h1 { margin: var(--space-md) 0 0; font-size: clamp(2.5rem, 7vw, 4.5rem); letter-spacing: -0.045em; line-height: 1.02; }
+.rank-hero > div > p:last-child { max-width: 48ch; margin: var(--space-md) 0 0; color: var(--color-ink-2); }
+.rank-hero__note { align-self: start; padding: var(--space-lg); background: var(--color-pear-soft); color: var(--color-ink-2); }
+.rank-hero__note > div { display: flex; align-items: center; gap: var(--space-xs); color: var(--color-ink); }
+.rank-hero__note svg { flex: 0 0 auto; color: var(--color-pear-deep); }
+.rank-hero__note p { margin: var(--space-sm) 0 0; font-size: var(--text-sm); }
+.rank-hero__warn { display: flex; padding-top: var(--space-sm); gap: var(--space-2xs); border-top: var(--rule-hair) dashed var(--color-rule); color: var(--color-muted); font-size: var(--text-xs) !important; }
+.rank-hero__warn svg { margin-top: 0.15rem; color: var(--color-danger); }
+
+.rank-boards { padding: var(--space-3xl) clamp(1.5rem, 6vw, 6rem); background: var(--color-paper-2); }
+.rank-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-xl); }
+
+.rank-board { display: flex; flex-direction: column; min-width: 0; padding: var(--space-lg); background: var(--color-paper); }
+.rank-board header { display: flex; align-items: center; padding-bottom: var(--space-sm); gap: var(--space-xs); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.rank-board header svg { flex: 0 0 auto; color: var(--color-pear-deep); }
+.rank-board h3 { margin: 0; color: var(--color-ink); font-size: var(--text-lg); letter-spacing: -0.03em; }
+.rank-board__measure { margin: var(--space-sm) 0 var(--space-md); color: var(--color-muted); font-size: var(--text-xs); line-height: 1.5; }
+
+.rank-board ol { margin: 0; padding: 0; list-style: none; }
+.rank-board li { border-top: var(--rule-hair) dashed var(--color-rule); }
+.rank-board li a { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto; align-items: center; min-height: 3.75rem; padding: var(--space-sm) 0; gap: var(--space-sm); color: var(--color-ink); }
+.rank-board li a:hover { background: var(--color-accent-soft); }
+/* Warna angka dihitung dari warna merek (lihat lib/leaderboard.ts). Untuk
+ * sebagian merah merek, tinta hitam maupun putih sama-sama di bawah 4,5:1,
+ * jadi angkanya dirender minimal 19px tebal agar masuk ambang teks besar
+ * WCAG yang syaratnya 3:1. */
+.rank-board__pos { display: grid; width: 2.5rem; height: 2.5rem; place-items: center; background: var(--accent, var(--color-accent)); color: var(--accent-ink, var(--color-ink)); font-family: var(--font-mono); font-size: 1.2rem; font-weight: 800; letter-spacing: -0.06em; }
+.rank-board__copy { min-width: 0; }
+.rank-board__copy b { display: block; font-size: var(--text-base); }
+.rank-board__copy small { display: block; margin-top: 0.1rem; color: var(--color-muted); font-size: var(--text-xs); }
+.rank-board li em { color: var(--color-ink); font-family: var(--font-mono); font-size: var(--text-base); font-style: normal; font-weight: 800; letter-spacing: -0.03em; text-align: right; white-space: nowrap; }
+.rank-board__caveat { display: flex; margin: var(--space-md) 0 0; padding-top: var(--space-sm); gap: var(--space-2xs); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-muted); font-size: var(--text-xs); }
+.rank-board__caveat svg { flex: 0 0 auto; margin-top: 0.15rem; }
+
+.rank-cities { padding: var(--space-3xl) clamp(1.5rem, 6vw, 6rem); background: var(--color-paper); }
+.rank-city-list { display: grid; margin: var(--space-xl) 0 0; padding: 0; gap: var(--space-md); list-style: none; }
+.rank-city-list li { display: grid; grid-template-columns: 2.5rem minmax(0, 1fr) auto auto; align-items: center; padding: var(--space-md); gap: var(--space-md); background: var(--color-paper-2); }
+.rank-city-list li > div { min-width: 0; }
+.rank-city-list b { display: flex; align-items: center; gap: var(--space-2xs); color: var(--color-ink); font-size: var(--text-md); }
+.rank-city-list b svg { flex: 0 0 auto; color: var(--color-coral-deep); }
+.rank-city-list small { display: block; margin-top: 0.1rem; color: var(--color-muted); font-size: var(--text-xs); }
+.rank-city-list em { color: var(--color-ink); font-family: var(--font-mono); font-size: var(--text-lg); font-style: normal; font-weight: 800; letter-spacing: -0.04em; }
+.rank-city-list em small { display: inline; color: var(--color-muted); font-size: var(--text-xs); font-weight: 500; }
+.rank-city-list li > a { display: grid; width: 2.75rem; height: 2.75rem; place-items: center; background: var(--color-accent); color: var(--color-ink); }
+
+@media (min-width: 48rem) {
+  .rank-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 64rem) {
+  .rank-hero { grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.6fr); }
+  .rank-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Detail entri peringkat dipangkas dua baris agar tinggi barisnya seragam. */
+.rank-board__copy small {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
