@@ -1,5 +1,5 @@
 /**
- * Membangun panduan PDF 4 halaman untuk setiap model usaha.
+ * Membangun panduan PDF 5 halaman untuk setiap model usaha.
  *
  * Sumber data sama persis dengan situs (data/business-data.json + data/business-details.json),
  * jadi angka di PDF tidak akan pernah menyimpang dari angka di web.
@@ -26,7 +26,7 @@ const businessData = JSON.parse(readFileSync(join(root, "data/business-data.json
 const detailsFile = JSON.parse(readFileSync(join(root, "data/business-details.json"), "utf8"));
 const { marketplaces, details } = detailsFile;
 
-const PAGES = 4;
+const PAGES = 5;
 /** Lebar cetak hero ~182 mm dan tile alat 18 mm; ukuran ini setara ~200 dpi. */
 const HERO_PX = 1500;
 const TILE_PX = 260;
@@ -158,7 +158,10 @@ const styles = `
   .sticker.orange { background: var(--orange); }
   .sticker.flat { box-shadow: none; }
 
-  .sectiontitle { display: flex; align-items: baseline; gap: 3mm; margin: 5mm 0 2.5mm; }
+  /* Halaman operasi memuat tiga judul bagian plus disclaimer dan blok penutup.
+   * Dengan margin 5mm, usaha yang daftar operasinya paling panjang (laundry)
+   * meluber ~15px dan terpotong diam-diam oleh overflow:hidden. */
+  .sectiontitle { display: flex; align-items: baseline; gap: 3mm; margin: 3.8mm 0 2.1mm; }
   .sectiontitle h2 { font-size: 15pt; }
   .sectiontitle span { font-family: var(--mono); font-size: 7pt; font-weight: 700; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
 
@@ -253,6 +256,27 @@ const styles = `
   .listbox li { display: grid; grid-template-columns: 5mm 1fr; gap: 1mm; margin-bottom: 1.8mm; font-size: 7.8pt; line-height: 1.35; list-style: none; }
   .listbox li b { font-family: var(--mono); font-size: 7pt; }
   .listbox.risk { background: #ffe0d6; }
+
+  /* --- halaman skema ---------------------------------------------------- */
+  .streamrow { display: grid; grid-template-columns: 1fr 42mm 12mm; align-items: center; gap: 3mm; margin-bottom: 2.2mm; font-size: 8pt; }
+  .streamrow:last-child { margin-bottom: 0; }
+  .streamrow i { display: block; height: 3.4mm; border: 1.4pt solid var(--line); background: var(--paper); }
+  .streamrow i b { display: block; height: 100%; background: var(--cyan); }
+  .streamrow em { font-family: var(--mono); font-style: normal; font-weight: 800; text-align: right; }
+
+  .bepstrip {
+    display: flex;
+    align-items: center;
+    gap: 5mm;
+    margin-top: 5mm;
+    padding: 4mm;
+    border: 2.4pt solid var(--line);
+    background: var(--lime);
+    box-shadow: 2.6mm 2.6mm 0 var(--line);
+  }
+  .bepstrip small { display: block; font-family: var(--mono); font-size: 6.6pt; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #37451a; }
+  .bepstrip b { display: block; margin-top: 1.5mm; font-family: var(--display); font-size: 20pt; letter-spacing: -0.03em; white-space: nowrap; }
+  .bepstrip p { font-size: 8pt; line-height: 1.4; font-weight: 600; }
 
   .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin-top: 3mm; }
   .phase { padding: 3.5mm; border: 2pt solid var(--line); background: var(--paper-2); box-shadow: 2mm 2mm 0 var(--line); }
@@ -457,6 +481,97 @@ function equipmentPage(business, detail, assets) {
   </section>`;
 }
 
+/**
+ * Halaman skema: dari mana omzet datang, KPI yang menentukan, perkiraan omzet
+ * per skenario, dan rentang balik modal khas model usaha ini.
+ *
+ * Omzet skenario dihitung ulang dari `avgTicket`, persis seperti di web, jadi
+ * angkanya tidak bisa menyimpang dari simulator.
+ */
+function schemePage(business, metrics) {
+  const scenarioRevenue = (scenario) =>
+    business.trafficMode === "member"
+      ? scenario.units * business.avgTicket
+      : scenario.units * business.avgTicket * 30;
+
+  const streams = business.scheme.streams
+    .map(
+      (stream) => `
+      <div class="streamrow">
+        <span>${esc(stream.name)}</span>
+        <i><b style="width:${stream.share}%"></b></i>
+        <em>${stream.share}%</em>
+      </div>`,
+    )
+    .join("");
+
+  const kpiRows = business.kpi
+    .map(
+      (item) =>
+        `<tr><td>${esc(item.label)}</td><td class="num">${esc(item.target)}</td><td>${esc(item.note)}</td></tr>`,
+    )
+    .join("");
+
+  const scenarioCards = business.scenarios
+    .map((scenario) => {
+      const revenue = scenarioRevenue(scenario);
+      const profit = revenue * (1 - business.variableRate) - business.fixedBase;
+      const capexMid = (business.capex[0] + business.capex[1]) / 2;
+      const payback = profit > 0 ? `${Math.ceil(capexMid / profit)} bulan` : "belum balik";
+      return `
+      <div class="phase">
+        <small>${esc(scenario.name)}</small>
+        <h3>${esc(money(revenue, 0))}</h3>
+        <p>— ${scenario.units.toLocaleString("id-ID")} ${esc(business.trafficLabel)}</p>
+        <p>— Laba ${profit >= 0 ? "+" : ""}${esc(money(profit))}/bln</p>
+        <p>— Balik modal ${esc(payback)}</p>
+      </div>`;
+    })
+    .join("");
+
+  return `
+  <section class="page">
+    ${topbar(business, "04 · Skema & KPI")}
+
+    <div class="sectiontitle"><h2>Dari mana uangnya datang</h2><span>Model pendapatan</span></div>
+    <div class="callout"><span class="k">SKEMA</span><span>${esc(business.scheme.model)}</span></div>
+
+    <div class="table" style="margin-top:3mm">
+      <table>
+        <tbody>
+          <tr><td>Dasar harga</td><td>${esc(business.scheme.priceBasis)}</td></tr>
+          <tr><td>Siklus kas</td><td>${esc(business.scheme.cashCycle)}</td></tr>
+          <tr><td>Pemicu biaya</td><td>${esc(business.scheme.costDrivers.join(" · "))}</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="sectiontitle"><h2>Komposisi omzet</h2><span>Susun menu atau SKU dari sini</span></div>
+    <div class="listbox">${streams}</div>
+
+    <div class="sectiontitle"><h2>KPI yang wajib dipantau</h2><span>Angka penentu, bukan perasaan</span></div>
+    <div class="table">
+      <table>
+        <thead><tr><th>Indikator</th><th style="text-align:right">Target</th><th>Kenapa penting</th></tr></thead>
+        <tbody>${kpiRows}</tbody>
+      </table>
+    </div>
+
+    <div class="sectiontitle"><h2>Perkiraan omzet per skenario</h2><span>Baseline nasional, faktor kota = 1,00</span></div>
+    <div class="phases">${scenarioCards}</div>
+
+    <div class="bepstrip">
+      <div>
+        <small>POTENSI BALIK MODAL</small>
+        <b>${business.bepMonths[0]}-${business.bepMonths[1]} bulan</b>
+      </div>
+      <p>Rentang khas model usaha ini bila omzet menyentuh skenario realistis dan rasio sewa terkendali. Simulasi baseline panduan ini: ${esc(Number.isFinite(metrics.payback) ? `${Math.ceil(metrics.payback)} bulan` : "belum balik modal")}.</p>
+    </div>
+
+    ${pagefoot(business, 4)}
+  </section>`;
+}
+
 function operationsPage(business, sources) {
   const list = (items, ordered) =>
     items
@@ -483,7 +598,7 @@ function operationsPage(business, sources) {
 
   return `
   <section class="page">
-    ${topbar(business, "04 · Operasi & rencana")}
+    ${topbar(business, "05 · Operasi & rencana")}
 
     <div class="sectiontitle"><h2>Jalankan dan jaga</h2><span>Harian, cek awal, risiko</span></div>
     <div class="cols3">
@@ -512,7 +627,7 @@ function operationsPage(business, sources) {
       <a href="https://cek-bisnis.vercel.app/usaha/${esc(business.slug)}">Buka simulasi &#8599;</a>
     </div>
 
-    ${pagefoot(business, 4)}
+    ${pagefoot(business, 5)}
   </section>`;
 }
 
@@ -533,6 +648,7 @@ function buildHtml(business, assets) {
   ${coverPage(business, metrics, assets)}
   ${economicsPage(business, detail, metrics, topCities)}
   ${equipmentPage(business, detail, assets)}
+  ${schemePage(business, metrics)}
   ${operationsPage(business, sources)}
 </body>
 </html>`;

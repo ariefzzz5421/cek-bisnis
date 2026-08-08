@@ -149,7 +149,7 @@ a dd,
 .quick-pdf,
 .survey-run,
 .map-download,
-.simple-business-download a,
+.simple-business-download :is(a, button),
 .detail-next-business > a,
 .workbench-mobile-cta a {
   border: var(--edge);
@@ -169,7 +169,7 @@ a dd,
 .quick-pdf:hover,
 .survey-run:hover:not(:disabled),
 .map-download:hover,
-.simple-business-download a:hover,
+.simple-business-download :is(a, button):hover,
 .detail-next-business > a:hover,
 .workbench-mobile-cta a:hover {
   transform: translate(2px, 2px);
@@ -181,7 +181,7 @@ a dd,
 .quick-pdf:active,
 .survey-run:active:not(:disabled),
 .map-download:active,
-.simple-business-download a:active,
+.simple-business-download :is(a, button):active,
 .detail-next-business > a:active,
 .workbench-mobile-cta a:active {
   transform: translate(4px, 4px);
@@ -795,13 +795,14 @@ a dd,
 .risk-guide .guide-row svg { color: var(--color-danger); }
 
 .plan-steps article > span { border: var(--edge); border-radius: 0; background: var(--color-ink); color: var(--color-paper); font-family: var(--font-mono); font-weight: 800; }
-.plan-steps article small { font-family: var(--font-mono); text-transform: uppercase; }
-.plan-steps article h3 { font-weight: 800; }
+.plan-steps article small { color: var(--color-neutral); font-family: var(--font-mono); text-transform: uppercase; }
+.plan-steps article h3 { color: var(--color-ink); font-weight: 800; }
+.plan-steps article p { color: var(--color-ink-2); }
 .plan-steps article p svg { color: var(--color-ink); }
 
 .simple-business-download { border-top: var(--edge-thick); background: var(--color-cyan-soft); }
 .simple-business-download img { border: var(--edge-thick); border-radius: 0; box-shadow: var(--shadow-hard); }
-.simple-business-download a { justify-content: flex-start; width: 100%; }
+.simple-business-download :is(a, button) { justify-content: flex-start; width: 100%; }
 
 .compact-sources a {
   border: var(--edge);
@@ -953,3 +954,204 @@ a dd,
     transform: none;
   }
 }
+
+/* ====================================================================== */
+/* 14 · Jaring pengaman keterbacaan                                        */
+/* ====================================================================== */
+/*
+ * Situs ini menumpuk tiga lapis CSS (globals -> workbench -> brutal). Beberapa
+ * blok pernah berlatar gelap lalu diubah jadi terang, tapi `color`-nya tidak
+ * ikut diubah sehingga teks putih menempel di kartu putih. Aturan di bawah ini
+ * mengunci warna teks mengikuti latar kartunya, supaya kejadian yang sama tidak
+ * terulang saat latar diganti lagi.
+ */
+
+/* Kartu berlatar terang: paksa tinta gelap untuk judul dan teks tebal. */
+.plan-steps article,
+.guide-columns article,
+.compact-metric-grid > article,
+.survey-empty,
+.simple-business-download,
+.decision-workspace__copy,
+.business-browser__body {
+  color: var(--color-ink-2);
+}
+
+.plan-steps article h1, .plan-steps article h2, .plan-steps article h3, .plan-steps article h4,
+.guide-columns article h1, .guide-columns article h2, .guide-columns article h3, .guide-columns article h4,
+.compact-metric-grid > article b,
+.survey-empty b,
+.simple-business-download h2,
+.decision-workspace__copy li b,
+.business-browser__body h3 {
+  color: var(--color-ink);
+}
+
+/* Latar gelap: kembalikan warna terang secara eksplisit. */
+.workbench-footer .brand-wordmark b,
+.hero-brand-lockup .brand-wordmark b,
+.scenario-panel .brand-wordmark b {
+  color: var(--color-accent);
+}
+
+.workbench-footer__statement { color: var(--color-paper); }
+
+/* ====================================================================== */
+/* 15 · Kolom angka simulator                                             */
+/* ====================================================================== */
+
+.scenario-scenarios button {
+  border: 2px solid var(--color-dark-3);
+  border-radius: 0;
+  font-family: var(--font-mono);
+  transition: transform var(--dur-micro) linear, background-color var(--dur-micro) linear;
+}
+
+.scenario-scenarios button:hover { transform: translate(1px, 1px); }
+.scenario-scenarios button.active { border-color: var(--color-ink); }
+
+/* Thumb slider harus diberi ukuran eksplisit; tanpa `appearance: none` Chrome
+ * merender kotak kosong kecil yang nyaris tak terlihat di panel hitam. */
+.scenario-panel input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 1.25rem;
+  border: 2px solid var(--color-paper);
+}
+
+.scenario-panel input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.15rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  background: var(--color-paper);
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.scenario-panel input[type="range"]::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--color-ink);
+  border-radius: 0;
+  background: var(--color-paper);
+  cursor: pointer;
+}
+
+.bep-meter__track { border: var(--edge); border-radius: 0; }
+.economics-extra dd { font-weight: 800; }
+
+/* Verdict mengikuti status kas, bukan selalu hijau. */
+.compact-verdict { margin: var(--space-lg); padding: var(--space-md); border: var(--edge); box-shadow: var(--shadow-hard-xs); }
+.compact-verdict i { width: 0.7rem; height: 0.7rem; border: 2px solid var(--color-ink); }
+.verdict-sehat { background: var(--color-success-soft); color: var(--color-ink); }
+.verdict-sehat i { background: var(--color-success); }
+.verdict-tipis { background: var(--color-warning-soft); color: var(--color-ink); }
+.verdict-tipis i { background: var(--color-pear); }
+.verdict-rugi { background: var(--color-danger-soft); color: var(--color-ink); }
+.verdict-rugi i { background: var(--color-danger); }
+.compact-verdict span { color: var(--color-ink-2); font-family: var(--font-body); font-weight: 500; text-transform: none; }
+
+/* ====================================================================== */
+/* 16 · Skema, KPI, dan skenario                                          */
+/* ====================================================================== */
+
+.scheme-section { border-top: var(--edge-thick); }
+.scheme-card,
+.scenario-card {
+  border: var(--edge-thick);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard-sm);
+}
+
+.scheme-card__head h3 { font-weight: 800; }
+.scheme-streams i,
+.scheme-streams i b { border-radius: 0; }
+.scheme-streams i { border: var(--edge); }
+.scheme-card--bep { background: var(--color-accent); }
+.scheme-card--bep .scheme-bep__now b { color: var(--color-ink); }
+
+.kpi-table { border-top: var(--edge); }
+.kpi-row > b { color: var(--color-ink); }
+.kpi-block__title,
+.scenario-block .kpi-block__title { font-weight: 800; text-transform: uppercase; }
+
+.scenario-card.verdict-sehat { background: var(--color-success-soft); }
+.scenario-card.verdict-tipis { background: var(--color-warning-soft); }
+.scenario-card.verdict-rugi { background: var(--color-danger-soft); }
+.scenario-card footer { color: var(--color-ink); }
+
+/* ====================================================================== */
+/* 17 · Halaman waralaba                                                  */
+/* ====================================================================== */
+
+.franchise-hero,
+.franchise-browser,
+.franchise-compare,
+.franchise-sources { border-top: var(--edge-thick); }
+
+.franchise-hero__copy h1 { font-weight: 800; letter-spacing: -0.05em; }
+.franchise-hero__note { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+
+.franchise-filter-group button {
+  border: var(--edge);
+  border-radius: 0;
+  font-weight: 700;
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+
+.franchise-filter-group button:hover { transform: translate(1px, 1px); }
+.franchise-filter-group button.active { box-shadow: var(--shadow-hard-xs); }
+.franchise-filter-selects select { border: var(--edge); border-radius: 0; font-weight: 700; }
+
+.franchise-card {
+  border: var(--edge-thick);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard-sm);
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+
+.franchise-card:hover { transform: translate(-2px, -2px); box-shadow: var(--shadow-hard); }
+.franchise-card.is-open { box-shadow: var(--shadow-hard); }
+
+/* Ubin merek: kotak dengan garis tinta, bukan lingkaran lembut. */
+.franchise-logo { border: var(--edge); border-radius: 0; }
+
+.franchise-card__numbers dd { font-weight: 800; }
+.franchise-card__toggle {
+  border: var(--edge);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard-xs);
+  font-weight: 800;
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+
+.franchise-card__toggle:hover { transform: translate(2px, 2px); box-shadow: none; }
+.franchise-card__detail h4 { font-weight: 800; }
+
+.franchise-table-wrap { border: var(--edge-thick); box-shadow: var(--shadow-hard-sm); }
+.franchise-table thead th { border-bottom: var(--edge); }
+.franchise-table tbody tr:hover td,
+.franchise-table tbody tr:hover th { background: var(--color-accent-soft); }
+
+.franchise-sources nav a { border-bottom: 2px solid var(--color-dark-3); font-weight: 700; }
+
+/* Kartu waralaba di daftar jenis usaha dibedakan warnanya supaya jelas ini
+ * rute lain, bukan halaman analisis usaha mandiri. */
+.business-browser__item--franchise .business-browser__body { background: var(--color-cyan-soft); }
+.business-browser__item--franchise .business-browser__media span { background: var(--color-cyan); }
+
+/* Hand-off AI mengikuti gaya tombol keras yang sama dengan tombol lain. */
+.survey-ai { border: var(--edge); }
+.survey-ai__buttons button {
+  border: var(--edge);
+  border-radius: 0;
+  box-shadow: var(--shadow-hard-xs);
+  font-weight: 800;
+  transition: transform var(--dur-micro) linear, box-shadow var(--dur-micro) linear;
+}
+
+.survey-ai__buttons button:hover { transform: translate(2px, 2px); box-shadow: none; }

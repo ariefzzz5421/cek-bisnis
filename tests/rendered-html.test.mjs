@@ -28,7 +28,7 @@ test("server-renders the Cek Bisnis landing page", async () => {
   assert.match(html, /Pilih model usaha/i);
   assert.match(html, /Peta usaha Indonesia/i);
   assert.match(html, /497/i);
-  assert.match(html, /PDF · 3 halaman/i);
+  assert.match(html, /PDF · 5 halaman/i);
 });
 
 test("server-renders the all-Indonesia location survey", async () => {
@@ -51,7 +51,7 @@ test("every business has a working routed analysis page", async () => {
     assert.match(html, new RegExp(business.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.match(html, /HITUNG ANGKA/i);
     assert.match(html, /SURVEI LOKASI/i);
-    assert.match(html, /PDF panduan 3 halaman/i);
+    assert.match(html, /PDF panduan 5 halaman/i);
     assert.match(html, new RegExp(`/equipment/${business.slug}-atlas\\.webp`));
     assert.equal((html.match(/class="equipment-product"/g) ?? []).length, 8, `${business.slug} equipment card count`);
     assert.equal((html.match(/class="equipment-product__body"/g) ?? []).length, 8, `${business.slug} supplier link count`);

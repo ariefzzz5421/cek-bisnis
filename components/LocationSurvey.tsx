@@ -3,6 +3,7 @@
 import { AlertTriangle, Building2, Download, Globe2, LoaderCircle, MapPin, Search, Store, Users, Waypoints } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Map as LeafletMap, LayerGroup } from "leaflet";
+import { SurveyAiHandoff } from "@/components/SurveyAiHandoff";
 import type { Business } from "@/lib/business-data";
 import { formatMoney } from "@/lib/business-data";
 import {
@@ -331,6 +332,15 @@ export function LocationSurvey({ business }: { business: Business }) {
               <p className="survey-coverage">Kepadatan data peta: {result.coverage}% · populasi kota terdekat {selected.place.population > 0 ? selected.place.population.toLocaleString("id-ID") : "-"}</p>
             </>
           )}
+
+          <SurveyAiHandoff
+            business={business}
+            place={selected.place}
+            lat={selected.lat}
+            lng={selected.lng}
+            radius={radius}
+            result={result}
+          />
         </aside>
       </div>
 
