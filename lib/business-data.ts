@@ -28,6 +28,31 @@ export type PlanPhase = {
   actions: string[];
 };
 
+/** Bagaimana usaha ini menghasilkan uang: sumber omzet, dasar harga, siklus kas. */
+export type BusinessScheme = {
+  model: string;
+  priceBasis: string;
+  cashCycle: string;
+  streams: { name: string; share: number }[];
+  costDrivers: string[];
+};
+
+export type BusinessKpi = {
+  label: string;
+  target: string;
+  note: string;
+};
+
+/**
+ * Skenario disimpan sebagai jumlah unit (order/cup/member) dan bukan rupiah,
+ * sehingga omzetnya selalu diturunkan ulang dari `avgTicket`. Dengan begitu
+ * angka di kartu skenario tidak bisa menyimpang dari simulator.
+ */
+export type BusinessScenario = {
+  name: string;
+  units: number;
+};
+
 export type Business = {
   id: BusinessId;
   slug: string;
@@ -59,6 +84,11 @@ export type Business = {
   plan90: PlanPhase[];
   permits: string[];
   sourceIds: string[];
+  scheme: BusinessScheme;
+  kpi: BusinessKpi[];
+  /** Rentang balik modal khas model usaha ini, dari riset lapangan. */
+  bepMonths: [number, number];
+  scenarios: BusinessScenario[];
 };
 
 export type City = {
@@ -125,10 +155,21 @@ export const calculateMetrics = (
   const breakEvenRevenue = fixedCost / (1 - business.variableRate);
   const opex = fixedCost + monthlyRevenue * business.variableRate;
   const profit = monthlyRevenue * (1 - business.variableRate) - fixedCost;
-  const traffic = business.trafficMode === "member"
-    ? Math.ceil(breakEvenRevenue / business.avgTicket)
-    : Math.ceil(breakEvenRevenue / business.avgTicket / 30);
+  /** Member dihitung sebagai stok bulanan, model lain sebagai arus harian. */
+  const unitsFor = (revenue: number) => business.trafficMode === "member"
+    ? Math.ceil(revenue / business.avgTicket)
+    : Math.ceil(revenue / business.avgTicket / 30);
+  const traffic = unitsFor(breakEvenRevenue);
+  const targetTraffic = unitsFor(monthlyRevenue);
   const payback = profit > 0 ? capexMid / profit : Infinity;
+  const variableCost = monthlyRevenue * business.variableRate;
+  const contributionMargin = 1 - business.variableRate;
+  const marginRate = monthlyRevenue > 0 ? profit / monthlyRevenue : 0;
+  const dailyRevenue = monthlyRevenue / 30;
+  const roiPerYear = capexMid > 0 ? (profit * 12) / capexMid : 0;
+  /** >1 berarti target sudah melewati titik impas. */
+  const bepRatio = breakEvenRevenue > 0 ? monthlyRevenue / breakEvenRevenue : 0;
+  const rentToSales = monthlyRevenue > 0 ? rent / monthlyRevenue : 0;
   const health = monthlyRevenue >= breakEvenRevenue * 1.2
     ? "Sehat"
     : monthlyRevenue >= breakEvenRevenue
@@ -149,11 +190,36 @@ export const calculateMetrics = (
     opex,
     profit,
     traffic,
+    targetTraffic,
     payback,
+    variableCost,
+    contributionMargin,
+    marginRate,
+    dailyRevenue,
+    roiPerYear,
+    bepRatio,
+    rentToSales,
     health,
     opportunity: city.scores[business.id],
   };
 };
+
+export type BusinessMetrics = ReturnType<typeof calculateMetrics>;
+
+/** Omzet sebuah skenario, diturunkan dari jumlah unit supaya konsisten dengan simulator. */
+export const scenarioRevenue = (business: Business, scenario: BusinessScenario) =>
+  business.trafficMode === "member"
+    ? scenario.units * business.avgTicket
+    : scenario.units * business.avgTicket * 30;
+
+/** Satuan yang dipakai di kartu skenario, mis. "order per hari". */
+export const trafficUnit = (business: Business) => business.trafficLabel;
+
+export const formatPercent = (ratio: number, decimals = 0) =>
+  `${(ratio * 100).toFixed(decimals).replace(".", ",")}%`;
+
+export const formatMonths = (months: number) =>
+  Number.isFinite(months) ? `${Math.ceil(months)} bulan` : "belum balik";
 
 export const rankedCities = (business: Business) =>
   [...cities].sort((a, b) => b.scores[business.id] - a.scores[business.id]);

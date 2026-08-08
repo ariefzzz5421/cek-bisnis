@@ -1,15 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, FileText, ImageDown, MapPinned, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, FileText, ImageDown, MapPinned, ShieldCheck, Store } from "lucide-react";
 import { BusinessIcon } from "@/components/BusinessIcon";
 import { BusinessTour } from "@/components/BusinessTour";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { businessData, businesses, formatMoney, formatTicket } from "@/lib/business-data";
+import { formatInvestment, franchises } from "@/lib/franchise-data";
 import { indonesiaPlaces, placesMeta, scorePlaceForBusiness } from "@/lib/location-survey";
 
 const featured = businesses[0];
 const mapPlaces = ["Kediri", "Bandung", "Makassar"].map((name) => indonesiaPlaces.find((place) => place.name === name)).filter(Boolean);
+/** Foto franchise minuman dipakai sebagai wajah kartu waralaba di daftar usaha. */
+const franchiseSample = businesses.find((business) => business.id === "franchise") ?? featured;
+const franchiseEntryCost = Math.min(...franchises.map((franchise) => franchise.investment[0]));
 
 export default function Home() {
   return (
@@ -79,6 +83,26 @@ export default function Home() {
               </Link>
             </article>
           ))}
+
+          <article className="business-browser__item business-browser__item--franchise">
+            <Link href="/franchise" aria-label="Bandingkan 20 waralaba Indonesia">
+              <div className="business-browser__media">
+                <Image src={`/businesses/${franchiseSample.slug}.jpg`} alt="Gerai waralaba minuman di Indonesia" width={720} height={480} unoptimized />
+                <span><Store size={18} aria-hidden="true" /> Waralaba siap pakai</span>
+              </div>
+              <div className="business-browser__body">
+                <div>
+                  <h3>Franchise</h3>
+                  <p>Beli sistem yang sudah jalan: {franchises.length} merek dengan modal, fee, royalti, dan BEP yang bisa dibandingkan.</p>
+                </div>
+                <dl>
+                  <div><dt>Modal mulai</dt><dd>{formatInvestment(franchiseEntryCost)}</dd></div>
+                  <div><dt>Merek dibandingkan</dt><dd>{franchises.length}</dd></div>
+                </dl>
+                <span className="business-browser__action">Lihat daftar franchise <ArrowUpRight size={17} aria-hidden="true" /></span>
+              </div>
+            </Link>
+          </article>
         </div>
       </section>
 
@@ -121,8 +145,8 @@ export default function Home() {
           <p>Pilih usaha terlebih dahulu. Dua file tersedia langsung dari halaman analisis.</p>
         </header>
         <div className="download-workspace__rows">
-          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · 4 HALAMAN</small><h3>Panduan usaha lengkap</h3><p>Modal, daftar alat berfoto dengan tautan marketplace, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
-          <article><ImageDown size={24} aria-hidden="true" /><div><small>PNG · PREVIEW</small><h3>Kartu angka utama</h3><p>Modal, omzet, BEP, dan traffic minimum dalam satu gambar.</p></div><span>Tersedia per usaha</span></article>
+          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · 5 halaman</small><h3>Panduan usaha lengkap</h3><p>Modal, daftar alat berfoto dengan tautan marketplace, skema pendapatan, KPI, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
+          <article><ImageDown size={24} aria-hidden="true" /><div><small>PNG · RINGKASAN</small><h3>Satu gambar, semua angka</h3><p>Foto usaha, modal, omzet BEP, skema pendapatan, KPI, dan lama balik modal — dibuat dari simulasi yang sedang kamu buka.</p></div><span>Tersedia per usaha</span></article>
         </div>
       </section>
 

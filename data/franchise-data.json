@@ -1,0 +1,959 @@
+{
+  "updatedAt": "Agustus 2026",
+  "note": "Nilai investasi, fee, dan BEP dirangkum dari publikasi franchisor, media bisnis nasional, dan laporan kemitraan publik. Angka bersifat indikatif dan berubah mengikuti kebijakan pusat, lokasi, serta harga sewa. Selalu minta prospektus penawaran waralaba resmi sebelum menandatangani apa pun.",
+  "disclaimer": "Cek Bisnis tidak berafiliasi, tidak disponsori, dan bukan agen penjualan dari brand mana pun di halaman ini. Nama dan warna merek dipakai sebatas rujukan identifikasi.",
+  "sources": [
+    {
+      "id": "cnbc-alfamart",
+      "title": "CNBC Indonesia - Biaya dan balik modal Alfamart",
+      "url": "https://www.cnbcindonesia.com/market/20260315125214-17-719150/tertarik-punya-alfamart-sendiri-segini-biaya-dan-balik-modal-2026"
+    },
+    {
+      "id": "alfamart-waralaba",
+      "title": "Alfamart - Tipe kerjasama waralaba resmi",
+      "url": "https://waralaba.alfamart.co.id/about/memiliki-alfamart"
+    },
+    {
+      "id": "katadata-indomaret",
+      "title": "Katadata - Rincian biaya dan balik modal Indomaret",
+      "url": "https://katadata.co.id/lifestyle/varia/699d217c30824/rincian-biaya-dan-balik-modal-indomaret-2026"
+    },
+    {
+      "id": "detik-indomaret",
+      "title": "detikFinance - Biaya buka Indomaret sendiri",
+      "url": "https://finance.detik.com/berita-ekonomi-bisnis/d-7874573/biaya-untuk-bikin-indomaret-sendiri-di-2025-termasuk-syaratnya"
+    },
+    {
+      "id": "moka-mixue",
+      "title": "Moka - Panduan modal dan syarat franchise Mixue",
+      "url": "https://www.mokapos.com/blog/franchise-mixue-panduan-lengkap-modal-syarat-dan-keuntungan"
+    },
+    {
+      "id": "moka-esteh",
+      "title": "Moka - Harga modal dan cara daftar Es Teh Indonesia",
+      "url": "https://www.mokapos.com/blog/franchise-es-teh-indonesia"
+    },
+    {
+      "id": "poci",
+      "title": "Es Teh Poci - Program kemitraan resmi",
+      "url": "https://estehpoci.id/jadi-juragan"
+    },
+    {
+      "id": "franchisekopi-jiwa",
+      "title": "Franchise Kopi - Syarat dan biaya kemitraan Janji Jiwa",
+      "url": "https://www.franchisekopi.co.id/franchise-kopi-janji-jiwa/"
+    },
+    {
+      "id": "majalah-coffee",
+      "title": "Majalah Franchise - Daftar franchise coffee shop dan cafe",
+      "url": "https://majalahfranchise.co.id/franchise-coffee-shop-dan-cafe/"
+    },
+    {
+      "id": "kledo-rocket",
+      "title": "Kledo - Syarat dan modal franchise Rocket Chicken",
+      "url": "https://kledo.com/blog/franchise-rocket-chicken/"
+    },
+    {
+      "id": "ocbc-sabana",
+      "title": "OCBC - Syarat, cara daftar, dan biaya Sabana Fried Chicken",
+      "url": "https://www.ocbc.id/id/article/2024/10/24/franchise-sabana-fried-chicken"
+    },
+    {
+      "id": "bisnis-bensu",
+      "title": "Bisnis.com - Biaya franchise Geprek Bensu dan potensi balik modal",
+      "url": "https://entrepreneur.bisnis.com/read/20220914/263/1577494/biaya-franchise-geprek-bensu-terbaru-potensi-balik-modal-hanya-dalam-10-bulan"
+    },
+    {
+      "id": "babarafi",
+      "title": "Kebab Turki Baba Rafi - Paket dan anggaran franchise",
+      "url": "https://www.babarafi.com/franchisebudget"
+    },
+    {
+      "id": "ocbc-k24",
+      "title": "OCBC - Berapa harga franchise Apotek K-24",
+      "url": "https://www.ocbc.id/id/article/2024/10/25/franchise-apotek-k-24"
+    },
+    {
+      "id": "k24-official",
+      "title": "Apotek K-24 - Peluang usaha waralaba resmi",
+      "url": "https://www.apotek-k24.com/berita/110/Peluang-Usaha-Franchise-Apotek-K-24"
+    },
+    {
+      "id": "bisnis-jnt",
+      "title": "Bisnis.com - Cara daftar franchise J&T Express dan harganya",
+      "url": "https://ekonomi.bisnis.com/read/20240102/98/1727644/cara-daftar-franchise-jt-express-dan-harganya"
+    },
+    {
+      "id": "tuwaga-ekspedisi",
+      "title": "Tuwaga - Daftar biaya franchise jasa ekspedisi",
+      "url": "https://tuwaga.id/artikel/biaya-franchise-ekspedisi-2025/"
+    },
+    {
+      "id": "simplyfresh",
+      "title": "Simply Fresh Laundry - Paket franchise laundry kiloan",
+      "url": "https://www.simplyfreshlaundry.com/franchiselaundry/"
+    },
+    {
+      "id": "fortune-laundry",
+      "title": "Fortune Indonesia - 8 franchise laundry terbaik dan harganya",
+      "url": "https://www.fortuneidn.com/business/franchise-laundry-terbaik-00-mv2nm-jjndkv"
+    },
+    {
+      "id": "tantri-franchise",
+      "title": "Tantri - 30 bisnis franchise terbaik dan paling menjanjikan",
+      "url": "https://tantri.id/post/bisnis-franchise-terbaik-paling-menjanjikan-tahun-2025"
+    },
+    {
+      "id": "flei",
+      "title": "FLEI - Franchise & License Expo Indonesia",
+      "url": "https://franchise-expo.co.id/news/franchise-terlaris"
+    },
+    {
+      "id": "klikfranchise-fee",
+      "title": "Klik Franchise - Cara menghitung franchise fee",
+      "url": "https://klikfranchise.com/blog/detail/menghitung-franchise-fee"
+    }
+  ],
+  "categories": [
+    {
+      "id": "minimarket",
+      "name": "Minimarket & retail"
+    },
+    {
+      "id": "minuman",
+      "name": "Minuman & kopi"
+    },
+    {
+      "id": "makanan",
+      "name": "Makanan cepat saji"
+    },
+    {
+      "id": "jasa",
+      "name": "Jasa & logistik"
+    },
+    {
+      "id": "kesehatan",
+      "name": "Kesehatan"
+    }
+  ],
+  "franchises": [
+    {
+      "id": "alfamart",
+      "name": "Alfamart",
+      "category": "minimarket",
+      "brandColor": "#E4002B",
+      "initials": "AM",
+      "officialUrl": "https://waralaba.alfamart.co.id/",
+      "outlets": "20.000+ gerai",
+      "since": 1999,
+      "investment": [
+        300,
+        500
+      ],
+      "investmentNote": "Gerai baru 9 rak (30 m2) sampai 45 rak (100 m2), di luar properti.",
+      "franchiseFee": "Rp45 jt / 5 tahun",
+      "royalty": "Progresif 0-4% dari penjualan bersih",
+      "contractYears": 5,
+      "bepMonths": [
+        36,
+        60
+      ],
+      "monthlyRevenue": [
+        150,
+        300
+      ],
+      "scheme": "Franchisor menyiapkan sistem, pasokan, dan manajemen gerai. Mitra menyediakan lokasi dan modal, lalu berbagi hasil lewat royalti berjenjang yang baru aktif di atas omzet Rp150 jt per bulan.",
+      "kpi": [
+        "Penjualan bersih di atas Rp150 jt/bulan",
+        "Rasio susut barang di bawah 0,3%",
+        "Traffic 400+ struk per hari"
+      ],
+      "requirements": [
+        "Lokasi minimal 30 m2 dengan lebar depan 6 m",
+        "Izin usaha dan bangunan lengkap",
+        "Siap kontrak 5 tahun"
+      ],
+      "sourceIds": [
+        "cnbc-alfamart",
+        "alfamart-waralaba"
+      ]
+    },
+    {
+      "id": "indomaret",
+      "name": "Indomaret",
+      "category": "minimarket",
+      "brandColor": "#0054A6",
+      "initials": "IM",
+      "officialUrl": "https://www.indomaret.co.id/",
+      "outlets": "22.000+ gerai",
+      "since": 1988,
+      "investment": [
+        400,
+        550
+      ],
+      "investmentNote": "Estimasi gerai baru rata-rata Rp494 jt, belum termasuk sewa bangunan.",
+      "franchiseFee": "Rp36 jt / 5 tahun",
+      "royalty": "Progresif 0-4% dari penjualan",
+      "contractYears": 5,
+      "bepMonths": [
+        36,
+        60
+      ],
+      "monthlyRevenue": [
+        150,
+        300
+      ],
+      "scheme": "Paket mencakup franchise fee, renovasi, penambahan daya listrik, dan peralatan gerai. Royalti hanya dipungut setelah omzet melewati Rp175 jt per bulan, sehingga gerai baru punya ruang bernapas.",
+      "kpi": [
+        "Penjualan di atas Rp175 jt/bulan",
+        "Ketersediaan SKU inti di atas 95%",
+        "Selisih stok opname di bawah 0,3%"
+      ],
+      "requirements": [
+        "Lokasi milik sendiri atau sewa jangka panjang",
+        "Modal siap di luar biaya sewa",
+        "Lolos survei kelayakan lokasi"
+      ],
+      "sourceIds": [
+        "katadata-indomaret",
+        "detik-indomaret"
+      ]
+    },
+    {
+      "id": "mixue",
+      "name": "Mixue",
+      "category": "minuman",
+      "brandColor": "#D6001C",
+      "initials": "MX",
+      "officialUrl": "https://mixue.co.id/",
+      "outlets": "2.500+ gerai di Indonesia",
+      "since": 2020,
+      "investment": [
+        800,
+        1500
+      ],
+      "investmentNote": "All-in termasuk konstruksi Rp200-350 jt, mesin Rp170 jt, dan stok awal Rp100 jt.",
+      "franchiseFee": "Deposit ±Rp40 jt + management fee Rp18-24 jt/tahun",
+      "royalty": "Tanpa royalti persentase; wajib beli bahan baku dari pusat",
+      "contractYears": 3,
+      "bepMonths": [
+        12,
+        24
+      ],
+      "monthlyRevenue": [
+        120,
+        250
+      ],
+      "scheme": "Alih-alih memotong omzet, Mixue mengunci keuntungan lewat rantai pasok: seluruh bahan baku dan kemasan dibeli dari pusat. Margin mitra ditentukan volume, bukan harga jual.",
+      "kpi": [
+        "300+ cup per hari",
+        "HPP bahan maksimal 45% omzet",
+        "Lokasi dengan lalu lalang pejalan kaki tinggi"
+      ],
+      "requirements": [
+        "Ruko lokasi ramai, minimal 20-40 m2",
+        "Survei lokasi wajib oleh pusat",
+        "Sanggup stok bahan dari gudang regional"
+      ],
+      "sourceIds": [
+        "moka-mixue",
+        "flei"
+      ]
+    },
+    {
+      "id": "es-teh-indonesia",
+      "name": "Es Teh Indonesia",
+      "category": "minuman",
+      "brandColor": "#0F3D2E",
+      "initials": "ET",
+      "officialUrl": "https://esteh.id/",
+      "outlets": "900+ gerai",
+      "since": 2018,
+      "investment": [
+        330,
+        380
+      ],
+      "investmentNote": "Lisensi ±Rp130 jt ditambah Rp200-250 jt untuk booth atau ruko.",
+      "franchiseFee": "±Rp130 jt (lisensi tahunan)",
+      "royalty": "Termasuk dalam paket lisensi; bahan baku dari pusat",
+      "contractYears": 1,
+      "bepMonths": [
+        12,
+        24
+      ],
+      "monthlyRevenue": [
+        60,
+        130
+      ],
+      "scheme": "Lisensi diperbarui tahunan dan sudah mencakup peralatan, bahan baku awal, serta pelatihan karyawan. Perputaran cepat menjadikan pemilihan titik jauh lebih menentukan daripada ukuran gerai.",
+      "kpi": [
+        "150+ cup per hari",
+        "Rata-rata struk Rp20.000+",
+        "Kontribusi jam 15.00-21.00 di atas 55%"
+      ],
+      "requirements": [
+        "Titik ramai anak muda atau kampus",
+        "Siap perpanjangan lisensi tahunan",
+        "Karyawan mengikuti pelatihan pusat"
+      ],
+      "sourceIds": [
+        "moka-esteh",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "teh-poci",
+      "name": "Es Teh Poci",
+      "category": "minuman",
+      "brandColor": "#E60012",
+      "initials": "TP",
+      "officialUrl": "https://estehpoci.id/jadi-juragan",
+      "outlets": "10.000+ titik",
+      "since": 2001,
+      "investment": [
+        7,
+        20
+      ],
+      "investmentNote": "Paket booth lengkap termasuk peralatan dan bahan baku awal.",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Tanpa royalti bulanan; bahan baku dibeli dari pusat",
+      "contractYears": 1,
+      "bepMonths": [
+        3,
+        8
+      ],
+      "monthlyRevenue": [
+        8,
+        20
+      ],
+      "scheme": "Modal terkecil di daftar ini. Mitra membeli paket booth sekali bayar tanpa cicilan, lalu untung dari selisih harga bahan baku. Cocok untuk uji pasar sebelum masuk model yang lebih berat.",
+      "kpi": [
+        "70+ cup per hari",
+        "Harga jual Rp5.000-8.000 per cup",
+        "Titik dengan lalu lalang pejalan kaki"
+      ],
+      "requirements": [
+        "Lahan booth 2-4 m2",
+        "Pembayaran penuh di muka",
+        "Lokasi strategis disetujui distributor"
+      ],
+      "sourceIds": [
+        "poci",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "janji-jiwa",
+      "name": "Kopi Janji Jiwa",
+      "category": "minuman",
+      "brandColor": "#EE7623",
+      "initials": "JJ",
+      "officialUrl": "https://janjijiwa.com/",
+      "outlets": "1.200+ gerai",
+      "since": 2018,
+      "investment": [
+        200,
+        400
+      ],
+      "investmentNote": "Franchise fee Rp85-150 jt, renovasi dan peralatan Rp100-200 jt, stok awal Rp20-30 jt.",
+      "franchiseFee": "Rp85-150 jt",
+      "royalty": "5-10% dari omzet bulanan",
+      "contractYears": 5,
+      "bepMonths": [
+        12,
+        24
+      ],
+      "monthlyRevenue": [
+        70,
+        160
+      ],
+      "scheme": "Model waralaba penuh: franchise fee di depan plus royalti berjalan dari omzet. Ada juga lini kopi keliling bermodal jauh lebih kecil untuk masuk lebih awal.",
+      "kpi": [
+        "120+ cup per hari",
+        "HPP maksimal 38% omzet",
+        "Royalti + bahan di bawah 48% omzet"
+      ],
+      "requirements": [
+        "Lokasi 15-40 m2 di area ramai",
+        "Mengikuti standar desain dan menu pusat",
+        "Kontrak kemitraan 5 tahun"
+      ],
+      "sourceIds": [
+        "franchisekopi-jiwa",
+        "majalah-coffee"
+      ]
+    },
+    {
+      "id": "point-coffee",
+      "name": "Point Coffee",
+      "category": "minuman",
+      "brandColor": "#1B5E43",
+      "initials": "PC",
+      "officialUrl": "https://www.indomaret.co.id/",
+      "outlets": "1.000+ titik",
+      "since": 2019,
+      "investment": [
+        150,
+        250
+      ],
+      "investmentNote": "Umumnya menempel pada gerai Indomaret, sehingga biaya sewa terpisah bisa ditekan.",
+      "franchiseFee": "Termasuk dalam paket kemitraan",
+      "royalty": "Mengikuti skema kemitraan Indomaret",
+      "contractYears": 5,
+      "bepMonths": [
+        14,
+        28
+      ],
+      "monthlyRevenue": [
+        45,
+        110
+      ],
+      "scheme": "Menumpang traffic minimarket induknya. Biaya akuisisi pelanggan hampir nol karena pembeli sudah berada di dalam gerai, tetapi tiket rata-rata lebih rendah dari kedai mandiri.",
+      "kpi": [
+        "80+ cup per hari",
+        "Attachment rate 6%+ dari pengunjung gerai",
+        "Waste susu di bawah 4%"
+      ],
+      "requirements": [
+        "Menyatu dengan gerai Indomaret",
+        "Barista mengikuti sertifikasi pusat",
+        "Standar menu dan harga terpusat"
+      ],
+      "sourceIds": [
+        "majalah-coffee",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "fore-coffee",
+      "name": "Fore Coffee",
+      "category": "minuman",
+      "brandColor": "#00563F",
+      "initials": "FC",
+      "officialUrl": "https://fore.coffee/",
+      "outlets": "300+ gerai",
+      "since": 2018,
+      "investment": [
+        250,
+        450
+      ],
+      "investmentNote": "Investasi awal ±Rp250 jt untuk format kios; format kafe lebih besar.",
+      "franchiseFee": "Termasuk paket investasi awal",
+      "royalty": "Persentase omzet sesuai perjanjian kemitraan",
+      "contractYears": 5,
+      "bepMonths": [
+        18,
+        36
+      ],
+      "monthlyRevenue": [
+        80,
+        180
+      ],
+      "scheme": "Berat di sisi digital: sebagian besar transaksi datang dari aplikasi dan layanan antar. Mitra membeli akses ke sistem pemesanan dan basis pelanggan yang sudah terbentuk.",
+      "kpi": [
+        "100+ cup per hari",
+        "Porsi order aplikasi 40%+",
+        "Rating layanan antar di atas 4,7"
+      ],
+      "requirements": [
+        "Lokasi perkantoran atau area padat",
+        "Integrasi penuh dengan aplikasi Fore",
+        "Standar mutu biji dan resep pusat"
+      ],
+      "sourceIds": [
+        "majalah-coffee",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "rocket-chicken",
+      "name": "Rocket Chicken",
+      "category": "makanan",
+      "brandColor": "#E4032E",
+      "initials": "RC",
+      "officialUrl": "https://rocketchicken.co.id/",
+      "outlets": "800+ gerai",
+      "since": 2010,
+      "investment": [
+        250,
+        400
+      ],
+      "investmentNote": "Rp300-400 jt untuk Pulau Jawa; mulai Rp250 jt untuk luar Jawa.",
+      "franchiseFee": "Termasuk dalam paket kemitraan",
+      "royalty": "Tanpa royalti persentase; bahan baku dari pusat",
+      "contractYears": 5,
+      "bepMonths": [
+        12,
+        24
+      ],
+      "monthlyRevenue": [
+        70,
+        160
+      ],
+      "scheme": "Mengambil posisi harga di bawah brand ayam global dan menyasar kota lapis dua dan tiga. Paket sudah termasuk peralatan, bahan baku awal, pelatihan, dan perizinan; properti tanggung jawab mitra.",
+      "kpi": [
+        "200+ porsi per hari",
+        "HPP maksimal 45% omzet",
+        "Rasio sewa di bawah 12% omzet"
+      ],
+      "requirements": [
+        "Lokasi 60-100 m2 dengan area makan",
+        "Menyiapkan sendiri sewa atau beli properti",
+        "Lolos studi kelayakan lokasi"
+      ],
+      "sourceIds": [
+        "kledo-rocket",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "sabana",
+      "name": "Sabana Fried Chicken",
+      "category": "makanan",
+      "brandColor": "#F7941D",
+      "initials": "SB",
+      "officialUrl": "https://sabanafriedchicken.com/",
+      "outlets": "3.000+ titik",
+      "since": 2007,
+      "investment": [
+        23,
+        75
+      ],
+      "investmentNote": "Paket booth ±Rp23 jt; total realistis sampai Rp75 jt setelah sewa dan modal kerja.",
+      "franchiseFee": "Rp5 jt (biaya pendaftaran)",
+      "royalty": "Tanpa royalti; wajib ambil bahan baku dari pusat",
+      "contractYears": 1,
+      "bepMonths": [
+        6,
+        14
+      ],
+      "monthlyRevenue": [
+        15,
+        40
+      ],
+      "scheme": "Booth kecil bersertifikat halal dengan harga jual sangat terjangkau. Modal masuk paling rendah di kategori ayam goreng, tetapi margin per porsi tipis sehingga volume harian menentukan.",
+      "kpi": [
+        "80+ porsi per hari",
+        "Harga jual Rp10.000-15.000 per porsi",
+        "Waste ayam di bawah 3%"
+      ],
+      "requirements": [
+        "Lahan booth 4-9 m2",
+        "Ikut pelatihan memasak dan operasional",
+        "Ambil pasokan ayam dari depot resmi"
+      ],
+      "sourceIds": [
+        "ocbc-sabana",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "geprek-bensu",
+      "name": "Geprek Bensu",
+      "category": "makanan",
+      "brandColor": "#ED1C24",
+      "initials": "GB",
+      "officialUrl": "https://geprekbensu.id/",
+      "outlets": "150+ gerai",
+      "since": 2017,
+      "investment": [
+        300,
+        500
+      ],
+      "investmentNote": "Paket kemitraan mencakup lisensi merek, pelatihan, desain gerai, peralatan, dan POS.",
+      "franchiseFee": "±5% dari nilai paket",
+      "royalty": "Royalti tahunan, mis. Rp14 jt untuk paket Rp400 jt",
+      "contractYears": 5,
+      "bepMonths": [
+        10,
+        20
+      ],
+      "monthlyRevenue": [
+        80,
+        170
+      ],
+      "scheme": "Menjual daya tarik merek selebritas dengan menu sempit dan cepat saji. Perpanjangan kontrak dikenakan 85-90% dari biaya awal, jadi hitung biaya siklus penuh, bukan hanya tahun pertama.",
+      "kpi": [
+        "180+ porsi per hari",
+        "HPP maksimal 42% omzet",
+        "Rasio sewa di bawah 15% omzet"
+      ],
+      "requirements": [
+        "Lokasi 50-100 m2",
+        "Mengikuti SOP dapur dan menu pusat",
+        "Kontrak 1-5 tahun dengan biaya perpanjangan"
+      ],
+      "sourceIds": [
+        "bisnis-bensu",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "baba-rafi",
+      "name": "Kebab Turki Baba Rafi",
+      "category": "makanan",
+      "brandColor": "#E30613",
+      "initials": "BR",
+      "officialUrl": "https://www.babarafi.com/franchisebudget",
+      "outlets": "1.300+ outlet di Indonesia",
+      "since": 2003,
+      "investment": [
+        15,
+        200
+      ],
+      "investmentNote": "Paket gerobak dan booth mulai Rp15-20 jt; paket kontainer dan kafe sampai Rp200 jt.",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Bagi hasil 60% mitra : 40% franchisor pada paket tertentu",
+      "contractYears": 5,
+      "bepMonths": [
+        8,
+        18
+      ],
+      "monthlyRevenue": [
+        12,
+        60
+      ],
+      "scheme": "Rentang paket paling lebar di daftar ini, dari gerobak sampai kafe. Cocok untuk naik kelas bertahap: mulai dari booth, lalu pindah format setelah data penjualan terkumpul.",
+      "kpi": [
+        "60+ porsi per hari untuk booth",
+        "HPP maksimal 40% omzet",
+        "Lokasi dengan lalu lalang malam hari"
+      ],
+      "requirements": [
+        "Lahan menyesuaikan paket, mulai 2 m2",
+        "Ikut pelatihan operasional pusat",
+        "Beli bahan baku dari jaringan resmi"
+      ],
+      "sourceIds": [
+        "babarafi",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "mie-gacoan",
+      "name": "Mie Gacoan",
+      "category": "makanan",
+      "brandColor": "#C8102E",
+      "initials": "MG",
+      "officialUrl": "https://miegacoan.co.id/",
+      "outlets": "150+ gerai",
+      "since": 2016,
+      "investment": [
+        125,
+        400
+      ],
+      "investmentNote": "Modal awal dilaporkan mulai Rp125 jt; skala resto penuh jauh lebih besar.",
+      "franchiseFee": "Diinformasikan saat penawaran resmi",
+      "royalty": "Sesuai perjanjian kemitraan",
+      "contractYears": 5,
+      "bepMonths": [
+        12,
+        24
+      ],
+      "monthlyRevenue": [
+        100,
+        250
+      ],
+      "scheme": "Harga per porsi sangat rendah dengan volume sangat tinggi dan antrean panjang di jam makan. Model ini menuntut kapasitas dapur dan tempat duduk, bukan sekadar titik ramai.",
+      "kpi": [
+        "400+ porsi per hari",
+        "Perputaran meja 4x+ per jam sibuk",
+        "Waktu saji di bawah 10 menit"
+      ],
+      "requirements": [
+        "Lokasi luas dengan area parkir",
+        "Kapasitas dapur tinggi",
+        "Verifikasi langsung ke pusat sebelum transaksi"
+      ],
+      "sourceIds": [
+        "flei",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "apotek-k24",
+      "name": "Apotek K-24",
+      "category": "kesehatan",
+      "brandColor": "#009A44",
+      "initials": "K24",
+      "officialUrl": "https://www.apotek-k24.com/",
+      "outlets": "500+ apotek",
+      "since": 2002,
+      "investment": [
+        1000,
+        1400
+      ],
+      "investmentNote": "Total setup ±Rp1,2 miliar termasuk stok obat; franchise fee Rp132 jt untuk 6 tahun.",
+      "franchiseFee": "Rp132 jt / 6 tahun",
+      "royalty": "1,8% dari omzet bulanan",
+      "contractYears": 6,
+      "bepMonths": [
+        36,
+        48
+      ],
+      "monthlyRevenue": [
+        180,
+        400
+      ],
+      "scheme": "Buka 24 jam dengan harga sama siang dan malam. Modal terbesar bukan renovasi melainkan stok obat, dan usaha ini terikat regulasi apoteker penanggung jawab.",
+      "kpi": [
+        "Omzet Rp200 jt+/bulan",
+        "Perputaran stok obat 1,5x/bulan",
+        "Ketersediaan obat inti di atas 90%"
+      ],
+      "requirements": [
+        "Bangunan minimal 60 m2, lebar depan 4 m",
+        "Apoteker penanggung jawab berizin",
+        "Perizinan apotek dari dinas kesehatan"
+      ],
+      "sourceIds": [
+        "ocbc-k24",
+        "k24-official"
+      ]
+    },
+    {
+      "id": "jnt",
+      "name": "J&T Express",
+      "category": "jasa",
+      "brandColor": "#E60012",
+      "initials": "JT",
+      "officialUrl": "https://www.jet.co.id/",
+      "outlets": "6.000+ titik layanan",
+      "since": 2015,
+      "investment": [
+        10,
+        20
+      ],
+      "investmentNote": "Paket Rp10 jt (neon box, timbangan, sistem) atau Rp20 jt (plus laptop dan printer).",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Tanpa royalti; mitra menerima komisi 20% dari pendapatan",
+      "contractYears": 1,
+      "bepMonths": [
+        4,
+        12
+      ],
+      "monthlyRevenue": [
+        6,
+        20
+      ],
+      "scheme": "Mitra tidak menjual barang, melainkan mendapat komisi dari setiap paket yang masuk. Modal ringan, tetapi pendapatannya langsung terikat pada kepadatan penjual online di sekitar titik.",
+      "kpi": [
+        "100+ paket per hari",
+        "Komisi 20% dari ongkos kirim",
+        "Waktu jemput kurir sesuai jadwal"
+      ],
+      "requirements": [
+        "Ruang depan minimal 3x3 m",
+        "Buka setiap hari termasuk akhir pekan",
+        "Terhubung sistem J&T"
+      ],
+      "sourceIds": [
+        "bisnis-jnt",
+        "tuwaga-ekspedisi"
+      ]
+    },
+    {
+      "id": "sicepat",
+      "name": "SiCepat Ekspres",
+      "category": "jasa",
+      "brandColor": "#ED1C24",
+      "initials": "SC",
+      "officialUrl": "https://sicepat.com/",
+      "outlets": "3.000+ titik layanan",
+      "since": 2014,
+      "investment": [
+        3,
+        12
+      ],
+      "investmentNote": "Tiga pilihan paket kemitraan menyesuaikan anggaran, mulai dari Rp3 jutaan.",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Tanpa royalti; komisi ±Rp2.500 per paket",
+      "contractYears": 1,
+      "bepMonths": [
+        3,
+        10
+      ],
+      "monthlyRevenue": [
+        3,
+        12
+      ],
+      "scheme": "Modal masuk paling ringan di seluruh daftar. Penghasilan dihitung per paket, jadi kelayakannya murni soal volume: 50 paket per hari setara sekitar Rp3,75 jt per bulan.",
+      "kpi": [
+        "50+ paket per hari",
+        "Komisi Rp2.500 per paket",
+        "Nol paket hilang atau rusak"
+      ],
+      "requirements": [
+        "Ruang kecil di lokasi mudah dijangkau",
+        "Timbangan dan komputer dasar",
+        "Jam buka konsisten"
+      ],
+      "sourceIds": [
+        "tuwaga-ekspedisi"
+      ]
+    },
+    {
+      "id": "simply-fresh",
+      "name": "Simply Fresh Laundry",
+      "category": "jasa",
+      "brandColor": "#00A0E3",
+      "initials": "SF",
+      "officialUrl": "https://www.simplyfreshlaundry.com/franchiselaundry/",
+      "outlets": "380+ outlet di 100 kota",
+      "since": 2006,
+      "investment": [
+        45,
+        115
+      ],
+      "investmentNote": "Dua skema: business opportunity mulai Rp55 jt dan franchise penuh sampai Rp115 jt.",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Tanpa royalti pada paket business opportunity",
+      "contractYears": 5,
+      "bepMonths": [
+        10,
+        20
+      ],
+      "monthlyRevenue": [
+        20,
+        45
+      ],
+      "scheme": "Menyediakan mesin, sistem, dan pelatihan sekaligus. Perbedaan utama dengan laundry mandiri adalah SOP dan merek yang sudah dikenal, bukan mesin yang lebih murah.",
+      "kpi": [
+        "70+ kg cucian per hari",
+        "Pelanggan berulang di atas 60%",
+        "Turnaround maksimal 24 jam"
+      ],
+      "requirements": [
+        "Lokasi minimal 20 m2",
+        "Daya listrik 3.500 watt",
+        "Dekat kos, kampus, atau perumahan padat"
+      ],
+      "sourceIds": [
+        "simplyfresh",
+        "fortune-laundry"
+      ]
+    },
+    {
+      "id": "laundryklin",
+      "name": "LaundryKlin",
+      "category": "jasa",
+      "brandColor": "#29ABE2",
+      "initials": "LK",
+      "officialUrl": "https://laundryklin.com/",
+      "outlets": "100+ outlet di 16 kota",
+      "since": 2016,
+      "investment": [
+        35,
+        75
+      ],
+      "investmentNote": "Paket termasuk mesin, sistem aplikasi KliknKlin, dan pelatihan.",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Biaya sistem aplikasi bulanan",
+      "contractYears": 5,
+      "bepMonths": [
+        10,
+        18
+      ],
+      "monthlyRevenue": [
+        18,
+        40
+      ],
+      "scheme": "Nilai jualnya ada di perangkat lunak: pesanan, pelacakan, dan pembayaran berjalan lewat aplikasi. Cocok bagi pemilik yang tidak ingin menunggui kasir setiap hari.",
+      "kpi": [
+        "60+ kg cucian per hari",
+        "Order lewat aplikasi 40%+",
+        "Komplain di bawah 2% order"
+      ],
+      "requirements": [
+        "Lokasi minimal 20 m2",
+        "Koneksi internet stabil",
+        "Operator terlatih memakai aplikasi"
+      ],
+      "sourceIds": [
+        "fortune-laundry",
+        "tantri-franchise"
+      ]
+    },
+    {
+      "id": "mrklin",
+      "name": "Mr Klin Laundry",
+      "category": "jasa",
+      "brandColor": "#0072BC",
+      "initials": "MK",
+      "officialUrl": "https://mrklin.co.id/",
+      "outlets": "280+ mitra di 50 kota",
+      "since": 2009,
+      "investment": [
+        57,
+        298
+      ],
+      "investmentNote": "Paket Bronze Rp56,87 jt sampai Platinum Rp298 jt.",
+      "franchiseFee": "Termasuk dalam harga paket",
+      "royalty": "Sesuai paket yang dipilih",
+      "contractYears": 5,
+      "bepMonths": [
+        12,
+        24
+      ],
+      "monthlyRevenue": [
+        20,
+        70
+      ],
+      "scheme": "Berjenjang dari paket kecil sampai skala pabrik cuci. Paket atas menyasar pasar korporat seperti hotel dan rumah sakit, yang volumenya jauh lebih stabil dari pelanggan ritel.",
+      "kpi": [
+        "80+ kg cucian per hari",
+        "Kontrak korporat minimal 1 klien",
+        "Biaya utilitas maksimal 12% omzet"
+      ],
+      "requirements": [
+        "Ruang menyesuaikan paket",
+        "Daya listrik memadai",
+        "Akses air bersih lancar"
+      ],
+      "sourceIds": [
+        "fortune-laundry"
+      ]
+    },
+    {
+      "id": "miniso",
+      "name": "Miniso",
+      "category": "minimarket",
+      "brandColor": "#E60012",
+      "initials": "MN",
+      "officialUrl": "https://www.miniso.com/",
+      "outlets": "200+ gerai di Indonesia",
+      "since": 2017,
+      "investment": [
+        2000,
+        4000
+      ],
+      "investmentNote": "Investasi terbesar di daftar ini; ROI dilaporkan 24-36 bulan.",
+      "franchiseFee": "Sesuai perjanjian regional",
+      "royalty": "Bagi hasil dari penjualan harian",
+      "contractYears": 5,
+      "bepMonths": [
+        24,
+        36
+      ],
+      "monthlyRevenue": [
+        400,
+        900
+      ],
+      "scheme": "Retail gaya hidup dengan perputaran produk sangat cepat dan koleksi yang terus berganti. Mitra praktis menyewakan lokasi dan modal, sementara pusat mengendalikan kurasi barang.",
+      "kpi": [
+        "Omzet Rp400 jt+/bulan",
+        "Perputaran stok 2x+ per bulan",
+        "Lokasi mal kelas menengah ke atas"
+      ],
+      "requirements": [
+        "Lokasi mal 150-300 m2",
+        "Modal besar dan tahan periode ramp-up",
+        "Mengikuti kurasi produk pusat"
+      ],
+      "sourceIds": [
+        "tantri-franchise",
+        "flei"
+      ]
+    }
+  ]
+}

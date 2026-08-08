@@ -69,7 +69,10 @@
       "description": "Format 2 washer dan 2 dryer dengan layanan kiloan, express, setrika, dan antar-jemput radius dekat. Fokus utamanya bukan sekadar mesin, tetapi utilisasi per hari dan pelanggan berulang.",
       "idealFor": "Pemilik yang siap mengawasi kualitas, turnaround, dan relasi lokal setiap hari.",
       "format": "Ruko atau kios 30-45 m2, 2 washer, 2 dryer, 2 staf.",
-      "capex": [70, 115],
+      "capex": [
+        70,
+        115
+      ],
       "fixedBase": 14.6,
       "rentBase": 3.2,
       "staffCount": 2,
@@ -83,22 +86,160 @@
       "idealRadius": "1-2 km",
       "locationSignal": "Kost, kampus, perumahan padat, akses motor mudah",
       "equipment": [
-        { "item": "Paket washer dan dryer komersial", "range": "Rp55-75 jt", "note": "Komponen modal terbesar; cek garansi dan servis lokal." },
-        { "item": "Setrika uap, timbangan, meja sortir", "range": "Rp5-9 jt", "note": "Pilih alat yang tahan jam kerja panjang." },
-        { "item": "Renovasi air, gas, listrik, signage", "range": "Rp9-16 jt", "note": "Drainase dan ventilasi tidak boleh dipangkas." },
-        { "item": "POS, printer label, CCTV", "range": "Rp3-6 jt", "note": "Penting untuk mengurangi pakaian tertukar." },
-        { "item": "Deposit sewa dan kas awal", "range": "Rp8-14 jt", "note": "Simpan buffer minimal 2 bulan biaya tetap." }
+        {
+          "item": "Paket washer dan dryer komersial",
+          "range": "Rp55-75 jt",
+          "note": "Komponen modal terbesar; cek garansi dan servis lokal."
+        },
+        {
+          "item": "Setrika uap, timbangan, meja sortir",
+          "range": "Rp5-9 jt",
+          "note": "Pilih alat yang tahan jam kerja panjang."
+        },
+        {
+          "item": "Renovasi air, gas, listrik, signage",
+          "range": "Rp9-16 jt",
+          "note": "Drainase dan ventilasi tidak boleh dipangkas."
+        },
+        {
+          "item": "POS, printer label, CCTV",
+          "range": "Rp3-6 jt",
+          "note": "Penting untuk mengurangi pakaian tertukar."
+        },
+        {
+          "item": "Deposit sewa dan kas awal",
+          "range": "Rp8-14 jt",
+          "note": "Simpan buffer minimal 2 bulan biaya tetap."
+        }
       ],
-      "dailyOps": ["Terima dan timbang cucian", "Pisahkan warna dan jenis layanan", "Cuci, keringkan, setrika", "QC, packing, dan notifikasi", "Antar-jemput dan follow-up pelanggan"],
-      "checklist": ["Hitung jumlah kamar kos dalam radius 1 km", "Minta tarif dan kapasitas listrik lokasi", "Bandingkan 5 pesaing terdekat", "Uji harga per kg dan layanan express", "Siapkan SOP kehilangan dan komplain"],
-      "risks": ["Mesin berhenti membuat omzet langsung terhenti", "Perang harga menekan margin", "Musim hujan menaikkan demand tetapi memperlambat proses"],
+      "dailyOps": [
+        "Terima dan timbang cucian",
+        "Pisahkan warna dan jenis layanan",
+        "Cuci, keringkan, setrika",
+        "QC, packing, dan notifikasi",
+        "Antar-jemput dan follow-up pelanggan"
+      ],
+      "checklist": [
+        "Hitung jumlah kamar kos dalam radius 1 km",
+        "Minta tarif dan kapasitas listrik lokasi",
+        "Bandingkan 5 pesaing terdekat",
+        "Uji harga per kg dan layanan express",
+        "Siapkan SOP kehilangan dan komplain"
+      ],
+      "risks": [
+        "Mesin berhenti membuat omzet langsung terhenti",
+        "Perang harga menekan margin",
+        "Musim hujan menaikkan demand tetapi memperlambat proses"
+      ],
       "plan90": [
-        { "phase": "Hari 1-14", "title": "Validasi radius", "actions": ["Survei 100 calon pelanggan", "Catat harga 5 pesaing", "Uji minat antar-jemput"] },
-        { "phase": "Hari 15-45", "title": "Bangun operasi", "actions": ["Finalisasi lokasi", "Pasang utilitas", "Latih SOP dan QC"] },
-        { "phase": "Hari 46-90", "title": "Kejar repeat order", "actions": ["Paket kos bulanan", "Program referral", "Pantau kg per mesin per hari"] }
+        {
+          "phase": "Hari 1-14",
+          "title": "Validasi radius",
+          "actions": [
+            "Survei 100 calon pelanggan",
+            "Catat harga 5 pesaing",
+            "Uji minat antar-jemput"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Bangun operasi",
+          "actions": [
+            "Finalisasi lokasi",
+            "Pasang utilitas",
+            "Latih SOP dan QC"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Kejar repeat order",
+          "actions": [
+            "Paket kos bulanan",
+            "Program referral",
+            "Pantau kg per mesin per hari"
+          ]
+        }
       ],
-      "permits": ["NIB melalui OSS sesuai KBLI jasa pencucian", "Cek persetujuan lingkungan dan pembuangan air setempat"],
-      "sourceIds": ["bps-wage", "bps-imk", "esdm-electricity", "laundry-package", "oss"]
+      "permits": [
+        "NIB melalui OSS sesuai KBLI jasa pencucian",
+        "Cek persetujuan lingkungan dan pembuangan air setempat"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "esdm-electricity",
+        "laundry-package",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Jasa per kilogram dengan siklus kas harian",
+        "priceBasis": "Rp7.000-9.000 per kg reguler; express 1,6-2x tarif reguler",
+        "cashCycle": "Bayar saat ambil, tanpa piutang. Kas masuk setiap hari.",
+        "streams": [
+          {
+            "name": "Cuci kering lipat kiloan",
+            "share": 62
+          },
+          {
+            "name": "Express dan satuan (bed cover, jas)",
+            "share": 24
+          },
+          {
+            "name": "Setrika saja dan antar-jemput",
+            "share": 14
+          }
+        ],
+        "costDrivers": [
+          "Deterjen, pewangi, plastik",
+          "Listrik, gas, air",
+          "Gaji operator"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Volume harian",
+          "target": "60-90 kg",
+          "note": "Titik aman 2 washer 2 dryer."
+        },
+        {
+          "label": "Pelanggan berulang",
+          "target": "60%+",
+          "note": "Sumber omzet utama, bukan pelanggan baru."
+        },
+        {
+          "label": "Turnaround reguler",
+          "target": "maks 24 jam",
+          "note": "Lewat ini komplain naik tajam."
+        },
+        {
+          "label": "Biaya utilitas",
+          "target": "maks 12% omzet",
+          "note": "Listrik dan gas paling cepat bocor."
+        },
+        {
+          "label": "Cucian rusak atau hilang",
+          "target": "di bawah 0,5%",
+          "note": "Wajib pakai label dan foto serah terima."
+        }
+      ],
+      "bepMonths": [
+        5,
+        12
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 16
+        },
+        {
+          "name": "Realistis",
+          "units": 25
+        },
+        {
+          "name": "Agresif",
+          "units": 36
+        }
+      ]
     },
     {
       "id": "kelontong",
@@ -111,7 +252,10 @@
       "description": "Toko 35-50 m2 dengan produk kebutuhan harian, minuman dingin, produk rumah tangga, pulsa, dan pembayaran digital. Kunci bisnis adalah perputaran stok dan basket size, bukan margin tinggi per barang.",
       "idealFor": "Pemilik yang teliti stok, disiplin kas, dan dekat dengan komunitas perumahan.",
       "format": "Toko lingkungan 35-50 m2, 1 staf, 800-1.200 SKU awal.",
-      "capex": [55, 130],
+      "capex": [
+        55,
+        130
+      ],
       "fixedBase": 10.6,
       "rentBase": 3,
       "staffCount": 1,
@@ -125,22 +269,159 @@
       "idealRadius": "300-700 m",
       "locationSignal": "Perumahan, jalan pulang kerja, jauh dari minimarket besar",
       "equipment": [
-        { "item": "Stok barang pembuka", "range": "Rp30-70 jt", "note": "Mulai dari SKU cepat laku, jangan terlalu lebar." },
-        { "item": "Rak, etalase, freezer, chiller", "range": "Rp12-25 jt", "note": "Pendingin menambah penjualan minuman dan frozen food." },
-        { "item": "POS, barcode, printer, CCTV", "range": "Rp4-8 jt", "note": "Wajib untuk kontrol stok dan kebocoran." },
-        { "item": "Renovasi dan signage", "range": "Rp5-12 jt", "note": "Prioritaskan pencahayaan dan alur belanja." },
-        { "item": "Deposit sewa dan kas awal", "range": "Rp6-15 jt", "note": "Jangan pakai seluruh kas untuk stok." }
+        {
+          "item": "Stok barang pembuka",
+          "range": "Rp30-70 jt",
+          "note": "Mulai dari SKU cepat laku, jangan terlalu lebar."
+        },
+        {
+          "item": "Rak, etalase, freezer, chiller",
+          "range": "Rp12-25 jt",
+          "note": "Pendingin menambah penjualan minuman dan frozen food."
+        },
+        {
+          "item": "POS, barcode, printer, CCTV",
+          "range": "Rp4-8 jt",
+          "note": "Wajib untuk kontrol stok dan kebocoran."
+        },
+        {
+          "item": "Renovasi dan signage",
+          "range": "Rp5-12 jt",
+          "note": "Prioritaskan pencahayaan dan alur belanja."
+        },
+        {
+          "item": "Deposit sewa dan kas awal",
+          "range": "Rp6-15 jt",
+          "note": "Jangan pakai seluruh kas untuk stok."
+        }
       ],
-      "dailyOps": ["Cek stok dan harga pemasok", "Terima dan tata barang", "Pantau fast-moving SKU", "Rekonsiliasi kas dan QRIS", "Restock produk inti"],
-      "checklist": ["Hitung jumlah rumah radius 500 m", "Catat jam ramai pagi dan sore", "Audit harga 50 SKU pembanding", "Pastikan akses parkir motor", "Pisahkan uang usaha dan rumah tangga"],
-      "risks": ["Stok mati mengunci kas", "Kebocoran barang dan kas", "Minimarket modern menekan harga dan kenyamanan"],
+      "dailyOps": [
+        "Cek stok dan harga pemasok",
+        "Terima dan tata barang",
+        "Pantau fast-moving SKU",
+        "Rekonsiliasi kas dan QRIS",
+        "Restock produk inti"
+      ],
+      "checklist": [
+        "Hitung jumlah rumah radius 500 m",
+        "Catat jam ramai pagi dan sore",
+        "Audit harga 50 SKU pembanding",
+        "Pastikan akses parkir motor",
+        "Pisahkan uang usaha dan rumah tangga"
+      ],
+      "risks": [
+        "Stok mati mengunci kas",
+        "Kebocoran barang dan kas",
+        "Minimarket modern menekan harga dan kenyamanan"
+      ],
       "plan90": [
-        { "phase": "Hari 1-14", "title": "Baca kebutuhan warga", "actions": ["Survei 60 rumah", "Susun 150 SKU inti", "Cari 3 pemasok"] },
-        { "phase": "Hari 15-45", "title": "Buka lean", "actions": ["Mulai stok terbatas", "Pasang POS", "Catat lost sales"] },
-        { "phase": "Hari 46-90", "title": "Percepat rotasi", "actions": ["Tambah SKU berdasarkan data", "Paket langganan warung", "Negosiasi tempo pemasok"] }
+        {
+          "phase": "Hari 1-14",
+          "title": "Baca kebutuhan warga",
+          "actions": [
+            "Survei 60 rumah",
+            "Susun 150 SKU inti",
+            "Cari 3 pemasok"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Buka lean",
+          "actions": [
+            "Mulai stok terbatas",
+            "Pasang POS",
+            "Catat lost sales"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Percepat rotasi",
+          "actions": [
+            "Tambah SKU berdasarkan data",
+            "Paket langganan warung",
+            "Negosiasi tempo pemasok"
+          ]
+        }
       ],
-      "permits": ["NIB perdagangan eceran melalui OSS", "Perizinan tambahan bila menjual produk khusus tertentu"],
-      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "oss"]
+      "permits": [
+        "NIB perdagangan eceran melalui OSS",
+        "Perizinan tambahan bila menjual produk khusus tertentu"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "bi-retail",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Retail margin tipis yang menang dari rotasi stok",
+        "priceBasis": "Markup 8-18% per SKU; rokok dan sembako paling tipis",
+        "cashCycle": "Penjualan tunai dan QRIS harian, pembelian sebagian tempo 7-14 hari.",
+        "streams": [
+          {
+            "name": "Sembako dan kebutuhan harian",
+            "share": 48
+          },
+          {
+            "name": "Rokok dan minuman",
+            "share": 34
+          },
+          {
+            "name": "Pulsa, token, dan layanan digital",
+            "share": 18
+          }
+        ],
+        "costDrivers": [
+          "Harga beli pemasok",
+          "Stok mati dan susut",
+          "Sewa lokasi"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Jumlah struk",
+          "target": "70+ per hari",
+          "note": "Volume lebih menentukan daripada nilai struk."
+        },
+        {
+          "label": "Margin kotor campuran",
+          "target": "14-18%",
+          "note": "Di bawah 12% biaya tetap sulit tertutup."
+        },
+        {
+          "label": "Perputaran stok",
+          "target": "2-3x per bulan",
+          "note": "Kas mati kalau lebih lambat."
+        },
+        {
+          "label": "Stok mati",
+          "target": "di bawah 5% nilai stok",
+          "note": "Audit tiap bulan, potong SKU lambat."
+        },
+        {
+          "label": "Selisih kas",
+          "target": "di bawah 0,3% omzet",
+          "note": "Rekonsiliasi tunai dan QRIS harian."
+        }
+      ],
+      "bepMonths": [
+        18,
+        36
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 45
+        },
+        {
+          "name": "Realistis",
+          "units": 70
+        },
+        {
+          "name": "Agresif",
+          "units": 95
+        }
+      ]
     },
     {
       "id": "franchise",
@@ -153,7 +434,10 @@
       "description": "Booth minuman 12-20 m2 dengan paket brand, alat, bahan awal, dan SOP. Cocok untuk belajar operasi F&B, tetapi calon mitra wajib membedah fee, kewajiban bahan baku, wilayah, dan dukungan pemasaran.",
       "idealFor": "Pemilik pemula yang ingin SOP siap pakai namun tetap mau aktif mengawasi outlet.",
       "format": "Booth 12-20 m2, 2 staf, menu 12-20 SKU.",
-      "capex": [35, 85],
+      "capex": [
+        35,
+        85
+      ],
       "fixedBase": 13.4,
       "rentBase": 4,
       "staffCount": 2,
@@ -167,22 +451,159 @@
       "idealRadius": "500 m",
       "locationSignal": "Sekolah, pasar, jalan ramai sore, tenant mix makanan",
       "equipment": [
-        { "item": "Paket kemitraan dan lisensi", "range": "Rp15-35 jt", "note": "Minta rincian fee, masa kontrak, dan wilayah." },
-        { "item": "Booth, signage, renovasi", "range": "Rp8-18 jt", "note": "Sesuaikan dengan standar landlord dan brand." },
-        { "item": "Mesin sealer, blender, chiller", "range": "Rp6-14 jt", "note": "Pastikan kapasitas cocok jam puncak." },
-        { "item": "Stok bahan dan kemasan", "range": "Rp3-7 jt", "note": "Periksa minimum order dan shelf life." },
-        { "item": "Deposit sewa dan kas awal", "range": "Rp5-12 jt", "note": "Buffer pembukaan minimal 6 minggu." }
+        {
+          "item": "Paket kemitraan dan lisensi",
+          "range": "Rp15-35 jt",
+          "note": "Minta rincian fee, masa kontrak, dan wilayah."
+        },
+        {
+          "item": "Booth, signage, renovasi",
+          "range": "Rp8-18 jt",
+          "note": "Sesuaikan dengan standar landlord dan brand."
+        },
+        {
+          "item": "Mesin sealer, blender, chiller",
+          "range": "Rp6-14 jt",
+          "note": "Pastikan kapasitas cocok jam puncak."
+        },
+        {
+          "item": "Stok bahan dan kemasan",
+          "range": "Rp3-7 jt",
+          "note": "Periksa minimum order dan shelf life."
+        },
+        {
+          "item": "Deposit sewa dan kas awal",
+          "range": "Rp5-12 jt",
+          "note": "Buffer pembukaan minimal 6 minggu."
+        }
       ],
-      "dailyOps": ["Prep bahan dan cek suhu", "Produksi saat jam puncak", "Kontrol resep dan waste", "Rekonsiliasi POS", "Restock bahan wajib"],
-      "checklist": ["Minta laporan outlet pembanding", "Baca kontrak royalty dan bahan wajib", "Hitung traffic per 15 menit", "Uji harga terhadap daya beli lokal", "Cek batas wilayah mitra"],
-      "risks": ["Tren minuman cepat berubah", "Bahan baku wajib menekan margin", "Penjualan sangat bergantung jam puncak"],
+      "dailyOps": [
+        "Prep bahan dan cek suhu",
+        "Produksi saat jam puncak",
+        "Kontrol resep dan waste",
+        "Rekonsiliasi POS",
+        "Restock bahan wajib"
+      ],
+      "checklist": [
+        "Minta laporan outlet pembanding",
+        "Baca kontrak royalty dan bahan wajib",
+        "Hitung traffic per 15 menit",
+        "Uji harga terhadap daya beli lokal",
+        "Cek batas wilayah mitra"
+      ],
+      "risks": [
+        "Tren minuman cepat berubah",
+        "Bahan baku wajib menekan margin",
+        "Penjualan sangat bergantung jam puncak"
+      ],
       "plan90": [
-        { "phase": "Hari 1-14", "title": "Audit franchisor", "actions": ["Wawancara 3 mitra", "Bedah kontrak", "Cek outlet tutup"] },
-        { "phase": "Hari 15-45", "title": "Tes titik", "actions": ["Hitung traffic", "Negosiasi sewa", "Rekrut dan training"] },
-        { "phase": "Hari 46-90", "title": "Optimasi jam ramai", "actions": ["Paket bundling", "Sampling lokal", "Pantau cup per jam"] }
+        {
+          "phase": "Hari 1-14",
+          "title": "Audit franchisor",
+          "actions": [
+            "Wawancara 3 mitra",
+            "Bedah kontrak",
+            "Cek outlet tutup"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Tes titik",
+          "actions": [
+            "Hitung traffic",
+            "Negosiasi sewa",
+            "Rekrut dan training"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Optimasi jam ramai",
+          "actions": [
+            "Paket bundling",
+            "Sampling lokal",
+            "Pantau cup per jam"
+          ]
+        }
       ],
-      "permits": ["NIB dan KBLI F&B sesuai format", "Sertifikasi halal dan izin pangan sesuai kewajiban produk"],
-      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "oss"]
+      "permits": [
+        "NIB dan KBLI F&B sesuai format",
+        "Sertifikasi halal dan izin pangan sesuai kewajiban produk"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "bi-retail",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Waralaba: bayar lisensi di depan, bahan baku wajib dari pusat",
+        "priceBasis": "Rp8.000-25.000 per cup, menu inti 12-20 SKU",
+        "cashCycle": "Tunai harian, tetapi stok bahan dibeli di muka ke franchisor.",
+        "streams": [
+          {
+            "name": "Minuman menu inti",
+            "share": 70
+          },
+          {
+            "name": "Topping dan upsize",
+            "share": 18
+          },
+          {
+            "name": "Snack dan paket bundling",
+            "share": 12
+          }
+        ],
+        "costDrivers": [
+          "Bahan baku dari pusat",
+          "Royalti atau management fee",
+          "Sewa titik ramai"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Volume harian",
+          "target": "60-100 cup",
+          "note": "Di bawah 50 cup booth sulit menutup sewa."
+        },
+        {
+          "label": "HPP bahan",
+          "target": "maks 40% omzet",
+          "note": "Sudah termasuk cup, sedotan, dan es."
+        },
+        {
+          "label": "Royalti plus bahan",
+          "target": "maks 45% omzet",
+          "note": "Baca kontrak sebelum tanda tangan."
+        },
+        {
+          "label": "Waste harian",
+          "target": "di bawah 3%",
+          "note": "Es dan susu paling sering terbuang."
+        },
+        {
+          "label": "Kontribusi jam sibuk",
+          "target": "55%+ dari 15.00-21.00",
+          "note": "Atur shift mengikuti kurva ini."
+        }
+      ],
+      "bepMonths": [
+        8,
+        18
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 40
+        },
+        {
+          "name": "Realistis",
+          "units": 66
+        },
+        {
+          "name": "Agresif",
+          "units": 95
+        }
+      ]
     },
     {
       "id": "game",
@@ -195,7 +616,10 @@
       "description": "Enam station PS5 dengan TV 4K, kursi nyaman, internet stabil, game legal, dan snack counter. Model ini hidup dari jam terpakai per station, membership, turnamen, dan repeat community.",
       "idealFor": "Pemilik yang mengerti komunitas gamer lokal dan bisa menjaga perangkat serta suasana.",
       "format": "6 station, 70-100 m2, 2 staf shift, buka sampai malam.",
-      "capex": [105, 190],
+      "capex": [
+        105,
+        190
+      ],
       "fixedBase": 16,
       "rentBase": 4.5,
       "staffCount": 2,
@@ -209,22 +633,161 @@
       "idealRadius": "1-3 km",
       "locationSignal": "Kampus, sekolah, kos, parkir, internet stabil, buka malam",
       "equipment": [
-        { "item": "6 unit PS5 dan controller cadangan", "range": "Rp65-82 jt", "note": "Harga resmi PS5 Mei 2026 menjadi anchor utama." },
-        { "item": "6 TV 43-50 inci", "range": "Rp24-40 jt", "note": "Utamakan input lag rendah dan garansi." },
-        { "item": "Interior, sofa, meja, akustik", "range": "Rp12-28 jt", "note": "Kenyamanan menaikkan durasi sesi." },
-        { "item": "Jaringan, UPS, CCTV, POS", "range": "Rp6-12 jt", "note": "Pisahkan jaringan tamu dan perangkat." },
-        { "item": "Lisensi game dan kas awal", "range": "Rp8-16 jt", "note": "Gunakan akun dan game legal." }
+        {
+          "item": "6 unit PS5 dan controller cadangan",
+          "range": "Rp65-82 jt",
+          "note": "Harga resmi PS5 Mei 2026 menjadi anchor utama."
+        },
+        {
+          "item": "6 TV 43-50 inci",
+          "range": "Rp24-40 jt",
+          "note": "Utamakan input lag rendah dan garansi."
+        },
+        {
+          "item": "Interior, sofa, meja, akustik",
+          "range": "Rp12-28 jt",
+          "note": "Kenyamanan menaikkan durasi sesi."
+        },
+        {
+          "item": "Jaringan, UPS, CCTV, POS",
+          "range": "Rp6-12 jt",
+          "note": "Pisahkan jaringan tamu dan perangkat."
+        },
+        {
+          "item": "Lisensi game dan kas awal",
+          "range": "Rp8-16 jt",
+          "note": "Gunakan akun dan game legal."
+        }
       ],
-      "dailyOps": ["Cek controller dan storage", "Atur booking station", "Reset akun setelah sesi", "Jual snack dan membership", "Monitor jam terpakai per station"],
-      "checklist": ["Survei komunitas sekolah dan kampus", "Tes internet malam", "Hitung jam ramai per station", "Buat aturan akun dan kerusakan", "Siapkan controller cadangan"],
-      "risks": ["Controller dan TV cepat aus", "Jam sepi siang menekan utilisasi", "Game baru menambah biaya konten"],
+      "dailyOps": [
+        "Cek controller dan storage",
+        "Atur booking station",
+        "Reset akun setelah sesi",
+        "Jual snack dan membership",
+        "Monitor jam terpakai per station"
+      ],
+      "checklist": [
+        "Survei komunitas sekolah dan kampus",
+        "Tes internet malam",
+        "Hitung jam ramai per station",
+        "Buat aturan akun dan kerusakan",
+        "Siapkan controller cadangan"
+      ],
+      "risks": [
+        "Controller dan TV cepat aus",
+        "Jam sepi siang menekan utilisasi",
+        "Game baru menambah biaya konten"
+      ],
       "plan90": [
-        { "phase": "Hari 1-14", "title": "Bangun komunitas", "actions": ["Kumpulkan 50 gamer", "Tes tarif per jam", "Pilih game inti"] },
-        { "phase": "Hari 15-45", "title": "Siapkan station", "actions": ["Beli bertahap", "Tes jaringan", "Buat sistem booking"] },
-        { "phase": "Hari 46-90", "title": "Naikkan utilisasi", "actions": ["Liga mingguan", "Membership off-peak", "Paket snack"] }
+        {
+          "phase": "Hari 1-14",
+          "title": "Bangun komunitas",
+          "actions": [
+            "Kumpulkan 50 gamer",
+            "Tes tarif per jam",
+            "Pilih game inti"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Siapkan station",
+          "actions": [
+            "Beli bertahap",
+            "Tes jaringan",
+            "Buat sistem booking"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Naikkan utilisasi",
+          "actions": [
+            "Liga mingguan",
+            "Membership off-peak",
+            "Paket snack"
+          ]
+        }
       ],
-      "permits": ["NIB untuk aktivitas hiburan/recreational yang sesuai", "Pastikan penggunaan software dan game legal"],
-      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "esdm-electricity", "sony-ps5", "oss"]
+      "permits": [
+        "NIB untuk aktivitas hiburan/recreational yang sesuai",
+        "Pastikan penggunaan software dan game legal"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "bi-retail",
+        "esdm-electricity",
+        "sony-ps5",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Sewa per jam per station dengan biaya variabel sangat rendah",
+        "priceBasis": "Rp8.000-15.000 per jam; paket 3 jam dan paket malam",
+        "cashCycle": "Bayar di muka per sesi. Kas masuk harian, nyaris tanpa stok.",
+        "streams": [
+          {
+            "name": "Sewa station reguler",
+            "share": 64
+          },
+          {
+            "name": "Paket malam dan borongan",
+            "share": 22
+          },
+          {
+            "name": "Minuman, snack, dan turnamen",
+            "share": 14
+          }
+        ],
+        "costDrivers": [
+          "Listrik dan internet",
+          "Peremajaan stik dan TV",
+          "Gaji penjaga shift"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Utilisasi station",
+          "target": "45-65%",
+          "note": "Dihitung dari total jam buka x jumlah station."
+        },
+        {
+          "label": "Sesi harian",
+          "target": "27+ sesi",
+          "note": "Enam station, rata-rata 4-5 sesi per station."
+        },
+        {
+          "label": "Kontribusi jam prime",
+          "target": "60%+ dari 16.00-23.00",
+          "note": "Jangan pasang tarif sama sepanjang hari."
+        },
+        {
+          "label": "Biaya listrik",
+          "target": "maks 10% omzet",
+          "note": "Cek daya terpasang sebelum sewa tempat."
+        },
+        {
+          "label": "Kerusakan stik",
+          "target": "maks 2 unit per bulan",
+          "note": "Anggarkan penggantian rutin."
+        }
+      ],
+      "bepMonths": [
+        10,
+        20
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 16
+        },
+        {
+          "name": "Realistis",
+          "units": 27
+        },
+        {
+          "name": "Agresif",
+          "units": 40
+        }
+      ]
     },
     {
       "id": "gym",
@@ -237,7 +800,10 @@
       "description": "Studio 120-180 m2 berfokus strength training, cardio dasar, personal training, dan kelas komunitas. Model sehat memerlukan member aktif, retensi, dan utilisasi ruang - bukan hanya alat yang banyak.",
       "idealFor": "Pemilik yang mampu membangun komunitas, menjaga alat, dan mengelola membership.",
       "format": "Studio 120-180 m2, 18-26 unit alat, 4 staf termasuk trainer.",
-      "capex": [220, 480],
+      "capex": [
+        220,
+        480
+      ],
       "fixedBase": 29,
       "rentBase": 8.5,
       "staffCount": 4,
@@ -251,22 +817,160 @@
       "idealRadius": "3-5 km",
       "locationSignal": "Perumahan muda, kantor, parkir cukup, ceiling tinggi",
       "equipment": [
-        { "item": "Paket alat strength dan cardio", "range": "Rp120-250 jt", "note": "Vendor 2026 menawarkan paket Rp50-250 juta sebelum fit-out." },
-        { "item": "Lantai karet, cermin, ventilasi", "range": "Rp35-75 jt", "note": "Jangan hemat pada lantai dan airflow." },
-        { "item": "Locker, shower, reception", "range": "Rp20-45 jt", "note": "Sesuaikan dengan segmen member." },
-        { "item": "Access control, CCTV, software", "range": "Rp8-18 jt", "note": "Membership harus tercatat rapi." },
-        { "item": "Deposit sewa dan kas awal", "range": "Rp35-80 jt", "note": "Siapkan runway minimal 4 bulan." }
+        {
+          "item": "Paket alat strength dan cardio",
+          "range": "Rp120-250 jt",
+          "note": "Vendor 2026 menawarkan paket Rp50-250 juta sebelum fit-out."
+        },
+        {
+          "item": "Lantai karet, cermin, ventilasi",
+          "range": "Rp35-75 jt",
+          "note": "Jangan hemat pada lantai dan airflow."
+        },
+        {
+          "item": "Locker, shower, reception",
+          "range": "Rp20-45 jt",
+          "note": "Sesuaikan dengan segmen member."
+        },
+        {
+          "item": "Access control, CCTV, software",
+          "range": "Rp8-18 jt",
+          "note": "Membership harus tercatat rapi."
+        },
+        {
+          "item": "Deposit sewa dan kas awal",
+          "range": "Rp35-80 jt",
+          "note": "Siapkan runway minimal 4 bulan."
+        }
       ],
-      "dailyOps": ["Opening check alat dan kebersihan", "Registrasi dan onboarding member", "Kelas dan personal training", "Maintenance preventif", "Follow-up member pasif"],
-      "checklist": ["Hitung populasi radius 5 km", "Audit 5 gym dan harga membership", "Tes parkir jam 18.00", "Minta layout alat dari vendor", "Hitung churn dan kapasitas puncak"],
-      "risks": ["Member awal tinggi tetapi churn cepat", "Alat rusak membutuhkan spare part", "Sewa ruang besar menekan cashflow"],
+      "dailyOps": [
+        "Opening check alat dan kebersihan",
+        "Registrasi dan onboarding member",
+        "Kelas dan personal training",
+        "Maintenance preventif",
+        "Follow-up member pasif"
+      ],
+      "checklist": [
+        "Hitung populasi radius 5 km",
+        "Audit 5 gym dan harga membership",
+        "Tes parkir jam 18.00",
+        "Minta layout alat dari vendor",
+        "Hitung churn dan kapasitas puncak"
+      ],
+      "risks": [
+        "Member awal tinggi tetapi churn cepat",
+        "Alat rusak membutuhkan spare part",
+        "Sewa ruang besar menekan cashflow"
+      ],
       "plan90": [
-        { "phase": "Hari 1-21", "title": "Pre-sell member", "actions": ["Daftar tunggu 150 orang", "Uji harga", "Cari komunitas"] },
-        { "phase": "Hari 22-60", "title": "Fit-out dan training", "actions": ["Pasang alat", "Latih safety", "Bangun sistem member"] },
-        { "phase": "Hari 61-90", "title": "Jaga retensi", "actions": ["Onboarding 30 hari", "Kelas komunitas", "Follow-up member pasif"] }
+        {
+          "phase": "Hari 1-21",
+          "title": "Pre-sell member",
+          "actions": [
+            "Daftar tunggu 150 orang",
+            "Uji harga",
+            "Cari komunitas"
+          ]
+        },
+        {
+          "phase": "Hari 22-60",
+          "title": "Fit-out dan training",
+          "actions": [
+            "Pasang alat",
+            "Latih safety",
+            "Bangun sistem member"
+          ]
+        },
+        {
+          "phase": "Hari 61-90",
+          "title": "Jaga retensi",
+          "actions": [
+            "Onboarding 30 hari",
+            "Kelas komunitas",
+            "Follow-up member pasif"
+          ]
+        }
       ],
-      "permits": ["NIB untuk aktivitas pusat kebugaran", "K3, keselamatan alat, dan persetujuan bangunan sesuai lokasi"],
-      "sourceIds": ["bps-wage", "bps-imk", "esdm-electricity", "gym-package", "oss"]
+      "permits": [
+        "NIB untuk aktivitas pusat kebugaran",
+        "K3, keselamatan alat, dan persetujuan bangunan sesuai lokasi"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "esdm-electricity",
+        "gym-package",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Langganan bulanan: pendapatan berulang, biaya variabel kecil",
+        "priceBasis": "Rp250.000-300.000 per member per bulan; personal trainer terpisah",
+        "cashCycle": "Iuran di muka tiap bulan. Kas kuat, tetapi churn langsung menggerus.",
+        "streams": [
+          {
+            "name": "Membership bulanan",
+            "share": 72
+          },
+          {
+            "name": "Personal trainer dan kelas",
+            "share": 20
+          },
+          {
+            "name": "Suplemen, loker, dan drop-in",
+            "share": 8
+          }
+        ],
+        "costDrivers": [
+          "Sewa ruang besar",
+          "Gaji trainer dan staf",
+          "Perawatan alat"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Member aktif",
+          "target": "200+",
+          "note": "Hitung yang benar-benar membayar bulan ini."
+        },
+        {
+          "label": "Churn bulanan",
+          "target": "maks 8%",
+          "note": "Di atas 12% pertumbuhan berhenti."
+        },
+        {
+          "label": "Kunjungan per member",
+          "target": "8x+ per bulan",
+          "note": "Prediktor terkuat perpanjangan."
+        },
+        {
+          "label": "Biaya trainer",
+          "target": "maks 22% omzet",
+          "note": "Pakai skema komisi, bukan gaji tetap penuh."
+        },
+        {
+          "label": "Konversi trial",
+          "target": "30%+",
+          "note": "Trial gratis tanpa follow-up sia-sia."
+        }
+      ],
+      "bepMonths": [
+        18,
+        30
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 130
+        },
+        {
+          "name": "Realistis",
+          "units": 200
+        },
+        {
+          "name": "Agresif",
+          "units": 280
+        }
+      ]
     },
     {
       "id": "coffee",
@@ -279,7 +983,10 @@
       "description": "Booth kopi take-away dengan espresso machine, grinder, 8-12 kursi, dan menu ringkas. Format ini menjaga modal lebih rendah daripada coffee shop penuh dan memudahkan fokus pada throughput serta kualitas.",
       "idealFor": "Pemilik yang siap terlibat dalam rasa, service, dan pemasaran lokal.",
       "format": "Booth 20-35 m2, 2 barista, 10-16 menu utama.",
-      "capex": [55, 120],
+      "capex": [
+        55,
+        120
+      ],
       "fixedBase": 16,
       "rentBase": 4.5,
       "staffCount": 2,
@@ -293,22 +1000,161 @@
       "idealRadius": "500 m-1 km",
       "locationSignal": "Kantor, kampus, arus komuter, titik nongkrong sore",
       "equipment": [
-        { "item": "Espresso machine dan grinder", "range": "Rp15-32 jt", "note": "OCBC 2026 memberi contoh mesin Rp12 juta dan grinder Rp3 juta." },
-        { "item": "Water filter, chiller, smallwares", "range": "Rp8-15 jt", "note": "Kualitas air mempengaruhi rasa dan umur mesin." },
-        { "item": "Booth, listrik, plumbing, signage", "range": "Rp12-28 jt", "note": "Rancang alur kerja 2 barista." },
-        { "item": "POS, menu, stok awal", "range": "Rp5-10 jt", "note": "Menu ringkas menekan waste." },
-        { "item": "Deposit sewa dan kas awal", "range": "Rp12-25 jt", "note": "Simpan buffer 2-3 bulan." }
+        {
+          "item": "Espresso machine dan grinder",
+          "range": "Rp15-32 jt",
+          "note": "OCBC 2026 memberi contoh mesin Rp12 juta dan grinder Rp3 juta."
+        },
+        {
+          "item": "Water filter, chiller, smallwares",
+          "range": "Rp8-15 jt",
+          "note": "Kualitas air mempengaruhi rasa dan umur mesin."
+        },
+        {
+          "item": "Booth, listrik, plumbing, signage",
+          "range": "Rp12-28 jt",
+          "note": "Rancang alur kerja 2 barista."
+        },
+        {
+          "item": "POS, menu, stok awal",
+          "range": "Rp5-10 jt",
+          "note": "Menu ringkas menekan waste."
+        },
+        {
+          "item": "Deposit sewa dan kas awal",
+          "range": "Rp12-25 jt",
+          "note": "Simpan buffer 2-3 bulan."
+        }
       ],
-      "dailyOps": ["Dial-in espresso", "Prep susu dan sirup", "Layani jam puncak", "Catat waste dan COGS", "Closing clean mesin"],
-      "checklist": ["Hitung pejalan dan motor saat pagi-sore", "Tes willingness to pay", "Batasi menu awal", "Audit listrik dan air", "Cari pemasok beans kedua"],
-      "risks": ["Sewa terlalu mahal untuk volume", "Kualitas rasa tidak konsisten", "Bahan susu dan sirup mudah waste"],
+      "dailyOps": [
+        "Dial-in espresso",
+        "Prep susu dan sirup",
+        "Layani jam puncak",
+        "Catat waste dan COGS",
+        "Closing clean mesin"
+      ],
+      "checklist": [
+        "Hitung pejalan dan motor saat pagi-sore",
+        "Tes willingness to pay",
+        "Batasi menu awal",
+        "Audit listrik dan air",
+        "Cari pemasok beans kedua"
+      ],
+      "risks": [
+        "Sewa terlalu mahal untuk volume",
+        "Kualitas rasa tidak konsisten",
+        "Bahan susu dan sirup mudah waste"
+      ],
       "plan90": [
-        { "phase": "Hari 1-14", "title": "Tes produk", "actions": ["Pop-up 3 hari", "Uji 6 menu", "Kumpulkan 100 feedback"] },
-        { "phase": "Hari 15-45", "title": "Bangun booth", "actions": ["Finalisasi alur", "Latih barista", "Buka soft launch"] },
-        { "phase": "Hari 46-90", "title": "Dorong repeat", "actions": ["Loyalty sederhana", "Menu kantor", "Pantau order per jam"] }
+        {
+          "phase": "Hari 1-14",
+          "title": "Tes produk",
+          "actions": [
+            "Pop-up 3 hari",
+            "Uji 6 menu",
+            "Kumpulkan 100 feedback"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Bangun booth",
+          "actions": [
+            "Finalisasi alur",
+            "Latih barista",
+            "Buka soft launch"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Dorong repeat",
+          "actions": [
+            "Loyalty sederhana",
+            "Menu kantor",
+            "Pantau order per jam"
+          ]
+        }
       ],
-      "permits": ["NIB dan KBLI penyediaan minuman", "Kewajiban halal dan higiene sesuai format produk"],
-      "sourceIds": ["bps-wage", "bps-imk", "bi-retail", "coffee-capex", "esdm-electricity", "oss"]
+      "permits": [
+        "NIB dan KBLI penyediaan minuman",
+        "Kewajiban halal dan higiene sesuai format produk"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "bi-retail",
+        "coffee-capex",
+        "esdm-electricity",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Booth kopi: margin per gelas tinggi, tetapi sangat bergantung volume",
+        "priceBasis": "Rp18.000-32.000 per gelas, menu inti 10-16 SKU",
+        "cashCycle": "Tunai dan QRIS harian; biji dan susu dibeli mingguan.",
+        "streams": [
+          {
+            "name": "Espresso based dan susu",
+            "share": 58
+          },
+          {
+            "name": "Manual brew dan non-kopi",
+            "share": 24
+          },
+          {
+            "name": "Pastry dan makanan ringan",
+            "share": 18
+          }
+        ],
+        "costDrivers": [
+          "Biji kopi dan susu",
+          "Sewa titik ramai",
+          "Gaji barista"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Volume harian",
+          "target": "50-80 gelas",
+          "note": "Titik impas booth biasanya di 45 gelas."
+        },
+        {
+          "label": "HPP minuman",
+          "target": "30-38%",
+          "note": "Susu paling sensitif terhadap kenaikan harga."
+        },
+        {
+          "label": "Waste susu",
+          "target": "di bawah 4%",
+          "note": "Steam berlebih adalah kebocoran diam-diam."
+        },
+        {
+          "label": "Rata-rata struk",
+          "target": "Rp28.000+",
+          "note": "Naikkan lewat bundling, bukan diskon."
+        },
+        {
+          "label": "Kontribusi sore",
+          "target": "45%+ setelah pukul 15.00",
+          "note": "Menentukan jam tutup yang masuk akal."
+        }
+      ],
+      "bepMonths": [
+        6,
+        18
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 32
+        },
+        {
+          "name": "Realistis",
+          "units": 54
+        },
+        {
+          "name": "Agresif",
+          "units": 78
+        }
+      ]
     },
     {
       "id": "barber",
@@ -321,7 +1167,10 @@
       "description": "Barbershop dua kursi dengan satu wash station, waiting area, booking sederhana, dan produk grooming. Unit economics didorong jumlah potong per kursi, harga rata-rata, dan komisi barber.",
       "idealFor": "Pemilik yang kuat di service, talent management, dan community marketing.",
       "format": "2 kursi, 35-60 m2, 2 barber, 1 wash station.",
-      "capex": [65, 145],
+      "capex": [
+        65,
+        145
+      ],
       "fixedBase": 18,
       "rentBase": 4,
       "staffCount": 2,
@@ -335,120 +1184,496 @@
       "idealRadius": "1-2 km",
       "locationSignal": "Perumahan, kampus, visibilitas jalan, parkir mudah",
       "equipment": [
-        { "item": "2 kursi barber dan workstation", "range": "Rp18-38 jt", "note": "Utamakan ergonomi dan spare part." },
-        { "item": "Clipper, trimmer, sterilizer", "range": "Rp8-16 jt", "note": "Sediakan alat cadangan tiap barber." },
-        { "item": "Wash station, AC, water heater", "range": "Rp10-20 jt", "note": "Pastikan plumbing mudah dirawat." },
-        { "item": "Interior, signage, waiting area", "range": "Rp15-35 jt", "note": "Fokus nyaman dan mudah dibersihkan." },
-        { "item": "Deposit sewa dan kas awal", "range": "Rp10-22 jt", "note": "Buffer gaji dan komisi 2 bulan." }
+        {
+          "item": "2 kursi barber dan workstation",
+          "range": "Rp18-38 jt",
+          "note": "Utamakan ergonomi dan spare part."
+        },
+        {
+          "item": "Clipper, trimmer, sterilizer",
+          "range": "Rp8-16 jt",
+          "note": "Sediakan alat cadangan tiap barber."
+        },
+        {
+          "item": "Wash station, AC, water heater",
+          "range": "Rp10-20 jt",
+          "note": "Pastikan plumbing mudah dirawat."
+        },
+        {
+          "item": "Interior, signage, waiting area",
+          "range": "Rp15-35 jt",
+          "note": "Fokus nyaman dan mudah dibersihkan."
+        },
+        {
+          "item": "Deposit sewa dan kas awal",
+          "range": "Rp10-22 jt",
+          "note": "Buffer gaji dan komisi 2 bulan."
+        }
       ],
-      "dailyOps": ["Sterilisasi alat", "Booking dan walk-in", "Potong, wash, styling", "Upsell grooming", "Rekonsiliasi kursi dan komisi"],
-      "checklist": ["Hitung pria usia produktif radius 2 km", "Audit harga 8 barber", "Tes kualitas barber", "Susun komisi yang sehat", "Siapkan SOP sterilisasi"],
-      "risks": ["Barber bagus pindah membawa pelanggan", "Kursi kosong menekan omzet", "Dekorasi mahal tidak menjamin repeat"],
+      "dailyOps": [
+        "Sterilisasi alat",
+        "Booking dan walk-in",
+        "Potong, wash, styling",
+        "Upsell grooming",
+        "Rekonsiliasi kursi dan komisi"
+      ],
+      "checklist": [
+        "Hitung pria usia produktif radius 2 km",
+        "Audit harga 8 barber",
+        "Tes kualitas barber",
+        "Susun komisi yang sehat",
+        "Siapkan SOP sterilisasi"
+      ],
+      "risks": [
+        "Barber bagus pindah membawa pelanggan",
+        "Kursi kosong menekan omzet",
+        "Dekorasi mahal tidak menjamin repeat"
+      ],
       "plan90": [
-        { "phase": "Hari 1-14", "title": "Cari talent", "actions": ["Audisi barber", "Tes 30 pelanggan", "Susun komisi"] },
-        { "phase": "Hari 15-45", "title": "Buka dua kursi", "actions": ["Soft opening", "Booking WA", "Konten before-after"] },
-        { "phase": "Hari 46-90", "title": "Bangun repeat", "actions": ["Reminder 4 minggu", "Paket father-son", "Jual grooming"] }
+        {
+          "phase": "Hari 1-14",
+          "title": "Cari talent",
+          "actions": [
+            "Audisi barber",
+            "Tes 30 pelanggan",
+            "Susun komisi"
+          ]
+        },
+        {
+          "phase": "Hari 15-45",
+          "title": "Buka dua kursi",
+          "actions": [
+            "Soft opening",
+            "Booking WA",
+            "Konten before-after"
+          ]
+        },
+        {
+          "phase": "Hari 46-90",
+          "title": "Bangun repeat",
+          "actions": [
+            "Reminder 4 minggu",
+            "Paket father-son",
+            "Jual grooming"
+          ]
+        }
       ],
-      "permits": ["NIB untuk jasa pangkas rambut", "Standar kebersihan dan pembuangan limbah ringan"],
-      "sourceIds": ["bps-wage", "bps-imk", "oss"]
+      "permits": [
+        "NIB untuk jasa pangkas rambut",
+        "Standar kebersihan dan pembuangan limbah ringan"
+      ],
+      "sourceIds": [
+        "bps-wage",
+        "bps-imk",
+        "oss"
+      ],
+      "scheme": {
+        "model": "Jasa per kepala dengan komisi barber sebagai biaya variabel utama",
+        "priceBasis": "Rp35.000-75.000 per potong; paket cukur plus cuci dan styling",
+        "cashCycle": "Bayar di tempat. Tanpa stok besar, kas masuk harian.",
+        "streams": [
+          {
+            "name": "Potong rambut reguler",
+            "share": 66
+          },
+          {
+            "name": "Cukur jenggot, coloring, perawatan",
+            "share": 22
+          },
+          {
+            "name": "Pomade dan produk retail",
+            "share": 12
+          }
+        ],
+        "costDrivers": [
+          "Komisi barber",
+          "Sewa dan listrik",
+          "Produk styling"
+        ]
+      },
+      "kpi": [
+        {
+          "label": "Pelanggan harian",
+          "target": "21+ (10-11 per kursi)",
+          "note": "Dua kursi, buka 10 jam."
+        },
+        {
+          "label": "Kembali dalam 6 minggu",
+          "target": "55%+",
+          "note": "Catat di POS, bukan diingat-ingat."
+        },
+        {
+          "label": "Utilisasi kursi",
+          "target": "55-70%",
+          "note": "Kursi ketiga baru masuk akal di atas 70%."
+        },
+        {
+          "label": "Komisi barber",
+          "target": "30-40% omzet jasa",
+          "note": "Di atas 45% laba pemilik habis."
+        },
+        {
+          "label": "Penjualan produk",
+          "target": "8%+ omzet",
+          "note": "Marginnya jauh lebih tebal dari jasa."
+        }
+      ],
+      "bepMonths": [
+        8,
+        18
+      ],
+      "scenarios": [
+        {
+          "name": "Konservatif",
+          "units": 13
+        },
+        {
+          "name": "Realistis",
+          "units": 21
+        },
+        {
+          "name": "Agresif",
+          "units": 30
+        }
+      ]
     }
   ],
   "cities": [
     {
-      "id": "kediri", "name": "Kediri", "province": "Jawa Timur", "lat": -7.848, "lng": 112.0178,
-      "wageFactor": 0.82, "rentFactor": 0.72, "capexFactor": 0.9, "demandFactor": 0.82,
-      "demandLabel": "Stabil, sensitif harga", "competition": "Sedang-rendah",
+      "id": "kediri",
+      "name": "Kediri",
+      "province": "Jawa Timur",
+      "lat": -7.848,
+      "lng": 112.0178,
+      "wageFactor": 0.82,
+      "rentFactor": 0.72,
+      "capexFactor": 0.9,
+      "demandFactor": 0.82,
+      "demandLabel": "Stabil, sensitif harga",
+      "competition": "Sedang-rendah",
       "note": "Biaya masuk ringan; menang lewat lokasi dekat permukiman dan layanan konsisten.",
-      "hotspots": ["Mojoroto dan koridor kampus", "Bandar Lor", "Pare dan koridor pendidikan"],
-      "scores": { "laundry": 83, "kelontong": 87, "franchise": 74, "game": 78, "gym": 67, "coffee": 73, "barber": 82 }
+      "hotspots": [
+        "Mojoroto dan koridor kampus",
+        "Bandar Lor",
+        "Pare dan koridor pendidikan"
+      ],
+      "scores": {
+        "laundry": 83,
+        "kelontong": 87,
+        "franchise": 74,
+        "game": 78,
+        "gym": 67,
+        "coffee": 73,
+        "barber": 82
+      }
     },
     {
-      "id": "surabaya", "name": "Surabaya", "province": "Jawa Timur", "lat": -7.2575, "lng": 112.7521,
-      "wageFactor": 1.2, "rentFactor": 1.28, "capexFactor": 1.12, "demandFactor": 1.16,
-      "demandLabel": "Tinggi dan beragam", "competition": "Tinggi",
+      "id": "surabaya",
+      "name": "Surabaya",
+      "province": "Jawa Timur",
+      "lat": -7.2575,
+      "lng": 112.7521,
+      "wageFactor": 1.2,
+      "rentFactor": 1.28,
+      "capexFactor": 1.12,
+      "demandFactor": 1.16,
+      "demandLabel": "Tinggi dan beragam",
+      "competition": "Tinggi",
       "note": "Volume besar, tetapi sewa dan kompetisi memaksa positioning lebih tajam.",
-      "hotspots": ["Rungkut", "Ketintang-Wonocolo", "Mulyorejo"],
-      "scores": { "laundry": 82, "kelontong": 72, "franchise": 85, "game": 83, "gym": 86, "coffee": 86, "barber": 81 }
+      "hotspots": [
+        "Rungkut",
+        "Ketintang-Wonocolo",
+        "Mulyorejo"
+      ],
+      "scores": {
+        "laundry": 82,
+        "kelontong": 72,
+        "franchise": 85,
+        "game": 83,
+        "gym": 86,
+        "coffee": 86,
+        "barber": 81
+      }
     },
     {
-      "id": "jakarta", "name": "Jakarta", "province": "DKI Jakarta", "lat": -6.2088, "lng": 106.8456,
-      "wageFactor": 1.48, "rentFactor": 1.65, "capexFactor": 1.3, "demandFactor": 1.35,
-      "demandLabel": "Sangat tinggi", "competition": "Sangat tinggi",
+      "id": "jakarta",
+      "name": "Jakarta",
+      "province": "DKI Jakarta",
+      "lat": -6.2088,
+      "lng": 106.8456,
+      "wageFactor": 1.48,
+      "rentFactor": 1.65,
+      "capexFactor": 1.3,
+      "demandFactor": 1.35,
+      "demandLabel": "Sangat tinggi",
+      "competition": "Sangat tinggi",
       "note": "Tiket jual tinggi, tetapi salah titik cepat membakar modal sewa dan gaji.",
-      "hotspots": ["Tebet", "Rawamangun", "Tanjung Duren"],
-      "scores": { "laundry": 84, "kelontong": 65, "franchise": 83, "game": 78, "gym": 88, "coffee": 84, "barber": 82 }
+      "hotspots": [
+        "Tebet",
+        "Rawamangun",
+        "Tanjung Duren"
+      ],
+      "scores": {
+        "laundry": 84,
+        "kelontong": 65,
+        "franchise": 83,
+        "game": 78,
+        "gym": 88,
+        "coffee": 84,
+        "barber": 82
+      }
     },
     {
-      "id": "bandung", "name": "Bandung", "province": "Jawa Barat", "lat": -6.9175, "lng": 107.6191,
-      "wageFactor": 1.08, "rentFactor": 1.15, "capexFactor": 1.08, "demandFactor": 1.14,
-      "demandLabel": "Tinggi, muda", "competition": "Tinggi",
+      "id": "bandung",
+      "name": "Bandung",
+      "province": "Jawa Barat",
+      "lat": -6.9175,
+      "lng": 107.6191,
+      "wageFactor": 1.08,
+      "rentFactor": 1.15,
+      "capexFactor": 1.08,
+      "demandFactor": 1.14,
+      "demandLabel": "Tinggi, muda",
+      "competition": "Tinggi",
       "note": "Pasar muda kuat; konsep visual dan komunitas lebih penting daripada sekadar murah.",
-      "hotspots": ["Dipatiukur", "Antapani", "Buahbatu"],
-      "scores": { "laundry": 85, "kelontong": 70, "franchise": 87, "game": 87, "gym": 85, "coffee": 90, "barber": 84 }
+      "hotspots": [
+        "Dipatiukur",
+        "Antapani",
+        "Buahbatu"
+      ],
+      "scores": {
+        "laundry": 85,
+        "kelontong": 70,
+        "franchise": 87,
+        "game": 87,
+        "gym": 85,
+        "coffee": 90,
+        "barber": 84
+      }
     },
     {
-      "id": "yogyakarta", "name": "Yogyakarta", "province": "DI Yogyakarta", "lat": -7.7956, "lng": 110.3695,
-      "wageFactor": 0.76, "rentFactor": 0.92, "capexFactor": 0.96, "demandFactor": 1.02,
-      "demandLabel": "Muda, sangat sensitif harga", "competition": "Tinggi",
+      "id": "yogyakarta",
+      "name": "Yogyakarta",
+      "province": "DI Yogyakarta",
+      "lat": -7.7956,
+      "lng": 110.3695,
+      "wageFactor": 0.76,
+      "rentFactor": 0.92,
+      "capexFactor": 0.96,
+      "demandFactor": 1.02,
+      "demandLabel": "Muda, sangat sensitif harga",
+      "competition": "Tinggi",
       "note": "Basis mahasiswa besar; volume bagus, tetapi harga dan musim libur perlu dihitung.",
-      "hotspots": ["Seturan", "Gejayan", "Pogung"],
-      "scores": { "laundry": 91, "kelontong": 78, "franchise": 86, "game": 90, "gym": 78, "coffee": 88, "barber": 83 }
+      "hotspots": [
+        "Seturan",
+        "Gejayan",
+        "Pogung"
+      ],
+      "scores": {
+        "laundry": 91,
+        "kelontong": 78,
+        "franchise": 86,
+        "game": 90,
+        "gym": 78,
+        "coffee": 88,
+        "barber": 83
+      }
     },
     {
-      "id": "malang", "name": "Malang", "province": "Jawa Timur", "lat": -7.9666, "lng": 112.6326,
-      "wageFactor": 0.9, "rentFactor": 0.88, "capexFactor": 0.96, "demandFactor": 1.0,
-      "demandLabel": "Tumbuh, pasar pelajar", "competition": "Sedang-tinggi",
+      "id": "malang",
+      "name": "Malang",
+      "province": "Jawa Timur",
+      "lat": -7.9666,
+      "lng": 112.6326,
+      "wageFactor": 0.9,
+      "rentFactor": 0.88,
+      "capexFactor": 0.96,
+      "demandFactor": 1.0,
+      "demandLabel": "Tumbuh, pasar pelajar",
+      "competition": "Sedang-tinggi",
       "note": "Kampus dan kos membentuk demand kuat untuk jasa praktis dan hiburan.",
-      "hotspots": ["Lowokwaru", "Soekarno Hatta", "Dinoyo"],
-      "scores": { "laundry": 90, "kelontong": 79, "franchise": 85, "game": 89, "gym": 80, "coffee": 86, "barber": 84 }
+      "hotspots": [
+        "Lowokwaru",
+        "Soekarno Hatta",
+        "Dinoyo"
+      ],
+      "scores": {
+        "laundry": 90,
+        "kelontong": 79,
+        "franchise": 85,
+        "game": 89,
+        "gym": 80,
+        "coffee": 86,
+        "barber": 84
+      }
     },
     {
-      "id": "semarang", "name": "Semarang", "province": "Jawa Tengah", "lat": -6.9667, "lng": 110.4167,
-      "wageFactor": 1.0, "rentFactor": 1.0, "capexFactor": 1.0, "demandFactor": 1.05,
-      "demandLabel": "Stabil, kota pekerja", "competition": "Sedang-tinggi",
+      "id": "semarang",
+      "name": "Semarang",
+      "province": "Jawa Tengah",
+      "lat": -6.9667,
+      "lng": 110.4167,
+      "wageFactor": 1.0,
+      "rentFactor": 1.0,
+      "capexFactor": 1.0,
+      "demandFactor": 1.05,
+      "demandLabel": "Stabil, kota pekerja",
+      "competition": "Sedang-tinggi",
       "note": "Pasar keluarga dan pekerja mendukung usaha repeat-order dengan lokasi praktis.",
-      "hotspots": ["Tembalang", "Banyumanik", "Pedurungan"],
-      "scores": { "laundry": 84, "kelontong": 80, "franchise": 82, "game": 80, "gym": 82, "coffee": 81, "barber": 83 }
+      "hotspots": [
+        "Tembalang",
+        "Banyumanik",
+        "Pedurungan"
+      ],
+      "scores": {
+        "laundry": 84,
+        "kelontong": 80,
+        "franchise": 82,
+        "game": 80,
+        "gym": 82,
+        "coffee": 81,
+        "barber": 83
+      }
     },
     {
-      "id": "solo", "name": "Solo", "province": "Jawa Tengah", "lat": -7.5755, "lng": 110.8243,
-      "wageFactor": 0.84, "rentFactor": 0.78, "capexFactor": 0.92, "demandFactor": 0.9,
-      "demandLabel": "Stabil, value-driven", "competition": "Sedang",
+      "id": "solo",
+      "name": "Solo",
+      "province": "Jawa Tengah",
+      "lat": -7.5755,
+      "lng": 110.8243,
+      "wageFactor": 0.84,
+      "rentFactor": 0.78,
+      "capexFactor": 0.92,
+      "demandFactor": 0.9,
+      "demandLabel": "Stabil, value-driven",
+      "competition": "Sedang",
       "note": "Biaya relatif sehat; produk harus terasa worth it dan membangun pelanggan tetap.",
-      "hotspots": ["Jebres", "Banjarsari", "Laweyan"],
-      "scores": { "laundry": 84, "kelontong": 86, "franchise": 78, "game": 81, "gym": 72, "coffee": 79, "barber": 84 }
+      "hotspots": [
+        "Jebres",
+        "Banjarsari",
+        "Laweyan"
+      ],
+      "scores": {
+        "laundry": 84,
+        "kelontong": 86,
+        "franchise": 78,
+        "game": 81,
+        "gym": 72,
+        "coffee": 79,
+        "barber": 84
+      }
     },
     {
-      "id": "medan", "name": "Medan", "province": "Sumatera Utara", "lat": 3.5952, "lng": 98.6722,
-      "wageFactor": 1.0, "rentFactor": 1.02, "capexFactor": 1.04, "demandFactor": 1.08,
-      "demandLabel": "Tinggi, komunal", "competition": "Sedang-tinggi",
+      "id": "medan",
+      "name": "Medan",
+      "province": "Sumatera Utara",
+      "lat": 3.5952,
+      "lng": 98.6722,
+      "wageFactor": 1.0,
+      "rentFactor": 1.02,
+      "capexFactor": 1.04,
+      "demandFactor": 1.08,
+      "demandLabel": "Tinggi, komunal",
+      "competition": "Sedang-tinggi",
       "note": "Pasar besar dan sosial; rekomendasi mulut ke mulut sangat berpengaruh.",
-      "hotspots": ["Setia Budi", "Pancing", "Ring Road"],
-      "scores": { "laundry": 80, "kelontong": 82, "franchise": 86, "game": 82, "gym": 83, "coffee": 85, "barber": 86 }
+      "hotspots": [
+        "Setia Budi",
+        "Pancing",
+        "Ring Road"
+      ],
+      "scores": {
+        "laundry": 80,
+        "kelontong": 82,
+        "franchise": 86,
+        "game": 82,
+        "gym": 83,
+        "coffee": 85,
+        "barber": 86
+      }
     },
     {
-      "id": "makassar", "name": "Makassar", "province": "Sulawesi Selatan", "lat": -5.1477, "lng": 119.4327,
-      "wageFactor": 0.98, "rentFactor": 0.98, "capexFactor": 1.05, "demandFactor": 1.06,
-      "demandLabel": "Tinggi, kota hub", "competition": "Sedang",
+      "id": "makassar",
+      "name": "Makassar",
+      "province": "Sulawesi Selatan",
+      "lat": -5.1477,
+      "lng": 119.4327,
+      "wageFactor": 0.98,
+      "rentFactor": 0.98,
+      "capexFactor": 1.05,
+      "demandFactor": 1.06,
+      "demandLabel": "Tinggi, kota hub",
+      "competition": "Sedang",
       "note": "Kota hub memberi demand luas; suplai dan logistik alat perlu buffer lebih besar.",
-      "hotspots": ["Panakkukang", "Tamalanrea", "Rappocini"],
-      "scores": { "laundry": 81, "kelontong": 84, "franchise": 85, "game": 81, "gym": 84, "coffee": 84, "barber": 85 }
+      "hotspots": [
+        "Panakkukang",
+        "Tamalanrea",
+        "Rappocini"
+      ],
+      "scores": {
+        "laundry": 81,
+        "kelontong": 84,
+        "franchise": 85,
+        "game": 81,
+        "gym": 84,
+        "coffee": 84,
+        "barber": 85
+      }
     },
     {
-      "id": "denpasar", "name": "Denpasar", "province": "Bali", "lat": -8.65, "lng": 115.2167,
-      "wageFactor": 1.02, "rentFactor": 1.35, "capexFactor": 1.15, "demandFactor": 1.2,
-      "demandLabel": "Tinggi, lokal-wisata", "competition": "Tinggi",
+      "id": "denpasar",
+      "name": "Denpasar",
+      "province": "Bali",
+      "lat": -8.65,
+      "lng": 115.2167,
+      "wageFactor": 1.02,
+      "rentFactor": 1.35,
+      "capexFactor": 1.15,
+      "demandFactor": 1.2,
+      "demandLabel": "Tinggi, lokal-wisata",
+      "competition": "Tinggi",
       "note": "Potensi tiket tinggi, tetapi sewa dan seasonality membuat kas cadangan wajib.",
-      "hotspots": ["Renon", "Teuku Umar", "Sesetan"],
-      "scores": { "laundry": 88, "kelontong": 72, "franchise": 84, "game": 74, "gym": 89, "coffee": 91, "barber": 86 }
+      "hotspots": [
+        "Renon",
+        "Teuku Umar",
+        "Sesetan"
+      ],
+      "scores": {
+        "laundry": 88,
+        "kelontong": 72,
+        "franchise": 84,
+        "game": 74,
+        "gym": 89,
+        "coffee": 91,
+        "barber": 86
+      }
     },
     {
-      "id": "balikpapan", "name": "Balikpapan", "province": "Kalimantan Timur", "lat": -1.2379, "lng": 116.8529,
-      "wageFactor": 1.22, "rentFactor": 1.18, "capexFactor": 1.15, "demandFactor": 1.1,
-      "demandLabel": "Daya beli relatif kuat", "competition": "Sedang",
+      "id": "balikpapan",
+      "name": "Balikpapan",
+      "province": "Kalimantan Timur",
+      "lat": -1.2379,
+      "lng": 116.8529,
+      "wageFactor": 1.22,
+      "rentFactor": 1.18,
+      "capexFactor": 1.15,
+      "demandFactor": 1.1,
+      "demandLabel": "Daya beli relatif kuat",
+      "competition": "Sedang",
       "note": "Daya beli menarik, namun ongkos logistik dan tenaga kerja menaikkan titik impas.",
-      "hotspots": ["Sepinggan", "Damai", "Balikpapan Baru"],
-      "scores": { "laundry": 82, "kelontong": 80, "franchise": 84, "game": 82, "gym": 87, "coffee": 85, "barber": 84 }
+      "hotspots": [
+        "Sepinggan",
+        "Damai",
+        "Balikpapan Baru"
+      ],
+      "scores": {
+        "laundry": 82,
+        "kelontong": 80,
+        "franchise": 84,
+        "game": 82,
+        "gym": 87,
+        "coffee": 85,
+        "barber": 84
+      }
     }
   ]
 }
