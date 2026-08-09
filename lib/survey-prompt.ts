@@ -7,6 +7,7 @@ export type AssistantId = "claude" | "chatgpt" | "gemini";
 export type Assistant = {
   id: AssistantId;
   name: string;
+  logo: string;
   /**
    * `null` berarti layanan itu tidak menerima prompt lewat parameter URL, jadi
    * kita hanya bisa membuka halamannya dan mengandalkan papan klip.
@@ -16,9 +17,9 @@ export type Assistant = {
 };
 
 export const ASSISTANTS: Assistant[] = [
-  { id: "claude", name: "Claude", urlTemplate: "https://claude.ai/new?q={q}", homeUrl: "https://claude.ai/new" },
-  { id: "chatgpt", name: "ChatGPT", urlTemplate: "https://chatgpt.com/?q={q}", homeUrl: "https://chatgpt.com/" },
-  { id: "gemini", name: "Gemini", urlTemplate: null, homeUrl: "https://gemini.google.com/app" },
+  { id: "claude", name: "Claude", logo: "/brands/ai/anthropic.svg", urlTemplate: "https://claude.ai/new?q={q}", homeUrl: "https://claude.ai/new" },
+  { id: "chatgpt", name: "ChatGPT", logo: "/brands/ai/openai.svg", urlTemplate: "https://chatgpt.com/?q={q}", homeUrl: "https://chatgpt.com/" },
+  { id: "gemini", name: "Gemini", logo: "/brands/ai/gemini.svg", urlTemplate: null, homeUrl: "https://gemini.google.com/app" },
 ];
 
 /**

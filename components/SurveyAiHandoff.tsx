@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @next/next/no-img-element -- official AI marks use mixed local and remote sources */
+
 import { Check, ClipboardCopy, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { ASSISTANTS, assistantUrl, buildSurveyPrompt, type Assistant, type SurveyPromptInput } from "@/lib/survey-prompt";
@@ -54,7 +56,9 @@ export function SurveyAiHandoff(props: SurveyPromptInput) {
       <div className="survey-ai__buttons">
         {ASSISTANTS.map((assistant) => (
           <button type="button" key={assistant.id} onClick={() => void openAssistant(assistant)}>
-            {copied === assistant.id ? <Check size={15} aria-hidden="true" /> : null}
+            {copied === assistant.id
+              ? <Check size={15} aria-hidden="true" />
+              : <img src={assistant.logo} alt="" width="18" height="18" onError={(event) => { event.currentTarget.hidden = true; }} />}
             {assistant.name}
           </button>
         ))}

@@ -10,6 +10,7 @@ import {
 import {
   formatInvestment,
   formatMonthRange,
+  franchiseLeaderboard,
   franchises,
   midInvestment,
   readableInkOn,
@@ -84,6 +85,75 @@ export type Leaderboard = {
 };
 
 const TOP = 5;
+
+export type ProfitabilityRank = {
+  rank: number;
+  id: string;
+  name: string;
+  kind: "business" | "franchise";
+  profit: number;
+  revenue: string;
+  rating: number;
+  basis: string;
+  href: string;
+  external: boolean;
+  accent: string;
+  businessId?: BusinessId;
+  logo?: string;
+  initials?: string;
+};
+
+/**
+ * Sepuluh peluang dengan estimasi laba operasional bulanan tertinggi.
+ *
+ * Model usaha memakai baseline nasional Cek Bisnis. Entri waralaba memakai
+ * proyeksi brand atau skenario Cek Bisnis yang sudah diberi label sumbernya.
+ * Skor bintang bersifat relatif terhadap laba tertinggi di daftar ini.
+ */
+export const buildProfitabilityRanking = (): ProfitabilityRank[] => {
+  const businessRows = businesses.map((business) => ({
+    id: business.id,
+    name: business.name,
+    kind: "business" as const,
+    profit: baselineMetrics(business).profit,
+    revenue: `${formatMoney(business.targetRevenue)}/bln`,
+    basis: "Baseline usaha mandiri",
+    href: `/usaha/${business.slug}`,
+    external: false,
+    accent: business.accent,
+    businessId: business.id,
+  }));
+
+  const franchiseRows = franchiseLeaderboard.map((item) => {
+    const detail = franchises.find((franchise) =>
+      franchise.id === item.slug || franchise.name.toLocaleLowerCase("id-ID").includes(item.name.toLocaleLowerCase("id-ID")),
+    );
+    return {
+      id: item.slug,
+      name: item.name,
+      kind: "franchise" as const,
+      profit: item.monthlyProfit,
+      revenue: `${item.monthlyRevenue}/bln`,
+      basis: item.basis,
+      href: detail ? `/franchise/${detail.id}` : item.officialUrl,
+      external: !detail,
+      accent: detail?.brandColor ?? "var(--color-accent)",
+      logo: item.logo,
+      initials: item.name.split(" ").map((word) => word[0]).join("").slice(0, 3),
+    };
+  });
+
+  const top = [...businessRows, ...franchiseRows]
+    .sort((a, b) => b.profit - a.profit)
+    .slice(0, 10);
+  const maximum = Math.max(...top.map((item) => item.profit), 1);
+
+  return top.map((item, index) => ({
+    ...item,
+    rank: index + 1,
+    rating: Math.max(1, Math.min(10, Math.round((item.profit / maximum) * 10))),
+  }));
+};
 
 const businessEntry = (business: Business, value: string, detail: string): LeaderboardEntry => ({
   id: business.id,

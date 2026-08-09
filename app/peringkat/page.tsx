@@ -3,16 +3,17 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Info, MapPin, ShieldAlert, Trophy } from "lucide-react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { ProfitabilityLeaderboard } from "@/components/ProfitabilityLeaderboard";
 import { businessData, businesses } from "@/lib/business-data";
 import { franchises } from "@/lib/franchise-data";
 import { buildCityRanking, buildLeaderboards } from "@/lib/leaderboard";
 
 export const metadata: Metadata = {
-  title: "Peringkat Usaha dan Waralaba Indonesia - Top 5 per Kategori | Cek Bisnis",
+  title: "Top 10 Usaha Profitable dan Peringkat Bisnis Indonesia | Cek Bisnis",
   description:
-    "Top 5 balik modal tercepat, modal teringan, margin tertinggi, traffic minimum paling ringan, waralaba termurah, dan kota paling menjanjikan — dihitung dari seluruh data Cek Bisnis.",
+    "Top 10 usaha dan waralaba berdasarkan estimasi laba bulanan, dilengkapi peringkat balik modal, modal awal, margin, traffic minimum, dan kota potensial.",
   openGraph: {
-    title: "Peringkat Usaha dan Waralaba Indonesia - Top 5 per Kategori",
+    title: "Top 10 Usaha Profitable dan Peringkat Bisnis Indonesia",
     description: "Peringkat balik modal, modal awal, margin, traffic, dan kota terbaik dari seluruh data Cek Bisnis.",
     url: "/peringkat",
   },
@@ -49,6 +50,8 @@ export default function LeaderboardPage() {
           </p>
         </aside>
       </section>
+
+      <ProfitabilityLeaderboard />
 
       <section className="rank-boards" aria-labelledby="rank-boards-title">
         <h2 id="rank-boards-title" className="visually-hidden">Papan peringkat</h2>

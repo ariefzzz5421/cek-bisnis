@@ -42,6 +42,31 @@ test("server-renders the all-Indonesia location survey", async () => {
   assert.match(html, /Jalankan survei/i);
 });
 
+test("server-renders a top-10 profitability ranking", async () => {
+  const response = await render("/peringkat");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /TOP 10.*PROFITABILITAS/i);
+  assert.match(html, /Skor 1–10 bersifat relatif/i);
+  assert.equal((html.match(/class="profit-rank__row"/g) ?? []).length, 10);
+  assert.equal((html.match(/class="profit-rank__rating"/g) ?? []).length, 10);
+});
+
+test("every franchise has an official or generated category identity", async () => {
+  const franchiseData = JSON.parse(
+    await readFile(new URL("../data/franchise-data.json", import.meta.url), "utf8"),
+  );
+  const categories = new Set(franchiseData.categories.map((category) => category.id));
+  for (const category of categories) {
+    const imageUrl = new URL(`../public/brands/categories/${category}.webp`, import.meta.url);
+    const [info, file] = await Promise.all([stat(imageUrl), readFile(imageUrl)]);
+    assert.ok(info.size > 5_000, `${category} fallback icon is unexpectedly small`);
+    assert.equal(file.subarray(0, 4).toString(), "RIFF");
+    assert.equal(file.subarray(8, 12).toString(), "WEBP");
+  }
+  assert.ok(franchiseData.franchises.every((franchise) => categories.has(franchise.category)));
+});
+
 test("every business has a working routed analysis page", async () => {
   assert.equal(businessData.businesses.length, 8);
   assert.equal(businessData.cities.length, 12);

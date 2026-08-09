@@ -16,7 +16,7 @@ export const aiProviders: Record<AIProviderId, ProviderConfig> = {
   openai: {
     id: "openai",
     name: "OpenAI",
-    logo: "https://openai.com/favicon.svg",
+    logo: "/brands/ai/openai.svg",
     description: "Ringkasan keputusan dan risiko utama.",
     apiKey: process.env.OPENAI_API_KEY,
     model: process.env.OPENAI_MODEL,
