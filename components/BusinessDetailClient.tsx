@@ -148,7 +148,7 @@ export function BusinessDetailClient({ business, cities, sources }: { business: 
           <span>CONTOH FORMAT NYATA</span>
         </div>
         <div className="photo-detail-copy">
-          <Link href="/#pilih-usaha"><ArrowLeft size={17} /> Semua usaha</Link>
+          <Link href="/usaha"><ArrowLeft size={17} /> Semua usaha</Link>
           <div className="detail-category"><BusinessIcon id={business.id} size={23} />{business.category}</div>
           <h1>{business.name}</h1>
           <p>{business.oneLine}</p>
@@ -414,7 +414,7 @@ export function BusinessDetailClient({ business, cities, sources }: { business: 
 
       <section className="compact-sources"><span>SUMBER UTAMA</span><div>{sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><b>{source.title}</b><ArrowUpRight size={15} /></a>)}</div><p><ShieldAlert size={16} /> Harga dan permintaan dapat berbeda di setiap titik. Minta quotation dan hitung traffic 7 hari.</p></section>
 
-      <section className="detail-next-business"><div><span>BANDINGKAN PILIHAN LAIN</span><h2>Jangan terpaku satu usaha.</h2></div><Link href="/#pilih-usaha">Lihat semua <ArrowRight size={20} /></Link></section>
+      <section className="detail-next-business"><div><span>BANDINGKAN PILIHAN LAIN</span><h2>Jangan terpaku satu usaha.</h2></div><Link href="/compare">Bandingkan bisnis <ArrowRight size={20} /></Link></section>
     </>
   );
 }
