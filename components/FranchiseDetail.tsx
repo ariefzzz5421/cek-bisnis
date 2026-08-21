@@ -21,7 +21,6 @@ import {
   formatInvestmentRange,
   formatMonthRange,
   formatRevenueRange,
-  franchiseArticleFile,
   franchiseBasisLabel,
   franchiseData,
   franchiseSectorName,
@@ -31,6 +30,9 @@ import {
   type FranchiseArticle,
   type FranchiseSource,
 } from "@/lib/franchise-data";
+
+const CURRENT_PROSPECTUS_NOTE =
+  "Menurut Pasal 5 PP 35/2024 tentang Waralaba, prospektus penawaran waralaba harus diberikan kepada calon penerima paling lambat 14 hari kalender sebelum penandatanganan perjanjian. Dokumen itu umumnya tidak diunduh bebas, jadi tautan di bawah mengarah ke halaman kemitraan resmi tempat kamu bisa memintanya.";
 
 export function FranchiseDetail({
   franchise,
@@ -130,7 +132,7 @@ export function FranchiseDetail({
 
           <div className="franchise-side-card franchise-side-card--docs">
             <h3><FileText size={17} aria-hidden="true" /> Skema resmi & kontak brand</h3>
-            <p>{franchiseArticleFile.prospectusNote}</p>
+            <p>{CURRENT_PROSPECTUS_NOTE}</p>
             <div className="franchise-doc-links">
               <a href={franchise.contactUrl ?? franchise.officialUrl} target="_blank" rel="noreferrer">
                 <ArrowUpRight size={15} aria-hidden="true" />
