@@ -14,7 +14,8 @@ const featured = businesses[0];
 const mapPlaces = ["Kediri", "Bandung", "Makassar"].map((name) => indonesiaPlaces.find((place) => place.name === name)).filter(Boolean);
 /** Foto franchise minuman dipakai sebagai wajah kartu waralaba di daftar usaha. */
 const franchiseSample = businesses.find((business) => business.id === "franchise") ?? featured;
-const franchiseEntryCost = Math.min(...franchises.map((franchise) => franchise.investment[0]));
+const publishedFranchiseInvestments = franchises.filter((franchise) => franchise.investment[0] > 0).map((franchise) => franchise.investment[0]);
+const franchiseEntryCost = Math.min(...publishedFranchiseInvestments);
 
 export default function Home() {
   return (
@@ -31,9 +32,10 @@ export default function Home() {
           </div>
           <p className="workbench-kicker"><span aria-hidden="true" /> Data Indonesia · diperbarui {businessData.updatedAt}</p>
           <h1 id="workbench-title">Sebelum buka usaha,<br />buka angkanya.</h1>
-          <p>Bandingkan modal, biaya bulanan, omzet BEP, alat, dan lokasi untuk tujuh model UMKM Indonesia.</p>
+          <p>Bandingkan modal, biaya bulanan, omzet BEP, alat, dan lokasi untuk model UMKM dan franchise Indonesia.</p>
           <div className="workbench-hero__actions">
-            <Link className="workbench-button workbench-button--primary" href="#pilih-usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link className="workbench-button workbench-button--primary" href="/usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
+            <Link className="workbench-button workbench-button--quiet" href="/compare">Bandingkan bisnis</Link>
             <Link className="workbench-button workbench-button--quiet" href="/survei-lokasi"><MapPinned size={18} aria-hidden="true" /> Peta usaha Indonesia</Link>
           </div>
           <dl className="workbench-proof">
@@ -86,7 +88,7 @@ export default function Home() {
           ))}
 
           <article className="business-browser__item business-browser__item--franchise">
-            <Link href="/franchise" aria-label="Bandingkan 20 waralaba Indonesia">
+            <Link href="/franchise" aria-label={`Bandingkan ${franchises.length} waralaba Indonesia`}>
               <div className="business-browser__media">
                 <Image src={`/businesses/${franchiseSample.slug}.jpg`} alt="Gerai waralaba minuman di Indonesia" width={720} height={480} unoptimized />
                 <span><Store size={18} aria-hidden="true" /> Waralaba siap pakai</span>
@@ -94,7 +96,7 @@ export default function Home() {
               <div className="business-browser__body">
                 <div>
                   <h3>Franchise</h3>
-                  <p>Beli sistem yang sudah jalan: {franchises.length} merek dengan modal, fee, royalti, dan BEP yang bisa dibandingkan.</p>
+                  <p>Beli sistem yang sudah jalan: {franchises.length} merek dengan modal, fee, royalti, sektor, dan BEP yang bisa dibandingkan.</p>
                 </div>
                 <dl>
                   <div><dt>Modal mulai</dt><dd>{formatInvestment(franchiseEntryCost)}</dd></div>
@@ -173,11 +175,11 @@ export default function Home() {
       <section className="workbench-closing" aria-labelledby="workbench-closing-title">
         <p>Pilih satu usaha. Uji angkanya.</p>
         <h2 id="workbench-closing-title">Hitung dulu.<br />Baru buka.</h2>
-        <Link className="workbench-button workbench-button--light" href="#pilih-usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
+        <Link className="workbench-button workbench-button--light" href="/usaha">Mulai analisis <ArrowRight size={18} aria-hidden="true" /></Link>
       </section>
 
       <SiteFooter />
-      <aside className="workbench-mobile-cta" aria-label="Mulai analisis usaha"><span>Pilih usaha untuk mulai.</span><a href="#pilih-usaha">Mulai analisis <ArrowRight size={17} /></a></aside>
+      <aside className="workbench-mobile-cta" aria-label="Mulai analisis usaha"><span>Pilih usaha untuk mulai.</span><Link href="/usaha">Mulai analisis <ArrowRight size={17} /></Link></aside>
     </main>
   );
 }
