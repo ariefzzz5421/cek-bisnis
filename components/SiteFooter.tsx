@@ -9,11 +9,12 @@ export function SiteFooter({ compact = false }: { compact?: boolean }) {
       <BrandLogo />
       <p>Estimasi awal UMKM Indonesia. Validasi harga dan arus pengunjung sebelum membuka usaha.</p>
       <nav aria-label="Navigasi footer">
-        <Link href="/#pilih-usaha">Jenis usaha</Link>
+        <Link href="/usaha">Jenis usaha</Link>
         <Link href="/franchise">Franchise</Link>
+        <Link href="/compare">Bandingkan</Link>
         <Link href="/peringkat">Peringkat</Link>
         <Link href="/survei-lokasi">Survei lokasi</Link>
-        <Link href="/#data">Dasar data</Link>
+        <Link href="/data">Dasar data</Link>
         <a href="https://www.openstreetmap.org/" target="_blank" rel="noreferrer">OpenStreetMap <ArrowUpRight size={13} aria-hidden="true" /></a>
       </nav>
       <span>© 2026 Cek Bisnis</span>
