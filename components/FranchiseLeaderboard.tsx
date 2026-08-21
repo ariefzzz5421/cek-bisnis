@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- official brand marks use mixed local and official remote sources */
 "use client";
 
-import { ArrowUpRight, Star } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Star } from "lucide-react";
 import { formatMoney } from "@/lib/business-data";
 import { franchiseLeaderboard } from "@/lib/franchise-data";
 
@@ -52,7 +53,11 @@ export function FranchiseLeaderboard() {
             <div role="cell"><small>Modal</small><b>{brand.investment}</b></div>
             <div role="cell"><small>Omzet/bln</small><b>{brand.monthlyRevenue}</b></div>
             <div className="franchise-rank__profit" role="cell"><small>Est. laba/bln</small><b>{formatMoney(brand.monthlyProfit)}</b></div>
-            <div className="franchise-rank__score" role="cell"><ProfitStars value={brand.rating} /><a href={brand.officialUrl} target="_blank" rel="noreferrer">Cek resmi <ArrowUpRight size={14} aria-hidden="true" /></a></div>
+            <div className="franchise-rank__score" role="cell">
+              <ProfitStars value={brand.rating} />
+              <Link href={`/franchise/${brand.slug}`}>Analisis <ArrowRight size={14} aria-hidden="true" /></Link>
+              <a href={brand.officialUrl} target="_blank" rel="noreferrer">Resmi <ArrowUpRight size={14} aria-hidden="true" /></a>
+            </div>
             <p>{brand.note}</p>
           </article>
         ))}

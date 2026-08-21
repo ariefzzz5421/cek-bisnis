@@ -1,0 +1,344 @@
+{
+  "sources": [
+    {
+      "id": "kopigo-official",
+      "title": "KOPIGO Signature - Kemitraan resmi",
+      "url": "https://kemitraan.kopigo.id/"
+    },
+    {
+      "id": "bingxue-official",
+      "title": "Bingxue Indonesia - Franchise resmi",
+      "url": "https://bingxueindonesia.co.id/franchise/"
+    },
+    {
+      "id": "sai-official",
+      "title": "Ayam Geprek Sa'i - Kemitraan resmi",
+      "url": "https://ayamgepreksai.com/"
+    },
+    {
+      "id": "nyoklat-paket",
+      "title": "Nyoklat Klasik - Paket kemitraan resmi",
+      "url": "https://nyoklatklasik.co.id/paket/"
+    },
+    {
+      "id": "nyoklat-faq",
+      "title": "Nyoklat Klasik - FAQ kemitraan",
+      "url": "https://nyoklatklasik.co.id/faq/"
+    },
+    {
+      "id": "tahugo-official",
+      "title": "Tahu Go - Kemitraan resmi",
+      "url": "https://www.tahugo.co.id/"
+    },
+    {
+      "id": "doyanayam-official",
+      "title": "Doyan Ayam - Franchise resmi",
+      "url": "https://doyanayam.com/franchise/"
+    }
+  ],
+  "franchises": [
+    {
+      "id": "kopigo",
+      "name": "KOPIGO Signature",
+      "category": "minuman",
+      "sector": "Kopi & grab-and-go",
+      "dataBasis": "official",
+      "revenueBasis": "Proyeksi skenario yang dipublikasikan brand.",
+      "bepBasis": "Target balik modal 3-5 bulan merupakan skenario brand, bukan jaminan.",
+      "brandColor": "#111111",
+      "initials": "KG",
+      "officialUrl": "https://kemitraan.kopigo.id/",
+      "contactUrl": "https://kemitraan.kopigo.id/",
+      "outlets": "20+ unit KOPIGO; program Signature dibuka 2026",
+      "since": 2024,
+      "investment": [53, 87],
+      "investmentNote": "Rentang all-in Tier 1 yang dipublikasikan brand. Paket inti, sewa, renovasi, dan kebutuhan lokasi dapat berubah.",
+      "franchiseFee": "Paket inti Rp30-50 jt; lisensi 3 tahun",
+      "royalty": "5% omzet setelah BEP atau paling lambat mulai bulan ke-6",
+      "contractYears": 3,
+      "bepMonths": [3, 5],
+      "monthlyRevenue": [22, 81],
+      "scheme": "Model multi-channel: outlet, mobile selling, online delivery, serta event/reseller. Bahan baku dan SOP dikendalikan pusat, sementara mitra mengoperasikan unit dengan dukungan sistem dan pelatihan.",
+      "kpi": [
+        "Sekitar 36 cup/hari untuk menutup biaya pada simulasi brand",
+        "Skenario moderat 80-120 cup/hari",
+        "Food cost acuan brand sekitar 38%"
+      ],
+      "requirements": [
+        "Lokasi lolos evaluasi tim kemitraan",
+        "Mengikuti SOP, pelatihan, dan rantai pasok pusat",
+        "Menyiapkan modal kerja di luar kebutuhan pembukaan"
+      ],
+      "sourceIds": ["kopigo-official"]
+    },
+    {
+      "id": "bingxue",
+      "name": "Bingxue",
+      "category": "minuman",
+      "sector": "Es krim, teh & minuman",
+      "dataBasis": "official",
+      "revenueBasis": "Brand tidak mempublikasikan omzet outlet Indonesia pada halaman kemitraan.",
+      "bepBasis": "Brand menyebut BEP lebih cepat, tetapi tidak mempublikasikan jumlah bulan.",
+      "brandColor": "#E4002B",
+      "initials": "BX",
+      "officialUrl": "https://bingxueindonesia.co.id/franchise/",
+      "contactUrl": "https://bingxueindonesia.co.id/franchise/",
+      "outlets": "550+ store di Indonesia menurut situs brand",
+      "since": 2014,
+      "investment": [0, 0],
+      "investmentNote": "Biaya kemitraan terbaru tidak ditampilkan sebagai angka publik; calon mitra diarahkan menghubungi tim franchise untuk quotation.",
+      "franchiseFee": "Minta quotation resmi",
+      "royalty": "Konfirmasi pada perjanjian terbaru",
+      "contractYears": 0,
+      "bepMonths": [0, 0],
+      "monthlyRevenue": [0, 0],
+      "scheme": "Calon mitra berkonsultasi, mengajukan lokasi, menjalani survei, menandatangani kontrak, mengikuti desain-renovasi dan pelatihan, lalu outlet diperiksa sebelum pembukaan.",
+      "kpi": [
+        "Gross profit produk sekitar 60% menurut materi brand",
+        "Lokasi lolos survei dan memenuhi standar desain",
+        "Kepatuhan SOP dan pasokan bahan baku pusat"
+      ],
+      "requirements": [
+        "Memiliki modal dan lokasi yang dapat disurvei",
+        "Membayar biaya sesuai quotation resmi",
+        "Mengikuti pelatihan serta standar operasional brand"
+      ],
+      "sourceIds": ["bingxue-official"]
+    },
+    {
+      "id": "ayam-geprek-sai",
+      "name": "Ayam Geprek Sa'i",
+      "category": "makanan",
+      "sector": "Restoran ayam geprek",
+      "dataBasis": "mixed",
+      "revenueBasis": "Rentang omzet adalah skenario Cek Bisnis untuk screening, bukan publikasi brand.",
+      "bepBasis": "Brand tidak mempublikasikan BEP dalam bulan pada halaman kemitraan yang ditinjau.",
+      "brandColor": "#F6A800",
+      "initials": "GS",
+      "officialUrl": "https://ayamgepreksai.com/",
+      "contactUrl": "https://ayamgepreksai.com/",
+      "outlets": "Jaringan nasional; jumlah outlet berubah seiring ekspansi",
+      "since": 2017,
+      "investment": [300, 300],
+      "investmentNote": "Situs brand menyebut investasi sekitar Rp300 juta, di luar biaya sewa lokasi.",
+      "franchiseFee": "Tanpa franchise fee",
+      "royalty": "Tanpa royalti; skema bagi hasil syariah, contoh 70% mitra : 30% manajemen",
+      "contractYears": 0,
+      "bepMonths": [0, 0],
+      "monthlyRevenue": [85, 115],
+      "scheme": "Kemitraan menggunakan pengelolaan operasional dan bagi hasil syariah. Brand menyediakan SOP, dukungan pengelolaan, dan standar outlet; porsi hasil mengikuti akad/perjanjian aktual.",
+      "kpi": [
+        "Traffic makan siang dan malam yang stabil",
+        "Food cost, waste, dan kecepatan pelayanan",
+        "Sewa lokasi tetap proporsional terhadap omzet"
+      ],
+      "requirements": [
+        "Area sekitar 100 m2 dan frontage minimal sekitar 6 meter",
+        "Memiliki area parkir yang memadai",
+        "Lokasi dan sumber modal harus memenuhi ketentuan kemitraan brand"
+      ],
+      "sourceIds": ["sai-official"]
+    },
+    {
+      "id": "nyoklat-klasik",
+      "name": "Nyoklat Klasik",
+      "category": "minuman",
+      "sector": "Minuman cokelat & booth",
+      "dataBasis": "mixed",
+      "revenueBasis": "Rentang omzet adalah skenario Cek Bisnis; brand mempublikasikan struktur paket dan margin bahan, bukan omzet outlet standar.",
+      "bepBasis": "Tidak ada BEP bulanan resmi yang dipublikasikan pada halaman paket/FAQ yang ditinjau.",
+      "brandColor": "#6B3F2A",
+      "initials": "NK",
+      "officialUrl": "https://nyoklatklasik.co.id/paket/",
+      "contactUrl": "https://nyoklatklasik.co.id/paket/",
+      "outlets": "Kemitraan multi-format dari booth sampai gerai besar",
+      "since": 2013,
+      "investment": [12, 250],
+      "investmentNote": "Paket resmi yang ditampilkan mulai Silver Rp12 jt, Container Rp14 jt, Minibar Rp17 jt, hingga Gold dan Platinum yang lebih besar.",
+      "franchiseFee": "Admin tahunan; nominal berbeda menurut paket",
+      "royalty": "Tanpa royalti; repeat order bahan dari pusat",
+      "contractYears": 1,
+      "bepMonths": [0, 0],
+      "monthlyRevenue": [15, 30],
+      "scheme": "Mitra memilih format paket, menyiapkan lokasi dan karyawan, kemudian memakai bahan baku pusat. Struktur repeat order membuat economics sangat bergantung pada volume cup dan disiplin HPP.",
+      "kpi": [
+        "Volume cup harian dan average selling price",
+        "HPP bahan sekitar 45-50% dari harga jual menurut FAQ brand",
+        "Traffic lokasi dan biaya tenaga kerja"
+      ],
+      "requirements": [
+        "Lokasi harus disetujui dan menjaga jarak dengan mitra lain",
+        "Mitra menyediakan lokasi dan karyawan",
+        "Mengikuti standar bahan baku dan identitas brand"
+      ],
+      "sourceIds": ["nyoklat-paket", "nyoklat-faq"]
+    },
+    {
+      "id": "tahu-go",
+      "name": "Tahu Go",
+      "category": "makanan",
+      "sector": "Snack tahu & take-away",
+      "dataBasis": "mixed",
+      "revenueBasis": "Rentang omzet adalah skenario Cek Bisnis; situs brand tidak mempublikasikan omzet standar outlet.",
+      "bepBasis": "Brand menyebut BEP cepat tanpa mempublikasikan rentang bulan pada halaman yang ditinjau.",
+      "brandColor": "#F5A623",
+      "initials": "TG",
+      "officialUrl": "https://www.tahugo.co.id/",
+      "contactUrl": "https://www.tahugo.co.id/",
+      "outlets": "Jaringan kemitraan snack take-away",
+      "since": 2019,
+      "investment": [0, 0],
+      "investmentNote": "Harga paket terbaru tidak terlihat sebagai angka publik pada halaman resmi yang ditinjau; konfirmasi langsung sebelum memakai angka investasi lama dari artikel pihak ketiga.",
+      "franchiseFee": "Konfirmasi paket terbaru",
+      "royalty": "Tanpa royalti menurut situs brand",
+      "contractYears": 0,
+      "bepMonths": [0, 0],
+      "monthlyRevenue": [16, 25],
+      "scheme": "Format take-away dengan menu inti tahu goreng. Brand mendukung pelatihan, materi promosi, dan pendaftaran kanal delivery; economics utamanya ditentukan volume transaksi dan food cost.",
+      "kpi": [
+        "Jumlah transaksi per hari",
+        "Waste minyak dan bahan baku",
+        "Kontribusi delivery terhadap penjualan"
+      ],
+      "requirements": [
+        "Lokasi dengan traffic take-away yang cukup",
+        "Mengikuti training dan standar produk",
+        "Memakai kanal pemesanan/delivery yang relevan"
+      ],
+      "sourceIds": ["tahugo-official"]
+    },
+    {
+      "id": "doyan-ayam",
+      "name": "Doyan Ayam",
+      "category": "makanan",
+      "sector": "Fried chicken & ayam geprek",
+      "dataBasis": "official",
+      "revenueBasis": "Brand menampilkan contoh performa partner, bukan omzet minimum yang dijamin.",
+      "bepBasis": "Brand mengklaim rata-rata BEP di bawah satu tahun; hasil outlet individual dapat berbeda.",
+      "brandColor": "#E62429",
+      "initials": "DA",
+      "officialUrl": "https://doyanayam.com/franchise/",
+      "contactUrl": "https://doyanayam.com/franchise/",
+      "outlets": "300+ partner aktif menurut situs brand",
+      "since": 2018,
+      "investment": [0, 0],
+      "investmentNote": "Nominal paket/promosi dapat berubah dan perlu diminta dari tim franchise; jangan memakai harga promo lama sebagai biaya permanen.",
+      "franchiseFee": "Minta quotation paket terbaru",
+      "royalty": "Tanpa bagi hasil/royalti; 100% profit operasional untuk partner menurut brand",
+      "contractYears": 5,
+      "bepMonths": [0, 12],
+      "monthlyRevenue": [0, 0],
+      "scheme": "Partner mengoperasikan outlet dengan SOP, bahan, training, dan dukungan pusat. Situs brand menyatakan tidak ada profit sharing sehingga hasil operasional outlet tetap pada mitra setelah biaya usaha.",
+      "kpi": [
+        "Penjualan harian dan repeat customer",
+        "Food cost serta waste ayam dan minyak",
+        "Sewa dan payroll dibanding omzet"
+      ],
+      "requirements": [
+        "Luas lokasi minimal sekitar 32 m2 dan tinggi plafon sekitar 3 m",
+        "Parkir memadai untuk motor dan mobil",
+        "Menyiapkan sekitar 5-7 karyawan serta DP sesuai ketentuan paket"
+      ],
+      "sourceIds": ["doyanayam-official"]
+    }
+  ],
+  "articles": {
+    "kopigo": {
+      "lede": "KOPIGO Signature menarik karena economics-nya dipublikasikan cukup terbuka: paket, skenario cup harian, omzet, food cost, royalti, dan target balik modal bisa diuji sebelum menghubungi sales. Angka tetap merupakan proyeksi brand, bukan jaminan keuntungan.",
+      "sections": [
+        {"heading": "Bagaimana uangnya dibuat", "body": "Pendapatan tidak hanya berasal dari counter. Model Signature menggabungkan outlet, penjualan mobile, delivery online, serta event/reseller. Ini memperbesar peluang utilisasi aset, tetapi juga menambah kebutuhan kontrol stok dan operasional."},
+        {"heading": "Omzet dan skenario", "body": "Materi resmi menampilkan skenario konservatif sekitar 50-70 cup per hari dengan omzet Rp22-32 juta per bulan, moderat 80-120 cup dengan Rp36-54 juta, dan optimistis 130-180 cup dengan Rp59-81 juta. Gunakan skenario konservatif saat menghitung kelayakan lokasi."},
+        {"heading": "BEP dan faktor penentu", "body": "Brand menempatkan titik tutup biaya sekitar 36 cup per hari dan target payback 3-5 bulan pada skenario yang mereka publikasikan. Risiko terbesar tetap traffic, sewa, konsistensi cup harian, food cost, serta kemampuan menjaga repeat customer."},
+        {"heading": "Mekanisme kemitraan", "body": "Mitra mendapatkan sistem, standar produk, pelatihan, dan dukungan peluncuran. Royalti 5% baru berlaku setelah BEP atau paling lambat bulan keenam, sehingga periode awal lebih ringan dibanding model yang langsung menarik royalti sejak hari pertama."}
+      ],
+      "costBreakdown": [
+        {"item": "Paket inti Tier 1", "amount": "Rp30-50 jt", "note": "Harga berubah menurut wave/promo dan lisensi."},
+        {"item": "Sewa lokasi", "amount": "±Rp12-25 jt/tahun", "note": "Contoh kisaran pada simulasi brand; kota dan titik sangat menentukan."},
+        {"item": "Renovasi/fit-out", "amount": "±Rp11-32 jt", "note": "Bergantung kondisi lokasi."},
+        {"item": "Total all-in Tier 1", "amount": "±Rp53-87 jt", "note": "Rentang resmi yang dipublikasikan untuk screening."}
+      ],
+      "schemeDocs": [{"label": "Halaman kemitraan resmi KOPIGO", "url": "https://kemitraan.kopigo.id/", "kind": "page"}],
+      "verdict": "Menarik untuk diuji karena disclosure economics relatif lengkap. Jangan membeli hanya karena target BEP 3-5 bulan; validasi apakah titik pilihan realistis mencapai minimal 50-80 cup per hari setelah masa pembukaan lewat."
+    },
+    "bingxue": {
+      "lede": "Bingxue sudah memiliki jaringan besar di Indonesia, tetapi halaman franchise resminya tidak menampilkan angka modal, omzet, atau BEP dalam rupiah. Karena itu halaman ini sengaja tidak mengarang angka dan mengarahkan calon mitra meminta quotation terbaru.",
+      "sections": [
+        {"heading": "Mekanisme kemitraan", "body": "Alur resmi dimulai dari konsultasi, pengajuan lokasi, survei, kontrak, desain dan renovasi, pelatihan, inspeksi, lalu grand opening. Model seperti ini membuat kelayakan lokasi dan kepatuhan standar brand menjadi gerbang utama."},
+        {"heading": "Economics yang dipublikasikan", "body": "Situs brand menonjolkan gross profit produk sekitar 60%, lebih dari 550 store di Indonesia, dan klaim BEP lebih cepat. Namun gross profit bukan laba bersih: sewa, gaji, listrik, delivery fee, shrinkage, dan biaya kemitraan tetap harus dikurangi."},
+        {"heading": "Apa yang harus diminta ke sales", "body": "Minta quotation all-in, daftar biaya berulang, durasi kontrak, harga bahan baku, ketentuan renovasi, estimasi payroll, serta data penjualan outlet pembanding dengan karakter lokasi serupa. Tanpa itu, ROI belum layak dihitung."}
+      ],
+      "costBreakdown": [
+        {"item": "Biaya kemitraan", "amount": "Minta quotation", "note": "Tidak ditampilkan sebagai angka publik di halaman resmi."},
+        {"item": "Renovasi & desain", "amount": "Tergantung lokasi", "note": "Masuk dalam tahapan wajib sebelum inspeksi."},
+        {"item": "Modal kerja", "amount": "Hitung terpisah", "note": "Sediakan buffer untuk gaji, sewa, utilitas dan stok."}
+      ],
+      "schemeDocs": [{"label": "Halaman franchise resmi Bingxue Indonesia", "url": "https://bingxueindonesia.co.id/franchise/", "kind": "page"}],
+      "verdict": "Brand scale-nya menarik, tetapi keputusan investasi belum bisa dibuat dari website publik saja. Anggap statusnya 'needs quotation' sampai seluruh recurring fee dan unit economics tertulis di proposal."
+    },
+    "ayam-geprek-sai": {
+      "lede": "Ayam Geprek Sa'i berbeda dari franchise fee klasik: situs resminya menekankan investasi sekitar Rp300 juta di luar sewa, tanpa franchise fee dan royalti, dengan pengelolaan serta bagi hasil syariah sesuai akad.",
+      "sections": [
+        {"heading": "Mekanisme bagi hasil", "body": "Contoh materi brand menggunakan pembagian 70% untuk mitra dan 30% untuk manajemen. Ini berarti yang harus dianalisis bukan hanya omzet, tetapi definisi laba yang dibagi, komponen biaya yang dipotong sebelum pembagian, dan siapa yang menanggung biaya tak terduga."},
+        {"heading": "Omzet", "body": "Rentang omzet Rp85-115 juta pada Cek Bisnis adalah skenario screening, bukan angka resmi Sa'i. Gunakan hanya untuk stress test, lalu ganti dengan data outlet pembanding yang diberikan brand saat due diligence."},
+        {"heading": "Lokasi dan kapasitas", "body": "Format restoran membutuhkan area sekitar 100 m2, frontage yang cukup, dan parkir. Karena fixed cost lebih tinggi daripada booth, salah memilih lokasi bisa merusak economics walau brand fee rendah."},
+        {"heading": "BEP", "body": "Halaman resmi yang ditinjau tidak mempublikasikan BEP standar dalam bulan. Jangan menurunkan BEP hanya dari omzet; minta proyeksi laba outlet setelah seluruh biaya dan porsi bagi hasil."}
+      ],
+      "costBreakdown": [
+        {"item": "Investasi awal", "amount": "±Rp300 jt", "note": "Angka yang disebut brand; di luar sewa lokasi."},
+        {"item": "Franchise fee", "amount": "Rp0", "note": "Brand menyatakan tanpa franchise fee."},
+        {"item": "Royalti", "amount": "Rp0", "note": "Digantikan mekanisme pengelolaan/bagi hasil sesuai akad."}
+      ],
+      "schemeDocs": [{"label": "Website kemitraan resmi Ayam Geprek Sa'i", "url": "https://ayamgepreksai.com/", "kind": "page"}],
+      "verdict": "Struktur tanpa royalty menarik, tetapi profit sharing membuat definisi laba dan kontrol biaya menjadi lebih penting. Minta contoh P&L outlet nyata sebelum menganggap porsi 70% sebagai return yang tinggi."
+    },
+    "nyoklat-klasik": {
+      "lede": "Nyoklat Klasik punya rentang format yang sangat lebar, dari booth sekitar belasan juta sampai gerai besar ratusan juta. Ini cocok untuk membandingkan economics per format, bukan memperlakukan seluruh brand sebagai satu jenis investasi.",
+      "sections": [
+        {"heading": "Pilihan paket", "body": "Halaman resmi menampilkan paket Silver Rp12 juta, Container Rp14 juta, Minibar Rp17 juta, serta format Gold dan Platinum yang jauh lebih besar. Semakin besar format, fixed cost lokasi dan payroll ikut meningkat."},
+        {"heading": "Margin dan bahan baku", "body": "FAQ brand menjelaskan repeat order bahan berada sekitar 45-50% dari harga jual normal. Itu memberi gambaran gross margin, tetapi belum memasukkan sewa, gaji, utilitas, promo, delivery fee, dan waste."},
+        {"heading": "Omzet dan BEP", "body": "Cek Bisnis memakai Rp15-30 juta per bulan sebagai skenario screening untuk format kecil. Brand tidak mempublikasikan BEP standar pada halaman yang ditinjau, sehingga hasil akhir harus dihitung berdasarkan traffic lokasi dan paket yang dipilih."}
+      ],
+      "costBreakdown": [
+        {"item": "Silver", "amount": "Rp12 jt", "note": "Paket kecil menurut halaman resmi."},
+        {"item": "Container", "amount": "Rp14 jt", "note": "Format container."},
+        {"item": "Minibar", "amount": "Rp17 jt", "note": "Format minibar."},
+        {"item": "Gold/Platinum", "amount": "Hingga ±Rp250 jt", "note": "Format gerai lebih besar; cek paket terbaru."}
+      ],
+      "schemeDocs": [
+        {"label": "Paket resmi Nyoklat Klasik", "url": "https://nyoklatklasik.co.id/paket/", "kind": "page"},
+        {"label": "FAQ kemitraan Nyoklat Klasik", "url": "https://nyoklatklasik.co.id/faq/", "kind": "page"}
+      ],
+      "verdict": "Keunggulan utamanya adalah entry ticket rendah pada format kecil. Fokuskan due diligence pada cup harian dan recurring cost bahan; paket murah tidak otomatis berarti BEP cepat."
+    },
+    "tahu-go": {
+      "lede": "Tahu Go adalah format snack take-away yang sederhana, tetapi situs resminya saat ini tidak menampilkan harga paket terbaru secara jelas. Cek Bisnis karena itu memisahkan klaim resmi seperti tanpa royalti dari skenario omzet internal.",
+      "sections": [
+        {"heading": "Mekanisme", "body": "Mitra menjalankan outlet take-away dengan dukungan training, promosi, dan integrasi kanal delivery. Model sederhana membuat throughput transaksi, harga bahan, minyak, dan waste lebih menentukan daripada kompleksitas menu."},
+        {"heading": "Omzet", "body": "Rentang Rp16-25 juta per bulan adalah skenario Cek Bisnis untuk screening volume rendah-menengah, bukan angka yang dijamin brand."},
+        {"heading": "BEP", "body": "Situs resmi menyebut BEP cepat tetapi tidak memberikan rentang bulan yang dapat diverifikasi pada halaman yang ditinjau. Gunakan quotation terbaru dan hitung ulang dari contribution margin outlet."}
+      ],
+      "costBreakdown": [
+        {"item": "Paket kemitraan", "amount": "Minta quotation", "note": "Harga paket terbaru perlu dikonfirmasi ke brand."},
+        {"item": "Royalti", "amount": "Rp0", "note": "Situs brand menyatakan tanpa royalti."},
+        {"item": "Modal kerja", "amount": "Hitung terpisah", "note": "Buffer stok, payroll, sewa, dan utilitas."}
+      ],
+      "schemeDocs": [{"label": "Website resmi Tahu Go", "url": "https://www.tahugo.co.id/", "kind": "page"}],
+      "verdict": "Modelnya relatif mudah dipahami, tetapi kekurangan data publik membuat quotation dan data outlet pembanding wajib diminta sebelum menghitung ROI."
+    },
+    "doyan-ayam": {
+      "lede": "Doyan Ayam ditambahkan karena materi franchise resminya relatif detail tentang persyaratan outlet, kontrak, dan dukungan, serta menyebut 300+ partner aktif. Harga promo dapat berubah, jadi halaman ini tidak mengunci nominal yang cepat basi.",
+      "sections": [
+        {"heading": "Mekanisme kemitraan", "body": "Partner mengelola outlet dengan SOP, training dan dukungan pusat. Brand menyatakan profit operasional tidak dibagi melalui royalty/profit sharing, sehingga 100% profit outlet berada pada partner setelah biaya usaha."},
+        {"heading": "BEP dan klaim performa", "body": "Brand menyebut rata-rata BEP di bawah satu tahun dan menampilkan contoh partner dengan omzet tinggi. Perlakukan ini sebagai bukti pemasaran, bukan baseline. Minta distribusi performa seluruh outlet atau minimal outlet dengan kota dan sewa yang sebanding."},
+        {"heading": "Lokasi", "body": "Persyaratan publik mencakup luas sekitar 32 m2, plafon sekitar 3 meter, parkir, dan kebutuhan 5-7 karyawan. Artinya fixed cost outlet tetap signifikan walaupun tidak ada royalty."}
+      ],
+      "costBreakdown": [
+        {"item": "Paket franchise", "amount": "Minta quotation", "note": "Promo dan paket dapat berubah."},
+        {"item": "DP", "amount": "25%", "note": "Persentase yang disebut pada materi franchise brand."},
+        {"item": "Royalti/profit share", "amount": "Rp0", "note": "Menurut klaim resmi brand."}
+      ],
+      "schemeDocs": [{"label": "Halaman franchise resmi Doyan Ayam", "url": "https://doyanayam.com/franchise/", "kind": "page"}],
+      "verdict": "Layak masuk shortlist untuk investor yang ingin restoran ayam tanpa royalty, tetapi jangan menggunakan contoh omzet terbaik sebagai base case. Quotation, sewa lokasi, payroll, dan food cost tetap penentu utama."
+    }
+  }
+}

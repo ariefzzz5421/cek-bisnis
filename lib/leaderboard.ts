@@ -8,12 +8,12 @@ import {
   type BusinessId,
 } from "@/lib/business-data";
 import {
-  formatInvestment,
+  formatInvestmentRange,
   formatMonthRange,
   franchiseLeaderboard,
   franchises,
-  midInvestment,
   readableInkOn,
+  sortFranchises,
   type Franchise,
 } from "@/lib/franchise-data";
 
@@ -247,28 +247,28 @@ export const buildLeaderboards = (): Leaderboard[] => {
     {
       id: "bep-franchise",
       title: "Waralaba balik modal tercepat",
-      measure: "Batas bawah rentang balik modal yang dilaporkan untuk merek tersebut.",
-      caveat: "Angka franchisor cenderung optimistis. Minta prospektus resmi sebelum memutuskan.",
-      entries: [...franchises]
-        .sort((a, b) => a.bepMonths[0] - b.bepMonths[0] || a.bepMonths[1] - b.bepMonths[1])
+      measure: "Batas bawah rentang balik modal yang dipublikasikan untuk merek tersebut.",
+      caveat: "Franchise tanpa angka BEP publik dikeluarkan dari ranking. Angka franchisor tetap perlu divalidasi dengan prospektus resmi.",
+      entries: sortFranchises(franchises, "bep-asc")
+        .filter((franchise) => franchise.bepMonths[0] > 0)
         .slice(0, TOP)
         .map((franchise) => franchiseEntry(
           franchise,
           formatMonthRange(franchise.bepMonths),
-          `Modal ${formatInvestment(franchise.investment[0])}-${formatInvestment(franchise.investment[1])} · ${franchise.royalty}`,
+          `Modal ${formatInvestmentRange(franchise.investment)} · ${franchise.royalty}`,
         )),
     },
     {
       id: "modal-franchise",
       title: "Waralaba modal paling ringan",
       measure: "Batas bawah investasi awal yang dipublikasikan merek tersebut.",
-      caveat: "Sewa lokasi dan modal kerja sering berada di luar angka paket.",
-      entries: [...franchises]
-        .sort((a, b) => a.investment[0] - b.investment[0] || midInvestment(a) - midInvestment(b))
+      caveat: "Franchise quotation-only tidak dianggap bermodal Rp0. Sewa lokasi dan modal kerja sering berada di luar angka paket.",
+      entries: sortFranchises(franchises, "modal-asc")
+        .filter((franchise) => franchise.investment[0] > 0)
         .slice(0, TOP)
         .map((franchise) => franchiseEntry(
           franchise,
-          formatInvestment(franchise.investment[0]),
+          formatInvestmentRange(franchise.investment),
           `${franchise.outlets} · BEP ${formatMonthRange(franchise.bepMonths)}`,
         )),
     },

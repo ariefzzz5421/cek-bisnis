@@ -24,29 +24,34 @@ export function SiteHeader({ landing = false }: { landing?: boolean }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const actionHref = landing ? "/usaha" : "/survei-lokasi";
+  const actionLabel = landing ? "Mulai analisis" : "Cek lokasi";
+
   return (
     <header className={`workbench-header ${floating ? "is-floating" : ""}`}>
       <nav className="workbench-nav" aria-label="Navigasi utama">
         <BrandLogo />
         <div className="workbench-nav__links">
-          <Link href="/#pilih-usaha">Jenis usaha</Link>
+          <Link href="/usaha">Jenis usaha</Link>
           <Link href="/franchise">Franchise</Link>
+          <Link href="/compare">Bandingkan</Link>
           <Link href="/peringkat">Peringkat</Link>
           <Link href="/survei-lokasi">Peta Indonesia</Link>
-          <Link href="/#data">Dasar data</Link>
+          <Link href="/data">Dasar data</Link>
         </div>
-        <Link className="workbench-nav__action" href={landing ? "#pilih-usaha" : "/survei-lokasi"}>
-          {landing ? "Mulai analisis" : "Cek lokasi"} <ArrowRight size={17} aria-hidden="true" />
+        <Link className="workbench-nav__action" href={actionHref}>
+          {actionLabel} <ArrowRight size={17} aria-hidden="true" />
         </Link>
         <details className="workbench-nav__mobile">
           <summary aria-label="Buka navigasi"><Menu size={20} aria-hidden="true" /></summary>
           <div>
-            <Link href="/#pilih-usaha">Jenis usaha</Link>
+            <Link href="/usaha">Jenis usaha</Link>
             <Link href="/franchise">Franchise</Link>
+            <Link href="/compare">Bandingkan</Link>
             <Link href="/peringkat">Peringkat</Link>
             <Link href="/survei-lokasi">Peta Indonesia</Link>
-            <Link href="/#data">Dasar data</Link>
-            <Link href={landing ? "#pilih-usaha" : "/survei-lokasi"}>{landing ? "Mulai analisis" : "Cek lokasi"} <ArrowRight size={16} /></Link>
+            <Link href="/data">Dasar data</Link>
+            <Link href={actionHref}>{actionLabel} <ArrowRight size={16} /></Link>
           </div>
         </details>
       </nav>

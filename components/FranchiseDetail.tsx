@@ -17,11 +17,14 @@ import {
 } from "lucide-react";
 import { FranchiseLogo } from "@/components/FranchiseLogo";
 import {
+  formatContractYears,
   formatInvestmentRange,
   formatMonthRange,
+  formatRevenueRange,
   franchiseArticleFile,
-  franchiseCategoryName,
+  franchiseBasisLabel,
   franchiseData,
+  franchiseSectorName,
   franchises,
   midInvestment,
   type Franchise,
@@ -51,7 +54,7 @@ export function FranchiseDetail({
         <div className="franchise-detail-lockup">
           <FranchiseLogo franchise={franchise} size={78} />
           <div>
-            <p>{franchiseCategoryName(franchise.category)} · sejak {franchise.since} · {franchise.outlets}</p>
+            <p>{franchiseSectorName(franchise)} · sejak {franchise.since} · {franchise.outlets}</p>
             <h1>{franchise.name}</h1>
           </div>
         </div>
@@ -61,14 +64,20 @@ export function FranchiseDetail({
           <div><dt><Wallet size={15} aria-hidden="true" /> Modal awal</dt><dd>{formatInvestmentRange(franchise.investment)}</dd></div>
           <div><dt><Handshake size={15} aria-hidden="true" /> Franchise fee</dt><dd>{franchise.franchiseFee}</dd></div>
           <div><dt><BadgePercent size={15} aria-hidden="true" /> Royalti</dt><dd>{franchise.royalty}</dd></div>
-          <div><dt><Building2 size={15} aria-hidden="true" /> Omzet / bulan</dt><dd>{formatInvestmentRange(franchise.monthlyRevenue)}</dd></div>
+          <div><dt><Building2 size={15} aria-hidden="true" /> Omzet / bulan</dt><dd>{formatRevenueRange(franchise.monthlyRevenue)}</dd></div>
           <div><dt><Timer size={15} aria-hidden="true" /> Balik modal</dt><dd>{formatMonthRange(franchise.bepMonths)}</dd></div>
-          <div><dt><ScrollText size={15} aria-hidden="true" /> Kontrak</dt><dd>{franchise.contractYears} tahun</dd></div>
+          <div><dt><ScrollText size={15} aria-hidden="true" /> Kontrak</dt><dd>{formatContractYears(franchise.contractYears)}</dd></div>
         </dl>
       </section>
 
       <article className="franchise-article">
         <div className="franchise-article__body">
+          <section>
+            <h2>Basis angka</h2>
+            <p><b>{franchiseBasisLabel(franchise.dataBasis)}.</b> {franchise.revenueBasis ?? "Angka omzet dipakai sebagai screening awal dan harus divalidasi dengan proposal terbaru."}</p>
+            <p>{franchise.bepBasis ?? "Rentang BEP bukan jaminan dan sangat dipengaruhi lokasi, biaya sewa, payroll, HPP, serta volume penjualan."}</p>
+          </section>
+
           {article.sections.map((section) => (
             <section key={section.heading}>
               <h2>{section.heading}</h2>
@@ -120,9 +129,13 @@ export function FranchiseDetail({
           </div>
 
           <div className="franchise-side-card franchise-side-card--docs">
-            <h3><FileText size={17} aria-hidden="true" /> Skema resmi & prospektus</h3>
+            <h3><FileText size={17} aria-hidden="true" /> Skema resmi & kontak brand</h3>
             <p>{franchiseArticleFile.prospectusNote}</p>
             <div className="franchise-doc-links">
+              <a href={franchise.contactUrl ?? franchise.officialUrl} target="_blank" rel="noreferrer">
+                <ArrowUpRight size={15} aria-hidden="true" />
+                <span>Hubungi / buka situs resmi {franchise.name}</span>
+              </a>
               {article.schemeDocs.map((doc) => (
                 <a href={doc.url} target="_blank" rel="noreferrer" key={doc.url}>
                   {doc.kind === "pdf" ? <FileText size={15} aria-hidden="true" /> : <ArrowUpRight size={15} aria-hidden="true" />}
@@ -168,8 +181,8 @@ export function FranchiseDetail({
       )}
 
       <section className="detail-next-business">
-        <div><span>MASIH MENIMBANG?</span><h2>Bandingkan dengan usaha mandiri.</h2></div>
-        <Link href="/#pilih-usaha">Lihat model usaha <ArrowRight size={20} aria-hidden="true" /></Link>
+        <div><span>MASIH MENIMBANG?</span><h2>Bandingkan dengan bisnis lain.</h2></div>
+        <Link href="/compare">Buka compare business <ArrowRight size={20} aria-hidden="true" /></Link>
       </section>
     </>
   );

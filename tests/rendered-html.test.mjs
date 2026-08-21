@@ -5,6 +5,12 @@ import test from "node:test";
 const businessData = JSON.parse(
   await readFile(new URL("../data/business-data.json", import.meta.url), "utf8"),
 );
+const franchiseData = JSON.parse(
+  await readFile(new URL("../data/franchise-data.json", import.meta.url), "utf8"),
+);
+const franchiseExtra = JSON.parse(
+  await readFile(new URL("../data/franchise-extra.json", import.meta.url), "utf8"),
+);
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
@@ -18,7 +24,7 @@ async function render(pathname = "/") {
   );
 }
 
-test("server-renders the Cek Bisnis landing page", async () => {
+test("server-renders the Cek Bisnis landing page with clean navigation", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -31,6 +37,23 @@ test("server-renders the Cek Bisnis landing page", async () => {
   assert.match(html, /PDF · 5 halaman/i);
   assert.match(html, /Ranking franchise/i);
   assert.equal((html.match(/class="franchise-rank"/g) ?? []).length, 10);
+  assert.doesNotMatch(html, /href="\/#(?:pilih-usaha|data)"/i);
+  assert.match(html, /href="\/usaha"/i);
+  assert.match(html, /href="\/compare"/i);
+});
+
+test("server-renders clean index and compare routes", async () => {
+  for (const [pathname, expected] of [
+    ["/usaha", /Pilih model yang mau diuji/i],
+    ["/compare", /Dua bisnis\. Satu layar/i],
+    ["/data", /Angka boleh dipakai\. Asalnya harus jelas/i],
+  ]) {
+    const response = await render(pathname);
+    assert.equal(response.status, 200, pathname);
+    const html = await response.text();
+    assert.match(html, expected, pathname);
+    assert.doesNotMatch(html, /href="\/#/i, pathname);
+  }
 });
 
 test("server-renders the all-Indonesia location survey", async () => {
@@ -53,9 +76,6 @@ test("server-renders a top-10 profitability ranking", async () => {
 });
 
 test("every franchise has an official or generated category identity", async () => {
-  const franchiseData = JSON.parse(
-    await readFile(new URL("../data/franchise-data.json", import.meta.url), "utf8"),
-  );
   const categories = new Set(franchiseData.categories.map((category) => category.id));
   for (const category of categories) {
     const imageUrl = new URL(`../public/brands/categories/${category}.webp`, import.meta.url);
@@ -64,7 +84,19 @@ test("every franchise has an official or generated category identity", async () 
     assert.equal(file.subarray(0, 4).toString(), "RIFF");
     assert.equal(file.subarray(8, 12).toString(), "WEBP");
   }
-  assert.ok(franchiseData.franchises.every((franchise) => categories.has(franchise.category)));
+  const allFranchises = [...franchiseData.franchises, ...franchiseExtra.franchises];
+  assert.ok(allFranchises.every((franchise) => categories.has(franchise.category)));
+});
+
+test("new researched franchises have routed detail pages", async () => {
+  for (const franchise of franchiseExtra.franchises) {
+    const response = await render(`/franchise/${franchise.id}`);
+    assert.equal(response.status, 200, franchise.id);
+    const html = await response.text();
+    assert.match(html, new RegExp(franchise.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), franchise.id);
+    assert.match(html, /Basis angka/i, franchise.id);
+    assert.match(html, /Hubungi \/ buka situs resmi/i, franchise.id);
+  }
 });
 
 test("every business has a working routed analysis page", async () => {
@@ -83,6 +115,7 @@ test("every business has a working routed analysis page", async () => {
     assert.match(html, new RegExp(`/equipment/${business.slug}-atlas\\.webp`));
     assert.equal((html.match(/class="equipment-product"/g) ?? []).length, 8, `${business.slug} equipment card count`);
     assert.equal((html.match(/class="equipment-product__body"/g) ?? []).length, 8, `${business.slug} supplier link count`);
+    assert.doesNotMatch(html, /href="\/#pilih-usaha"/i, business.slug);
   }
 });
 

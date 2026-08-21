@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {
+  ArrowLeftRight,
   ArrowRight,
   ArrowUpRight,
   BadgePercent,
@@ -17,12 +18,16 @@ import {
 import { useMemo, useState } from "react";
 import { FranchiseLogo } from "@/components/FranchiseLogo";
 import {
+  franchiseBasisLabel,
   franchiseCategories,
   franchiseCategoryName,
   franchiseData,
+  franchiseSectorName,
+  franchiseSectors,
   formatInvestment,
   formatInvestmentRange,
   formatMonthRange,
+  formatRevenueRange,
   getFranchiseSources,
   sortFranchises,
   type Franchise,
@@ -46,6 +51,7 @@ const BUDGETS: { id: string; label: string; max: number | null }[] = [
 
 export function FranchiseBrowser() {
   const [category, setCategory] = useState<string>("all");
+  const [sector, setSector] = useState<string>("all");
   const [budget, setBudget] = useState<string>("all");
   const [sort, setSort] = useState<FranchiseSort>("modal-asc");
   const [openId, setOpenId] = useState<string | null>(null);
@@ -54,19 +60,20 @@ export function FranchiseBrowser() {
     const maxBudget = BUDGETS.find((item) => item.id === budget)?.max ?? null;
     const filtered = franchiseData.franchises.filter((franchise) => {
       if (category !== "all" && franchise.category !== category) return false;
-      // Sebuah paket dianggap masuk anggaran bila batas bawahnya terjangkau.
-      if (maxBudget !== null && franchise.investment[0] > maxBudget) return false;
+      if (sector !== "all" && franchiseSectorName(franchise) !== sector) return false;
+      // Unknown quotation tidak dipaksa masuk filter anggaran karena angka belum tersedia.
+      if (maxBudget !== null && (franchise.investment[0] <= 0 || franchise.investment[0] > maxBudget)) return false;
       return true;
     });
     return sortFranchises(filtered, sort);
-  }, [budget, category, sort]);
+  }, [budget, category, sector, sort]);
 
   const cheapest = useMemo(
-    () => sortFranchises(franchiseData.franchises, "modal-asc")[0],
+    () => sortFranchises(franchiseData.franchises, "modal-asc").find((item) => item.investment[0] > 0),
     [],
   );
   const fastest = useMemo(
-    () => sortFranchises(franchiseData.franchises, "bep-asc")[0],
+    () => sortFranchises(franchiseData.franchises, "bep-asc").find((item) => item.bepMonths[0] > 0),
     [],
   );
 
@@ -77,17 +84,17 @@ export function FranchiseBrowser() {
           <p className="workbench-kicker"><span aria-hidden="true" /> Data waralaba · diperbarui {franchiseData.updatedAt}</p>
           <h1 id="franchise-title">Beli sistem,<br />bukan cuma merek.</h1>
           <p>
-            Modal awal, franchise fee, royalti, skema kemitraan, dan rentang balik modal dari {franchiseData.franchises.length} waralaba
-            populer Indonesia — disusun agar bisa dibandingkan berdampingan.
+            Modal awal, franchise fee, royalti, skema kemitraan, sektor, dan rentang balik modal dari {franchiseData.franchises.length} waralaba
+            Indonesia — dengan metric resmi dipisahkan dari estimasi.
           </p>
           <div className="workbench-hero__actions">
-            <a className="workbench-button workbench-button--primary" href="#daftar-franchise">Bandingkan daftar <ArrowRight size={18} aria-hidden="true" /></a>
-            <Link className="workbench-button workbench-button--quiet" href="/#pilih-usaha">Bandingkan usaha mandiri</Link>
+            <Link className="workbench-button workbench-button--primary" href="/compare"><ArrowLeftRight size={18} aria-hidden="true" /> Bandingkan dua bisnis</Link>
+            <Link className="workbench-button workbench-button--quiet" href="/usaha">Lihat usaha mandiri <ArrowRight size={18} aria-hidden="true" /></Link>
           </div>
           <dl className="workbench-proof">
             <div><dt>Merek dibandingkan</dt><dd>{franchiseData.franchises.length}</dd></div>
-            <div><dt>Modal terkecil</dt><dd>{formatInvestment(cheapest.investment[0])}</dd></div>
-            <div><dt>BEP tercepat</dt><dd>{fastest.bepMonths[0]} bln</dd></div>
+            <div><dt>Modal terkecil</dt><dd>{cheapest ? formatInvestment(cheapest.investment[0]) : "-"}</dd></div>
+            <div><dt>BEP tercepat</dt><dd>{fastest ? `${fastest.bepMonths[0]} bln` : "-"}</dd></div>
           </dl>
         </div>
 
@@ -100,8 +107,8 @@ export function FranchiseBrowser() {
 
       <section className="franchise-browser" id="daftar-franchise" aria-labelledby="franchise-list-title">
         <header className="workbench-section-heading">
-          <div><p>DAFTAR WARALABA</p><h2 id="franchise-list-title">Saring sesuai modal yang ada.</h2></div>
-          <p>Klik satu kartu untuk membuka skema kemitraan, KPI, syarat, dan sumber datanya.</p>
+          <div><p>DAFTAR WARALABA</p><h2 id="franchise-list-title">Saring sesuai modal dan sektor.</h2></div>
+          <p>Klik satu kartu untuk membuka skema kemitraan, KPI, syarat, sumber data, dan halaman resmi brand.</p>
         </header>
 
         <div className="franchise-filters">
@@ -114,6 +121,13 @@ export function FranchiseBrowser() {
             ))}
           </div>
           <div className="franchise-filter-selects">
+            <label>
+              <span>Sektor</span>
+              <select value={sector} onChange={(event) => setSector(event.target.value)}>
+                <option value="all">Semua sektor</option>
+                {franchiseSectors.map((item) => <option value={item} key={item}>{item}</option>)}
+              </select>
+            </label>
             <label>
               <span>Anggaran</span>
               <select value={budget} onChange={(event) => setBudget(event.target.value)}>
@@ -143,22 +157,22 @@ export function FranchiseBrowser() {
         </div>
 
         {visible.length === 0 && (
-          <p className="franchise-empty">Tidak ada waralaba di rentang itu. Longgarkan anggaran atau pilih kategori lain.</p>
+          <p className="franchise-empty">Tidak ada waralaba di filter itu. Longgarkan anggaran atau pilih sektor lain.</p>
         )}
       </section>
 
       <section className="franchise-compare" aria-labelledby="franchise-compare-title">
         <header className="workbench-section-heading">
           <div><p>TABEL PEMBANDING</p><h2 id="franchise-compare-title">Semua angka dalam satu tabel.</h2></div>
-          <p>Modal, fee, royalti, perkiraan omzet, dan BEP berdampingan. Geser ke samping di layar kecil.</p>
+          <p>Modal, sektor, fee, royalti, omzet, dan BEP berdampingan. Geser ke samping di layar kecil.</p>
         </header>
         <div className="franchise-table-wrap">
           <table className="franchise-table">
-            <caption className="visually-hidden">Perbandingan modal, fee, royalti, omzet, dan balik modal waralaba Indonesia</caption>
+            <caption className="visually-hidden">Perbandingan modal, sektor, fee, royalti, omzet, dan balik modal waralaba Indonesia</caption>
             <thead>
               <tr>
                 <th scope="col">Merek</th>
-                <th scope="col">Kategori</th>
+                <th scope="col">Sektor</th>
                 <th scope="col">Modal awal</th>
                 <th scope="col">Franchise fee</th>
                 <th scope="col">Royalti</th>
@@ -175,11 +189,11 @@ export function FranchiseBrowser() {
                       {franchise.name}
                     </Link>
                   </th>
-                  <td>{franchiseCategoryName(franchise.category)}</td>
+                  <td>{franchiseSectorName(franchise)}</td>
                   <td className="num">{formatInvestmentRange(franchise.investment)}</td>
                   <td>{franchise.franchiseFee}</td>
                   <td>{franchise.royalty}</td>
-                  <td className="num">{formatInvestmentRange(franchise.monthlyRevenue)}</td>
+                  <td className="num">{formatRevenueRange(franchise.monthlyRevenue)}</td>
                   <td className="num">{formatMonthRange(franchise.bepMonths)}</td>
                 </tr>
               ))}
@@ -216,7 +230,7 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
         <FranchiseLogo franchise={franchise} />
         <div>
           <h3>{franchise.name}</h3>
-          <p>{franchiseCategoryName(franchise.category)} · sejak {franchise.since} · {franchise.outlets}</p>
+          <p>{franchiseSectorName(franchise)} · sejak {franchise.since} · {franchise.outlets}</p>
         </div>
       </div>
 
@@ -229,7 +243,7 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
 
       <p className="franchise-card__revenue">
         <Building2 size={15} aria-hidden="true" />
-        Perkiraan omzet <b>{formatInvestmentRange(franchise.monthlyRevenue)}</b> per bulan
+        Omzet / skenario <b>{formatRevenueRange(franchise.monthlyRevenue)}</b> per bulan
       </p>
 
       <div className="franchise-card__actions">
@@ -237,12 +251,13 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
           {open ? "Tutup ringkas" : "Lihat ringkas"}
         </button>
         <Link className="franchise-card__more" href={`/franchise/${franchise.id}`}>
-          Artikel lengkap <ArrowRight size={16} aria-hidden="true" />
+          Analisis lengkap <ArrowRight size={16} aria-hidden="true" />
         </Link>
       </div>
 
       {open && (
         <div className="franchise-card__detail">
+          <p><b>{franchiseBasisLabel(franchise.dataBasis)}</b></p>
           <h4>Skema kemitraan</h4>
           <p>{franchise.scheme}</p>
           <p className="franchise-card__investnote">{franchise.investmentNote}</p>
@@ -258,8 +273,8 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
           </ul>
 
           <div className="franchise-card__foot">
-            <Link href={`/franchise/${franchise.id}`}>Baca artikel lengkap <ArrowRight size={14} aria-hidden="true" /></Link>
-            <a href={franchise.officialUrl} target="_blank" rel="noreferrer">Situs resmi <ArrowUpRight size={14} aria-hidden="true" /></a>
+            <Link href={`/franchise/${franchise.id}`}>Baca analisis lengkap <ArrowRight size={14} aria-hidden="true" /></Link>
+            <a href={franchise.contactUrl ?? franchise.officialUrl} target="_blank" rel="noreferrer">Hubungi brand <ArrowUpRight size={14} aria-hidden="true" /></a>
           </div>
 
           {sources.length > 0 && (

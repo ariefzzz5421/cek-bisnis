@@ -1,7 +1,9 @@
 import rawArticles from "@/data/franchise-articles.json";
 import rawData from "@/data/franchise-data.json";
+import rawExtra from "@/data/franchise-extra.json";
 
 export type FranchiseCategoryId = "minimarket" | "minuman" | "makanan" | "jasa" | "kesehatan";
+export type FranchiseDataBasis = "official" | "mixed" | "estimate";
 
 export type FranchiseSource = {
   id: string;
@@ -18,6 +20,12 @@ export type Franchise = {
   id: string;
   name: string;
   category: FranchiseCategoryId;
+  /** Sektor yang lebih spesifik daripada kategori utama. */
+  sector?: string;
+  /** Menjelaskan apakah metric berasal dari brand, campuran, atau model internal. */
+  dataBasis?: FranchiseDataBasis;
+  revenueBasis?: string;
+  bepBasis?: string;
   /** Nama berkas logo resmi yang sudah disimpan lokal, jika tersedia. */
   logoFile?: string;
   /** URL logo resmi untuk sumber yang hanya mengizinkan hotlink. */
@@ -25,17 +33,20 @@ export type Franchise = {
   brandColor: string;
   initials: string;
   officialUrl: string;
+  /** Halaman kontak/kemitraan resmi; fallback ke officialUrl. */
+  contactUrl?: string;
   outlets: string;
   since: number;
-  /** Rentang investasi awal dalam juta rupiah. */
+  /** Rentang investasi awal dalam juta rupiah. [0,0] = belum dipublikasikan. */
   investment: [number, number];
   investmentNote: string;
   franchiseFee: string;
   royalty: string;
+  /** 0 berarti durasi kontrak tidak dipublikasikan pada sumber yang ditinjau. */
   contractYears: number;
-  /** Rentang balik modal khas, dalam bulan. */
+  /** Rentang balik modal khas, dalam bulan. Nilai 0 berarti belum dipublikasikan. */
   bepMonths: [number, number];
-  /** Perkiraan omzet kotor per bulan, dalam juta rupiah. */
+  /** Perkiraan omzet kotor per bulan, dalam juta rupiah. [0,0] = belum dipublikasikan. */
   monthlyRevenue: [number, number];
   scheme: string;
   kpi: string[];
@@ -52,10 +63,58 @@ type FranchiseFile = {
   franchises: Franchise[];
 };
 
-export const franchiseData = rawData as FranchiseFile;
+export type FranchiseArticleSection = { heading: string; body: string };
+export type FranchiseCostRow = { item: string; amount: string; note: string };
+export type FranchiseSchemeDoc = { label: string; url: string; kind: "page" | "pdf" };
+
+export type FranchiseArticle = {
+  lede: string;
+  sections: FranchiseArticleSection[];
+  costBreakdown: FranchiseCostRow[];
+  /**
+   * Halaman kemitraan resmi. Prospektus penawaran waralaba wajib diberikan
+   * franchisor ke calon mitra tetapi umumnya bukan berkas unduhan publik, jadi
+   * yang ditautkan adalah halaman tempat memintanya.
+   */
+  schemeDocs: FranchiseSchemeDoc[];
+  verdict: string;
+};
+
+type ArticleFile = {
+  note: string;
+  prospectusNote: string;
+  articles: Record<string, FranchiseArticle>;
+};
+
+type ExtraFile = {
+  sources: FranchiseSource[];
+  franchises: Franchise[];
+  articles: Record<string, FranchiseArticle>;
+};
+
+const baseData = rawData as FranchiseFile;
+const baseArticles = rawArticles as ArticleFile;
+const extraData = rawExtra as unknown as ExtraFile;
+
+const mergeById = <T extends { id: string }>(base: T[], extra: T[]) => {
+  const items = new Map(base.map((item) => [item.id, item]));
+  extra.forEach((item) => items.set(item.id, { ...items.get(item.id), ...item } as T));
+  return Array.from(items.values());
+};
+
+export const franchiseData: FranchiseFile = {
+  ...baseData,
+  sources: mergeById(baseData.sources, extraData.sources),
+  franchises: mergeById(baseData.franchises, extraData.franchises),
+};
 export const franchises = franchiseData.franchises;
 export const franchiseCategories = franchiseData.categories;
 export const franchiseSources = franchiseData.sources;
+
+export const franchiseArticleFile: ArticleFile = {
+  ...baseArticles,
+  articles: { ...baseArticles.articles, ...extraData.articles },
+};
 
 const relativeLuminance = (hex: string) => {
   const value = hex.replace("#", "");
@@ -85,29 +144,64 @@ export const getFranchiseSources = (franchise: Franchise) =>
 export const franchiseCategoryName = (id: FranchiseCategoryId) =>
   franchiseCategories.find((category) => category.id === id)?.name ?? id;
 
+export const franchiseSectorName = (franchise: Franchise) =>
+  franchise.sector ?? franchiseCategoryName(franchise.category);
+
+export const franchiseSectors = Array.from(new Set(franchises.map(franchiseSectorName))).sort((a, b) =>
+  a.localeCompare(b, "id"),
+);
+
+export const franchiseBasisLabel = (basis?: FranchiseDataBasis) => {
+  switch (basis) {
+    case "official": return "Data resmi brand";
+    case "mixed": return "Resmi + skenario Cek Bisnis";
+    case "estimate": return "Skenario Cek Bisnis";
+    default: return "Data terkurasi";
+  }
+};
+
 /**
  * Nilai investasi disimpan dalam juta rupiah, jadi angka di atas seribu lebih
- * mudah dibaca sebagai miliar.
+ * mudah dibaca sebagai miliar. Nilai nol berarti brand belum mempublikasikan
+ * angkanya dan UI harus mendorong user meminta quotation, bukan mengarang.
  */
 export const formatInvestment = (juta: number) => {
+  if (juta <= 0) return "Minta quotation";
   if (juta >= 1000) {
     const miliar = juta / 1000;
     return `Rp${Number(miliar.toFixed(miliar >= 10 ? 0 : 1)).toLocaleString("id-ID")} M`;
   }
-  return `Rp${Math.round(juta).toLocaleString("id-ID")} jt`;
+  return `Rp${Number(juta.toFixed(juta < 10 ? 1 : 0)).toLocaleString("id-ID")} jt`;
 };
 
-export const formatInvestmentRange = ([low, high]: [number, number]) =>
-  low === high ? formatInvestment(low) : `${formatInvestment(low)} - ${formatInvestment(high)}`;
+export const formatInvestmentRange = ([low, high]: [number, number]) => {
+  if (low <= 0 && high <= 0) return "Minta quotation";
+  if (low <= 0) return `Hingga ${formatInvestment(high)}`;
+  return low === high ? formatInvestment(low) : `${formatInvestment(low)} - ${formatInvestment(high)}`;
+};
 
-export const formatMonthRange = ([low, high]: [number, number]) => `${low}-${high} bulan`;
+export const formatRevenueRange = ([low, high]: [number, number]) => {
+  if (low <= 0 && high <= 0) return "Belum dipublikasikan";
+  if (low <= 0) return `Hingga ${formatInvestment(high)}`;
+  return formatInvestmentRange([low, high]);
+};
+
+export const formatMonthRange = ([low, high]: [number, number]) => {
+  if (low <= 0 && high <= 0) return "Belum dipublikasikan";
+  if (low <= 0) return `< ${high} bulan`;
+  return `${low}-${high} bulan`;
+};
+
+export const formatContractYears = (years: number) => years > 0 ? `${years} tahun` : "Konfirmasi ke brand";
 
 /**
- * Perkiraan kasar balik modal: modal tengah dibagi laba bulanan.
- * Dipakai hanya untuk mengurutkan, bukan ditampilkan sebagai janji.
+ * Perkiraan kasar modal tengah. Unknown dibuat Infinity supaya quotation-only
+ * tidak salah muncul sebagai franchise termurah.
  */
-export const midInvestment = (franchise: Franchise) =>
-  (franchise.investment[0] + franchise.investment[1]) / 2;
+export const midInvestment = (franchise: Franchise) => {
+  if (franchise.investment[0] <= 0 && franchise.investment[1] <= 0) return Number.POSITIVE_INFINITY;
+  return (Math.max(0, franchise.investment[0]) + franchise.investment[1]) / 2;
+};
 
 export type FranchiseSort = "modal-asc" | "modal-desc" | "bep-asc" | "nama";
 
@@ -117,40 +211,23 @@ export const sortFranchises = (list: Franchise[], sort: FranchiseSort) => {
     case "modal-asc":
       return sorted.sort((a, b) => midInvestment(a) - midInvestment(b));
     case "modal-desc":
-      return sorted.sort((a, b) => midInvestment(b) - midInvestment(a));
+      return sorted.sort((a, b) => {
+        const aValue = midInvestment(a);
+        const bValue = midInvestment(b);
+        if (!Number.isFinite(aValue)) return 1;
+        if (!Number.isFinite(bValue)) return -1;
+        return bValue - aValue;
+      });
     case "bep-asc":
-      return sorted.sort((a, b) => a.bepMonths[0] - b.bepMonths[0] || a.bepMonths[1] - b.bepMonths[1]);
+      return sorted.sort((a, b) => {
+        const aLow = a.bepMonths[0] > 0 ? a.bepMonths[0] : Number.POSITIVE_INFINITY;
+        const bLow = b.bepMonths[0] > 0 ? b.bepMonths[0] : Number.POSITIVE_INFINITY;
+        return aLow - bLow || a.bepMonths[1] - b.bepMonths[1];
+      });
     default:
       return sorted.sort((a, b) => a.name.localeCompare(b.name, "id"));
   }
 };
-
-/* ------------------------------------------------------------- artikel */
-
-export type FranchiseArticleSection = { heading: string; body: string };
-export type FranchiseCostRow = { item: string; amount: string; note: string };
-export type FranchiseSchemeDoc = { label: string; url: string; kind: "page" | "pdf" };
-
-export type FranchiseArticle = {
-  lede: string;
-  sections: FranchiseArticleSection[];
-  costBreakdown: FranchiseCostRow[];
-  /**
-   * Halaman kemitraan resmi. Prospektus penawaran waralaba wajib diberikan
-   * franchisor ke calon mitra tetapi umumnya bukan berkas unduhan publik, jadi
-   * yang ditautkan adalah halaman tempat memintanya.
-   */
-  schemeDocs: FranchiseSchemeDoc[];
-  verdict: string;
-};
-
-type ArticleFile = {
-  note: string;
-  prospectusNote: string;
-  articles: Record<string, FranchiseArticle>;
-};
-
-export const franchiseArticleFile = rawArticles as ArticleFile;
 
 export const getFranchise = (id: string) => franchises.find((franchise) => franchise.id === id);
 export const getFranchiseArticle = (id: string): FranchiseArticle | undefined =>
@@ -217,7 +294,7 @@ export const franchiseLeaderboard: FranchiseEstimate[] = [
   },
   {
     rank: 4,
-    slug: "esteh-indonesia",
+    slug: "es-teh-indonesia",
     name: "Esteh Indonesia",
     logo: "/brands/franchises/esteh-indonesia.svg",
     officialUrl: "https://www.estehindonesia.com/partnership",
@@ -282,7 +359,7 @@ export const franchiseLeaderboard: FranchiseEstimate[] = [
   },
   {
     rank: 9,
-    slug: "esteh-poci",
+    slug: "teh-poci",
     name: "Es Teh Poci",
     logo: "/brands/franchises/esteh-poci.png",
     officialUrl: "https://estehpoci.id/",
