@@ -99,7 +99,7 @@ export default function LeaderboardPage() {
                 <small>{city.province} · model terkuat: {city.best.name} ({city.best.score}/100)</small>
               </div>
               <em>{city.average.toFixed(1)}<small>/100</small></em>
-              <Link href={`/usaha/${city.best.slug}#lokasi`} aria-label={`Cek ${city.best.name} di ${city.name}`}>
+              <Link href={`/usaha/${city.best.slug}`} aria-label={`Buka analisis ${city.best.name}`}>
                 <ArrowUpRight size={17} aria-hidden="true" />
               </Link>
             </li>
