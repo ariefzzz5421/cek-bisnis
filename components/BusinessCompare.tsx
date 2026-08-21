@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { ArrowLeftRight, ArrowRight, BadgePercent, Building2, Gauge, Timer, Wallet } from "lucide-react";
 import { useMemo, useState } from "react";
-import { businesses, formatMoney } from "@/lib/business-data";
+import { BusinessIcon } from "@/components/BusinessIcon";
+import { FranchiseLogo } from "@/components/FranchiseLogo";
+import { businesses, formatMoney, type BusinessId } from "@/lib/business-data";
 import {
   formatInvestmentRange,
   formatMonthRange,
@@ -18,6 +20,8 @@ type CompareChoice = {
   key: string;
   name: string;
   kind: "Usaha mandiri" | "Franchise";
+  businessId?: BusinessId;
+  franchiseId?: string;
   sector: string;
   capital: string;
   revenue: string;
@@ -35,6 +39,7 @@ const choices: CompareChoice[] = [
     key: `business:${business.slug}`,
     name: business.name,
     kind: "Usaha mandiri" as const,
+    businessId: business.id,
     sector: business.category,
     capital: `${formatMoney(business.capex[0], 0)} - ${formatMoney(business.capex[1], 0).replace("Rp", "")}`,
     revenue: `${formatMoney(business.targetRevenue, 0)}/bulan`,
@@ -50,6 +55,7 @@ const choices: CompareChoice[] = [
     key: `franchise:${franchise.id}`,
     name: franchise.name,
     kind: "Franchise" as const,
+    franchiseId: franchise.id,
     sector: franchiseSectorName(franchise),
     capital: formatInvestmentRange(franchise.investment),
     revenue: `${formatRevenueRange(franchise.monthlyRevenue)}/bulan`,
@@ -116,8 +122,8 @@ export function BusinessCompare() {
       </div>
 
       <div className={styles.detailGrid}>
-        <CompareNarrative title="Mekanisme bisnis" left={left.mechanism} right={right.mechanism} />
-        <CompareNarrative title="Faktor penentu" left={left.factors.join(" · ")} right={right.factors.join(" · ")} />
+        <CompareNarrative title="Mekanisme bisnis" leftLabel={left.name} rightLabel={right.name} left={left.mechanism} right={right.mechanism} />
+        <CompareNarrative title="Faktor penentu" leftLabel={left.name} rightLabel={right.name} left={left.factors} right={right.factors} />
       </div>
 
       <p className={styles.disclaimer}>Perbandingan ini adalah alat screening. Untuk franchise, angka yang tidak dipublikasikan brand sengaja ditandai sebagai belum tersedia atau minta quotation—bukan diisi dengan tebakan.</p>
@@ -144,14 +150,29 @@ function ChoiceSelect({ label, value, onChange }: { label: string; value: string
 }
 
 function CompareCard({ choice }: { choice: CompareChoice }) {
+  const franchise = choice.franchiseId
+    ? franchises.find((item) => item.id === choice.franchiseId)
+    : undefined;
+
   return (
     <article className={styles.card}>
       <div className={styles.cardTop}>
         <span>{choice.kind}</span>
         <small>{choice.basis}</small>
       </div>
-      <h2>{choice.name}</h2>
-      <p>{choice.sector}</p>
+      <div className={styles.identity}>
+        {franchise ? (
+          <FranchiseLogo franchise={franchise} size={70} />
+        ) : choice.businessId ? (
+          <span className={styles.businessIcon} aria-hidden="true">
+            <BusinessIcon id={choice.businessId} size={32} />
+          </span>
+        ) : null}
+        <div>
+          <h2>{choice.name}</h2>
+          <p>{choice.sector}</p>
+        </div>
+      </div>
       <dl>
         <div><dt>Modal</dt><dd>{choice.capital}</dd></div>
         <div><dt>Omzet</dt><dd>{choice.revenue}</dd></div>
@@ -172,11 +193,39 @@ function CompareRow({ icon, label, left, right }: { icon: React.ReactNode; label
   );
 }
 
-function CompareNarrative({ title, left, right }: { title: string; left: string; right: string }) {
+function CompareNarrative({
+  title,
+  leftLabel,
+  rightLabel,
+  left,
+  right,
+}: {
+  title: string;
+  leftLabel: string;
+  rightLabel: string;
+  left: string | string[];
+  right: string | string[];
+}) {
   return (
     <section className={styles.narrative}>
       <h3>{title}</h3>
-      <div><p>{left}</p><p>{right}</p></div>
+      <div>
+        <NarrativeColumn label={leftLabel} value={left} />
+        <NarrativeColumn label={rightLabel} value={right} />
+      </div>
     </section>
+  );
+}
+
+function NarrativeColumn({ label, value }: { label: string; value: string | string[] }) {
+  return (
+    <div className={styles.narrativeColumn}>
+      <small>{label}</small>
+      {Array.isArray(value) ? (
+        <ul>{value.map((item) => <li key={item}>{item}</li>)}</ul>
+      ) : (
+        <p>{value}</p>
+      )}
+    </div>
   );
 }
