@@ -16,11 +16,10 @@ import {
   Wallet,
 } from "lucide-react";
 import { useMemo, useState } from "react";
-import { FranchiseLogo } from "@/components/FranchiseLogo";
+import { BrandLogo } from "@/components/BrandLogo";
 import {
   franchiseBasisLabel,
   franchiseCategories,
-  franchiseCategoryName,
   franchiseData,
   franchiseSectorName,
   franchiseSectors,
@@ -29,6 +28,7 @@ import {
   formatMonthRange,
   formatRevenueRange,
   getFranchiseSources,
+  rangeLow,
   sortFranchises,
   type Franchise,
   type FranchiseSort,
@@ -49,6 +49,12 @@ const BUDGETS: { id: string; label: string; max: number | null }[] = [
   { id: "500", label: "Di bawah Rp500 jt", max: 500 },
 ];
 
+/** Jumlah merek per sektor, dihitung sekali dari data penuh (bukan hasil filter). */
+const sectorCounts: Record<string, number> = franchiseData.franchises.reduce<Record<string, number>>(
+  (acc, franchise) => ({ ...acc, [franchise.category]: (acc[franchise.category] ?? 0) + 1 }),
+  {},
+);
+
 export function FranchiseBrowser() {
   const [category, setCategory] = useState<string>("all");
   const [sector, setSector] = useState<string>("all");
@@ -62,20 +68,24 @@ export function FranchiseBrowser() {
       if (category !== "all" && franchise.category !== category) return false;
       if (sector !== "all" && franchiseSectorName(franchise) !== sector) return false;
       // Unknown quotation tidak dipaksa masuk filter anggaran karena angka belum tersedia.
-      if (maxBudget !== null && (franchise.investment[0] <= 0 || franchise.investment[0] > maxBudget)) return false;
+      const low = rangeLow(franchise.investment);
+      if (maxBudget !== null && (low === null || low > maxBudget)) return false;
       return true;
     });
     return sortFranchises(filtered, sort);
   }, [budget, category, sector, sort]);
 
   const cheapest = useMemo(
-    () => sortFranchises(franchiseData.franchises, "modal-asc").find((item) => item.investment[0] > 0),
+    () => sortFranchises(franchiseData.franchises, "modal-asc").find((item) => rangeLow(item.investment) !== null),
     [],
   );
   const fastest = useMemo(
-    () => sortFranchises(franchiseData.franchises, "bep-asc").find((item) => item.bepMonths[0] > 0),
+    () => sortFranchises(franchiseData.franchises, "bep-asc").find((item) => rangeLow(item.bepMonths) !== null),
     [],
   );
+
+  const cheapestLow = cheapest ? rangeLow(cheapest.investment) : null;
+  const fastestBep = fastest ? rangeLow(fastest.bepMonths) : null;
 
   return (
     <>
@@ -93,8 +103,8 @@ export function FranchiseBrowser() {
           </div>
           <dl className="workbench-proof">
             <div><dt>Merek dibandingkan</dt><dd>{franchiseData.franchises.length}</dd></div>
-            <div><dt>Modal terkecil</dt><dd>{cheapest ? formatInvestment(cheapest.investment[0]) : "-"}</dd></div>
-            <div><dt>BEP tercepat</dt><dd>{fastest ? `${fastest.bepMonths[0]} bln` : "-"}</dd></div>
+            <div><dt>Modal terkecil</dt><dd>{cheapestLow === null ? "-" : formatInvestment(cheapestLow)}</dd></div>
+            <div><dt>BEP tercepat</dt><dd>{fastestBep === null ? "-" : `${fastestBep} bln`}</dd></div>
           </dl>
         </div>
 
@@ -113,10 +123,12 @@ export function FranchiseBrowser() {
 
         <div className="franchise-filters">
           <div className="franchise-filter-group" role="group" aria-label="Filter kategori">
-            <button type="button" className={category === "all" ? "active" : ""} onClick={() => setCategory("all")}>Semua</button>
+            <button type="button" className={category === "all" ? "active" : ""} onClick={() => setCategory("all")}>
+              Semua <em>{franchiseData.franchises.length}</em>
+            </button>
             {franchiseCategories.map((item) => (
               <button type="button" key={item.id} className={category === item.id ? "active" : ""} onClick={() => setCategory(item.id)}>
-                {item.name}
+                {item.name} <em>{sectorCounts[item.id] ?? 0}</em>
               </button>
             ))}
           </div>
@@ -185,7 +197,7 @@ export function FranchiseBrowser() {
                 <tr key={franchise.id}>
                   <th scope="row">
                     <Link className="franchise-table__brand" href={`/franchise/${franchise.id}`}>
-                      <FranchiseLogo franchise={franchise} size={30} />
+                      <BrandLogo franchise={franchise} name={franchise.name} size={30} />
                       {franchise.name}
                     </Link>
                   </th>
@@ -227,7 +239,7 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
   return (
     <article className={`franchise-card ${open ? "is-open" : ""}`}>
       <div className="franchise-card__top" style={{ "--brand": franchise.brandColor } as React.CSSProperties}>
-        <FranchiseLogo franchise={franchise} />
+        <BrandLogo franchise={franchise} name={franchise.name} size={56} />
         <div>
           <h3>{franchise.name}</h3>
           <p>{franchiseSectorName(franchise)} · sejak {franchise.since} · {franchise.outlets}</p>

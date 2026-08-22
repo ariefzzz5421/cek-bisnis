@@ -6,7 +6,7 @@ import { BusinessIcon } from "@/components/BusinessIcon";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { businesses, formatMoney } from "@/lib/business-data";
-import { formatInvestment, franchises } from "@/lib/franchise-data";
+import { formatInvestment, franchises, rangeLow } from "@/lib/franchise-data";
 
 export const metadata: Metadata = {
   title: "Jenis Usaha - Bandingkan Model Bisnis Indonesia | Cek Bisnis",
@@ -14,7 +14,11 @@ export const metadata: Metadata = {
   openGraph: { title: "Jenis Usaha | Cek Bisnis", url: "/usaha" },
 };
 
-const franchiseEntryCost = Math.min(...franchises.filter((item) => item.investment[0] > 0).map((item) => item.investment[0]));
+const franchiseEntryCost = Math.min(
+  ...franchises
+    .map((item) => rangeLow(item.investment))
+    .filter((value): value is number => value !== null && value > 0),
+);
 const franchiseSample = businesses.find((business) => business.id === "franchise") ?? businesses[0];
 
 export default function BusinessIndexPage() {

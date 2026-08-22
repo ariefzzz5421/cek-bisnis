@@ -21,12 +21,24 @@
 html,
 body {
   background: var(--color-paper);
-  /* Kisi halus supaya bidang kosong tetap terasa seperti kertas kerja. */
+  /* Kisi tipis sebagai identitas halaman saja, bukan tekstur yang bersaing
+   * dengan teks. Halaman padat teks mematikannya lewat `.page-plain`. */
   background-image:
-    linear-gradient(var(--color-rule-soft) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-rule-soft) 1px, transparent 1px);
-  background-size: 4rem 4rem;
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
   background-attachment: fixed;
+}
+
+/* Rute yang isinya panjang dan penuh tabel memakai satu bidang kertas rata.
+ * Dipasang di <main>, dan ikut mematikan kisi di <body> supaya seluruh
+ * halaman pada rute itu tampil seragam, bukan hanya bagian kontennya. */
+body:has(.page-plain) {
+  background-image: none;
+}
+
+.page-plain {
+  background: var(--color-paper);
 }
 
 main,
@@ -1612,3 +1624,11 @@ a dd,
 @media (hover: hover) and (pointer: fine) {
   .profit-rank__row:hover { background: var(--color-accent-soft); }
 }
+
+/* Tiap sumber berdiri sebagai kartu dengan bayangan keras, bukan baris rapat. */
+.compact-sources a { box-shadow: var(--shadow-hard-xs); }
+.compact-sources a:hover { transform: translate(2px, 2px); box-shadow: none; }
+
+/* Ubin identitas mengikuti bahasa kotak bergaris tebal seperti kartu lain. */
+.brand-logo { border: 2px solid var(--color-ink); border-radius: 0 !important; }
+.brand-logo--dark { border-color: var(--color-ink); }

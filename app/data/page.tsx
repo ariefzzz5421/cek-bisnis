@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 
 export default function DataPage() {
   return (
-    <main className="workbench-page">
+    <main className="workbench-page page-plain">
       <SiteHeader />
-      <section className="data-workspace" aria-labelledby="data-page-title" style={{ marginTop: 64 }}>
+      <section className="data-workspace" aria-labelledby="data-page-title">
         <div>
           <ShieldCheck size={34} aria-hidden="true" />
           <p>DASAR DATA</p>
           <h1 id="data-page-title">Angka boleh dipakai. Asalnya harus jelas.</h1>
           <span>{businessData.methodNote}</span>
-          <span style={{ marginTop: 12 }}>{franchiseData.note}</span>
+          <span>{franchiseData.note}</span>
         </div>
         <nav aria-label="Sumber data usaha dan franchise">
           {businessData.sources.map((source) => (

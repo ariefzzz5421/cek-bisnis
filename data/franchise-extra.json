@@ -51,13 +51,22 @@
       "contactUrl": "https://kemitraan.kopigo.id/",
       "outlets": "20+ unit KOPIGO; program Signature dibuka 2026",
       "since": 2024,
-      "investment": [53, 87],
+      "investment": [
+        53,
+        87
+      ],
       "investmentNote": "Rentang all-in Tier 1 yang dipublikasikan brand. Paket inti, sewa, renovasi, dan kebutuhan lokasi dapat berubah.",
       "franchiseFee": "Paket inti Rp30-50 jt; lisensi 3 tahun",
       "royalty": "5% omzet setelah BEP atau paling lambat mulai bulan ke-6",
       "contractYears": 3,
-      "bepMonths": [3, 5],
-      "monthlyRevenue": [22, 81],
+      "bepMonths": [
+        3,
+        5
+      ],
+      "monthlyRevenue": [
+        22,
+        81
+      ],
       "scheme": "Model multi-channel: outlet, mobile selling, online delivery, serta event/reseller. Bahan baku dan SOP dikendalikan pusat, sementara mitra mengoperasikan unit dengan dukungan sistem dan pelatihan.",
       "kpi": [
         "Sekitar 36 cup/hari untuk menutup biaya pada simulasi brand",
@@ -69,7 +78,10 @@
         "Mengikuti SOP, pelatihan, dan rantai pasok pusat",
         "Menyiapkan modal kerja di luar kebutuhan pembukaan"
       ],
-      "sourceIds": ["kopigo-official"]
+      "sourceIds": [
+        "kopigo-official"
+      ],
+      "sourceUrls": []
     },
     {
       "id": "bingxue",
@@ -85,13 +97,22 @@
       "contactUrl": "https://bingxueindonesia.co.id/franchise/",
       "outlets": "550+ store di Indonesia menurut situs brand",
       "since": 2014,
-      "investment": [0, 0],
+      "investment": [
+        0,
+        0
+      ],
       "investmentNote": "Biaya kemitraan terbaru tidak ditampilkan sebagai angka publik; calon mitra diarahkan menghubungi tim franchise untuk quotation.",
       "franchiseFee": "Minta quotation resmi",
       "royalty": "Konfirmasi pada perjanjian terbaru",
       "contractYears": 0,
-      "bepMonths": [0, 0],
-      "monthlyRevenue": [0, 0],
+      "bepMonths": [
+        0,
+        0
+      ],
+      "monthlyRevenue": [
+        0,
+        0
+      ],
       "scheme": "Calon mitra berkonsultasi, mengajukan lokasi, menjalani survei, menandatangani kontrak, mengikuti desain-renovasi dan pelatihan, lalu outlet diperiksa sebelum pembukaan.",
       "kpi": [
         "Gross profit produk sekitar 60% menurut materi brand",
@@ -103,7 +124,10 @@
         "Membayar biaya sesuai quotation resmi",
         "Mengikuti pelatihan serta standar operasional brand"
       ],
-      "sourceIds": ["bingxue-official"]
+      "sourceIds": [
+        "bingxue-official"
+      ],
+      "sourceUrls": []
     },
     {
       "id": "ayam-geprek-sai",
@@ -119,13 +143,22 @@
       "contactUrl": "https://ayamgepreksai.com/",
       "outlets": "Jaringan nasional; jumlah outlet berubah seiring ekspansi",
       "since": 2017,
-      "investment": [300, 300],
+      "investment": [
+        300,
+        300
+      ],
       "investmentNote": "Situs brand menyebut investasi sekitar Rp300 juta, di luar biaya sewa lokasi.",
       "franchiseFee": "Tanpa franchise fee",
       "royalty": "Tanpa royalti; skema bagi hasil syariah, contoh 70% mitra : 30% manajemen",
       "contractYears": 0,
-      "bepMonths": [0, 0],
-      "monthlyRevenue": [85, 115],
+      "bepMonths": [
+        0,
+        0
+      ],
+      "monthlyRevenue": [
+        85,
+        115
+      ],
       "scheme": "Kemitraan menggunakan pengelolaan operasional dan bagi hasil syariah. Brand menyediakan SOP, dukungan pengelolaan, dan standar outlet; porsi hasil mengikuti akad/perjanjian aktual.",
       "kpi": [
         "Traffic makan siang dan malam yang stabil",
@@ -137,7 +170,10 @@
         "Memiliki area parkir yang memadai",
         "Lokasi dan sumber modal harus memenuhi ketentuan kemitraan brand"
       ],
-      "sourceIds": ["sai-official"]
+      "sourceIds": [
+        "sai-official"
+      ],
+      "sourceUrls": []
     },
     {
       "id": "nyoklat-klasik",
@@ -153,13 +189,22 @@
       "contactUrl": "https://nyoklatklasik.co.id/paket/",
       "outlets": "Kemitraan multi-format dari booth sampai gerai besar",
       "since": 2013,
-      "investment": [12, 250],
+      "investment": [
+        12,
+        250
+      ],
       "investmentNote": "Paket resmi yang ditampilkan mulai Silver Rp12 jt, Container Rp14 jt, Minibar Rp17 jt, hingga Gold dan Platinum yang lebih besar.",
       "franchiseFee": "Admin tahunan; nominal berbeda menurut paket",
       "royalty": "Tanpa royalti; repeat order bahan dari pusat",
       "contractYears": 1,
-      "bepMonths": [0, 0],
-      "monthlyRevenue": [15, 30],
+      "bepMonths": [
+        0,
+        0
+      ],
+      "monthlyRevenue": [
+        15,
+        30
+      ],
       "scheme": "Mitra memilih format paket, menyiapkan lokasi dan karyawan, kemudian memakai bahan baku pusat. Struktur repeat order membuat economics sangat bergantung pada volume cup dan disiplin HPP.",
       "kpi": [
         "Volume cup harian dan average selling price",
@@ -171,7 +216,11 @@
         "Mitra menyediakan lokasi dan karyawan",
         "Mengikuti standar bahan baku dan identitas brand"
       ],
-      "sourceIds": ["nyoklat-paket", "nyoklat-faq"]
+      "sourceIds": [
+        "nyoklat-paket",
+        "nyoklat-faq"
+      ],
+      "sourceUrls": []
     },
     {
       "id": "tahu-go",
@@ -187,13 +236,22 @@
       "contactUrl": "https://www.tahugo.co.id/",
       "outlets": "Jaringan kemitraan snack take-away",
       "since": 2019,
-      "investment": [0, 0],
+      "investment": [
+        0,
+        0
+      ],
       "investmentNote": "Harga paket terbaru tidak terlihat sebagai angka publik pada halaman resmi yang ditinjau; konfirmasi langsung sebelum memakai angka investasi lama dari artikel pihak ketiga.",
       "franchiseFee": "Konfirmasi paket terbaru",
       "royalty": "Tanpa royalti menurut situs brand",
       "contractYears": 0,
-      "bepMonths": [0, 0],
-      "monthlyRevenue": [16, 25],
+      "bepMonths": [
+        0,
+        0
+      ],
+      "monthlyRevenue": [
+        16,
+        25
+      ],
       "scheme": "Format take-away dengan menu inti tahu goreng. Brand mendukung pelatihan, materi promosi, dan pendaftaran kanal delivery; economics utamanya ditentukan volume transaksi dan food cost.",
       "kpi": [
         "Jumlah transaksi per hari",
@@ -205,7 +263,10 @@
         "Mengikuti training dan standar produk",
         "Memakai kanal pemesanan/delivery yang relevan"
       ],
-      "sourceIds": ["tahugo-official"]
+      "sourceIds": [
+        "tahugo-official"
+      ],
+      "sourceUrls": []
     },
     {
       "id": "doyan-ayam",
@@ -221,13 +282,22 @@
       "contactUrl": "https://doyanayam.com/franchise/",
       "outlets": "300+ partner aktif menurut situs brand",
       "since": 2018,
-      "investment": [0, 0],
+      "investment": [
+        0,
+        0
+      ],
       "investmentNote": "Nominal paket/promosi dapat berubah dan perlu diminta dari tim franchise; jangan memakai harga promo lama sebagai biaya permanen.",
       "franchiseFee": "Minta quotation paket terbaru",
       "royalty": "Tanpa bagi hasil/royalti; 100% profit operasional untuk partner menurut brand",
       "contractYears": 5,
-      "bepMonths": [0, 12],
-      "monthlyRevenue": [0, 0],
+      "bepMonths": [
+        0,
+        12
+      ],
+      "monthlyRevenue": [
+        0,
+        0
+      ],
       "scheme": "Partner mengoperasikan outlet dengan SOP, bahan, training, dan dukungan pusat. Situs brand menyatakan tidak ada profit sharing sehingga hasil operasional outlet tetap pada mitra setelah biaya usaha.",
       "kpi": [
         "Penjualan harian dan repeat customer",
@@ -239,106 +309,1800 @@
         "Parkir memadai untuk motor dan mobil",
         "Menyiapkan sekitar 5-7 karyawan serta DP sesuai ketentuan paket"
       ],
-      "sourceIds": ["doyanayam-official"]
+      "sourceIds": [
+        "doyanayam-official"
+      ],
+      "sourceUrls": []
+    },
+    {
+      "id": "alfamidi",
+      "name": "Alfamidi",
+      "category": "minimarket",
+      "sector": "Minimarket besar",
+      "dataBasis": "mixed",
+      "brandColor": "#E4002B",
+      "initials": "AM",
+      "officialUrl": "https://www.alfamidiku.com/",
+      "contactUrl": "https://www.alfamidiku.com/en/menu-korporasi",
+      "sourceUrls": [
+        "https://www.alfamidiku.com/en/menu-korporasi",
+        "https://kabarfranchise.com/bisnis/franchise-minimarket-terbesar/"
+      ],
+      "outlets": "2.000+ gerai",
+      "since": 2007,
+      "investment": [
+        500,
+        1000
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Konfirmasi ke brand",
+      "royalty": "Konfirmasi ke brand",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Format lebih besar dari minimarket biasa, mendekati mini supermarket dengan lini produk segar. Mitra menyediakan lokasi dan modal, sistem serta pasokan dari pusat.",
+      "kpi": [
+        "Luas gerai lebih besar dari minimarket standar",
+        "Perputaran produk segar terkendali",
+        "Lokasi dengan daya beli menengah"
+      ],
+      "requirements": [
+        "Lokasi lebih luas dari minimarket standar",
+        "Modal di atas format minimarket biasa",
+        "Lolos survei kelayakan pusat"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "lawson",
+      "name": "Lawson",
+      "category": "minimarket",
+      "sector": "Convenience store",
+      "dataBasis": "mixed",
+      "brandColor": "#0068B7",
+      "initials": "LW",
+      "officialUrl": "https://www.lawsonindonesia.com/",
+      "contactUrl": "https://www.alfamidiku.com/en/menu-korporasi",
+      "sourceUrls": [
+        "https://franchisepedia.id/lawson-alfamart-bisa-franchise/",
+        "https://kabarfranchise.com/bisnis/franchise-minimarket-terbesar/"
+      ],
+      "outlets": "Ratusan gerai",
+      "since": 2011,
+      "investment": [
+        500,
+        1000
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Konfirmasi ke brand",
+      "royalty": "Konfirmasi ke brand",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Convenience store lisensi Jepang yang dipegang PT Lancar Wiguna Sejahtera, anak usaha grup Alfamidi. Menjual area duduk dan makanan siap saji, bukan sekadar ritel kemasan.",
+      "kpi": [
+        "Kontribusi makanan siap saji",
+        "Lokasi dengan pejalan kaki padat",
+        "Jam operasional panjang"
+      ],
+      "requirements": [
+        "Lokasi strategis area urban",
+        "Modal setara format minimarket besar",
+        "Mengikuti standar gerai pemegang lisensi"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "omi",
+      "name": "OMI Indogrosir",
+      "category": "minimarket",
+      "sector": "Minimarket kemitraan",
+      "dataBasis": "mixed",
+      "brandColor": "#00A651",
+      "initials": "OMI",
+      "officialUrl": "https://www.indogrosir.co.id/",
+      "contactUrl": "https://www.indogrosir.co.id/",
+      "sourceUrls": [
+        "https://infofranchiseindonesia.com/franchise-minimarket-di-indonesia-selain-indomaret-dan-alfamart/"
+      ],
+      "outlets": "Ribuan mitra",
+      "since": 2013,
+      "investment": [
+        250,
+        400
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Konfirmasi ke brand",
+      "royalty": "Tanpa royalti persentase; pasokan dari Indogrosir",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Outlet Mitra Indogrosir ditujukan untuk pemilik toko yang ingin mempertahankan identitas sendiri tetapi memakai sistem dan jalur distribusi grosir besar.",
+      "kpi": [
+        "Volume belanja rutin dari Indogrosir",
+        "Perputaran stok cepat",
+        "Harga bersaing di lingkungan sekitar"
+      ],
+      "requirements": [
+        "Sudah memiliki toko atau lokasi sendiri",
+        "Bersedia memakai sistem OMI",
+        "Belanja rutin lewat Indogrosir"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "212-mart",
+      "name": "212 Mart",
+      "category": "minimarket",
+      "sector": "Minimarket komunitas",
+      "dataBasis": "under-verification",
+      "brandColor": "#0F7B3E",
+      "initials": "212",
+      "officialUrl": "https://koperasisyariah212.co.id/",
+      "contactUrl": "https://koperasisyariah212.co.id/",
+      "sourceUrls": [
+        "https://infofranchiseindonesia.com/franchise-minimarket-di-indonesia-selain-indomaret-dan-alfamart/"
+      ],
+      "outlets": "Ratusan gerai komunitas",
+      "since": 2017,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Jaringan minimarket berbasis koperasi syariah dengan kepemilikan patungan anggota komunitas. Struktur permodalannya berbeda dari waralaba komersial biasa.",
+      "kpi": [
+        "Dukungan komunitas sekitar gerai",
+        "Perputaran sembako",
+        "Kepatuhan prinsip syariah"
+      ],
+      "requirements": [
+        "Mengikuti skema keanggotaan koperasi",
+        "Verifikasi skema terbaru ke pengurus koperasi"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "basmalah",
+      "name": "Basmalah",
+      "category": "minimarket",
+      "sector": "Minimarket komunitas",
+      "dataBasis": "under-verification",
+      "brandColor": "#1B7A4B",
+      "initials": "BS",
+      "officialUrl": "https://basmalah.co.id/",
+      "contactUrl": "https://basmalah.co.id/",
+      "sourceUrls": [
+        "https://infofranchiseindonesia.com/franchise-minimarket-di-indonesia-selain-indomaret-dan-alfamart/"
+      ],
+      "outlets": "700+ gerai",
+      "since": 2015,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Jaringan ritel milik Kopontren Sidogiri yang tumbuh dari basis pesantren dan komunitas di Jawa Timur.",
+      "kpi": [
+        "Kedekatan dengan basis komunitas",
+        "Perputaran sembako",
+        "Harga bersaing di pasar lokal"
+      ],
+      "requirements": [
+        "Verifikasi skema kemitraan ke pengelola",
+        "Kesesuaian lokasi dengan basis komunitas"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "dbesto",
+      "name": "D'Besto",
+      "category": "makanan",
+      "sector": "Ayam goreng & burger",
+      "dataBasis": "mixed",
+      "brandColor": "#E11B22",
+      "initials": "DB",
+      "officialUrl": "https://dbesto.co.id/",
+      "contactUrl": "https://dbesto.co.id/",
+      "sourceUrls": [
+        "https://money.kompas.com/read/2023/08/31/114000226/daftar-franchise-fried-chicken-murah-ada-sabana-dbesto-dan-dkriuk",
+        "https://www.sasamecoffee.com/franchise/franchise-d-besto/"
+      ],
+      "outlets": "400+ gerai",
+      "since": 2011,
+      "investment": [
+        200,
+        200
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket",
+      "royalty": "Konfirmasi ke brand",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": [
+        150,
+        450
+      ],
+      "scheme": "Ayam goreng dan burger dengan harga sangat terjangkau, menyasar pelajar dan pekerja. Paket mencakup alat produksi, bahan baku awal, training, dan renovasi mini resto sekitar 10 m2.",
+      "kpi": [
+        "Omzet harian Rp5-15 jt",
+        "HPP terkendali di bawah 45% omzet",
+        "Lokasi dekat sekolah atau permukiman padat"
+      ],
+      "requirements": [
+        "Ruang mini resto sekitar 10 m2",
+        "Mengikuti standar produksi pusat",
+        "Pasokan bahan dari pusat"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "hisana",
+      "name": "Hisana Fried Chicken",
+      "category": "makanan",
+      "sector": "Ayam goreng gerobak",
+      "dataBasis": "mixed",
+      "brandColor": "#D62027",
+      "initials": "HS",
+      "officialUrl": "https://hisanafriedchicken.co.id/",
+      "contactUrl": "https://www.instagram.com/hisanaindonesia/",
+      "sourceUrls": [
+        "https://franchiseness.com/franchise-hisana-fried-chicken/",
+        "https://gopay.co.id/blog/franchise-ayam-goreng-populer-pas-untuk-pengusaha-pemula"
+      ],
+      "outlets": "1.000+ gerai",
+      "since": 2005,
+      "investment": [
+        16.5,
+        16.5
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket",
+      "royalty": "Skema bagi hasil syariah",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Memakai skema syariah dengan pemberian porsi kepemilikan kepada mitra, bukan royalti persentase biasa. Modal masuk sangat rendah karena formatnya gerobak.",
+      "kpi": [
+        "Volume potong harian",
+        "Konsistensi pasokan ayam dari pusat",
+        "Lokasi lalu lalang tinggi"
+      ],
+      "requirements": [
+        "Lahan gerobak kecil",
+        "Mengambil bahan baku dari pusat",
+        "Mengikuti pelatihan produksi"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "jne",
+      "name": "JNE Express",
+      "category": "jasa",
+      "sector": "Ekspedisi & logistik",
+      "dataBasis": "mixed",
+      "brandColor": "#0C4DA2",
+      "initials": "JNE",
+      "officialUrl": "https://www.jne.co.id/",
+      "contactUrl": "https://www.jne.co.id/id/keagenan",
+      "sourceUrls": [
+        "https://tuwaga.id/artikel/biaya-franchise-ekspedisi-2025/",
+        "https://www.medcom.id/ekonomi/bisnis/ZkeMaD5k-franchise-bisnis-jasa-kurir-yang-menggiurkan-ini-daftar-harganya"
+      ],
+      "outlets": "7.000+ titik layanan",
+      "since": 1990,
+      "investment": [
+        5.5,
+        15.5
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Administrasi Rp5,5 jt",
+      "royalty": "Tanpa royalti; komisi bertingkat 22-27% dari omzet",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Keagenan dengan biaya administrasi di muka plus deposit jaminan. Komisi naik bertingkat mengikuti omzet bulanan agen, sehingga volume langsung menentukan pendapatan.",
+      "kpi": [
+        "Omzet bulanan di atas Rp10 jt untuk komisi tertinggi",
+        "Volume paket harian",
+        "Jam buka konsisten"
+      ],
+      "requirements": [
+        "Ruang layanan dan timbangan",
+        "Deposit jaminan keagenan",
+        "Terhubung sistem JNE"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "lion-parcel",
+      "name": "Lion Parcel",
+      "category": "jasa",
+      "sector": "Ekspedisi & logistik",
+      "dataBasis": "mixed",
+      "brandColor": "#E4002B",
+      "initials": "LP",
+      "officialUrl": "https://lionparcel.com/",
+      "contactUrl": "https://lionparcel.com/agen",
+      "sourceUrls": [
+        "https://tuwaga.id/artikel/biaya-franchise-ekspedisi-2025/"
+      ],
+      "outlets": "6.000+ titik layanan",
+      "since": 2013,
+      "investment": [
+        5,
+        5
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk biaya administrasi keagenan",
+      "royalty": "Tanpa royalti; komisi minimal 20% plus 5% untuk penjemputan",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Modal awal sudah termasuk saldo awal dan perlengkapan promosi. Selain komisi pengiriman, ada tambahan komisi penjemputan dan bonus insentif bila target tercapai.",
+      "kpi": [
+        "Volume paket harian",
+        "Porsi layanan penjemputan",
+        "Pencapaian target bulanan"
+      ],
+      "requirements": [
+        "Ruang layanan kecil",
+        "Saldo awal keagenan",
+        "Terhubung sistem Lion Parcel"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "ninja-xpress",
+      "name": "Ninja Xpress",
+      "category": "jasa",
+      "sector": "Ekspedisi & logistik",
+      "dataBasis": "mixed",
+      "brandColor": "#D8232A",
+      "initials": "NX",
+      "officialUrl": "https://www.ninjaxpress.co/",
+      "contactUrl": "https://www.ninjaxpress.co/id-id/mitra",
+      "sourceUrls": [
+        "https://tuwaga.id/artikel/biaya-franchise-ekspedisi-2025/",
+        "https://taukan.com/franchise-ninja-express/"
+      ],
+      "outlets": "Ribuan titik layanan",
+      "since": 2015,
+      "investment": [
+        15.5,
+        15.5
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket kemitraan",
+      "royalty": "Komisi per paket sesuai perjanjian",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Kemitraan agen dengan biaya masuk lebih tinggi dari agen ekspedisi lain, dengan imbalan dukungan sistem dan basis penjual daring yang sudah terbentuk.",
+      "kpi": [
+        "Volume paket harian",
+        "Kepadatan penjual daring sekitar titik",
+        "Ketepatan serah terima"
+      ],
+      "requirements": [
+        "Ruang layanan dan timbangan",
+        "Terhubung sistem Ninja Xpress",
+        "Jam buka konsisten"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "anteraja",
+      "name": "Anteraja",
+      "category": "jasa",
+      "sector": "Ekspedisi & logistik",
+      "dataBasis": "mixed",
+      "brandColor": "#F26B23",
+      "initials": "AJ",
+      "officialUrl": "https://anteraja.id/",
+      "contactUrl": "https://anteraja.id/mitra",
+      "sourceUrls": [
+        "https://tuwaga.id/artikel/biaya-franchise-ekspedisi-2025/"
+      ],
+      "outlets": "Ribuan titik layanan",
+      "since": 2019,
+      "investment": [
+        5,
+        5
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket kemitraan",
+      "royalty": "Komisi per paket sesuai perjanjian",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Paket kemitraan bermodal ringan yang sudah mencakup neon box, seragam, timbangan digital, dan akses sistem Anteraja.",
+      "kpi": [
+        "Volume paket harian",
+        "Kepadatan penjual daring sekitar titik",
+        "Jam buka konsisten"
+      ],
+      "requirements": [
+        "Ruang layanan kecil",
+        "Timbangan digital dan perangkat dasar",
+        "Terhubung sistem Anteraja"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "wahana",
+      "name": "Wahana Express",
+      "category": "jasa",
+      "sector": "Ekspedisi & logistik",
+      "dataBasis": "mixed",
+      "brandColor": "#F58220",
+      "initials": "WH",
+      "officialUrl": "https://www.wahana.com/",
+      "contactUrl": "https://www.wahana.com/",
+      "sourceUrls": [
+        "https://tuwaga.id/artikel/biaya-franchise-ekspedisi-2025/"
+      ],
+      "outlets": "Ribuan titik layanan",
+      "since": 1998,
+      "investment": [
+        3.8,
+        3.8
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket kemitraan",
+      "royalty": "Tanpa royalti; komisi 25% dari ongkos kirim",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Modal masuk paling ringan di antara agen ekspedisi yang ditinjau, dengan komisi tetap 25% dari ongkos kirim setiap paket.",
+      "kpi": [
+        "Volume paket harian",
+        "Komisi 25% per paket",
+        "Jam buka konsisten"
+      ],
+      "requirements": [
+        "Ruang layanan kecil",
+        "Timbangan dan perangkat dasar",
+        "Terhubung sistem Wahana"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "kimia-farma",
+      "name": "Apotek Kimia Farma",
+      "category": "kesehatan",
+      "sector": "Apotek & klinik",
+      "dataBasis": "mixed",
+      "brandColor": "#F58220",
+      "initials": "KF",
+      "officialUrl": "https://www.kimiafarma.co.id/",
+      "contactUrl": "https://www.kimiafarma.co.id/id/kimia-farma-apotek",
+      "sourceUrls": [
+        "https://www.kimiafarma.co.id/id/kimia-farma-apotek",
+        "https://www.fortuneidn.com/business/franchise-apotek-00-fykp7-zlkk87"
+      ],
+      "outlets": "1.200+ apotek",
+      "since": 1971,
+      "investment": [
+        460,
+        460
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket investasi",
+      "royalty": "1,5% dari penjualan bulanan",
+      "contractYears": 6,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Kerja Sama Operasional: mitra menyediakan lokasi strategis, seluruh operasional apotek dijalankan Kimia Farma. Investasi mencakup stok obat, perizinan, rak, furnitur, sistem informasi, POS, dan pelatihan SDM.",
+      "kpi": [
+        "Ketersediaan obat inti",
+        "Perputaran stok obat",
+        "Lokasi dekat fasilitas kesehatan"
+      ],
+      "requirements": [
+        "Lokasi strategis, di luar biaya sewa gedung",
+        "Mengikuti skema KSO",
+        "Kontrak kerja sama 6 tahun"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "century-pharma",
+      "name": "Apotek Century Pharma",
+      "category": "kesehatan",
+      "sector": "Apotek",
+      "dataBasis": "mixed",
+      "brandColor": "#0C4DA2",
+      "initials": "CP",
+      "officialUrl": "https://www.century-pharma.com/",
+      "contactUrl": "https://www.century-pharma.com/",
+      "sourceUrls": [
+        "https://www.garuda.website/blog/franchise-kesehatan-terbaik/"
+      ],
+      "outlets": "Ratusan gerai",
+      "since": 2003,
+      "investment": [
+        400,
+        400
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket investasi",
+      "royalty": "Konfirmasi ke brand",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Jaringan apotek yang memposisikan diri di segmen produk kesehatan premium dan sudah beroperasi lebih dari dua dekade.",
+      "kpi": [
+        "Ketersediaan produk inti",
+        "Perputaran stok",
+        "Lokasi dengan daya beli menengah ke atas"
+      ],
+      "requirements": [
+        "Apoteker penanggung jawab berizin",
+        "Perizinan apotek dari dinas kesehatan",
+        "Lokasi sesuai standar brand"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "pasfarma",
+      "name": "Apotek Pasfarma",
+      "category": "kesehatan",
+      "sector": "Apotek",
+      "dataBasis": "under-verification",
+      "brandColor": "#00A0A0",
+      "initials": "PF",
+      "officialUrl": "https://pasfarma.co.id/",
+      "contactUrl": "https://pasfarma.co.id/",
+      "sourceUrls": [
+        "https://franchisebisniskost.com/franchise-apotek/",
+        "https://franchiseindonesia.id/mengenal-apotek-pasfarma-dan-optik-loka-bisnis-kemitraan-di-bidang-kesehatan-yang-tengah-menjanjikan/"
+      ],
+      "outlets": "20+ cabang",
+      "since": 2022,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Kemitraan apotek yang memposisikan diri sebagai titik masuk paling terjangkau di segmennya, tumbuh cepat di Jawa dan Kalimantan.",
+      "kpi": [
+        "Ketersediaan obat inti",
+        "Perputaran stok",
+        "Kedekatan dengan permukiman"
+      ],
+      "requirements": [
+        "Apoteker penanggung jawab berizin",
+        "Perizinan apotek",
+        "Verifikasi paket terbaru ke brand"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "optik-loka",
+      "name": "Optik Loka",
+      "category": "kesehatan",
+      "sector": "Optik",
+      "dataBasis": "under-verification",
+      "brandColor": "#1F3C88",
+      "initials": "OL",
+      "officialUrl": "https://optikloka.com/",
+      "contactUrl": "https://optikloka.com/",
+      "sourceUrls": [
+        "https://franchiseindonesia.id/mengenal-apotek-pasfarma-dan-optik-loka-bisnis-kemitraan-di-bidang-kesehatan-yang-tengah-menjanjikan/"
+      ],
+      "outlets": "Sedang diverifikasi",
+      "since": 2020,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Kemitraan yang menggabungkan distribusi dan ritel optik dalam satu skema, kategori yang jarang ditawarkan sebagai waralaba di Indonesia.",
+      "kpi": [
+        "Volume pemeriksaan mata",
+        "Perputaran frame dan lensa",
+        "Kerja sama dengan tenaga refraksionis"
+      ],
+      "requirements": [
+        "Tenaga refraksionis optisien",
+        "Perizinan optik",
+        "Verifikasi paket terbaru ke brand"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "viva-generik",
+      "name": "Viva Generik",
+      "category": "kesehatan",
+      "sector": "Apotek",
+      "dataBasis": "under-verification",
+      "brandColor": "#E4002B",
+      "initials": "VG",
+      "officialUrl": "https://vivahealth.co.id/",
+      "contactUrl": "https://vivahealth.co.id/",
+      "sourceUrls": [
+        "https://www.garuda.website/blog/franchise-kesehatan-terbaik/"
+      ],
+      "outlets": "Sedang diverifikasi",
+      "since": 2013,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Jaringan apotek yang menekankan ketersediaan obat generik dengan harga terjangkau.",
+      "kpi": [
+        "Ketersediaan obat generik",
+        "Perputaran stok",
+        "Kedekatan dengan permukiman"
+      ],
+      "requirements": [
+        "Apoteker penanggung jawab berizin",
+        "Perizinan apotek",
+        "Verifikasi skema kemitraan ke brand"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "farmapoint",
+      "name": "Apotek Farmapoint",
+      "category": "kesehatan",
+      "sector": "Apotek & toko obat",
+      "dataBasis": "under-verification",
+      "brandColor": "#0F9D58",
+      "initials": "FP",
+      "officialUrl": "https://www.waralabaku.com/franchise-peluang-usaha-apotek-farmapoint",
+      "contactUrl": "https://www.waralabaku.com/franchise-peluang-usaha-apotek-farmapoint",
+      "sourceUrls": [
+        "https://www.waralabaku.com/franchise-peluang-usaha-apotek-farmapoint"
+      ],
+      "outlets": "Sedang diverifikasi",
+      "since": 2018,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Kemitraan ritel toko obat dan produk medis dengan format yang lebih ringan dari apotek penuh.",
+      "kpi": [
+        "Ketersediaan produk inti",
+        "Perputaran stok",
+        "Kepatuhan perizinan toko obat"
+      ],
+      "requirements": [
+        "Perizinan sesuai kategori toko obat atau apotek",
+        "Tenaga teknis kefarmasian",
+        "Verifikasi paket terbaru ke brand"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "haus",
+      "name": "Haus!",
+      "category": "minuman",
+      "sector": "Minuman kekinian",
+      "dataBasis": "under-verification",
+      "brandColor": "#E4322B",
+      "initials": "HS",
+      "officialUrl": "https://haus.co.id/",
+      "contactUrl": "https://haus.co.id/",
+      "sourceUrls": [
+        "https://tantri.id/post/bisnis-franchise-terbaik-paling-menjanjikan-tahun-2025"
+      ],
+      "outlets": "400+ gerai",
+      "since": 2018,
+      "investment": null,
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Jaringan minuman kekinian dengan harga sangat terjangkau dan volume tinggi, tumbuh cepat di kota besar Jawa.",
+      "kpi": [
+        "Volume cup harian",
+        "Kontribusi jam sore dan malam",
+        "Lokasi lalu lalang tinggi"
+      ],
+      "requirements": [
+        "Lokasi ramai anak muda",
+        "Mengikuti standar menu pusat",
+        "Verifikasi paket kemitraan terbaru ke brand"
+      ],
+      "sourceIds": []
     }
   ],
   "articles": {
     "kopigo": {
       "lede": "KOPIGO Signature menarik karena economics-nya dipublikasikan cukup terbuka: paket, skenario cup harian, omzet, food cost, royalti, dan target balik modal bisa diuji sebelum menghubungi sales. Angka tetap merupakan proyeksi brand, bukan jaminan keuntungan.",
       "sections": [
-        {"heading": "Bagaimana uangnya dibuat", "body": "Pendapatan tidak hanya berasal dari counter. Model Signature menggabungkan outlet, penjualan mobile, delivery online, serta event/reseller. Ini memperbesar peluang utilisasi aset, tetapi juga menambah kebutuhan kontrol stok dan operasional."},
-        {"heading": "Omzet dan skenario", "body": "Materi resmi menampilkan skenario konservatif sekitar 50-70 cup per hari dengan omzet Rp22-32 juta per bulan, moderat 80-120 cup dengan Rp36-54 juta, dan optimistis 130-180 cup dengan Rp59-81 juta. Gunakan skenario konservatif saat menghitung kelayakan lokasi."},
-        {"heading": "BEP dan faktor penentu", "body": "Brand menempatkan titik tutup biaya sekitar 36 cup per hari dan target payback 3-5 bulan pada skenario yang mereka publikasikan. Risiko terbesar tetap traffic, sewa, konsistensi cup harian, food cost, serta kemampuan menjaga repeat customer."},
-        {"heading": "Mekanisme kemitraan", "body": "Mitra mendapatkan sistem, standar produk, pelatihan, dan dukungan peluncuran. Royalti 5% baru berlaku setelah BEP atau paling lambat bulan keenam, sehingga periode awal lebih ringan dibanding model yang langsung menarik royalti sejak hari pertama."}
+        {
+          "heading": "Bagaimana uangnya dibuat",
+          "body": "Pendapatan tidak hanya berasal dari counter. Model Signature menggabungkan outlet, penjualan mobile, delivery online, serta event/reseller. Ini memperbesar peluang utilisasi aset, tetapi juga menambah kebutuhan kontrol stok dan operasional."
+        },
+        {
+          "heading": "Omzet dan skenario",
+          "body": "Materi resmi menampilkan skenario konservatif sekitar 50-70 cup per hari dengan omzet Rp22-32 juta per bulan, moderat 80-120 cup dengan Rp36-54 juta, dan optimistis 130-180 cup dengan Rp59-81 juta. Gunakan skenario konservatif saat menghitung kelayakan lokasi."
+        },
+        {
+          "heading": "BEP dan faktor penentu",
+          "body": "Brand menempatkan titik tutup biaya sekitar 36 cup per hari dan target payback 3-5 bulan pada skenario yang mereka publikasikan. Risiko terbesar tetap traffic, sewa, konsistensi cup harian, food cost, serta kemampuan menjaga repeat customer."
+        },
+        {
+          "heading": "Mekanisme kemitraan",
+          "body": "Mitra mendapatkan sistem, standar produk, pelatihan, dan dukungan peluncuran. Royalti 5% baru berlaku setelah BEP atau paling lambat bulan keenam, sehingga periode awal lebih ringan dibanding model yang langsung menarik royalti sejak hari pertama."
+        }
       ],
       "costBreakdown": [
-        {"item": "Paket inti Tier 1", "amount": "Rp30-50 jt", "note": "Harga berubah menurut wave/promo dan lisensi."},
-        {"item": "Sewa lokasi", "amount": "±Rp12-25 jt/tahun", "note": "Contoh kisaran pada simulasi brand; kota dan titik sangat menentukan."},
-        {"item": "Renovasi/fit-out", "amount": "±Rp11-32 jt", "note": "Bergantung kondisi lokasi."},
-        {"item": "Total all-in Tier 1", "amount": "±Rp53-87 jt", "note": "Rentang resmi yang dipublikasikan untuk screening."}
+        {
+          "item": "Paket inti Tier 1",
+          "amount": "Rp30-50 jt",
+          "note": "Harga berubah menurut wave/promo dan lisensi."
+        },
+        {
+          "item": "Sewa lokasi",
+          "amount": "±Rp12-25 jt/tahun",
+          "note": "Contoh kisaran pada simulasi brand; kota dan titik sangat menentukan."
+        },
+        {
+          "item": "Renovasi/fit-out",
+          "amount": "±Rp11-32 jt",
+          "note": "Bergantung kondisi lokasi."
+        },
+        {
+          "item": "Total all-in Tier 1",
+          "amount": "±Rp53-87 jt",
+          "note": "Rentang resmi yang dipublikasikan untuk screening."
+        }
       ],
-      "schemeDocs": [{"label": "Halaman kemitraan resmi KOPIGO", "url": "https://kemitraan.kopigo.id/", "kind": "page"}],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi KOPIGO",
+          "url": "https://kemitraan.kopigo.id/",
+          "kind": "page"
+        }
+      ],
       "verdict": "Menarik untuk diuji karena disclosure economics relatif lengkap. Jangan membeli hanya karena target BEP 3-5 bulan; validasi apakah titik pilihan realistis mencapai minimal 50-80 cup per hari setelah masa pembukaan lewat."
     },
     "bingxue": {
       "lede": "Bingxue sudah memiliki jaringan besar di Indonesia, tetapi halaman franchise resminya tidak menampilkan angka modal, omzet, atau BEP dalam rupiah. Karena itu halaman ini sengaja tidak mengarang angka dan mengarahkan calon mitra meminta quotation terbaru.",
       "sections": [
-        {"heading": "Mekanisme kemitraan", "body": "Alur resmi dimulai dari konsultasi, pengajuan lokasi, survei, kontrak, desain dan renovasi, pelatihan, inspeksi, lalu grand opening. Model seperti ini membuat kelayakan lokasi dan kepatuhan standar brand menjadi gerbang utama."},
-        {"heading": "Economics yang dipublikasikan", "body": "Situs brand menonjolkan gross profit produk sekitar 60%, lebih dari 550 store di Indonesia, dan klaim BEP lebih cepat. Namun gross profit bukan laba bersih: sewa, gaji, listrik, delivery fee, shrinkage, dan biaya kemitraan tetap harus dikurangi."},
-        {"heading": "Apa yang harus diminta ke sales", "body": "Minta quotation all-in, daftar biaya berulang, durasi kontrak, harga bahan baku, ketentuan renovasi, estimasi payroll, serta data penjualan outlet pembanding dengan karakter lokasi serupa. Tanpa itu, ROI belum layak dihitung."}
+        {
+          "heading": "Mekanisme kemitraan",
+          "body": "Alur resmi dimulai dari konsultasi, pengajuan lokasi, survei, kontrak, desain dan renovasi, pelatihan, inspeksi, lalu grand opening. Model seperti ini membuat kelayakan lokasi dan kepatuhan standar brand menjadi gerbang utama."
+        },
+        {
+          "heading": "Economics yang dipublikasikan",
+          "body": "Situs brand menonjolkan gross profit produk sekitar 60%, lebih dari 550 store di Indonesia, dan klaim BEP lebih cepat. Namun gross profit bukan laba bersih: sewa, gaji, listrik, delivery fee, shrinkage, dan biaya kemitraan tetap harus dikurangi."
+        },
+        {
+          "heading": "Apa yang harus diminta ke sales",
+          "body": "Minta quotation all-in, daftar biaya berulang, durasi kontrak, harga bahan baku, ketentuan renovasi, estimasi payroll, serta data penjualan outlet pembanding dengan karakter lokasi serupa. Tanpa itu, ROI belum layak dihitung."
+        }
       ],
       "costBreakdown": [
-        {"item": "Biaya kemitraan", "amount": "Minta quotation", "note": "Tidak ditampilkan sebagai angka publik di halaman resmi."},
-        {"item": "Renovasi & desain", "amount": "Tergantung lokasi", "note": "Masuk dalam tahapan wajib sebelum inspeksi."},
-        {"item": "Modal kerja", "amount": "Hitung terpisah", "note": "Sediakan buffer untuk gaji, sewa, utilitas dan stok."}
+        {
+          "item": "Biaya kemitraan",
+          "amount": "Minta quotation",
+          "note": "Tidak ditampilkan sebagai angka publik di halaman resmi."
+        },
+        {
+          "item": "Renovasi & desain",
+          "amount": "Tergantung lokasi",
+          "note": "Masuk dalam tahapan wajib sebelum inspeksi."
+        },
+        {
+          "item": "Modal kerja",
+          "amount": "Hitung terpisah",
+          "note": "Sediakan buffer untuk gaji, sewa, utilitas dan stok."
+        }
       ],
-      "schemeDocs": [{"label": "Halaman franchise resmi Bingxue Indonesia", "url": "https://bingxueindonesia.co.id/franchise/", "kind": "page"}],
+      "schemeDocs": [
+        {
+          "label": "Halaman franchise resmi Bingxue Indonesia",
+          "url": "https://bingxueindonesia.co.id/franchise/",
+          "kind": "page"
+        }
+      ],
       "verdict": "Brand scale-nya menarik, tetapi keputusan investasi belum bisa dibuat dari website publik saja. Anggap statusnya 'needs quotation' sampai seluruh recurring fee dan unit economics tertulis di proposal."
     },
     "ayam-geprek-sai": {
       "lede": "Ayam Geprek Sa'i berbeda dari franchise fee klasik: situs resminya menekankan investasi sekitar Rp300 juta di luar sewa, tanpa franchise fee dan royalti, dengan pengelolaan serta bagi hasil syariah sesuai akad.",
       "sections": [
-        {"heading": "Mekanisme bagi hasil", "body": "Contoh materi brand menggunakan pembagian 70% untuk mitra dan 30% untuk manajemen. Ini berarti yang harus dianalisis bukan hanya omzet, tetapi definisi laba yang dibagi, komponen biaya yang dipotong sebelum pembagian, dan siapa yang menanggung biaya tak terduga."},
-        {"heading": "Omzet", "body": "Rentang omzet Rp85-115 juta pada Cek Bisnis adalah skenario screening, bukan angka resmi Sa'i. Gunakan hanya untuk stress test, lalu ganti dengan data outlet pembanding yang diberikan brand saat due diligence."},
-        {"heading": "Lokasi dan kapasitas", "body": "Format restoran membutuhkan area sekitar 100 m2, frontage yang cukup, dan parkir. Karena fixed cost lebih tinggi daripada booth, salah memilih lokasi bisa merusak economics walau brand fee rendah."},
-        {"heading": "BEP", "body": "Halaman resmi yang ditinjau tidak mempublikasikan BEP standar dalam bulan. Jangan menurunkan BEP hanya dari omzet; minta proyeksi laba outlet setelah seluruh biaya dan porsi bagi hasil."}
+        {
+          "heading": "Mekanisme bagi hasil",
+          "body": "Contoh materi brand menggunakan pembagian 70% untuk mitra dan 30% untuk manajemen. Ini berarti yang harus dianalisis bukan hanya omzet, tetapi definisi laba yang dibagi, komponen biaya yang dipotong sebelum pembagian, dan siapa yang menanggung biaya tak terduga."
+        },
+        {
+          "heading": "Omzet",
+          "body": "Rentang omzet Rp85-115 juta pada Cek Bisnis adalah skenario screening, bukan angka resmi Sa'i. Gunakan hanya untuk stress test, lalu ganti dengan data outlet pembanding yang diberikan brand saat due diligence."
+        },
+        {
+          "heading": "Lokasi dan kapasitas",
+          "body": "Format restoran membutuhkan area sekitar 100 m2, frontage yang cukup, dan parkir. Karena fixed cost lebih tinggi daripada booth, salah memilih lokasi bisa merusak economics walau brand fee rendah."
+        },
+        {
+          "heading": "BEP",
+          "body": "Halaman resmi yang ditinjau tidak mempublikasikan BEP standar dalam bulan. Jangan menurunkan BEP hanya dari omzet; minta proyeksi laba outlet setelah seluruh biaya dan porsi bagi hasil."
+        }
       ],
       "costBreakdown": [
-        {"item": "Investasi awal", "amount": "±Rp300 jt", "note": "Angka yang disebut brand; di luar sewa lokasi."},
-        {"item": "Franchise fee", "amount": "Rp0", "note": "Brand menyatakan tanpa franchise fee."},
-        {"item": "Royalti", "amount": "Rp0", "note": "Digantikan mekanisme pengelolaan/bagi hasil sesuai akad."}
+        {
+          "item": "Investasi awal",
+          "amount": "±Rp300 jt",
+          "note": "Angka yang disebut brand; di luar sewa lokasi."
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Rp0",
+          "note": "Brand menyatakan tanpa franchise fee."
+        },
+        {
+          "item": "Royalti",
+          "amount": "Rp0",
+          "note": "Digantikan mekanisme pengelolaan/bagi hasil sesuai akad."
+        }
       ],
-      "schemeDocs": [{"label": "Website kemitraan resmi Ayam Geprek Sa'i", "url": "https://ayamgepreksai.com/", "kind": "page"}],
+      "schemeDocs": [
+        {
+          "label": "Website kemitraan resmi Ayam Geprek Sa'i",
+          "url": "https://ayamgepreksai.com/",
+          "kind": "page"
+        }
+      ],
       "verdict": "Struktur tanpa royalty menarik, tetapi profit sharing membuat definisi laba dan kontrol biaya menjadi lebih penting. Minta contoh P&L outlet nyata sebelum menganggap porsi 70% sebagai return yang tinggi."
     },
     "nyoklat-klasik": {
       "lede": "Nyoklat Klasik punya rentang format yang sangat lebar, dari booth sekitar belasan juta sampai gerai besar ratusan juta. Ini cocok untuk membandingkan economics per format, bukan memperlakukan seluruh brand sebagai satu jenis investasi.",
       "sections": [
-        {"heading": "Pilihan paket", "body": "Halaman resmi menampilkan paket Silver Rp12 juta, Container Rp14 juta, Minibar Rp17 juta, serta format Gold dan Platinum yang jauh lebih besar. Semakin besar format, fixed cost lokasi dan payroll ikut meningkat."},
-        {"heading": "Margin dan bahan baku", "body": "FAQ brand menjelaskan repeat order bahan berada sekitar 45-50% dari harga jual normal. Itu memberi gambaran gross margin, tetapi belum memasukkan sewa, gaji, utilitas, promo, delivery fee, dan waste."},
-        {"heading": "Omzet dan BEP", "body": "Cek Bisnis memakai Rp15-30 juta per bulan sebagai skenario screening untuk format kecil. Brand tidak mempublikasikan BEP standar pada halaman yang ditinjau, sehingga hasil akhir harus dihitung berdasarkan traffic lokasi dan paket yang dipilih."}
+        {
+          "heading": "Pilihan paket",
+          "body": "Halaman resmi menampilkan paket Silver Rp12 juta, Container Rp14 juta, Minibar Rp17 juta, serta format Gold dan Platinum yang jauh lebih besar. Semakin besar format, fixed cost lokasi dan payroll ikut meningkat."
+        },
+        {
+          "heading": "Margin dan bahan baku",
+          "body": "FAQ brand menjelaskan repeat order bahan berada sekitar 45-50% dari harga jual normal. Itu memberi gambaran gross margin, tetapi belum memasukkan sewa, gaji, utilitas, promo, delivery fee, dan waste."
+        },
+        {
+          "heading": "Omzet dan BEP",
+          "body": "Cek Bisnis memakai Rp15-30 juta per bulan sebagai skenario screening untuk format kecil. Brand tidak mempublikasikan BEP standar pada halaman yang ditinjau, sehingga hasil akhir harus dihitung berdasarkan traffic lokasi dan paket yang dipilih."
+        }
       ],
       "costBreakdown": [
-        {"item": "Silver", "amount": "Rp12 jt", "note": "Paket kecil menurut halaman resmi."},
-        {"item": "Container", "amount": "Rp14 jt", "note": "Format container."},
-        {"item": "Minibar", "amount": "Rp17 jt", "note": "Format minibar."},
-        {"item": "Gold/Platinum", "amount": "Hingga ±Rp250 jt", "note": "Format gerai lebih besar; cek paket terbaru."}
+        {
+          "item": "Silver",
+          "amount": "Rp12 jt",
+          "note": "Paket kecil menurut halaman resmi."
+        },
+        {
+          "item": "Container",
+          "amount": "Rp14 jt",
+          "note": "Format container."
+        },
+        {
+          "item": "Minibar",
+          "amount": "Rp17 jt",
+          "note": "Format minibar."
+        },
+        {
+          "item": "Gold/Platinum",
+          "amount": "Hingga ±Rp250 jt",
+          "note": "Format gerai lebih besar; cek paket terbaru."
+        }
       ],
       "schemeDocs": [
-        {"label": "Paket resmi Nyoklat Klasik", "url": "https://nyoklatklasik.co.id/paket/", "kind": "page"},
-        {"label": "FAQ kemitraan Nyoklat Klasik", "url": "https://nyoklatklasik.co.id/faq/", "kind": "page"}
+        {
+          "label": "Paket resmi Nyoklat Klasik",
+          "url": "https://nyoklatklasik.co.id/paket/",
+          "kind": "page"
+        },
+        {
+          "label": "FAQ kemitraan Nyoklat Klasik",
+          "url": "https://nyoklatklasik.co.id/faq/",
+          "kind": "page"
+        }
       ],
       "verdict": "Keunggulan utamanya adalah entry ticket rendah pada format kecil. Fokuskan due diligence pada cup harian dan recurring cost bahan; paket murah tidak otomatis berarti BEP cepat."
     },
     "tahu-go": {
       "lede": "Tahu Go adalah format snack take-away yang sederhana, tetapi situs resminya saat ini tidak menampilkan harga paket terbaru secara jelas. Cek Bisnis karena itu memisahkan klaim resmi seperti tanpa royalti dari skenario omzet internal.",
       "sections": [
-        {"heading": "Mekanisme", "body": "Mitra menjalankan outlet take-away dengan dukungan training, promosi, dan integrasi kanal delivery. Model sederhana membuat throughput transaksi, harga bahan, minyak, dan waste lebih menentukan daripada kompleksitas menu."},
-        {"heading": "Omzet", "body": "Rentang Rp16-25 juta per bulan adalah skenario Cek Bisnis untuk screening volume rendah-menengah, bukan angka yang dijamin brand."},
-        {"heading": "BEP", "body": "Situs resmi menyebut BEP cepat tetapi tidak memberikan rentang bulan yang dapat diverifikasi pada halaman yang ditinjau. Gunakan quotation terbaru dan hitung ulang dari contribution margin outlet."}
+        {
+          "heading": "Mekanisme",
+          "body": "Mitra menjalankan outlet take-away dengan dukungan training, promosi, dan integrasi kanal delivery. Model sederhana membuat throughput transaksi, harga bahan, minyak, dan waste lebih menentukan daripada kompleksitas menu."
+        },
+        {
+          "heading": "Omzet",
+          "body": "Rentang Rp16-25 juta per bulan adalah skenario Cek Bisnis untuk screening volume rendah-menengah, bukan angka yang dijamin brand."
+        },
+        {
+          "heading": "BEP",
+          "body": "Situs resmi menyebut BEP cepat tetapi tidak memberikan rentang bulan yang dapat diverifikasi pada halaman yang ditinjau. Gunakan quotation terbaru dan hitung ulang dari contribution margin outlet."
+        }
       ],
       "costBreakdown": [
-        {"item": "Paket kemitraan", "amount": "Minta quotation", "note": "Harga paket terbaru perlu dikonfirmasi ke brand."},
-        {"item": "Royalti", "amount": "Rp0", "note": "Situs brand menyatakan tanpa royalti."},
-        {"item": "Modal kerja", "amount": "Hitung terpisah", "note": "Buffer stok, payroll, sewa, dan utilitas."}
+        {
+          "item": "Paket kemitraan",
+          "amount": "Minta quotation",
+          "note": "Harga paket terbaru perlu dikonfirmasi ke brand."
+        },
+        {
+          "item": "Royalti",
+          "amount": "Rp0",
+          "note": "Situs brand menyatakan tanpa royalti."
+        },
+        {
+          "item": "Modal kerja",
+          "amount": "Hitung terpisah",
+          "note": "Buffer stok, payroll, sewa, dan utilitas."
+        }
       ],
-      "schemeDocs": [{"label": "Website resmi Tahu Go", "url": "https://www.tahugo.co.id/", "kind": "page"}],
+      "schemeDocs": [
+        {
+          "label": "Website resmi Tahu Go",
+          "url": "https://www.tahugo.co.id/",
+          "kind": "page"
+        }
+      ],
       "verdict": "Modelnya relatif mudah dipahami, tetapi kekurangan data publik membuat quotation dan data outlet pembanding wajib diminta sebelum menghitung ROI."
     },
     "doyan-ayam": {
       "lede": "Doyan Ayam ditambahkan karena materi franchise resminya relatif detail tentang persyaratan outlet, kontrak, dan dukungan, serta menyebut 300+ partner aktif. Harga promo dapat berubah, jadi halaman ini tidak mengunci nominal yang cepat basi.",
       "sections": [
-        {"heading": "Mekanisme kemitraan", "body": "Partner mengelola outlet dengan SOP, training dan dukungan pusat. Brand menyatakan profit operasional tidak dibagi melalui royalty/profit sharing, sehingga 100% profit outlet berada pada partner setelah biaya usaha."},
-        {"heading": "BEP dan klaim performa", "body": "Brand menyebut rata-rata BEP di bawah satu tahun dan menampilkan contoh partner dengan omzet tinggi. Perlakukan ini sebagai bukti pemasaran, bukan baseline. Minta distribusi performa seluruh outlet atau minimal outlet dengan kota dan sewa yang sebanding."},
-        {"heading": "Lokasi", "body": "Persyaratan publik mencakup luas sekitar 32 m2, plafon sekitar 3 meter, parkir, dan kebutuhan 5-7 karyawan. Artinya fixed cost outlet tetap signifikan walaupun tidak ada royalty."}
+        {
+          "heading": "Mekanisme kemitraan",
+          "body": "Partner mengelola outlet dengan SOP, training dan dukungan pusat. Brand menyatakan profit operasional tidak dibagi melalui royalty/profit sharing, sehingga 100% profit outlet berada pada partner setelah biaya usaha."
+        },
+        {
+          "heading": "BEP dan klaim performa",
+          "body": "Brand menyebut rata-rata BEP di bawah satu tahun dan menampilkan contoh partner dengan omzet tinggi. Perlakukan ini sebagai bukti pemasaran, bukan baseline. Minta distribusi performa seluruh outlet atau minimal outlet dengan kota dan sewa yang sebanding."
+        },
+        {
+          "heading": "Lokasi",
+          "body": "Persyaratan publik mencakup luas sekitar 32 m2, plafon sekitar 3 meter, parkir, dan kebutuhan 5-7 karyawan. Artinya fixed cost outlet tetap signifikan walaupun tidak ada royalty."
+        }
       ],
       "costBreakdown": [
-        {"item": "Paket franchise", "amount": "Minta quotation", "note": "Promo dan paket dapat berubah."},
-        {"item": "DP", "amount": "25%", "note": "Persentase yang disebut pada materi franchise brand."},
-        {"item": "Royalti/profit share", "amount": "Rp0", "note": "Menurut klaim resmi brand."}
+        {
+          "item": "Paket franchise",
+          "amount": "Minta quotation",
+          "note": "Promo dan paket dapat berubah."
+        },
+        {
+          "item": "DP",
+          "amount": "25%",
+          "note": "Persentase yang disebut pada materi franchise brand."
+        },
+        {
+          "item": "Royalti/profit share",
+          "amount": "Rp0",
+          "note": "Menurut klaim resmi brand."
+        }
       ],
-      "schemeDocs": [{"label": "Halaman franchise resmi Doyan Ayam", "url": "https://doyanayam.com/franchise/", "kind": "page"}],
+      "schemeDocs": [
+        {
+          "label": "Halaman franchise resmi Doyan Ayam",
+          "url": "https://doyanayam.com/franchise/",
+          "kind": "page"
+        }
+      ],
       "verdict": "Layak masuk shortlist untuk investor yang ingin restoran ayam tanpa royalty, tetapi jangan menggunakan contoh omzet terbaik sebagai base case. Quotation, sewa lokasi, payroll, dan food cost tetap penentu utama."
+    },
+    "alfamidi": {
+      "lede": "Format satu tingkat di atas minimarket biasa: lebih luas, dengan lini produk segar yang tidak dijual gerai konvensional.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Mitra menyediakan lokasi dan modal, sementara sistem, pasokan, dan standar operasional datang dari pusat. Karena formatnya mendekati mini supermarket, kebutuhan luas gerai dan modalnya berada di atas minimarket standar."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Penanganan produk segar. Lini sayur, buah, dan daging adalah pembeda utama format ini sekaligus sumber susut terbesar kalau perputarannya lambat. Lokasi dengan daya beli menengah lebih cocok daripada area yang sensitif harga."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Modal dan luas gerai yang lebih besar berarti biaya sewa lebih tinggi, sementara margin ritel tetap tipis. Angka fee dan royaltinya belum dipublikasikan terbuka, jadi konfirmasi langsung ke pusat wajib sebelum menghitung kelayakan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi gerai",
+          "amount": "Rp500 jt - Rp1 M",
+          "note": "Rentang publik, di luar properti"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Alfamidi",
+          "url": "https://www.alfamidiku.com/en/menu-korporasi",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Masuk akal untuk pemilik lokasi luas dengan modal besar. Minta rincian fee dan royalti tertulis sebelum melangkah."
+    },
+    "lawson": {
+      "lede": "Convenience store lisensi Jepang yang menjual tempat duduk dan makanan siap saji, bukan sekadar rak barang kemasan.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Lisensi tunggal Lawson di Indonesia dipegang PT Lancar Wiguna Sejahtera, anak usaha grup yang sama dengan Alfamidi. Investasinya berada di rentang format minimarket besar."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kontribusi makanan siap saji dan area duduk. Itu yang membedakan convenience store dari minimarket biasa dan yang membuat orang berhenti lebih lama, bukan sekadar membeli lalu pergi."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Format ini menuntut lokasi dengan pejalan kaki padat dan jam operasional panjang. Di lokasi yang salah, biaya operasional 24 jam tidak tertutup oleh keranjang belanja yang kecil."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi gerai",
+          "amount": "Rp500 jt - Rp1 M",
+          "note": "Rentang publik, di luar properti"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Lawson",
+          "url": "https://www.alfamidiku.com/en/menu-korporasi",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Pilih hanya kalau lokasimu benar-benar padat pejalan kaki. Format ini hidup dari kunjungan, bukan belanja besar."
+    },
+    "omi": {
+      "lede": "Bukan waralaba dalam arti biasa: OMI menawarkan sistem dan jalur distribusi Indogrosir untuk toko yang tetap memakai identitasnya sendiri.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Mitra mempertahankan nama dan kepemilikan tokonya, lalu mengadopsi sistem OMI dan belanja rutin lewat Indogrosir. Keuntungan pusat datang dari volume belanja, bukan dari royalti persentase."
+        },
+        {
+          "heading": "Untuk siapa model ini",
+          "body": "Pemilik toko kelontong yang sudah berjalan dan ingin harga beli lebih baik plus sistem yang rapi, tanpa menyerahkan merek dan kendali operasional sepenuhnya."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Karena tidak ada merek nasional yang menempel di papan nama, daya tarik ke pelanggan baru tidak berubah banyak. Yang membaik adalah struktur biaya dan sistem, bukan lalu lintas pengunjung."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Rp250 jt - Rp400 jt",
+          "note": "Rentang publik"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Tanpa royalti persentase",
+          "note": "Pusat untung dari pasokan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi OMI Indogrosir",
+          "url": "https://www.indogrosir.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Pilihan paling masuk akal kalau kamu sudah punya toko dan ingin memperbaiki harga beli, bukan mengganti merek."
+    },
+    "212-mart": {
+      "lede": "Jaringan minimarket berbasis koperasi syariah dengan kepemilikan patungan anggota komunitas.",
+      "sections": [
+        {
+          "heading": "Kenapa strukturnya berbeda",
+          "body": "Permodalannya bertumpu pada iuran anggota koperasi, bukan satu investor tunggal yang membeli lisensi. Karena itu skema masuknya tidak setara dengan waralaba komersial dan tidak bisa dibandingkan apple-to-apple soal modal."
+        },
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Angka investasi, fee, royalti, dan BEP untuk skema ini belum bisa kami verifikasi dari sumber resmi, jadi sengaja dikosongkan. Kami memilih menampilkan kolom kosong daripada mengisinya dengan tebakan."
+        },
+        {
+          "heading": "Langkah yang disarankan",
+          "body": "Hubungi pengurus koperasi untuk skema keanggotaan dan permodalan terbaru, lalu bandingkan biaya siklus penuhnya dengan minimarket komersial di daftar ini."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Struktur koperasi, bukan lisensi"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke pengurus"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi 212 Mart",
+          "url": "https://koperasisyariah212.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Menarik dari sisi komunitas, tetapi angkanya belum bisa diverifikasi. Perlakukan sebagai kandidat, bukan pilihan siap hitung."
+    },
+    "basmalah": {
+      "lede": "Jaringan ritel milik Kopontren Sidogiri yang tumbuh dari basis pesantren dan komunitas di Jawa Timur.",
+      "sections": [
+        {
+          "heading": "Kekuatan utamanya",
+          "body": "Kedekatan dengan basis komunitas yang sudah terbentuk. Loyalitas pelanggan di jaringan seperti ini datang dari afiliasi, bukan semata dari harga atau lokasi."
+        },
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Rincian modal, fee, dan royalti kemitraannya belum bisa kami verifikasi dari sumber resmi, jadi kolom angkanya dikosongkan alih-alih diisi perkiraan."
+        },
+        {
+          "heading": "Langkah yang disarankan",
+          "body": "Hubungi pengelola untuk skema kemitraan terbaru, dan pastikan lokasimu memang berada di dalam basis komunitas yang menjadi kekuatan jaringan ini."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke pengelola"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke pengelola"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Basmalah",
+          "url": "https://basmalah.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Kuat di basis komunitasnya. Angka kemitraannya perlu dikonfirmasi langsung sebelum dihitung."
+    },
+    "dbesto": {
+      "lede": "Ayam goreng dan burger dengan harga yang sengaja ditekan untuk pelajar dan pekerja, dijalankan dari mini resto berukuran kecil.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal sekitar Rp200 juta sudah mencakup alat produksi, bahan baku awal, training, dan renovasi mini resto sekitar 10 m2. Format kecil ini menekan biaya sewa dibanding resto penuh."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Volume harian. Dengan harga jual rendah, margin per porsi tipis dan yang menutup biaya tetap adalah jumlah porsi. Omzet harian yang dilaporkan berada di kisaran Rp5-15 juta, rentang yang sangat lebar dan sepenuhnya ditentukan lokasi."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Rentang omzet selebar itu berarti hasilnya bisa tiga kali lipat lebih baik atau lebih buruk tergantung titik. Hitung kelayakan dengan asumsi batas bawah, bukan batas atas."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan",
+          "amount": "Rp200 jt",
+          "note": "Termasuk alat, bahan awal, training, renovasi"
+        },
+        {
+          "item": "Luas mini resto",
+          "amount": "±10 m2",
+          "note": "Format kecil, menekan sewa"
+        },
+        {
+          "item": "Omzet harian dilaporkan",
+          "amount": "Rp5 jt - Rp15 jt",
+          "note": "Rentang sangat bergantung lokasi"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi D'Besto",
+          "url": "https://dbesto.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Paket lengkap dengan format kecil. Uji asumsi omzet di batas bawah sebelum memutuskan."
+    },
+    "hisana": {
+      "lede": "Ayam goreng gerobak dengan modal masuk paling ringan di kategorinya, memakai skema bagi hasil syariah alih-alih royalti persentase.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal sekitar Rp16,5 juta mencakup merek, bahan baku, dan gerobak. Alih-alih memungut royalti, Hisana memberi porsi kepemilikan kepada mitra melalui skema syariah."
+        },
+        {
+          "heading": "Kenapa modal sekecil ini masuk akal",
+          "body": "Formatnya gerobak, bukan resto. Tidak ada renovasi, tidak ada area makan, dan biaya tetapnya nyaris hanya sewa lapak. Risiko salah lokasi jadi jauh lebih murah."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Jaringan gerobak yang sangat banyak membuat jarak antar titik sering berdekatan. Cek berapa gerobak merek yang sama dalam radius satu kilometer sebelum mengambil lokasi."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan",
+          "amount": "±Rp16,5 jt",
+          "note": "Merek, bahan baku, dan gerobak"
+        },
+        {
+          "item": "Skema",
+          "amount": "Bagi hasil syariah",
+          "note": "Porsi kepemilikan, bukan royalti"
+        },
+        {
+          "item": "Sewa lapak",
+          "amount": "Di luar paket",
+          "note": "Sangat bergantung titik"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Hisana Fried Chicken",
+          "url": "https://www.instagram.com/hisanaindonesia/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Titik masuk termurah di kategori ayam goreng. Kelayakannya murni soal volume harian dan jarak antar gerobak."
+    },
+    "jne": {
+      "lede": "Salah satu jaringan ekspedisi tertua di Indonesia, dengan komisi agen yang naik bertingkat mengikuti omzet bulanan.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Biaya administrasi sekitar Rp5,5 juta ditambah deposit jaminan keagenan. Komisi berjenjang: 22% untuk omzet di bawah Rp5 juta per bulan, 25% untuk Rp5-10 juta, dan 27% di atas Rp10 juta."
+        },
+        {
+          "heading": "Kenapa jenjang komisinya penting",
+          "body": "Selisih 22% ke 27% terlihat kecil, tetapi pada omzet yang sama itu menambah seperlima pendapatan agen. Titik dengan volume tinggi jauh lebih berharga di skema ini daripada di skema komisi datar."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Penghasilan agen dihitung per paket, jadi kalau tidak ada penjual daring di sekitar titik, tidak ada pendapatan. Hitung dulu kepadatan toko online dalam radius satu kilometer sebelum membayar paket kemitraan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Biaya administrasi",
+          "amount": "Rp5,5 jt",
+          "note": "Wilayah Jakarta"
+        },
+        {
+          "item": "Deposit jaminan",
+          "amount": "Rp10 jt",
+          "note": "Uang jaminan keagenan"
+        },
+        {
+          "item": "Komisi",
+          "amount": "22% - 27%",
+          "note": "Bertingkat mengikuti omzet bulanan"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi JNE Express",
+          "url": "https://www.jne.co.id/id/keagenan",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Skema komisi bertingkat memberi imbalan pada volume. Hanya masuk akal di titik dengan banyak penjual daring."
+    },
+    "lion-parcel": {
+      "lede": "Keagenan bermodal ringan dengan komisi dasar plus tambahan untuk layanan penjemputan paket.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal awal sekitar Rp5 juta sudah termasuk saldo awal Rp2 juta, biaya administrasi keagenan, dan perlengkapan promosi seperti spanduk."
+        },
+        {
+          "heading": "Sumber pendapatan bertingkat",
+          "body": "Komisi minimal 20% dari biaya pengiriman, ditambah 5% untuk penjemputan paket dari lokasi pelanggan, plus bonus insentif bila target bulanan tercapai. Layanan jemput adalah cara paling langsung menaikkan pendapatan per paket."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Penghasilan agen dihitung per paket, jadi kalau tidak ada penjual daring di sekitar titik, tidak ada pendapatan. Hitung dulu kepadatan toko online dalam radius satu kilometer sebelum membayar paket kemitraan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Modal awal",
+          "amount": "Rp5 jt",
+          "note": "Termasuk saldo awal Rp2 jt"
+        },
+        {
+          "item": "Komisi dasar",
+          "amount": "Minimal 20%",
+          "note": "Dari biaya pengiriman"
+        },
+        {
+          "item": "Komisi penjemputan",
+          "amount": "+5%",
+          "note": "Untuk paket yang dijemput"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Lion Parcel",
+          "url": "https://lionparcel.com/agen",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Modal ringan dengan dua sumber komisi. Layanan jemput adalah pembeda yang layak dikejar."
+    },
+    "ninja-xpress": {
+      "lede": "Biaya masuk lebih tinggi dari agen ekspedisi lain di daftar ini, dengan imbalan dukungan sistem dan basis penjual daring yang sudah terbentuk.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Biaya kemitraan sekitar Rp15,5 juta. Komisi per paket mengikuti perjanjian keagenan, dan pendaftaran dilakukan lewat situs resmi Ninja Xpress."
+        },
+        {
+          "heading": "Yang perlu dibandingkan",
+          "body": "Modal masuknya tiga kali lipat agen bermodal Rp5 juta. Selisih itu baru terbayar kalau volume paket di titikmu memang lebih tinggi, jadi bandingkan proyeksi volume, bukan hanya biaya masuk."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Penghasilan agen dihitung per paket, jadi kalau tidak ada penjual daring di sekitar titik, tidak ada pendapatan. Hitung dulu kepadatan toko online dalam radius satu kilometer sebelum membayar paket kemitraan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Biaya kemitraan",
+          "amount": "±Rp15,5 jt",
+          "note": "Lebih tinggi dari agen sejenis"
+        },
+        {
+          "item": "Komisi",
+          "amount": "Sesuai perjanjian",
+          "note": "Konfirmasi saat pendaftaran"
+        },
+        {
+          "item": "Sewa ruang",
+          "amount": "Di luar paket",
+          "note": "Menyesuaikan lokasi"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Ninja Xpress",
+          "url": "https://www.ninjaxpress.co/id-id/mitra",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Masuk akal hanya kalau volume paket di titikmu lebih tinggi dari rata-rata. Bandingkan dengan agen bermodal lebih ringan."
+    },
+    "anteraja": {
+      "lede": "Paket kemitraan bermodal ringan yang sudah mencakup perlengkapan dasar operasional agen.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal minimal sekitar Rp5 juta sudah mencakup neon box, seragam sales, timbangan digital, dan akses sistem Anteraja."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kepadatan penjual daring di sekitar titik dan konsistensi jam buka. Penjual langganan memilih agen yang pasti buka, bukan yang paling dekat."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Penghasilan agen dihitung per paket, jadi kalau tidak ada penjual daring di sekitar titik, tidak ada pendapatan. Hitung dulu kepadatan toko online dalam radius satu kilometer sebelum membayar paket kemitraan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Modal minimal",
+          "amount": "Rp5 jt",
+          "note": "Termasuk perlengkapan dasar"
+        },
+        {
+          "item": "Komisi",
+          "amount": "Sesuai perjanjian",
+          "note": "Konfirmasi saat pendaftaran"
+        },
+        {
+          "item": "Sewa ruang",
+          "amount": "Di luar paket",
+          "note": "Menyesuaikan lokasi"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Anteraja",
+          "url": "https://anteraja.id/mitra",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Paket masuk yang lengkap untuk modalnya. Kelayakannya ditentukan kepadatan penjual daring sekitar."
+    },
+    "wahana": {
+      "lede": "Modal masuk paling ringan di antara agen ekspedisi yang ditinjau, dengan komisi tetap 25% dari ongkos kirim.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal awal sekitar Rp3,8 juta, dengan komisi 25% dari ongkos kirim setiap paket. Komisinya datar, tidak bertingkat seperti sebagian pesaing."
+        },
+        {
+          "heading": "Konsekuensi komisi datar",
+          "body": "Di volume rendah, komisi 25% lebih menguntungkan daripada skema bertingkat yang dimulai di 22%. Di volume tinggi, skema bertingkat bisa menyalip. Pilih mengikuti proyeksi volume titikmu."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Penghasilan agen dihitung per paket, jadi kalau tidak ada penjual daring di sekitar titik, tidak ada pendapatan. Hitung dulu kepadatan toko online dalam radius satu kilometer sebelum membayar paket kemitraan."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Modal awal",
+          "amount": "Rp3,8 jt",
+          "note": "Titik masuk termurah di kategori ini"
+        },
+        {
+          "item": "Komisi",
+          "amount": "25%",
+          "note": "Datar, dari ongkos kirim"
+        },
+        {
+          "item": "Sewa ruang",
+          "amount": "Di luar paket",
+          "note": "Menyesuaikan lokasi"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Wahana Express",
+          "url": "https://www.wahana.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Komisi datar 25% menguntungkan di volume rendah sampai menengah. Titik masuk termurah di kategorinya."
+    },
+    "kimia-farma": {
+      "lede": "Apotek BUMN dengan skema Kerja Sama Operasional: mitra menyediakan lokasi, seluruh operasional dijalankan Kimia Farma.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Investasi sekitar Rp460 juta di luar sewa gedung, mencakup stok obat senilai Rp150 juta, perizinan, brand sign, rak, counter, furnitur, sistem informasi, POS, pelatihan SDM, dan peralatan apotek. Royalti 1,5% dari penjualan bulanan, kontrak enam tahun."
+        },
+        {
+          "heading": "Kenapa KSO berbeda dari waralaba biasa",
+          "body": "Mitra tidak menjalankan apotek sehari-hari; Kimia Farma yang mengelola. Itu memangkas beban operasional dan risiko kepatuhan, tetapi juga memangkas kendali mitra atas jalannya usaha."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Sewa gedung berada di luar angka Rp460 juta dan sering menjadi komponen bulanan terbesar. Kontrak enam tahun juga berarti komitmen panjang di lokasi yang sama."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi outlet baru",
+          "amount": "Rp460 jt",
+          "note": "Di luar sewa gedung"
+        },
+        {
+          "item": "Stok obat awal",
+          "amount": "Rp150 jt",
+          "note": "Bagian dari investasi"
+        },
+        {
+          "item": "Royalti",
+          "amount": "1,5% penjualan",
+          "note": "Dibayar bulanan"
+        },
+        {
+          "item": "Kontrak",
+          "amount": "6 tahun",
+          "note": "Skema Kerja Sama Operasional"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Apotek Kimia Farma",
+          "url": "https://www.kimiafarma.co.id/id/kimia-farma-apotek",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Cocok untuk pemilik lokasi yang ingin masuk sektor apotek tanpa menjalankan operasionalnya sendiri."
+    },
+    "century-pharma": {
+      "lede": "Jaringan apotek yang memposisikan diri di segmen produk kesehatan premium dan sudah beroperasi lebih dari dua dekade.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket investasi tersedia di kisaran Rp400 juta. Rincian fee dan royaltinya belum dipublikasikan terbuka, jadi perlu dikonfirmasi langsung."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Ketersediaan produk inti dan perputaran stok. Apotek dengan segmen premium menuntut lokasi berdaya beli menengah ke atas agar keranjang belanjanya sepadan dengan biaya stok."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Seperti semua apotek, modal terbesar mengendap di rak dalam bentuk stok obat. Apoteker penanggung jawab berizin dan perizinan dinas kesehatan bukan formalitas, melainkan syarat operasional harian."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket investasi",
+          "amount": "±Rp400 jt",
+          "note": "Rentang publik"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Konfirmasi ke brand",
+          "note": "Belum dipublikasikan terbuka"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Apotek Century Pharma",
+          "url": "https://www.century-pharma.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Angka investasinya jelas, struktur fee-nya belum. Minta rincian tertulis sebelum menghitung kelayakan."
+    },
+    "pasfarma": {
+      "lede": "Apotek Pasfarma muncul di direktori kemitraan sebagai peluang apotek, tetapi angkanya belum bisa kami verifikasi dari sumber resmi.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP untuk merek ini sengaja dikosongkan, bukan diisi perkiraan. Selama belum ada sumber resmi yang bisa dikutip, mengisi kolom itu sama saja dengan menebak."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Hubungi brand untuk paket kemitraan terbaru. Pastikan juga kamu sudah punya apoteker penanggung jawab berizin, karena itu syarat mutlak sebelum apotek bisa beroperasi."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal di halaman peringkat. Begitu datanya masuk, posisinya akan terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Apotek Pasfarma",
+          "url": "https://pasfarma.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Kandidat yang layak ditanyakan langsung. Jangan dihitung sebagai pilihan siap pakai sampai angkanya keluar."
+    },
+    "optik-loka": {
+      "lede": "Optik Loka muncul di direktori kemitraan sebagai peluang ritel dan distribusi optik, tetapi angkanya belum bisa kami verifikasi dari sumber resmi.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP untuk merek ini sengaja dikosongkan, bukan diisi perkiraan. Selama belum ada sumber resmi yang bisa dikutip, mengisi kolom itu sama saja dengan menebak."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Hubungi brand untuk skema kemitraannya, dan pastikan ketersediaan tenaga refraksionis optisien di kotamu karena itu syarat operasional optik."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal di halaman peringkat. Begitu datanya masuk, posisinya akan terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Optik Loka",
+          "url": "https://optikloka.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Kandidat yang layak ditanyakan langsung. Jangan dihitung sebagai pilihan siap pakai sampai angkanya keluar."
+    },
+    "viva-generik": {
+      "lede": "Viva Generik muncul di direktori kemitraan sebagai peluang apotek obat generik, tetapi angkanya belum bisa kami verifikasi dari sumber resmi.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP untuk merek ini sengaja dikosongkan, bukan diisi perkiraan. Selama belum ada sumber resmi yang bisa dikutip, mengisi kolom itu sama saja dengan menebak."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Hubungi brand untuk memastikan apakah skema kemitraan masih dibuka dan berapa rentang modalnya saat ini."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal di halaman peringkat. Begitu datanya masuk, posisinya akan terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Viva Generik",
+          "url": "https://vivahealth.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Kandidat yang layak ditanyakan langsung. Jangan dihitung sebagai pilihan siap pakai sampai angkanya keluar."
+    },
+    "farmapoint": {
+      "lede": "Apotek Farmapoint muncul di direktori kemitraan sebagai peluang toko obat dan produk medis, tetapi angkanya belum bisa kami verifikasi dari sumber resmi.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP untuk merek ini sengaja dikosongkan, bukan diisi perkiraan. Selama belum ada sumber resmi yang bisa dikutip, mengisi kolom itu sama saja dengan menebak."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Hubungi brand untuk paket terbaru, dan pastikan kategori perizinan yang dibutuhkan: toko obat dan apotek punya syarat yang berbeda."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal di halaman peringkat. Begitu datanya masuk, posisinya akan terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Apotek Farmapoint",
+          "url": "https://www.waralabaku.com/franchise-peluang-usaha-apotek-farmapoint",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Kandidat yang layak ditanyakan langsung. Jangan dihitung sebagai pilihan siap pakai sampai angkanya keluar."
+    },
+    "haus": {
+      "lede": "Haus! muncul di direktori kemitraan sebagai peluang minuman kekinian, tetapi angkanya belum bisa kami verifikasi dari sumber resmi.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP untuk merek ini sengaja dikosongkan, bukan diisi perkiraan. Selama belum ada sumber resmi yang bisa dikutip, mengisi kolom itu sama saja dengan menebak."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Hubungi brand untuk memastikan apakah kemitraan sedang dibuka dan berapa modal per format gerainya."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal di halaman peringkat. Begitu datanya masuk, posisinya akan terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Halaman kemitraan resmi Haus!",
+          "url": "https://haus.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Kandidat yang layak ditanyakan langsung. Jangan dihitung sebagai pilihan siap pakai sampai angkanya keluar."
     }
   }
 }

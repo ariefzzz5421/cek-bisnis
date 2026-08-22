@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function ComparePage() {
   return (
-    <main className="workbench-page">
+    <main className="workbench-page page-plain">
       <SiteHeader />
       <BusinessCompare />
       <SiteFooter />

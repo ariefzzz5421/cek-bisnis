@@ -3,7 +3,31 @@ import rawData from "@/data/franchise-data.json";
 import rawExtra from "@/data/franchise-extra.json";
 
 export type FranchiseCategoryId = "minimarket" | "minuman" | "makanan" | "jasa" | "kesehatan";
-export type FranchiseDataBasis = "official" | "mixed" | "estimate";
+export type FranchiseDataBasis = "official" | "mixed" | "estimate" | "under-verification";
+
+/**
+ * Rentang angka yang boleh kosong.
+ *
+ * `null` dipakai untuk brand yang benar-benar tidak mempublikasikan angkanya.
+ * Entri lama memakai sentinel `[0, 0]` dengan arti yang sama, jadi seluruh
+ * formatter dan pengurutan menerima keduanya dan memperlakukannya identik:
+ * ditampilkan sebagai "belum dipublikasikan" dan tidak pernah ikut menang
+ * sebagai yang termurah atau tercepat.
+ */
+export type NumericRange = [number, number] | null;
+
+const isUnknownRange = (range: NumericRange): boolean =>
+  range === null || (range[0] <= 0 && range[1] <= 0);
+
+/** Batas bawah rentang, atau `null` kalau brand belum mempublikasikannya. */
+export const rangeLow = (range: NumericRange): number | null =>
+  isUnknownRange(range) ? null : (range as [number, number])[0];
+
+/** Batas atas rentang, atau `null` kalau brand belum mempublikasikannya. */
+export const rangeHigh = (range: NumericRange): number | null =>
+  isUnknownRange(range) ? null : (range as [number, number])[1];
+
+export const isRangeKnown = (range: NumericRange): boolean => !isUnknownRange(range);
 
 export type FranchiseSource = {
   id: string;
@@ -35,19 +59,21 @@ export type Franchise = {
   officialUrl: string;
   /** Halaman kontak/kemitraan resmi; fallback ke officialUrl. */
   contactUrl?: string;
+  /** Tautan sumber angka yang berdiri sendiri, di luar `sourceIds` bersama. */
+  sourceUrls?: string[];
   outlets: string;
   since: number;
-  /** Rentang investasi awal dalam juta rupiah. [0,0] = belum dipublikasikan. */
-  investment: [number, number];
+  /** Rentang investasi awal dalam juta rupiah. `null` / [0,0] = belum dipublikasikan. */
+  investment: NumericRange;
   investmentNote: string;
   franchiseFee: string;
   royalty: string;
   /** 0 berarti durasi kontrak tidak dipublikasikan pada sumber yang ditinjau. */
   contractYears: number;
-  /** Rentang balik modal khas, dalam bulan. Nilai 0 berarti belum dipublikasikan. */
-  bepMonths: [number, number];
-  /** Perkiraan omzet kotor per bulan, dalam juta rupiah. [0,0] = belum dipublikasikan. */
-  monthlyRevenue: [number, number];
+  /** Rentang balik modal khas, dalam bulan. `null` / [0,0] = belum dipublikasikan. */
+  bepMonths: NumericRange;
+  /** Perkiraan omzet kotor per bulan, dalam juta rupiah. `null` / [0,0] = belum dipublikasikan. */
+  monthlyRevenue: NumericRange;
   scheme: string;
   kpi: string[];
   requirements: string[];
@@ -92,7 +118,11 @@ type ExtraFile = {
   articles: Record<string, FranchiseArticle>;
 };
 
-const baseData = rawData as FranchiseFile;
+/* Rentang angka di JSON boleh berupa tuple atau `null`, sehingga tipe hasil
+ * inferensi TypeScript (`number[] | null`) tidak lagi tumpang tindih dengan
+ * tuple `[number, number]`. Cast lewat `unknown` adalah batas terjemahan yang
+ * biasa dipakai untuk impor JSON di berkas ini. */
+const baseData = rawData as unknown as FranchiseFile;
 const baseArticles = rawArticles as ArticleFile;
 const extraData = rawExtra as unknown as ExtraFile;
 
@@ -156,6 +186,7 @@ export const franchiseBasisLabel = (basis?: FranchiseDataBasis) => {
     case "official": return "Data resmi brand";
     case "mixed": return "Resmi + skenario Cek Bisnis";
     case "estimate": return "Skenario Cek Bisnis";
+    case "under-verification": return "Sedang diverifikasi";
     default: return "Data terkurasi";
   }
 };
@@ -174,20 +205,23 @@ export const formatInvestment = (juta: number) => {
   return `Rp${Number(juta.toFixed(juta < 10 ? 1 : 0)).toLocaleString("id-ID")} jt`;
 };
 
-export const formatInvestmentRange = ([low, high]: [number, number]) => {
-  if (low <= 0 && high <= 0) return "Minta quotation";
+export const formatInvestmentRange = (range: NumericRange) => {
+  if (isUnknownRange(range)) return "Minta quotation";
+  const [low, high] = range as [number, number];
   if (low <= 0) return `Hingga ${formatInvestment(high)}`;
   return low === high ? formatInvestment(low) : `${formatInvestment(low)} - ${formatInvestment(high)}`;
 };
 
-export const formatRevenueRange = ([low, high]: [number, number]) => {
-  if (low <= 0 && high <= 0) return "Belum dipublikasikan";
+export const formatRevenueRange = (range: NumericRange) => {
+  if (isUnknownRange(range)) return "Belum dipublikasikan";
+  const [low, high] = range as [number, number];
   if (low <= 0) return `Hingga ${formatInvestment(high)}`;
-  return formatInvestmentRange([low, high]);
+  return formatInvestmentRange(range);
 };
 
-export const formatMonthRange = ([low, high]: [number, number]) => {
-  if (low <= 0 && high <= 0) return "Belum dipublikasikan";
+export const formatMonthRange = (range: NumericRange) => {
+  if (isUnknownRange(range)) return "Belum dipublikasikan";
+  const [low, high] = range as [number, number];
   if (low <= 0) return `< ${high} bulan`;
   return `${low}-${high} bulan`;
 };
@@ -199,8 +233,16 @@ export const formatContractYears = (years: number) => years > 0 ? `${years} tahu
  * tidak salah muncul sebagai franchise termurah.
  */
 export const midInvestment = (franchise: Franchise) => {
-  if (franchise.investment[0] <= 0 && franchise.investment[1] <= 0) return Number.POSITIVE_INFINITY;
-  return (Math.max(0, franchise.investment[0]) + franchise.investment[1]) / 2;
+  if (isUnknownRange(franchise.investment)) return Number.POSITIVE_INFINITY;
+  const [low, high] = franchise.investment as [number, number];
+  return (Math.max(0, low) + high) / 2;
+};
+
+/** Batas bawah BEP untuk pengurutan; unknown didorong ke belakang. */
+const bepLowerBound = (franchise: Franchise) => {
+  if (isUnknownRange(franchise.bepMonths)) return Number.POSITIVE_INFINITY;
+  const [low] = franchise.bepMonths as [number, number];
+  return low > 0 ? low : Number.POSITIVE_INFINITY;
 };
 
 export type FranchiseSort = "modal-asc" | "modal-desc" | "bep-asc" | "nama";
@@ -219,11 +261,7 @@ export const sortFranchises = (list: Franchise[], sort: FranchiseSort) => {
         return bValue - aValue;
       });
     case "bep-asc":
-      return sorted.sort((a, b) => {
-        const aLow = a.bepMonths[0] > 0 ? a.bepMonths[0] : Number.POSITIVE_INFINITY;
-        const bLow = b.bepMonths[0] > 0 ? b.bepMonths[0] : Number.POSITIVE_INFINITY;
-        return aLow - bLow || a.bepMonths[1] - b.bepMonths[1];
-      });
+      return sorted.sort((a, b) => bepLowerBound(a) - bepLowerBound(b) || a.name.localeCompare(b.name, "id"));
     default:
       return sorted.sort((a, b) => a.name.localeCompare(b.name, "id"));
   }
