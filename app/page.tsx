@@ -7,14 +7,16 @@ import { FranchiseLeaderboard } from "@/components/FranchiseLeaderboard";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { businessData, businesses, formatMoney, formatTicket } from "@/lib/business-data";
-import { formatInvestment, franchises } from "@/lib/franchise-data";
+import { formatInvestment, franchises, rangeLow } from "@/lib/franchise-data";
 import { indonesiaPlaces, placesMeta, scorePlaceForBusiness } from "@/lib/location-survey";
 
 const featured = businesses[0];
 const mapPlaces = ["Kediri", "Bandung", "Makassar"].map((name) => indonesiaPlaces.find((place) => place.name === name)).filter(Boolean);
 /** Foto franchise minuman dipakai sebagai wajah kartu waralaba di daftar usaha. */
 const franchiseSample = businesses.find((business) => business.id === "franchise") ?? featured;
-const publishedFranchiseInvestments = franchises.filter((franchise) => franchise.investment[0] > 0).map((franchise) => franchise.investment[0]);
+const publishedFranchiseInvestments = franchises
+  .map((franchise) => rangeLow(franchise.investment))
+  .filter((value): value is number => value !== null && value > 0);
 const franchiseEntryCost = Math.min(...publishedFranchiseInvestments);
 
 export default function Home() {

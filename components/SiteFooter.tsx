@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { BrandLogo } from "@/components/BrandLogo";
+import { SiteWordmark } from "@/components/SiteWordmark";
 
 export function SiteFooter({ compact = false }: { compact?: boolean }) {
   return (
     <footer className={`workbench-footer ${compact ? "workbench-footer--compact" : ""}`}>
       {!compact && <p className="workbench-footer__statement">Usaha yang baik dimulai dari angka yang masuk akal.</p>}
-      <BrandLogo />
+      <SiteWordmark />
       <p>Estimasi awal UMKM Indonesia. Validasi harga dan arus pengunjung sebelum membuka usaha.</p>
       <nav aria-label="Navigasi footer">
         <Link href="/usaha">Jenis usaha</Link>

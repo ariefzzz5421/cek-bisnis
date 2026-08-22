@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { ArrowLeftRight, ArrowRight, BadgePercent, Building2, Gauge, Timer, Wallet } from "lucide-react";
 import { useMemo, useState } from "react";
-import { BusinessIcon } from "@/components/BusinessIcon";
-import { FranchiseLogo } from "@/components/FranchiseLogo";
+import { BrandLogo } from "@/components/BrandLogo";
 import { businesses, formatMoney, type BusinessId } from "@/lib/business-data";
 import {
   formatInvestmentRange,
@@ -161,13 +160,12 @@ function CompareCard({ choice }: { choice: CompareChoice }) {
         <small>{choice.basis}</small>
       </div>
       <div className={styles.identity}>
-        {franchise ? (
-          <FranchiseLogo franchise={franchise} size={70} />
-        ) : choice.businessId ? (
-          <span className={styles.businessIcon} aria-hidden="true">
-            <BusinessIcon id={choice.businessId} size={32} />
-          </span>
-        ) : null}
+        <BrandLogo
+          franchise={franchise}
+          businessId={choice.businessId}
+          name={choice.name}
+          size={64}
+        />
         <div>
           <h2>{choice.name}</h2>
           <p>{choice.sector}</p>
@@ -217,14 +215,32 @@ function CompareNarrative({
   );
 }
 
+/**
+ * Prose mekanisme datang sebagai satu paragraf panjang. Dalam kolom sempit
+ * berdampingan, blok seperti itu jauh lebih sulit dipindai daripada beberapa
+ * baris pendek, jadi kalimatnya dipecah jadi butir begitu paragrafnya panjang.
+ */
+const BULLET_MIN_CHARS = 150;
+
+function toBullets(value: string): string[] | null {
+  if (value.length < BULLET_MIN_CHARS) return null;
+  const sentences = value
+    .split(/(?<=\.)\s+(?=[A-Z])/)
+    .map((sentence) => sentence.trim())
+    .filter(Boolean);
+  return sentences.length > 1 ? sentences : null;
+}
+
 function NarrativeColumn({ label, value }: { label: string; value: string | string[] }) {
+  const bullets = Array.isArray(value) ? value : toBullets(value);
+
   return (
     <div className={styles.narrativeColumn}>
       <small>{label}</small>
-      {Array.isArray(value) ? (
-        <ul>{value.map((item) => <li key={item}>{item}</li>)}</ul>
+      {bullets ? (
+        <ul>{bullets.map((item) => <li key={item}>{item}</li>)}</ul>
       ) : (
-        <p>{value}</p>
+        <p>{value as string}</p>
       )}
     </div>
   );

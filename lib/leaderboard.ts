@@ -15,6 +15,7 @@ import {
   readableInkOn,
   sortFranchises,
   type Franchise,
+  rangeLow,
 } from "@/lib/franchise-data";
 
 /**
@@ -250,7 +251,7 @@ export const buildLeaderboards = (): Leaderboard[] => {
       measure: "Batas bawah rentang balik modal yang dipublikasikan untuk merek tersebut.",
       caveat: "Franchise tanpa angka BEP publik dikeluarkan dari ranking. Angka franchisor tetap perlu divalidasi dengan prospektus resmi.",
       entries: sortFranchises(franchises, "bep-asc")
-        .filter((franchise) => franchise.bepMonths[0] > 0)
+        .filter((franchise) => rangeLow(franchise.bepMonths) !== null)
         .slice(0, TOP)
         .map((franchise) => franchiseEntry(
           franchise,
@@ -264,7 +265,7 @@ export const buildLeaderboards = (): Leaderboard[] => {
       measure: "Batas bawah investasi awal yang dipublikasikan merek tersebut.",
       caveat: "Franchise quotation-only tidak dianggap bermodal Rp0. Sewa lokasi dan modal kerja sering berada di luar angka paket.",
       entries: sortFranchises(franchises, "modal-asc")
-        .filter((franchise) => franchise.investment[0] > 0)
+        .filter((franchise) => rangeLow(franchise.investment) !== null)
         .slice(0, TOP)
         .map((franchise) => franchiseEntry(
           franchise,

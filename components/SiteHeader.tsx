@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Menu } from "lucide-react";
 import { useEffect, useState } from "react";
-import { BrandLogo } from "./BrandLogo";
+import { SiteWordmark } from "./SiteWordmark";
 
 export function SiteHeader({ landing = false }: { landing?: boolean }) {
   const [floating, setFloating] = useState(false);
@@ -30,7 +30,7 @@ export function SiteHeader({ landing = false }: { landing?: boolean }) {
   return (
     <header className={`workbench-header ${floating ? "is-floating" : ""}`}>
       <nav className="workbench-nav" aria-label="Navigasi utama">
-        <BrandLogo />
+        <SiteWordmark />
         <div className="workbench-nav__links">
           <Link href="/usaha">Jenis usaha</Link>
           <Link href="/franchise">Franchise</Link>

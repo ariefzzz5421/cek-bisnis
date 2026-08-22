@@ -3215,3 +3215,104 @@ summary {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+/* ====================================================================== */
+/* Blok "Sumber utama": beri ruang, jangan dempet ke garis                */
+/* ====================================================================== */
+
+.compact-sources > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: var(--space-lg);
+  gap: var(--space-sm);
+  /* Garis atas warisan tidak dipakai lagi: tiap sumber kini kartu sendiri
+   * dengan jarak antar kartu, bukan baris yang menempel satu sama lain. */
+  border-top: 0;
+}
+
+.compact-sources a {
+  min-height: 3.75rem;
+  padding: var(--space-md) var(--space-lg);
+  gap: var(--space-lg);
+  border-bottom: 0;
+  line-height: 1.45;
+}
+
+.compact-sources a b { min-width: 0; }
+.compact-sources a svg { flex: 0 0 auto; }
+
+.compact-sources > p {
+  margin-top: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
+  gap: var(--space-sm);
+  line-height: 1.55;
+}
+
+@media (min-width: 48rem) {
+  .compact-sources > div { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Halaman /data: jarak antar paragraf metodologi ditangani CSS, bukan style
+ * inline, dan bagian atasnya cukup mengandalkan padding section. */
+.data-workspace > div > span + span { margin-top: var(--space-md); }
+
+/* Kolom kiri /data pendek sementara daftar sumbernya sangat panjang, jadi
+ * dibuat menempel supaya tidak meninggalkan bidang kosong besar saat digulir. */
+@media (min-width: 64rem) {
+  .data-workspace { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); align-items: start; }
+  .data-workspace > div { position: sticky; top: 6.5rem; }
+}
+
+/* ====================================================================== */
+/* Ubin identitas entitas (BrandLogo)                                     */
+/* ====================================================================== */
+
+.brand-logo {
+  display: grid;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 17, 0.16);
+  /* Alas terang netral: aman untuk logo transparan, gelap, maupun berwarna. */
+  background: #fffdf7;
+  color: var(--color-ink);
+}
+
+/* Merek yang logonya sendiri putih/terang butuh alas gelap agar tidak hilang. */
+.brand-logo--dark {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: #1c1c1c;
+  color: #ffffff;
+}
+
+/* Logo tidak pernah dipotong atau ditarik. */
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brand-logo b {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.brand-logo svg { color: var(--color-ink); }
+
+/* Jumlah merek di chip filter sektor. */
+.franchise-filter-group button em {
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.35rem;
+  background: rgba(13, 13, 13, 0.09);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.franchise-filter-group button.active em { background: rgba(13, 13, 13, 0.16); color: var(--color-ink); }

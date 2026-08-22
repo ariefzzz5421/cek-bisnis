@@ -177,7 +177,10 @@
       "sourceIds": [
         "cnbc-alfamart",
         "alfamart-waralaba"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://waralaba.alfamart.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "indomaret",
@@ -219,7 +222,10 @@
       "sourceIds": [
         "katadata-indomaret",
         "detik-indomaret"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.indomaret.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "mixue",
@@ -260,7 +266,10 @@
       "sourceIds": [
         "moka-mixue",
         "flei"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://mixue.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "es-teh-indonesia",
@@ -302,7 +311,10 @@
       "sourceIds": [
         "moka-esteh",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://esteh.id/",
+      "sourceUrls": []
     },
     {
       "id": "teh-poci",
@@ -344,7 +356,10 @@
       "sourceIds": [
         "poci",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://estehpoci.id/jadi-juragan",
+      "sourceUrls": []
     },
     {
       "id": "janji-jiwa",
@@ -385,7 +400,10 @@
       "sourceIds": [
         "franchisekopi-jiwa",
         "majalah-coffee"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://janjijiwa.com/",
+      "sourceUrls": []
     },
     {
       "id": "point-coffee",
@@ -426,7 +444,10 @@
       "sourceIds": [
         "majalah-coffee",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.indomaret.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "fore-coffee",
@@ -468,7 +489,10 @@
       "sourceIds": [
         "majalah-coffee",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://fore.coffee/",
+      "sourceUrls": []
     },
     {
       "id": "rocket-chicken",
@@ -510,7 +534,10 @@
       "sourceIds": [
         "kledo-rocket",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://rocketchicken.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "sabana",
@@ -552,7 +579,10 @@
       "sourceIds": [
         "ocbc-sabana",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://sabanafriedchicken.com/",
+      "sourceUrls": []
     },
     {
       "id": "geprek-bensu",
@@ -593,7 +623,10 @@
       "sourceIds": [
         "bisnis-bensu",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://geprekbensu.id/",
+      "sourceUrls": []
     },
     {
       "id": "baba-rafi",
@@ -635,7 +668,10 @@
       "sourceIds": [
         "babarafi",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.babarafi.com/franchisebudget",
+      "sourceUrls": []
     },
     {
       "id": "mie-gacoan",
@@ -677,7 +713,10 @@
       "sourceIds": [
         "flei",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://miegacoan.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "apotek-k24",
@@ -719,7 +758,10 @@
       "sourceIds": [
         "ocbc-k24",
         "k24-official"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.apotek-k24.com/",
+      "sourceUrls": []
     },
     {
       "id": "jnt",
@@ -760,7 +802,10 @@
       "sourceIds": [
         "bisnis-jnt",
         "tuwaga-ekspedisi"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.jet.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "sicepat",
@@ -801,7 +846,10 @@
       ],
       "sourceIds": [
         "tuwaga-ekspedisi"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://sicepat.com/",
+      "sourceUrls": []
     },
     {
       "id": "simply-fresh",
@@ -843,7 +891,10 @@
       "sourceIds": [
         "simplyfresh",
         "fortune-laundry"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.simplyfreshlaundry.com/franchiselaundry/",
+      "sourceUrls": []
     },
     {
       "id": "laundryklin",
@@ -885,7 +936,10 @@
       "sourceIds": [
         "fortune-laundry",
         "tantri-franchise"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://laundryklin.com/",
+      "sourceUrls": []
     },
     {
       "id": "mrklin",
@@ -925,7 +979,10 @@
       ],
       "sourceIds": [
         "fortune-laundry"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://mrklin.co.id/",
+      "sourceUrls": []
     },
     {
       "id": "miniso",
@@ -967,7 +1024,10 @@
       "sourceIds": [
         "tantri-franchise",
         "flei"
-      ]
+      ],
+      "dataBasis": "mixed",
+      "contactUrl": "https://www.miniso.com/",
+      "sourceUrls": []
     }
   ]
 }

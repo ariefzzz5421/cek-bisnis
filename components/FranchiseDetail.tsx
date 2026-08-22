@@ -15,7 +15,7 @@ import {
   Timer,
   Wallet,
 } from "lucide-react";
-import { FranchiseLogo } from "@/components/FranchiseLogo";
+import { BrandLogo } from "@/components/BrandLogo";
 import {
   formatContractYears,
   formatInvestmentRange,
@@ -54,7 +54,7 @@ export function FranchiseDetail({
       <section className="franchise-detail-hero" style={{ "--brand": franchise.brandColor } as React.CSSProperties}>
         <Link className="franchise-detail-back" href="/franchise"><ArrowLeft size={17} aria-hidden="true" /> Semua waralaba</Link>
         <div className="franchise-detail-lockup">
-          <FranchiseLogo franchise={franchise} size={78} />
+          <BrandLogo franchise={franchise} name={franchise.name} size={78} />
           <div>
             <p>{franchiseSectorName(franchise)} · sejak {franchise.since} · {franchise.outlets}</p>
             <h1>{franchise.name}</h1>
@@ -170,7 +170,7 @@ export function FranchiseDetail({
           <div className="franchise-related__grid">
             {related.map((item) => (
               <Link href={`/franchise/${item.id}`} key={item.id}>
-                <FranchiseLogo franchise={item} size={48} />
+                <BrandLogo franchise={item} name={item.name} size={48} />
                 <div>
                   <b>{item.name}</b>
                   <small>{formatInvestmentRange(item.investment)} · BEP {formatMonthRange(item.bepMonths)}</small>
