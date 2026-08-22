@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeftRight, ArrowRight, BadgePercent, Building2, Gauge, Timer, Wallet } from "lucide-react";
-import { useMemo, useState } from "react";
+import { ArrowLeftRight, ArrowRight, BadgePercent, Building2, ChevronDown, Gauge, Timer, Wallet } from "lucide-react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { businesses, formatMoney, type BusinessId } from "@/lib/business-data";
 import {
@@ -130,21 +130,197 @@ export function BusinessCompare() {
   );
 }
 
-function ChoiceSelect({ label, value, onChange }: { label: string; value: string; onChange: (value: string) => void }) {
-  const independent = choices.filter((item) => item.kind === "Usaha mandiri");
-  const franchise = choices.filter((item) => item.kind === "Franchise");
+const franchiseOf = (choice: CompareChoice) =>
+  choice.franchiseId ? franchises.find((item) => item.id === choice.franchiseId) : undefined;
+
+/**
+ * Pemilih bisnis dengan logo merek di sebelah kiri tiap baris.
+ *
+ * `<select>` bawaan browser tidak bisa merender gambar di dalam `<option>`,
+ * jadi daftarnya dibangun sebagai combobox: kotak teks untuk menyaring, plus
+ * listbox yang bisa dijalankan dengan panah, Enter, dan Escape. Dengan lebih
+ * dari lima puluh pilihan, penyaringan teks sekaligus menggantikan ketik-cepat
+ * yang biasa didapat gratis dari `<select>`.
+ */
+function ChoiceSelect({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  const listId = useId();
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const [activeIndex, setActiveIndex] = useState(0);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const optionRefs = useRef<Array<HTMLLIElement | null>>([]);
+
+  const selected = choices.find((item) => item.key === value);
+
+  const matches = useMemo(() => {
+    const needle = query.trim().toLowerCase();
+    if (!needle) return choices;
+    return choices.filter(
+      (item) =>
+        item.name.toLowerCase().includes(needle) || item.sector.toLowerCase().includes(needle),
+    );
+  }, [query]);
+
+  const groups = useMemo(
+    () =>
+      [
+        { title: "Usaha mandiri", items: matches.filter((item) => item.kind === "Usaha mandiri") },
+        { title: "Franchise", items: matches.filter((item) => item.kind === "Franchise") },
+      ].filter((group) => group.items.length > 0),
+    [matches],
+  );
+  /* Urutan datar mengikuti urutan render, supaya indeks aktif dan tombol panah
+     bergerak persis seperti yang dilihat pengguna. */
+  const ordered = useMemo(() => groups.flatMap((group) => group.items), [groups]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) optionRefs.current[activeIndex]?.scrollIntoView({ block: "nearest" });
+  }, [open, activeIndex]);
+
+  const openList = () => {
+    const current = ordered.findIndex((item) => item.key === value);
+    setActiveIndex(current >= 0 ? current : 0);
+    setOpen(true);
+  };
+
+  const commit = (choice?: CompareChoice) => {
+    if (choice) onChange(choice.key);
+    setQuery("");
+    setOpen(false);
+  };
+
+  const onKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Escape") {
+      setQuery("");
+      setOpen(false);
+      return;
+    }
+    if (event.key === "Tab") {
+      setOpen(false);
+      return;
+    }
+    if (!open && (event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "Enter")) {
+      event.preventDefault();
+      openList();
+      return;
+    }
+    if (!open) return;
+
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      if (ordered.length === 0) return;
+      const step = event.key === "ArrowDown" ? 1 : -1;
+      setActiveIndex((index) => (index + step + ordered.length) % ordered.length);
+    } else if (event.key === "Home") {
+      event.preventDefault();
+      setActiveIndex(0);
+    } else if (event.key === "End") {
+      event.preventDefault();
+      setActiveIndex(Math.max(0, ordered.length - 1));
+    } else if (event.key === "Enter") {
+      event.preventDefault();
+      commit(ordered[activeIndex]);
+    }
+  };
+
+  let flatIndex = -1;
+
   return (
-    <label className={styles.selectWrap}>
-      <span>{label}</span>
-      <select value={value} onChange={(event) => onChange(event.target.value)}>
-        <optgroup label="Usaha mandiri">
-          {independent.map((item) => <option value={item.key} key={item.key}>{item.name}</option>)}
-        </optgroup>
-        <optgroup label="Franchise">
-          {franchise.map((item) => <option value={item.key} key={item.key}>{item.name}</option>)}
-        </optgroup>
-      </select>
-    </label>
+    <div className={styles.selectWrap} ref={rootRef}>
+      <label htmlFor={`${listId}-input`}>{label}</label>
+      <div className={`${styles.picker} ${open ? styles.pickerOpen : ""}`}>
+        {selected && (
+          <BrandLogo
+            franchise={franchiseOf(selected)}
+            businessId={selected.businessId}
+            name={selected.name}
+            size={30}
+          />
+        )}
+        <input
+          id={`${listId}-input`}
+          type="text"
+          role="combobox"
+          autoComplete="off"
+          aria-expanded={open}
+          aria-controls={listId}
+          aria-autocomplete="list"
+          aria-activedescendant={open && ordered[activeIndex] ? `${listId}-${activeIndex}` : undefined}
+          placeholder={selected?.name ?? "Pilih bisnis"}
+          value={open ? query : (selected?.name ?? "")}
+          onChange={(event) => {
+            setQuery(event.target.value);
+            setActiveIndex(0);
+            if (!open) setOpen(true);
+          }}
+          onFocus={() => {
+            if (!open) openList();
+          }}
+          onKeyDown={onKeyDown}
+        />
+        <ChevronDown size={17} aria-hidden="true" />
+      </div>
+
+      <ul className={styles.options} id={listId} role="listbox" aria-label={label} hidden={!open}>
+        {groups.map((group) => (
+          <li key={group.title} role="group" aria-label={group.title}>
+            <p className={styles.optionGroup}>{group.title}</p>
+            <ul>
+              {group.items.map((item) => {
+                flatIndex += 1;
+                const index = flatIndex;
+                return (
+                  <li
+                    key={item.key}
+                    id={`${listId}-${index}`}
+                    ref={(node) => {
+                      optionRefs.current[index] = node;
+                    }}
+                    role="option"
+                    aria-selected={item.key === value}
+                    className={`${styles.option} ${index === activeIndex ? styles.optionActive : ""}`}
+                    onPointerDown={(event) => {
+                      event.preventDefault();
+                      commit(item);
+                    }}
+                    onPointerEnter={() => setActiveIndex(index)}
+                  >
+                    <BrandLogo
+                      franchise={franchiseOf(item)}
+                      businessId={item.businessId}
+                      name={item.name}
+                      size={26}
+                    />
+                    <span>
+                      <b>{item.name}</b>
+                      <small>{item.sector}</small>
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        ))}
+        {ordered.length === 0 && <li className={styles.optionEmpty}>Tidak ada yang cocok.</li>}
+      </ul>
+    </div>
   );
 }
 

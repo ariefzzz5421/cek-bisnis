@@ -50,9 +50,17 @@ export type Franchise = {
   dataBasis?: FranchiseDataBasis;
   revenueBasis?: string;
   bepBasis?: string;
-  /** Nama berkas logo resmi yang sudah disimpan lokal, jika tersedia. */
+  /**
+   * Berkas logo lokal tidak lagi dicatat di sini. Pemetaannya dibangkitkan
+   * `scripts/import-brand-logos.mjs` ke `lib/brand-logo-assets.ts`, lengkap
+   * dengan dimensi intrinsiknya, karena skrip itu yang membaca berkasnya.
+   */
   logoFile?: string;
-  /** URL logo resmi untuk sumber yang hanya mengizinkan hotlink. */
+  /**
+   * URL logo resmi untuk merek yang belum punya berkas lokal. Dipakai hanya
+   * sebagai cadangan: hotlink bergantung pada server pihak lain dan bisa
+   * berhenti bekerja kapan saja.
+   */
   logoUrl?: string;
   brandColor: string;
   initials: string;
@@ -166,6 +174,32 @@ export const readableInkOn = (brandColor: string) => {
   const onDark = contrastWith(luminance, relativeLuminance("#0d0d0d"));
   const onLight = contrastWith(luminance, relativeLuminance("#ffffff"));
   return onDark >= onLight ? "#0d0d0d" : "#ffffff";
+};
+
+/** Alas terang tempat monogram merek digambar. */
+const MONOGRAM_SURFACE = "#fffdf7";
+
+/**
+ * Menggelapkan warna merek secukupnya sampai kontrasnya dengan alas terang
+ * mencapai 4.5:1, ambang WCAG AA untuk teks ukuran normal.
+ *
+ * Monogram dipakai mulai dari ubin 30px, jadi hurufnya tidak selalu memenuhi
+ * syarat teks besar. Daripada memaksakan warna merek apa adanya (merah #ED1C24,
+ * misalnya, tidak lolos di atas terang maupun gelap), warnanya diturunkan
+ * kecerahannya sampai lolos. Rona merek tetap terbaca, teksnya tetap terbaca.
+ */
+export const accessibleBrandInk = (brandColor: string) => {
+  const surface = relativeLuminance(MONOGRAM_SURFACE);
+  const value = brandColor.replace("#", "");
+  const channels = [0, 2, 4].map((offset) => parseInt(value.slice(offset, offset + 2), 16));
+
+  for (let step = 0; step <= 20; step += 1) {
+    const factor = 1 - step * 0.05;
+    const shade = channels.map((c) => Math.round(c * factor));
+    const hex = `#${shade.map((c) => c.toString(16).padStart(2, "0")).join("")}`;
+    if (contrastWith(relativeLuminance(hex), surface) >= 4.5) return hex;
+  }
+  return "#0d0d0d";
 };
 
 export const getFranchiseSources = (franchise: Franchise) =>
