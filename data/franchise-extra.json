@@ -1023,6 +1023,207 @@
         "Verifikasi paket kemitraan terbaru ke brand"
       ],
       "sourceIds": []
+    },
+    {
+      "id": "yomart",
+      "name": "Yomart",
+      "category": "minimarket",
+      "sector": "Minimarket regional",
+      "dataBasis": "mixed",
+      "brandColor": "#E1251B",
+      "initials": "YM",
+      "officialUrl": "https://yomart.co.id/",
+      "contactUrl": "https://yomart.co.id/",
+      "sourceUrls": [
+        "https://waralabagram.com/franchise-yomart/",
+        "https://franchiseindo.co.id/franchise-yomart/",
+        "https://yomart.co.id/about"
+      ],
+      "outlets": "300+ gerai (Jawa Barat)",
+      "since": 2003,
+      "investment": [
+        314,
+        355
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket",
+      "royalty": "Konfirmasi ke brand",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Minimarket milik Yogya Group yang kuat di Jawa Barat. Paket kemitraan Rp314-355 juta mencakup 2.256-3.200 item stok awal untuk gerai 60-100 m2, dengan syarat lahan minimal 120 m2 yang sudah berizin minimarket.",
+      "kpi": [
+        "Jumlah struk per hari",
+        "Perputaran stok kategori kebutuhan harian",
+        "Kepadatan permukiman di radius 500 m"
+      ],
+      "requirements": [
+        "WNI perorangan atau badan usaha, punya NPWP",
+        "Lahan minimal 120 m2 dengan izin operasional minimarket",
+        "Mengikuti sistem distribusi dan standar Yogya Group"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "familymart",
+      "name": "FamilyMart",
+      "category": "minimarket",
+      "sector": "Convenience store",
+      "dataBasis": "under-verification",
+      "brandColor": "#0068B7",
+      "initials": "FM",
+      "officialUrl": "https://www.familymart.co.id/",
+      "contactUrl": "https://www.familymart.co.id/",
+      "sourceUrls": [
+        "https://kabarfranchise.com/franchise-family-mart/",
+        "https://www.franchiseindonesia.co.id/franchise-familymart-modal-layanan-syarat/"
+      ],
+      "outlets": "Konfirmasi ke pemegang lisensi",
+      "since": 2012,
+      "investment": null,
+      "investmentNote": "Lisensi FamilyMart di Indonesia dipegang tunggal oleh PT Fajar Mitra Indah, dan kemitraan tidak selalu dibuka untuk umum. Angka paket hanya beredar di situs agregator, belum dari pemegang lisensi.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Convenience store bergaya Jepang dengan porsi besar dari makanan siap santap dan area duduk. Di Indonesia lisensinya dipegang tunggal oleh PT Fajar Mitra Indah, sehingga jalur kemitraan harus dipastikan langsung ke pemegang lisensi.",
+      "kpi": [
+        "Kontribusi makanan siap santap terhadap omzet",
+        "Jumlah pengunjung yang duduk dan belanja ulang",
+        "Lokasi dengan lalu lalang tinggi 24 jam"
+      ],
+      "requirements": [
+        "Lokasi strategis sesuai standar pemegang lisensi",
+        "Mengikuti sistem operasional dan pelatihan brand",
+        "Pastikan kemitraan sedang dibuka sebelum menghitung modal"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "apotek-f21",
+      "name": "Apotek F21",
+      "category": "kesehatan",
+      "sector": "Apotek",
+      "dataBasis": "mixed",
+      "brandColor": "#0E8A5F",
+      "initials": "F21",
+      "officialUrl": "https://apotekf21.com/",
+      "contactUrl": "https://apotekf21.com/",
+      "sourceUrls": [
+        "https://www.fortuneidn.com/business/franchise-apotek-00-fykp7-zlkk87",
+        "https://franchisebisniskost.com/franchise-apotek/",
+        "https://majalahfranchise.com/apotek-f21/"
+      ],
+      "outlets": "Konfirmasi ke brand",
+      "since": 2011,
+      "investment": [
+        300,
+        350
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket",
+      "royalty": "1% dari omzet",
+      "contractYears": 0,
+      "bepMonths": [
+        36,
+        48
+      ],
+      "monthlyRevenue": [
+        80,
+        120
+      ],
+      "scheme": "Apotek waralaba kelas menengah. Paket Rp300-350 juta mencakup stok obat, interior, bantuan manajemen, dan pelatihan karyawan; mitra menyiapkan lokasi beserta perizinannya.",
+      "kpi": [
+        "Omzet bulanan Rp80-120 jt",
+        "Perputaran stok obat, hindari obat kedaluwarsa",
+        "Rasio resep terhadap penjualan bebas"
+      ],
+      "requirements": [
+        "Lokasi strategis beserta izin apotek",
+        "Apoteker penanggung jawab sesuai regulasi",
+        "Mengikuti sistem pengadaan dan pelaporan pusat"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "griya-farma",
+      "name": "Apotek Griya Farma",
+      "category": "kesehatan",
+      "sector": "Apotek",
+      "dataBasis": "mixed",
+      "brandColor": "#1E8A44",
+      "initials": "GF",
+      "officialUrl": "https://apotekgriyafarma.com/",
+      "contactUrl": "https://apotekgriyafarma.com/info-franchise/",
+      "sourceUrls": [
+        "https://apotekgriyafarma.com/info-franchise/",
+        "https://www.fortuneidn.com/business/franchise-apotek-00-fykp7-zlkk87",
+        "https://majalahfranchise.com/apotek-griya-farma/"
+      ],
+      "outlets": "18 cabang",
+      "since": 2004,
+      "investment": [
+        375,
+        400
+      ],
+      "investmentNote": "Angka di luar sewa lokasi dan modal kerja. Minta penawaran resmi untuk angka terkini.",
+      "franchiseFee": "Termasuk dalam paket (5 tahun)",
+      "royalty": "1,5% dari profit bulanan",
+      "contractYears": 5,
+      "bepMonths": [
+        30,
+        42
+      ],
+      "monthlyRevenue": null,
+      "scheme": "Apotek waralaba dengan dua paket: entrepreneur Rp375 juta untuk mitra yang mengelola sendiri, dan investor Rp400 juta untuk mitra yang tidak ikut operasional. Harga sudah termasuk hak waralaba 5 tahun, stok obat, dan pelatihan.",
+      "kpi": [
+        "Profit bulanan, bukan omzet, karena royalti dan bagi hasil dihitung dari profit",
+        "Perputaran stok obat",
+        "Jumlah pelanggan rutin obat kronis"
+      ],
+      "requirements": [
+        "Lokasi strategis beserta izin apotek",
+        "Apoteker penanggung jawab sesuai regulasi",
+        "Menyepakati skema bagi hasil 50:50 pada paket yang berlaku"
+      ],
+      "sourceIds": []
+    },
+    {
+      "id": "optik-melawai",
+      "name": "Optik Melawai",
+      "category": "kesehatan",
+      "sector": "Optik",
+      "dataBasis": "under-verification",
+      "brandColor": "#0B4DA2",
+      "initials": "OM",
+      "officialUrl": "https://www.optikmelawai.com/",
+      "contactUrl": "https://www.optikmelawai.com/",
+      "sourceUrls": [
+        "https://bukaoutlet.com/article/5-franchise-optik-kacamata-terbaik-di-indonesia-untuk-investasi-menguntungkan",
+        "https://www.franchiseglobal.com/banyak-pilihan-kemitraan-sektor-bisnis-apotek-optik-menarik-untuk-dilirik.phtml"
+      ],
+      "outlets": "Konfirmasi ke brand",
+      "since": 1982,
+      "investment": null,
+      "investmentNote": "Angka yang beredar (mulai Rp500 juta) berasal dari situs agregator, bukan dari halaman kemitraan resmi. Kami biarkan kosong sampai ada sumber yang bisa dikutip.",
+      "franchiseFee": "Sedang diverifikasi",
+      "royalty": "Sedang diverifikasi",
+      "contractYears": 0,
+      "bepMonths": null,
+      "monthlyRevenue": null,
+      "scheme": "Pelopor ritel optik di Indonesia sejak 1982, dengan koleksi merek internasional dan layanan pemeriksaan mata. Skema kemitraannya belum terverifikasi dari sumber resmi.",
+      "kpi": [
+        "Nilai transaksi rata-rata, ditopang lensa dan bingkai premium",
+        "Jumlah pemeriksaan mata yang berujung pembelian",
+        "Lokasi di pusat perbelanjaan dengan daya beli menengah atas"
+      ],
+      "requirements": [
+        "Lokasi ritel dengan daya beli menengah atas",
+        "Refraksionis optisien sesuai regulasi",
+        "Verifikasi paket kemitraan terbaru ke brand"
+      ],
+      "sourceIds": []
     }
   ],
   "articles": {
@@ -2103,6 +2304,257 @@
         }
       ],
       "verdict": "Kandidat yang layak ditanyakan langsung. Jangan dihitung sebagai pilihan siap pakai sampai angkanya keluar."
+    },
+    "yomart": {
+      "lede": "Minimarket Yogya Group yang menang di kandang sendiri: Jawa Barat. Paketnya lebih murah dari dua pemain nasional, tapi jangkauannya juga jauh lebih sempit.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Paket investasi Rp314-355 juta mencakup 2.256 sampai 3.200 item produk untuk gerai seluas 60-100 m2. Mitra menyediakan lahan minimal 120 m2 yang sudah mengantongi izin operasional minimarket. Calon mitra boleh perorangan maupun badan usaha, wajib WNI dan punya NPWP."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Kedekatan dengan jaringan distribusi Yogya Group. Yomart berdiri sejak 2003 dan kini punya lebih dari 300 gerai yang terkonsentrasi di Bandung, Cimahi, Garut, Tasikmalaya, dan Cirebon. Di dalam wilayah itu, pasokan dan pengenalan merek sudah matang. Di luar itu, kamu membangun dari nol."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Modal yang lebih ringan bukan berarti persaingan lebih longgar. Di Jawa Barat, gerai Yomart tetap berhadapan langsung dengan Alfamart dan Indomaret yang lalu lintas pelanggannya lebih besar. Selisih modal ratusan juta akan hilang percuma kalau titiknya kalah ramai."
+        },
+        {
+          "heading": "Yang belum kami punya",
+          "body": "BEP dan omzet bulanan tidak kami isi karena tidak ada angka resmi yang bisa dikutip. Karena itu Yomart tidak ikut diperingkat sebagai tercepat balik modal di halaman peringkat."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket investasi",
+          "amount": "Rp314 jt - Rp355 jt",
+          "note": "Termasuk 2.256-3.200 item stok awal"
+        },
+        {
+          "item": "Luas gerai",
+          "amount": "60 - 100 m2",
+          "note": "Lahan minimal 120 m2"
+        },
+        {
+          "item": "BEP",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada angka resmi"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Yogya Group / Yomart",
+          "url": "https://yomart.co.id/",
+          "kind": "page"
+        },
+        {
+          "label": "Profil Yomart",
+          "url": "https://yomart.co.id/about",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Pilihan masuk akal kalau lokasimu di Jawa Barat dan modalmu di bawah paket nasional. Di luar wilayah itu, keunggulannya hilang."
+    },
+    "familymart": {
+      "lede": "Convenience store Jepang dengan pelanggan yang duduk dan makan di tempat. Masalahnya bukan modelnya, tapi apakah pintu kemitraannya memang terbuka.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP sengaja dikosongkan. Angka Rp800-900 juta yang banyak beredar hanya muncul di situs agregator, tidak di kanal resmi pemegang lisensi. Mengisinya sama saja dengan menebak."
+        },
+        {
+          "heading": "Yang membedakan dari minimarket biasa",
+          "body": "Porsi besar omzet datang dari makanan siap santap dan area duduk, bukan dari barang kebutuhan rumah tangga. Itu berarti biaya operasional per gerai lebih tinggi dan pengelolaannya lebih dekat ke restoran kecil daripada ke toko kelontong."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Lisensi FamilyMart di Indonesia dipegang tunggal oleh PT Fajar Mitra Indah. Hubungi mereka lebih dulu untuk memastikan apakah kemitraan sedang dibuka untuk publik, sebelum menghitung modal apa pun."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal. Begitu datanya masuk, posisinya terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Belum ada sumber resmi yang bisa dikutip"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke pemegang lisensi"
+        },
+        {
+          "item": "Ketersediaan kemitraan",
+          "amount": "Perlu dipastikan",
+          "note": "Lisensi tunggal PT Fajar Mitra Indah"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi FamilyMart Indonesia",
+          "url": "https://www.familymart.co.id/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Model gerainya menarik, tapi jalur kemitraannya harus dipastikan dulu. Jangan dihitung sebagai pilihan siap pakai."
+    },
+    "apotek-f21": {
+      "lede": "Apotek waralaba kelas menengah dengan paket lengkap: stok obat, interior, dan pelatihan sudah termasuk. Balik modalnya lambat, dan itu memang wajar untuk apotek.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Modal Rp300-350 juta sudah mencakup stok obat, interior, bantuan manajemen, dan pelatihan karyawan. Mitra menyiapkan lokasi strategis beserta perizinannya. Royalti dipatok 1% dari omzet, bukan dari profit, sehingga tetap terbayar walau bulan itu tipis."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Perputaran stok. Omzet bulanan yang dilaporkan Rp80-120 juta, tapi margin apotek tipis dan sebagian besar modal terparkir di rak. Obat yang tidak laku sampai kedaluwarsa adalah kerugian penuh, bukan sekadar omzet yang tertunda."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "BEP-nya 3-4 tahun, jauh lebih lama daripada kemitraan makanan dan minuman di situs ini. Kalau kamu butuh modal kembali dalam dua tahun, sektor apotek bukan tempatnya. Tambahan lagi, kamu wajib punya apoteker penanggung jawab, yang berarti biaya tetap bulanan sejak hari pertama."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket kemitraan",
+          "amount": "Rp300 jt - Rp350 jt",
+          "note": "Termasuk stok obat, interior, pelatihan"
+        },
+        {
+          "item": "Royalti",
+          "amount": "1% dari omzet",
+          "note": "Dihitung dari omzet, bukan profit"
+        },
+        {
+          "item": "Omzet bulanan dilaporkan",
+          "amount": "Rp80 jt - Rp120 jt",
+          "note": "Sangat bergantung lokasi"
+        },
+        {
+          "item": "BEP",
+          "amount": "36 - 48 bulan",
+          "note": "Estimasi pihak brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Apotek F21",
+          "url": "https://apotekf21.com/",
+          "kind": "page"
+        },
+        {
+          "label": "Profil waralaba Apotek F21",
+          "url": "https://majalahfranchise.com/apotek-f21/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Masuk akal untuk mitra bermodal sabar. Uji dulu apakah kamu siap menunggu tiga sampai empat tahun."
+    },
+    "griya-farma": {
+      "lede": "Apotek waralaba dengan dua pintu masuk: kelola sendiri, atau taruh modal dan biarkan orang lain yang jalan. Perhatikan bahwa royalti dan bagi hasilnya dihitung dari profit.",
+      "sections": [
+        {
+          "heading": "Cara kerja kemitraannya",
+          "body": "Ada dua paket. Entrepreneur Rp375 juta untuk mitra yang ingin mengelola langsung, dan investor Rp400 juta untuk mitra yang hanya menaruh modal. Keduanya sudah termasuk hak waralaba lima tahun, stok obat, pelatihan, dan fasilitas lain."
+        },
+        {
+          "heading": "Yang paling menentukan",
+          "body": "Profit, bukan omzet. Royalti 1,5% dan skema bagi hasil 50:50 dihitung dari profit bulanan, jadi angka yang perlu kamu kejar adalah laba bersih. Apotek dengan omzet besar tapi margin tergerus diskon tidak akan terasa untung buat siapa pun."
+        },
+        {
+          "heading": "Risiko yang sering diremehkan",
+          "body": "Bagi hasil 50:50 memangkas separuh keuntungan yang kamu terima. Estimasi BEP 2,5-3,5 tahun dari pihak brand sudah memperhitungkan itu atau belum, perlu kamu tanyakan eksplisit sebelum tanda tangan. Minta simulasi tertulis, jangan lisan."
+        },
+        {
+          "heading": "Yang belum kami punya",
+          "body": "Omzet bulanan tidak kami isi karena tidak ada angka yang bisa dikutip dari sumber resmi."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Paket entrepreneur",
+          "amount": "Rp375 jt",
+          "note": "Mitra mengelola sendiri"
+        },
+        {
+          "item": "Paket investor",
+          "amount": "Rp400 jt",
+          "note": "Mitra tidak ikut operasional"
+        },
+        {
+          "item": "Royalti",
+          "amount": "1,5% dari profit bulanan",
+          "note": "Plus bagi hasil 50:50"
+        },
+        {
+          "item": "BEP",
+          "amount": "30 - 42 bulan",
+          "note": "Estimasi pihak brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Info kemitraan resmi Apotek Griya Farma",
+          "url": "https://apotekgriyafarma.com/info-franchise/",
+          "kind": "page"
+        },
+        {
+          "label": "Situs resmi Apotek Griya Farma",
+          "url": "https://apotekgriyafarma.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Struktur paketnya jelas, tapi bagi hasil 50:50 harus kamu masukkan ke hitungan sejak awal, bukan belakangan."
+    },
+    "optik-melawai": {
+      "lede": "Nama paling dikenal di ritel optik Indonesia sejak 1982. Skema kemitraannya yang belum bisa kami verifikasi dari sumber resmi.",
+      "sections": [
+        {
+          "heading": "Status data di Cek Bisnis",
+          "body": "Investasi, fee, royalti, dan BEP sengaja dikosongkan. Angka yang beredar, mulai Rp500 juta, hanya muncul di situs agregator dan disertai kata perkiraan. Selama belum ada sumber resmi, mengisi kolom itu sama saja dengan menebak."
+        },
+        {
+          "heading": "Kenapa sektor optik tetap menarik",
+          "body": "Nilai transaksi per pelanggan jauh lebih tinggi daripada apotek karena ditopang lensa dan bingkai bermerek. Jumlah pelanggannya sedikit, tapi setiap satu berbobot besar. Konsekuensinya, lokasi dengan daya beli menengah atas jauh lebih menentukan daripada sekadar lalu lalang ramai."
+        },
+        {
+          "heading": "Yang bisa kamu lakukan sekarang",
+          "body": "Hubungi brand untuk memastikan apakah kemitraan sedang dibuka dan berapa modal per format gerainya. Tanyakan juga kewajiban refraksionis optisien, karena regulasinya mengikat dan menjadi biaya tetap."
+        },
+        {
+          "heading": "Cara membandingkannya",
+          "body": "Karena angkanya kosong, merek ini tidak ikut diperingkat sebagai termurah atau tercepat balik modal. Begitu datanya masuk, posisinya terhitung otomatis."
+        }
+      ],
+      "costBreakdown": [
+        {
+          "item": "Investasi",
+          "amount": "Sedang diverifikasi",
+          "note": "Angka agregator belum bisa dikutip sebagai resmi"
+        },
+        {
+          "item": "Franchise fee",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        },
+        {
+          "item": "Royalti",
+          "amount": "Sedang diverifikasi",
+          "note": "Konfirmasi ke brand"
+        }
+      ],
+      "schemeDocs": [
+        {
+          "label": "Situs resmi Optik Melawai",
+          "url": "https://www.optikmelawai.com/",
+          "kind": "page"
+        }
+      ],
+      "verdict": "Merek kuat dengan nilai transaksi tinggi. Angkanya harus keluar dulu sebelum bisa dibandingkan secara adil."
     }
   }
 }

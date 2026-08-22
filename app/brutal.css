@@ -1632,3 +1632,5 @@ a dd,
 /* Ubin identitas mengikuti bahasa kotak bergaris tebal seperti kartu lain. */
 .brand-logo { border: 2px solid var(--color-ink); border-radius: 0 !important; }
 .brand-logo--dark { border-color: var(--color-ink); }
+/* Monogram menandai merek lewat garis bawah setebal rona mereknya. */
+.brand-logo--monogram { border-bottom: 5px solid var(--brand); }

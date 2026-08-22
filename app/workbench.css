@@ -2963,6 +2963,18 @@ summary {
 .franchise-sources nav a:hover { background: var(--color-dark-2); color: var(--color-accent); }
 .franchise-sources nav a span { min-width: 0; }
 
+/* Atribusi koleksi logo dan catatan merek dagang, selebar seluruh blok. */
+.franchise-sources__credit {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: var(--space-sm);
+  border-top: var(--rule-hair) solid var(--color-dark-3);
+  color: var(--color-dark-muted);
+  font-size: var(--text-xs);
+  line-height: 1.7;
+}
+.franchise-sources__credit a { color: var(--color-accent); text-decoration: underline; }
+
 @media (min-width: 48rem) {
   .franchise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -3293,9 +3305,21 @@ summary {
   object-fit: contain;
 }
 
+/*
+ * Merek tanpa berkas logo memakai monogram, bukan ilustrasi kategori bersama:
+ * sepuluh merek jasa yang memakai satu gambar yang sama justru tidak bisa
+ * dibedakan. Rona merek muncul di garis bawah dan pada hurufnya, sementara
+ * alasnya tetap terang supaya hurufnya lolos kontras di ubin sekecil 30px.
+ */
+.brand-logo--monogram {
+  border-bottom: 3px solid var(--brand);
+  background: #fffdf7;
+}
+
 .brand-logo b {
+  color: var(--brand-ink);
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: var(--monogram-size, 0.95rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;

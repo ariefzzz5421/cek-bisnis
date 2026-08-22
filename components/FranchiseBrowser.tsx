@@ -228,6 +228,18 @@ export function FranchiseBrowser() {
             </a>
           ))}
         </nav>
+        <p className="franchise-sources__credit">
+          Logo merek dipakai untuk identifikasi, bukan tanda afiliasi atau dukungan; tiap logo tetap
+          milik pemegang mereknya. Sebagian berkas logo berasal dari koleksi{" "}
+          <a href="https://github.com/hafidznoor/idn-finlogos" target="_blank" rel="noreferrer">
+            idn-finlogos
+          </a>{" "}
+          yang dirilis dengan lisensi{" "}
+          <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noreferrer">
+            CC BY-NC 4.0
+          </a>
+          . Merek yang belum punya berkas logo ditampilkan sebagai monogram berwarna mereknya.
+        </p>
       </section>
     </>
   );

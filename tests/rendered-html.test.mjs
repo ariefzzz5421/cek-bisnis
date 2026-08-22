@@ -75,17 +75,34 @@ test("server-renders a top-10 profitability ranking", async () => {
   assert.equal((html.match(/class="profit-rank__rating"/g) ?? []).length, 10);
 });
 
-test("every franchise has an official or generated category identity", async () => {
+test("every franchise resolves to a distinct visual identity", async () => {
   const categories = new Set(franchiseData.categories.map((category) => category.id));
-  for (const category of categories) {
-    const imageUrl = new URL(`../public/brands/categories/${category}.webp`, import.meta.url);
-    const [info, file] = await Promise.all([stat(imageUrl), readFile(imageUrl)]);
-    assert.ok(info.size > 5_000, `${category} fallback icon is unexpectedly small`);
-    assert.equal(file.subarray(0, 4).toString(), "RIFF");
-    assert.equal(file.subarray(8, 12).toString(), "WEBP");
+  const assets = await readFile(new URL("../lib/brand-logo-assets.ts", import.meta.url), "utf8");
+
+  // Setiap berkas yang dipetakan harus benar-benar ada, kalau tidak ubinnya
+  // jatuh ke monogram tanpa ada yang menyadarinya.
+  const mapped = [...assets.matchAll(/"([^"]+)": \{ file: "([^"]+)"/g)];
+  assert.ok(mapped.length >= 25, "brand logo map is unexpectedly small");
+  for (const [, id, file] of mapped) {
+    const info = await stat(new URL(`../public/brands/franchises/${file}`, import.meta.url));
+    assert.ok(info.size > 1_000, `${id} logo file is unexpectedly small`);
   }
+
   const allFranchises = [...franchiseData.franchises, ...franchiseExtra.franchises];
-  assert.ok(allFranchises.every((franchise) => categories.has(franchise.category)));
+  for (const franchise of allFranchises) {
+    assert.ok(categories.has(franchise.category), `${franchise.id} has an unknown category`);
+    // Merek tanpa berkas logo memakai monogram, jadi warna dan inisialnya wajib ada.
+    assert.match(franchise.brandColor, /^#[0-9a-f]{6}$/i, franchise.id);
+    assert.ok(franchise.initials?.length >= 1 && franchise.initials.length <= 3, franchise.id);
+  }
+});
+
+test("every sector carries at least ten researched brands", async () => {
+  const allFranchises = [...franchiseData.franchises, ...franchiseExtra.franchises];
+  for (const category of franchiseData.categories) {
+    const count = allFranchises.filter((item) => item.category === category.id).length;
+    assert.ok(count >= 10, `${category.id} only has ${count} brands`);
+  }
 });
 
 test("new researched franchises have routed detail pages", async () => {
