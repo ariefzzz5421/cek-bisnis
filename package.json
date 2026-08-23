@@ -7,11 +7,13 @@
   },
   "scripts": {
     "dev": "vinext dev",
+    "prebuild": "node scripts/sync-researched-brand-logos.mjs",
     "build": "vinext build",
     "start": "vinext start",
     "test": "npm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "guides": "node scripts/build-guides.mjs",
+    "logos:sync": "node scripts/sync-researched-brand-logos.mjs",
     "db:generate": "drizzle-kit generate",
     "illustrations": "node scripts/build-illustrations.mjs"
   },
