@@ -11,6 +11,9 @@ mkdirSync(OUT_DIR, { recursive: true });
  * sources; when no standalone official logo is exposed publicly, use a
  * reputable listing/press image. A generated name badge is only a last-resort
  * fallback so the UI never shows a broken image.
+ *
+ * Es Teh Indonesia, Tahu Go, and Doyan Ayam are intentionally absent here:
+ * the repository already contains cleaner local assets for those brands.
  */
 const ASSETS = [
   {
@@ -33,13 +36,6 @@ const ASSETS = [
     file: "janji-jiwa-researched.jpg",
     url: "https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/105f3f2b-06d2-4d6d-907f-ff30fdcf2216_brand-logo_1698896753190.jpg",
     brand: "#EE7623",
-  },
-  {
-    id: "es-teh-indonesia",
-    name: "Es Teh Indonesia",
-    file: "es-teh-indonesia-researched.jpg",
-    url: "https://www.medinfopedia.com/wp-content/uploads/2025/11/logo-es-teh-indonesia_-600x450.jpeg",
-    brand: "#0F3D2E",
   },
   {
     id: "haus",
@@ -82,20 +78,6 @@ const ASSETS = [
     file: "rocket-chicken.png",
     url: "https://cdn.brandfetch.io/idg7ixUkH_/w/6300/h/1856/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1766876763892",
     brand: "#E4032E",
-  },
-  {
-    id: "tahu-go",
-    name: "Tahu Go",
-    file: "tahu-go-researched.png",
-    url: "https://www.tahugo.co.id/wp-content/uploads/2019/11/Screen-Shot-2019-11-05-at-12.23.08-1024x962.png",
-    brand: "#F5A623",
-  },
-  {
-    id: "doyan-ayam",
-    name: "Doyan Ayam",
-    file: "doyan-ayam-researched.png",
-    url: "https://cdn.brandfetch.io/idxkisaBzo/w/758/h/855/theme/light/logo.png?c=1bxid64Mup7aczewSAYMX&t=1770673437853",
-    brand: "#E62429",
   },
   {
     id: "apotek-f21",
