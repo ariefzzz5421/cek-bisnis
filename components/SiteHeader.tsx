@@ -2,33 +2,14 @@
 
 import Link from "next/link";
 import { ArrowRight, Menu } from "lucide-react";
-import { useEffect, useState } from "react";
 import { SiteWordmark } from "./SiteWordmark";
 
 export function SiteHeader({ landing = false }: { landing?: boolean }) {
-  const [floating, setFloating] = useState(false);
-
-  useEffect(() => {
-    let ticking = false;
-    const update = () => {
-      setFloating(window.scrollY > 80);
-      ticking = false;
-    };
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(update);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    update();
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
   const actionHref = landing ? "/usaha" : "/survei-lokasi";
   const actionLabel = landing ? "Mulai analisis" : "Cek lokasi";
 
   return (
-    <header className={`workbench-header ${floating ? "is-floating" : ""}`}>
+    <header className="workbench-header" style={{ position: "relative", top: "auto" }}>
       <nav className="workbench-nav" aria-label="Navigasi utama">
         <SiteWordmark />
         <div className="workbench-nav__links">
