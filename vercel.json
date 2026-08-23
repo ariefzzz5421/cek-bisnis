@@ -1,5 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
-  "buildCommand": "npx next build"
+  "buildCommand": "node scripts/sync-researched-brand-logos.mjs && npx next build"
 }
