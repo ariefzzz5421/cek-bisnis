@@ -9,8 +9,22 @@ export function SiteHeader({ landing = false }: { landing?: boolean }) {
   const actionLabel = landing ? "Mulai analisis" : "Cek lokasi";
 
   return (
-    <header className="workbench-header" style={{ position: "relative", top: "auto" }}>
-      <nav className="workbench-nav" aria-label="Navigasi utama">
+    <header
+      className="workbench-header"
+      style={{
+        position: "relative",
+        inset: "auto",
+        top: "auto",
+        width: "100%",
+        marginTop: "-4rem",
+        background: "var(--color-paper)",
+      }}
+    >
+      <nav
+        className="workbench-nav"
+        aria-label="Navigasi utama"
+        style={{ width: "100%", maxWidth: "100%", margin: 0 }}
+      >
         <SiteWordmark />
         <div className="workbench-nav__links">
           <Link href="/usaha">Jenis usaha</Link>
