@@ -12,7 +12,7 @@ const MAX_ASPECT = 2.6;
 const WIDE_THRESHOLD = 1.35;
 
 /** Logo putih/terang yang memang dibuat untuk latar gelap. */
-const DARK_SURFACE_BRANDS = new Set<string>(["rocket-chicken"]);
+const DARK_SURFACE_BRANDS = new Set<string>(["es-teh-indonesia", "rocket-chicken"]);
 
 /**
  * Beberapa sumber publik terbaik berupa foto signage/storefront, bukan file
@@ -87,7 +87,7 @@ export function BrandLogo({ franchise, businessId, name, size = 56 }: BrandLogoP
         borderRadius: radius,
       } as React.CSSProperties}
       role="img"
-      aria-label={showLogo ? `Identitas ${name}` : `Identitas ${name}`}
+      aria-label={`Identitas ${name}`}
       data-source={sourceLabel}
     >
       {businessId ? (
