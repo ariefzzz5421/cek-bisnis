@@ -10,22 +10,29 @@ export const brandLogoAssets: Record<string, { file: string; width: number; heig
   "doyan-ayam": { file: "doyan-ayam.webp", width: 496, height: 560 },
   "es-teh-indonesia": { file: "esteh-indonesia.svg", width: 280, height: 96 },
   "teh-poci": { file: "esteh-poci.png", width: 600, height: 600 },
-  familymart: { file: "familymart.svg", width: 200, height: 80 },
+  // The bundled FamilyMart SVG is a compact vertical mark (57x62), not a 200x80 wordmark.
+  familymart: { file: "familymart.svg", width: 57, height: 62 },
   "geprek-bensu": { file: "geprek-bensu.webp", width: 360, height: 274 },
   indomaret: { file: "indomaret.svg", width: 200, height: 80 },
-  "janji-jiwa": { file: "janji-jiwa.webp", width: 560, height: 488 },
+  // Re-cropped from the user-provided artwork so the mark sits fully inside the tile.
+  "janji-jiwa": { file: "janji-jiwa.webp", width: 360, height: 360 },
   jne: { file: "jne.svg", width: 200, height: 80 },
   jnt: { file: "jnt-express.webp", width: 560, height: 393 },
   kopigo: { file: "kopigo.svg", width: 512, height: 512 },
   lawson: { file: "lawson.svg", width: 200, height: 80 },
   "lion-parcel": { file: "lion-parcel.svg", width: 200, height: 80 },
   "mr-klin": { file: "mr-klin.webp", width: 560, height: 208 },
-  "ninja-xpress": { file: "ninja-xpress.svg", width: 200, height: 80 },
+  // The franchise dataset uses `mrklin`; keep the old key too for backward compatibility.
+  mrklin: { file: "mr-klin.webp", width: 560, height: 208 },
+  // Intrinsic viewBox is 80x35. The old 200x80 hint made the mark look over-wide/cropped.
+  "ninja-xpress": { file: "ninja-xpress.svg", width: 80, height: 35 },
   "nyoklat-klasik": { file: "nyoklat-klasik.webp", width: 560, height: 179 },
   omi: { file: "omi.svg", width: 200, height: 80 },
-  "point-coffee": { file: "point-coffee.webp", width: 360, height: 255 },
+  // Rebuilt from the user-provided Point Coffee artwork with safe breathing room.
+  "point-coffee": { file: "point-coffee.webp", width: 420, height: 300 },
   sabana: { file: "sabana.webp", width: 560, height: 202 },
-  sicepat: { file: "sicepat.svg", width: 200, height: 80 },
+  // Intrinsic viewBox is 78x80. Treat it as a compact badge, not a 2.5:1 wordmark.
+  sicepat: { file: "sicepat.svg", width: 78, height: 80 },
   "tahu-go": { file: "tahu-go.webp", width: 560, height: 528 },
   wahana: { file: "wahana.svg", width: 200, height: 80 },
   yomart: { file: "yomart.svg", width: 200, height: 80 },
