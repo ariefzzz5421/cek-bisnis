@@ -31,6 +31,15 @@ const ASSETS = [
     brand: "#0F7B3E",
   },
   {
+    id: "mixue",
+    name: "Mixue",
+    file: "mixue.png",
+    // Public trademark artwork. It is a stable, full mark rather than an
+    // expiring image-search URL and is used only for brand identification.
+    url: "https://ised-isde.canada.ca/cipo/trademark-search/media/2445069.png",
+    brand: "#D6001C",
+  },
+  {
     id: "janji-jiwa",
     name: "Kopi Janji Jiwa",
     file: "janji-jiwa-researched.jpg",
@@ -83,6 +92,8 @@ const ASSETS = [
     id: "apotek-f21",
     name: "Apotek F21",
     file: "apotek-f21.svg",
+    // No reliable standalone official mark is publicly exposed. Keep this as
+    // verified-name artwork rather than presenting an invented mark as official.
     url: null,
     brand: "#0E8A5F",
   },
@@ -162,9 +173,23 @@ function readableInk(hex) {
   return luminance > 0.62 ? "#111111" : "#ffffff";
 }
 
-function fallbackBadge({ name, brand }) {
+function fallbackBadge({ id, name, brand }) {
   const text = escapeXml(name);
   const ink = readableInk(brand);
+
+  if (id === "apotek-f21") {
+    // Deliberately a verified-name identity tile, not a claim that this is the
+    // franchisor's official trademark artwork.
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240" role="img" aria-label="${text}">
+  <rect width="640" height="240" rx="22" fill="#fffdf7"/>
+  <rect x="10" y="10" width="620" height="220" rx="16" fill="none" stroke="${brand}" stroke-width="5"/>
+  <rect x="36" y="36" width="168" height="168" rx="20" fill="${brand}"/>
+  <path d="M102 68h36v38h38v36h-38v38h-36v-38H64v-36h38z" fill="#fff"/>
+  <text x="234" y="104" fill="#111" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="800" letter-spacing="2">APOTEK</text>
+  <text x="230" y="174" fill="${brand}" font-family="Arial,Helvetica,sans-serif" font-size="76" font-weight="900" letter-spacing="-3">F21</text>
+</svg>`;
+  }
+
   return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="240" viewBox="0 0 640 240" role="img" aria-label="${text}">
   <rect width="640" height="240" rx="24" fill="${brand}"/>
   <rect x="10" y="10" width="620" height="220" rx="18" fill="none" stroke="${ink}" stroke-opacity=".35" stroke-width="2"/>
