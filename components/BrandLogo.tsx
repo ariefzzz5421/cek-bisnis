@@ -31,6 +31,7 @@ const ASSET_ID_ALIASES: Record<string, string> = {
  */
 const SOURCE_OVERRIDES: Record<string, string> = {
   familymart: "https://commons.wikimedia.org/wiki/Special:Redirect/file/FamilyMart%20Logo%20(2016-).svg",
+  mixue: "https://ised-isde.canada.ca/cipo/trademark-search/media/2445069.png",
   sicepat: "https://fe-cft.cdn.sicepat.express/web-company-v3/public/company-logo.svg",
   "kimia-farma": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kimia-Farma-Apotek%20MemberofBiofarma.png",
   "optik-melawai": "https://stra-pi.s3.ap-southeast-1.amazonaws.com/optikmelawaidotcom_4df28342ce.png",
@@ -41,6 +42,7 @@ const SOURCE_OVERRIDES: Record<string, string> = {
 /** Remote assets do not expose intrinsic dimensions to this component. */
 const REMOTE_ASPECT_HINTS: Record<string, number> = {
   familymart: 592 / 86,
+  mixue: 1,
   sicepat: 2.8,
   "kimia-farma": 1005 / 664,
   "optik-melawai": 1.55,
@@ -59,15 +61,19 @@ const SURFACE_COLORS: Record<string, string> = {
   "doyan-ayam": "#e42a2d",
   "point-coffee": "#ffffff",
   familymart: "#ffffff",
+  mixue: "#ffffff",
   sicepat: "#ffffff",
   "kimia-farma": "#ffffff",
   "optik-melawai": "#ffffff",
   mrklin: "#ffffff",
+  "apotek-f21": "#fffdf7",
+  pasfarma: "#ffffff",
 };
 
 /** Per-brand breathing room for unusual artwork. */
 const PADDING_RATIOS: Record<string, number> = {
   familymart: 0.055,
+  mixue: 0.04,
   "simply-fresh": 0.045,
   sabana: 0.055,
   "janji-jiwa": 0.055,
@@ -78,22 +84,27 @@ const PADDING_RATIOS: Record<string, number> = {
   hisana: 0.05,
   "tahu-go": 0.025,
   "doyan-ayam": 0.025,
+  "apotek-f21": 0.03,
   "century-pharma": 0.08,
   "kimia-farma": 0.065,
   "griya-farma": 0.03,
+  pasfarma: 0.03,
   "optik-melawai": 0.075,
 };
 
 /** Final optical adjustment after contain-fit. Values below 1 add safe space. */
 const IMAGE_SCALE: Record<string, number> = {
   familymart: 0.94,
+  mixue: 0.88,
   "janji-jiwa": 0.88,
   "point-coffee": 0.88,
   mrklin: 0.92,
   sicepat: 0.9,
   "ninja-xpress": 0.9,
   hisana: 0.88,
+  "apotek-f21": 0.92,
   "kimia-farma": 0.82,
+  pasfarma: 0.78,
   "optik-melawai": 0.82,
 };
 
@@ -112,6 +123,7 @@ const OBJECT_POSITION: Record<string, string> = {
   "viva-generik": "50% 24%",
   hisana: "50% 50%",
   "kimia-farma": "50% 50%",
+  pasfarma: "50% 50%",
   "optik-melawai": "50% 50%",
 };
 
