@@ -16,6 +16,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { BrandLogo } from "@/components/BrandLogo";
+import { FranchiseDownload } from "@/components/FranchiseDownload";
 import {
   formatContractYears,
   formatInvestmentRange,
@@ -160,6 +161,8 @@ export function FranchiseDetail({
           </div>
         </aside>
       </article>
+
+      <FranchiseDownload franchise={franchise} article={article} sources={sources} />
 
       {related.length > 0 && (
         <section className="franchise-related">

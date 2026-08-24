@@ -41,6 +41,7 @@ export const brandLogoAssets: Record<string, { file: string; width: number; heig
   // fell back to initials. These stay local so cards remain stable.
   basmalah: { file: "basmalah-mart.png", width: 640, height: 240 },
   "212-mart": { file: "212-mart.jpg", width: 640, height: 360 },
+  mixue: { file: "mixue.png", width: 1000, height: 1000 },
   haus: { file: "haus.jpg", width: 640, height: 360 },
   hisana: { file: "hisana.jpg", width: 640, height: 360 },
   dbesto: { file: "dbesto.jpg", width: 640, height: 360 },
@@ -49,7 +50,9 @@ export const brandLogoAssets: Record<string, { file: string; width: number; heig
   "griya-farma": { file: "griya-farma.jpg", width: 640, height: 360 },
   "century-pharma": { file: "century-pharma.png", width: 600, height: 600 },
   "kimia-farma": { file: "kimia-farma.jpg", width: 640, height: 360 },
-  pasfarma: { file: "pasfarma.jpg", width: 640, height: 360 },
+  // Glints exposes a square identity tile. The old 640x360 hint made it look
+  // like a landscape banner and visually clipped the bottom line on mobile.
+  pasfarma: { file: "pasfarma.jpg", width: 512, height: 512 },
   "optik-loka": { file: "optik-loka.jpg", width: 640, height: 360 },
   "viva-generik": { file: "viva-generik.jpg", width: 640, height: 360 },
   farmapoint: { file: "farmapoint.jpg", width: 640, height: 360 },
