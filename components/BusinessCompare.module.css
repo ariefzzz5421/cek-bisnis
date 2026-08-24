@@ -431,6 +431,103 @@
   padding-left: 18px;
 }
 
+.downloads {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 28px;
+  align-items: center;
+  padding: 28px;
+  border: 2px solid #111;
+  background: #dff8f4;
+  box-shadow: 7px 7px 0 #111;
+}
+
+.downloadIntro > span {
+  display: inline-flex;
+  padding: 6px 10px;
+  border: 2px solid #111;
+  background: #c6f24f;
+  color: #111;
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+}
+
+.downloadIntro h2 {
+  margin: 14px 0 10px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.downloadIntro p {
+  max-width: 660px;
+  margin: 0;
+  color: #555;
+  line-height: 1.65;
+}
+
+.downloadActions {
+  display: grid;
+  gap: 12px;
+}
+
+.downloadActions button {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 70px;
+  padding: 12px 16px;
+  border: 2px solid #111;
+  background: #fffdf7;
+  color: #111;
+  box-shadow: 4px 4px 0 #111;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 120ms linear, box-shadow 120ms linear, background 120ms linear;
+}
+
+.downloadActions button:hover:not(:disabled) {
+  background: #c6f24f;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #111;
+}
+
+.downloadActions button:active:not(:disabled) {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.downloadActions button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.downloadActions button span {
+  display: grid;
+  gap: 2px;
+}
+
+.downloadActions button small {
+  color: #666;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.downloadActions button b {
+  font-size: 0.98rem;
+}
+
+.downloadError {
+  margin: 4px 0 0;
+  color: #9d1c1c;
+  font-size: 0.83rem;
+  font-weight: 700;
+}
+
 .disclaimer {
   margin: 0;
 }
@@ -454,7 +551,8 @@
   }
 
   .grid,
-  .detailGrid {
+  .detailGrid,
+  .downloads {
     grid-template-columns: 1fr;
   }
 
@@ -495,5 +593,10 @@
     padding-left: 0;
     border-top: 1px solid #e1dbd0;
     border-left: 0;
+  }
+
+  .downloads {
+    padding: 20px;
+    box-shadow: 5px 5px 0 #111;
   }
 }
