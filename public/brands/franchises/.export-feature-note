@@ -1,0 +1,1 @@
+Franchise and Compare Business exports are generated client-side from the same data rendered by Cek Bisnis. This marker can be removed in a later cleanup; it exists only to make the post-PR9 rollout boundary explicit.
