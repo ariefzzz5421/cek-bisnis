@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeftRight, ArrowRight, BadgePercent, Building2, ChevronDown, Gauge, Timer, Wallet } from "lucide-react";
+import { ArrowLeftRight, ArrowRight, BadgePercent, Building2, ChevronDown, Download, FileText, Gauge, ImageDown, Timer, Wallet } from "lucide-react";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { BrandLogo } from "@/components/BrandLogo";
 import { businesses, formatMoney, type BusinessId } from "@/lib/business-data";
@@ -74,6 +74,7 @@ const fallbackRight = choices.find((item) => item.kind === "Franchise")?.key ?? 
 export function BusinessCompare() {
   const [leftKey, setLeftKey] = useState(fallbackLeft);
   const [rightKey, setRightKey] = useState(fallbackRight);
+  const [exportState, setExportState] = useState<"idle" | "png" | "pdf" | "error">("idle");
 
   const left = useMemo(() => choices.find((item) => item.key === leftKey) ?? choices[0], [leftKey]);
   const right = useMemo(() => choices.find((item) => item.key === rightKey) ?? choices[1] ?? choices[0], [rightKey]);
@@ -84,6 +85,32 @@ export function BusinessCompare() {
   };
 
   if (!left || !right) return null;
+
+  const exportBase = `cek-bisnis-compare-${left.key}-${right.key}`.replace(/[^a-z0-9-]+/gi, "-").toLowerCase();
+
+  const downloadComparePng = async () => {
+    setExportState("png");
+    try {
+      const { downloadBlob, renderCompareSummaryPng } = await import("@/lib/export-documents");
+      const blob = await renderCompareSummaryPng(left, right);
+      downloadBlob(blob, `${exportBase}.png`);
+      setExportState("idle");
+    } catch {
+      setExportState("error");
+    }
+  };
+
+  const downloadComparePdf = async () => {
+    setExportState("pdf");
+    try {
+      const { buildComparePdf, downloadBlob } = await import("@/lib/export-documents");
+      const blob = buildComparePdf(left, right);
+      downloadBlob(blob, `${exportBase}.pdf`);
+      setExportState("idle");
+    } catch {
+      setExportState("error");
+    }
+  };
 
   return (
     <section className={styles.shell} aria-labelledby="compare-title">
@@ -124,6 +151,27 @@ export function BusinessCompare() {
         <CompareNarrative title="Mekanisme bisnis" leftLabel={left.name} rightLabel={right.name} left={left.mechanism} right={right.mechanism} />
         <CompareNarrative title="Faktor penentu" leftLabel={left.name} rightLabel={right.name} left={left.factors} right={right.factors} />
       </div>
+
+      <section className={styles.downloads} aria-labelledby="compare-download-title">
+        <div className={styles.downloadIntro}>
+          <span>UNDUH PERBANDINGAN</span>
+          <h2 id="compare-download-title">Simpan keputusan ini.</h2>
+          <p>File mengikuti Bisnis A dan Bisnis B yang sedang dipilih sekarang, termasuk modal, omzet, BEP, fee, biaya berulang, mekanisme, dan faktor penentu.</p>
+        </div>
+        <div className={styles.downloadActions}>
+          <button type="button" onClick={() => void downloadComparePng()} disabled={exportState === "png" || exportState === "pdf"}>
+            <ImageDown size={21} aria-hidden="true" />
+            <span><small>RINGKASAN</small><b>{exportState === "png" ? "Menyiapkan PNG..." : "Download PNG"}</b></span>
+            <Download size={17} aria-hidden="true" />
+          </button>
+          <button type="button" onClick={() => void downloadComparePdf()} disabled={exportState === "png" || exportState === "pdf"}>
+            <FileText size={21} aria-hidden="true" />
+            <span><small>DETAIL</small><b>{exportState === "pdf" ? "Menyiapkan PDF..." : "Download PDF"}</b></span>
+            <Download size={17} aria-hidden="true" />
+          </button>
+          {exportState === "error" && <p className={styles.downloadError}>Gagal membuat file di peramban ini. Coba ulang atau gunakan Chrome terbaru.</p>}
+        </div>
+      </section>
 
       <p className={styles.disclaimer}>Perbandingan ini adalah alat screening. Untuk franchise, angka yang tidak dipublikasikan brand sengaja ditandai sebagai belum tersedia atau minta quotation—bukan diisi dengan tebakan.</p>
     </section>
