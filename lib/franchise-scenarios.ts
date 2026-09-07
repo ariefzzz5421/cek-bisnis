@@ -43,7 +43,29 @@ export type FranchiseScenarioModel = {
   pros: string[];
   cons: string[];
   researchLinks: ScenarioResearchLink[];
+  commercialTerms: string;
 };
+
+type OperatingTemplate = {
+  fallbackDrivers: [number, number, number];
+  ticket: number;
+  variableRate: number;
+  fixedCost: number;
+  unit: string;
+  assumptions: string[];
+};
+
+type LogisticsTerms =
+  | {
+      mode: "percentage";
+      rates: [number, number, number];
+      label: string;
+    }
+  | {
+      mode: "fixed";
+      commissionPerPackage: number;
+      label: string;
+    };
 
 const BRAND_RESEARCH: Record<string, ScenarioResearchLink[]> = {
   alfamart: [
@@ -66,8 +88,12 @@ const BRAND_RESEARCH: Record<string, ScenarioResearchLink[]> = {
   ],
   "lion-parcel": [
     {
-      title: "Lion Parcel - pendaftaran agen dan struktur diskon resmi",
+      title: "Lion Parcel - ketentuan diskon Mitra POS resmi",
       url: "https://website.lionparcel.com/agen/registration/submit",
+    },
+    {
+      title: "Lion Parcel - pusat informasi mitra 2026",
+      url: "https://lionparcel.com/info-mitra/berapa-harga-modal-agen",
     },
   ],
   jne: [
@@ -88,16 +114,28 @@ const BRAND_RESEARCH: Record<string, ScenarioResearchLink[]> = {
   ],
 };
 
+const DEFAULT_CAPITAL: Record<FranchiseScenarioArchetype, [number, number]> = {
+  minimarket: [450, 650],
+  beverage: [80, 180],
+  food: [120, 250],
+  logistics: [15, 30],
+  health: [350, 600],
+  laundry: [80, 150],
+  service: [80, 180],
+};
+
 const median = (range: [number, number]) => (range[0] + range[1]) / 2;
 const positive = (value: number) => Number.isFinite(value) && value > 0;
 
 export const formatScenarioMoney = (juta: number, digits = 1) => {
   if (!Number.isFinite(juta)) return "-";
-  if (Math.abs(juta) >= 1000) {
-    const miliar = juta / 1000;
-    return `Rp${Number(miliar.toFixed(digits)).toLocaleString("id-ID")} M`;
+  const sign = juta < 0 ? "-" : "";
+  const absolute = Math.abs(juta);
+  if (absolute >= 1000) {
+    const miliar = absolute / 1000;
+    return `${sign}Rp${Number(miliar.toFixed(digits)).toLocaleString("id-ID")} M`;
   }
-  return `Rp${Number(juta.toFixed(digits)).toLocaleString("id-ID")} jt`;
+  return `${sign}Rp${Number(absolute.toFixed(digits)).toLocaleString("id-ID")} jt`;
 };
 
 export const formatScenarioPayback = (months: number | null) =>
@@ -115,16 +153,6 @@ function classify(franchise: Franchise): FranchiseScenarioArchetype {
   }
   return "service";
 }
-
-const DEFAULT_CAPITAL: Record<FranchiseScenarioArchetype, [number, number]> = {
-  minimarket: [450, 650],
-  beverage: [80, 180],
-  food: [120, 250],
-  logistics: [15, 30],
-  health: [350, 600],
-  laundry: [80, 150],
-  service: [80, 180],
-};
 
 function startupCapital(franchise: Franchise, archetype: FranchiseScenarioArchetype) {
   if (isRangeKnown(franchise.investment)) {
@@ -153,10 +181,11 @@ function percentageRates(text: string) {
 function flatRoyaltyRate(franchise: Franchise) {
   const text = franchise.royalty.toLowerCase();
   if (/tanpa\s+(royalti|bagi hasil)|100%\s+profit/.test(text)) return 0;
-  const rates = percentageRates(franchise.royalty);
-  if (!rates.length) return 0;
-  const positiveRates = rates.filter((value) => value > 0 && value <= 0.2);
-  return positiveRates[0] ?? 0;
+  if (/bagi hasil/.test(text) && !/royalti/.test(text)) return 0;
+  const explicit = text.match(/royalti[^0-9]{0,18}(\d+(?:[.,]\d+)?)\s*%/);
+  if (explicit) return Number(explicit[1].replace(",", ".")) / 100;
+  const rates = percentageRates(franchise.royalty).filter((value) => value > 0 && value <= 0.2);
+  return rates[0] ?? 0;
 }
 
 function managementProfitShare(franchise: Franchise) {
@@ -201,324 +230,391 @@ function minimarketRoyalty(franchise: Franchise, sales: number) {
   return Math.max(0, sales - 175) * 0.02;
 }
 
-function logisticsCommission(franchise: Franchise) {
-  if (franchise.id === "lion-parcel") return 0.275;
-  if (franchise.id === "wahana") return 0.25;
-  const text = franchise.royalty.toLowerCase();
-  const rates = percentageRates(franchise.royalty).filter((value) => value >= 0.05 && value <= 0.5);
-  if (rates.length >= 2) return (Math.min(...rates) + Math.max(...rates)) / 2;
-  if (rates.length === 1 && /komisi|diskon|profit/.test(text)) return rates[0];
-  return 0.22;
+function parseFixedCommissionPerPackage(text: string) {
+  const match = text.match(/rp\s*([0-9][0-9.,]*)\s*(?:\/|per\s*)paket/i);
+  if (!match) return null;
+  const digits = match[1].replace(/[^0-9]/g, "");
+  const rupiah = Number(digits);
+  if (!Number.isFinite(rupiah) || rupiah <= 0) return null;
+  return rupiah / 1_000_000;
 }
 
-function calibratedDrivers(franchise: Franchise, ticket: number, fallback: number[]) {
+function currentCommercialTerms(franchise: Franchise) {
+  if (franchise.id === "lion-parcel") {
+    return "Tanpa royalti; diskon penjualan resmi berbeda menurut layanan (10%-35%). Opsi pickup dapat mengurangi diskon, sehingga mix layanan wajib dihitung.";
+  }
+  if (franchise.id === "wahana") {
+    return "Tanpa royalti; referensi resmi 2026 menyebut profit per pengiriman hingga 25%.";
+  }
+  return franchise.royalty;
+}
+
+function logisticsTerms(franchise: Franchise): LogisticsTerms {
+  if (franchise.id === "lion-parcel") {
+    return {
+      mode: "percentage",
+      rates: [0.2, 0.275, 0.35],
+      label: "Lion Parcel mempublikasikan diskon per layanan 10%-35%; model memakai 20% / 27,5% / 35% untuk menguji mix layanan, bukan menganggap semua paket mendapat rate tertinggi.",
+    };
+  }
+
+  const fixed = parseFixedCommissionPerPackage(franchise.royalty);
+  if (fixed !== null) {
+    return {
+      mode: "fixed",
+      commissionPerPackage: fixed,
+      label: `Komisi model mengikuti angka yang tersimpan: ${formatScenarioMoney(fixed, 4)} per paket.`,
+    };
+  }
+
+  if (franchise.id === "wahana") {
+    return {
+      mode: "percentage",
+      rates: [0.2, 0.25, 0.25],
+      label: "Referensi resmi 2026 menyebut profit per pengiriman hingga 25%; skenario konservatif memakai 20% dan dua skenario berikutnya 25%.",
+    };
+  }
+
+  const rates = percentageRates(franchise.royalty).filter((value) => value >= 0.05 && value <= 0.5);
+  if (rates.length >= 2) {
+    const low = Math.min(...rates);
+    const high = Math.max(...rates);
+    return {
+      mode: "percentage",
+      rates: [low, (low + high) / 2, high],
+      label: `Komisi model mengikuti rentang yang tersimpan: ${(low * 100).toFixed(0)}%-${(high * 100).toFixed(0)}%.`,
+    };
+  }
+  if (rates.length === 1 && /komisi|diskon|profit/.test(franchise.royalty.toLowerCase())) {
+    return {
+      mode: "percentage",
+      rates: [rates[0], rates[0], rates[0]],
+      label: `Komisi model memakai ${(rates[0] * 100).toFixed(1).replace(".0", "")}% sesuai angka yang tersimpan.`,
+    };
+  }
+
+  return {
+    mode: "percentage",
+    rates: [0.18, 0.2, 0.22],
+    label: "Brand belum mempublikasikan unit commission yang cukup jelas. Model screening memakai 18%-22% dari GMV ongkir dan wajib diganti ketika proposal cabang diterima.",
+  };
+}
+
+function calibratedDrivers(franchise: Franchise, ticket: number, fallback: [number, number, number]) {
   if (!isRangeKnown(franchise.monthlyRevenue) || ticket <= 0) return fallback;
   const rawLow = rangeLow(franchise.monthlyRevenue);
   const high = rangeHigh(franchise.monthlyRevenue);
   if (rawLow === null || high === null || high <= 0) return fallback;
   const low = rawLow > 0 ? rawLow : high * 0.5;
-  const targets = [low, (low + high) / 2, high];
-  return targets.map((revenue) => Math.max(1, Math.round(revenue / ticket / 30)));
+  return [low, (low + high) / 2, high].map((revenue) => Math.max(1, Math.round(revenue / ticket / 30))) as [number, number, number];
 }
 
-function assumptionsFor(
+function logisticsDrivers(franchise: Franchise, terms: LogisticsTerms): [number, number, number] {
+  // Monthly revenue fields for agent networks are not consistently defined as
+  // GMV vs partner commission. Never calibrate a percentage-based model to an
+  // ambiguous revenue field. A fixed per-package commission is the exception:
+  // there we can safely infer package volume from partner income.
+  if (terms.mode === "fixed" && isRangeKnown(franchise.monthlyRevenue)) {
+    const rawLow = rangeLow(franchise.monthlyRevenue);
+    const high = rangeHigh(franchise.monthlyRevenue);
+    if (rawLow !== null && high !== null && high > 0 && terms.commissionPerPackage > 0) {
+      const low = rawLow > 0 ? rawLow : high * 0.5;
+      return [low, (low + high) / 2, high].map((income) =>
+        Math.max(1, Math.round(income / terms.commissionPerPackage / 30)),
+      ) as [number, number, number];
+    }
+  }
+  return [20, 50, 90];
+}
+
+function operatingTemplate(
   franchise: Franchise,
   archetype: FranchiseScenarioArchetype,
   capitalMid: number,
-) {
-  switch (archetype) {
-    case "minimarket": {
-      const ticket = 0.045;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, [180, 300, 450]),
-        ticket,
-        variableRate: 0.87,
-        fixedCost: 28 + Math.min(8, capitalMid * 0.01),
-        unit: "transaksi/hari",
-        assumptions: [
-          "Basket rata-rata model Rp45 ribu/transaksi.",
-          "Margin kotor model 13% sebelum payroll, sewa, utilitas, susut, dan royalti.",
-          "Jika brand sudah punya rentang omzet terkurasi, driver transaksi dikalibrasi ke rentang itu agar skenario tidak bertentangan dengan data publik yang tersedia.",
-          "Royalti Alfamart/Indomaret dihitung progresif dari tier publik; brand lain memakai screening 2% di atas Rp175 jt penjualan.",
-        ],
-      };
-    }
-    case "beverage": {
-      const kopigo = franchise.id === "kopigo";
-      const ticket = kopigo ? 0.015 : 0.018;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, kopigo ? [50, 100, 160] : [60, 120, 180]),
-        ticket,
-        variableRate: kopigo ? 0.38 : 0.43,
-        fixedCost: (kopigo ? 8.5 : 10) + Math.min(24, capitalMid * 0.02),
-        unit: "cup/hari",
-        assumptions: [
-          `Average ticket model ${kopigo ? "Rp15 ribu" : "Rp18 ribu"}/cup.`,
-          `HPP model ${(kopigo ? 38 : 43)}% omzet; untuk KOPIGO angka 38% mengikuti simulasi brand.`,
-          "Jika rentang omzet brand/riset sudah tersedia, jumlah cup/hari dikalibrasi ke rentang tersebut.",
-          "Biaya tetap mencakup payroll, sewa, utilitas, software, kebersihan, dan maintenance dasar.",
-        ],
-      };
-    }
-    case "food": {
-      const ticket = 0.028;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, [50, 100, 160]),
-        ticket,
-        variableRate: 0.50,
-        fixedCost: 14 + Math.min(20, capitalMid * 0.015),
-        unit: "order/hari",
-        assumptions: [
-          "Average ticket model Rp28 ribu/order.",
-          "HPP + packaging model 50% omzet, sejalan dengan banyak simulasi outlet F&B mass market.",
-          "Jika rentang omzet brand/riset tersedia, order/hari dikalibrasi ke rentang tersebut.",
-          "Biaya tetap mencakup staf, sewa, utilitas, maintenance, dan promosi dasar; waste di luar asumsi harus diuji saat survei.",
-        ],
-      };
-    }
-    case "logistics": {
-      const ticket = 0.025;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, [20, 50, 90]),
-        ticket,
-        variableRate: 0.05,
-        fixedCost: 4.5,
-        unit: "paket/hari",
-        assumptions: [
-          "Ongkir rata-rata model Rp25 ribu/paket; ganti dengan mix rute aktual saat sudah punya data.",
-          `Komisi/diskon efektif model ${(logisticsCommission(franchise) * 100).toFixed(1).replace(".0", "")}% dari GMV ongkir.`,
-          "Biaya operasional setelah komisi dimodelkan 5% dari pendapatan agen ditambah Rp4,5 jt biaya tetap/bulan.",
-        ],
-      };
-    }
-    case "health": {
-      const ticket = 0.12;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, [35, 70, 110]),
-        ticket,
-        variableRate: 0.80,
-        fixedCost: 18 + Math.min(18, capitalMid * 0.01),
-        unit: "transaksi/hari",
-        assumptions: [
-          "Basket rata-rata model Rp120 ribu/transaksi.",
-          "Gross margin model 20% sebelum payroll, sewa, sistem, shrinkage, dan royalti.",
-          "Jika rentang omzet tersedia, transaksi/hari dikalibrasi ke angka tersebut.",
-          "Stok mati, kedaluwarsa, modal kerja obat, dan kewajiban tenaga kefarmasian wajib diuji terpisah.",
-        ],
-      };
-    }
-    case "laundry": {
-      const ticket = 0.01;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, [35, 60, 90]),
-        ticket,
-        variableRate: 0.35,
-        fixedCost: 7 + Math.min(8, capitalMid * 0.015),
-        unit: "kg/hari",
-        assumptions: [
-          "Harga rata-rata model Rp10 ribu/kg dengan mix reguler dan express.",
-          "Biaya variabel model 35% untuk bahan, listrik/air variabel, packaging, dan rework.",
-          "Jika rentang omzet tersedia, kg/hari dikalibrasi ke rentang tersebut.",
-          "Biaya tetap mencakup sewa, payroll dasar, maintenance, dan utilitas minimum.",
-        ],
-      };
-    }
-    default: {
-      const ticket = 0.075;
-      return {
-        drivers: calibratedDrivers(franchise, ticket, [15, 30, 50]),
-        ticket,
-        variableRate: 0.40,
-        fixedCost: 10 + Math.min(14, capitalMid * 0.015),
-        unit: "transaksi/hari",
-        assumptions: [
-          "Average ticket model Rp75 ribu/transaksi untuk jasa umum.",
-          "Biaya variabel model 40%; angka harus diganti dengan unit economics brand ketika quotation diterima.",
-          "Jika rentang omzet tersedia, transaksi/hari dikalibrasi ke rentang tersebut.",
-          "Biaya tetap mencakup payroll, sewa, utilitas, sistem, dan maintenance dasar.",
-        ],
-      };
-    }
+): OperatingTemplate {
+  if (archetype === "minimarket") {
+    const ticket = 0.045;
+    return {
+      fallbackDrivers: calibratedDrivers(franchise, ticket, [180, 300, 450]),
+      ticket,
+      variableRate: 0.87,
+      fixedCost: 28 + Math.min(8, capitalMid * 0.01),
+      unit: "transaksi/hari",
+      assumptions: [
+        "Basket rata-rata model Rp45 ribu/transaksi.",
+        "Margin kotor model 13% sebelum payroll, sewa, utilitas, susut, dan royalti.",
+        "Jika brand punya rentang omzet terkurasi, transaksi/hari dikalibrasi ke rentang itu.",
+        "Royalti Alfamart/Indomaret dihitung progresif dari tier publik; minimarket lain memakai screening 2% di atas Rp175 jt omzet.",
+      ],
+    };
   }
+
+  if (archetype === "beverage") {
+    const kopigo = franchise.id === "kopigo";
+    const ticket = kopigo ? 0.015 : 0.018;
+    return {
+      fallbackDrivers: calibratedDrivers(franchise, ticket, kopigo ? [50, 100, 160] : [60, 120, 180]),
+      ticket,
+      variableRate: kopigo ? 0.38 : 0.43,
+      fixedCost: (kopigo ? 8.5 : 10) + Math.min(24, capitalMid * 0.02),
+      unit: "cup/hari",
+      assumptions: [
+        `Average ticket model ${kopigo ? "Rp15 ribu" : "Rp18 ribu"}/cup.`,
+        `HPP model ${kopigo ? "38%" : "43%"} omzet${kopigo ? "; input KOPIGO mengikuti simulasi brand" : ""}.`,
+        "Jika rentang omzet tersedia, cup/hari dikalibrasi ke rentang tersebut.",
+        "Biaya tetap mencakup payroll, sewa, utilitas, software, kebersihan, dan maintenance dasar.",
+      ],
+    };
+  }
+
+  if (archetype === "food") {
+    const ticket = 0.028;
+    return {
+      fallbackDrivers: calibratedDrivers(franchise, ticket, [50, 100, 160]),
+      ticket,
+      variableRate: 0.5,
+      fixedCost: 14 + Math.min(20, capitalMid * 0.015),
+      unit: "order/hari",
+      assumptions: [
+        "Average ticket model Rp28 ribu/order.",
+        "HPP + packaging model 50% omzet.",
+        "Jika rentang omzet tersedia, order/hari dikalibrasi ke rentang tersebut.",
+        "Biaya tetap mencakup staf, sewa, utilitas, maintenance, dan promosi dasar; waste harus diuji saat survei.",
+      ],
+    };
+  }
+
+  if (archetype === "logistics") {
+    const terms = logisticsTerms(franchise);
+    return {
+      fallbackDrivers: logisticsDrivers(franchise, terms),
+      ticket: 0.025,
+      variableRate: 0.05,
+      fixedCost: 4.5,
+      unit: "paket/hari",
+      assumptions: [
+        "Ongkir rata-rata model Rp25 ribu/paket untuk menghitung GMV; ganti dengan mix rute aktual.",
+        terms.label,
+        "Biaya operasional setelah komisi dimodelkan 5% dari pendapatan agen ditambah Rp4,5 jt biaya tetap/bulan.",
+        "Untuk komisi persentase, angka monthly revenue lama tidak dipakai untuk mengkalibrasi GMV karena definisinya bisa omzet ongkir atau pendapatan agen.",
+      ],
+    };
+  }
+
+  if (archetype === "health") {
+    const ticket = 0.12;
+    return {
+      fallbackDrivers: calibratedDrivers(franchise, ticket, [35, 70, 110]),
+      ticket,
+      variableRate: 0.8,
+      fixedCost: 18 + Math.min(18, capitalMid * 0.01),
+      unit: "transaksi/hari",
+      assumptions: [
+        "Basket rata-rata model Rp120 ribu/transaksi.",
+        "Gross margin model 20% sebelum payroll, sewa, sistem, shrinkage, dan royalti.",
+        "Jika rentang omzet tersedia, transaksi/hari dikalibrasi ke rentang tersebut.",
+        "Stok mati, kedaluwarsa, modal kerja obat, dan kewajiban tenaga kefarmasian wajib diuji terpisah.",
+      ],
+    };
+  }
+
+  if (archetype === "laundry") {
+    const ticket = 0.01;
+    return {
+      fallbackDrivers: calibratedDrivers(franchise, ticket, [35, 60, 90]),
+      ticket,
+      variableRate: 0.35,
+      fixedCost: 7 + Math.min(8, capitalMid * 0.015),
+      unit: "kg/hari",
+      assumptions: [
+        "Harga rata-rata model Rp10 ribu/kg dengan mix reguler dan express.",
+        "Biaya variabel model 35% untuk bahan, listrik/air variabel, packaging, dan rework.",
+        "Jika rentang omzet tersedia, kg/hari dikalibrasi ke rentang tersebut.",
+        "Biaya tetap mencakup sewa, payroll dasar, maintenance, dan utilitas minimum.",
+      ],
+    };
+  }
+
+  const ticket = 0.075;
+  return {
+    fallbackDrivers: calibratedDrivers(franchise, ticket, [15, 30, 50]),
+    ticket,
+    variableRate: 0.4,
+    fixedCost: 10 + Math.min(14, capitalMid * 0.015),
+    unit: "transaksi/hari",
+    assumptions: [
+      "Average ticket model Rp75 ribu/transaksi untuk jasa umum.",
+      "Biaya variabel model 40%; ganti dengan unit economics brand ketika quotation diterima.",
+      "Jika rentang omzet tersedia, transaksi/hari dikalibrasi ke rentang tersebut.",
+      "Biaya tetap mencakup payroll, sewa, utilitas, sistem, dan maintenance dasar.",
+    ],
+  };
 }
 
 function prosAndCons(archetype: FranchiseScenarioArchetype) {
-  switch (archetype) {
-    case "minimarket":
-      return {
-        pros: [
-          "Permintaan kebutuhan harian berulang dan basket relatif terdiversifikasi.",
-          "Sistem pasokan, POS, promosi, dan SOP brand mengurangi beban membangun operasi dari nol.",
-          "Data transaksi harian membuat kontrol SKU, shrinkage, dan jam ramai relatif terukur.",
-        ],
-        cons: [
-          "Margin kotor tipis membuat salah pilih lokasi atau sewa mahal cepat menggerus laba.",
-          "Modal awal besar dan working capital stok menyerap kas.",
-          "Royalti progresif, susut barang, dan kompetisi radius harus dihitung pada level toko.",
-        ],
-      };
-    case "beverage":
-      return {
-        pros: [
-          "Unit economics mudah diukur lewat cup/hari, average ticket, dan HPP.",
-          "Format booth dapat mencapai throughput tinggi dengan ruang relatif kecil.",
-          "Menu tambahan dan delivery memberi ruang menaikkan average ticket.",
-        ],
-        cons: [
-          "Lokasi dan tren sangat menentukan; traffic yang turun langsung memukul utilisasi staf dan sewa.",
-          "Ketergantungan bahan baku pusat dapat membatasi fleksibilitas HPP.",
-          "Promo platform dan diskon dapat membuat omzet terlihat besar tetapi margin mengecil.",
-        ],
-      };
-    case "food":
-      return {
-        pros: [
-          "Permintaan makan harian dan delivery membuka peluang repeat order.",
-          "Volume order, food cost, dan waste dapat dipantau sebagai KPI operasional yang jelas.",
-          "Brand/SOP dapat mempercepat standardisasi rasa dan pembukaan outlet.",
-        ],
-        cons: [
-          "Food cost, waste, payroll, dan kecepatan servis bisa mengubah laba sangat cepat.",
-          "Kualitas harus konsisten di jam sibuk; satu bottleneck dapur membatasi omzet.",
-          "Sewa dan kebutuhan parkir membuat lokasi bagus mahal.",
-        ],
-      };
-    case "logistics":
-      return {
-        pros: [
-          "Model relatif asset-light dan tidak memerlukan stok dagangan besar.",
-          "Pendapatan dapat diproyeksikan langsung dari paket/hari x ongkir x komisi.",
-          "Bisa mendapatkan pelanggan berulang dari seller lokal dan kebutuhan pickup.",
-        ],
-        cons: [
-          "Komisi per paket tipis; volume adalah penentu utama, bukan sekadar jumlah walk-in.",
-          "Ketentuan pickup, cutoff, deposit, eksklusivitas, dan target berbeda menurut jaringan/cabang.",
-          "Perubahan subsidi marketplace dapat mengalihkan volume antarkurir dengan cepat.",
-        ],
-      };
-    case "health":
-      return {
-        pros: [
-          "Permintaan obat dan produk kesehatan lebih defensif daripada banyak kategori discretionary.",
-          "Basket dapat diperluas lewat OTC, vitamin, personal care, dan layanan kesehatan.",
-          "Sistem brand membantu procurement, POS, dan standardisasi operasional.",
-        ],
-        cons: [
-          "Modal kerja stok tinggi serta risiko slow moving/kedaluwarsa.",
-          "Regulasi dan kebutuhan tenaga profesional menambah fixed cost dan kompleksitas.",
-          "Margin produk bervariasi; omzet besar tidak otomatis berarti laba besar.",
-        ],
-      };
-    case "laundry":
-      return {
-        pros: [
-          "Repeat demand tinggi di kos, apartemen, dan perumahan padat.",
-          "Pendapatan sederhana untuk dimodelkan dari kg/hari x harga/kg.",
-          "Upsell express, antar-jemput, sepatu, dan bedding dapat menaikkan ticket.",
-        ],
-        cons: [
-          "Downtime mesin, kualitas air, listrik, dan komplain rework langsung memukul kapasitas.",
-          "Persaingan harga lokal tinggi dan radius layanan cenderung sempit.",
-          "Utilisasi mesin rendah membuat payback alat memanjang.",
-        ],
-      };
-    default:
-      return {
-        pros: [
-          "SOP dan nama brand dapat mengurangi waktu membangun kepercayaan dari nol.",
-          "Model transaksi memudahkan pengujian target omzet sebelum ekspansi.",
-          "Skala dapat dinaikkan setelah unit economics dan repeat rate terbukti.",
-        ],
-        cons: [
-          "Kualitas eksekusi operator tetap lebih penting daripada nama brand.",
-          "Biaya sewa dan payroll tetap berjalan ketika traffic turun.",
-          "Quotation, kontrak, dan kewajiban pembelian pusat dapat mengubah hasil model.",
-        ],
-      };
-  }
+  if (archetype === "minimarket") return {
+    pros: [
+      "Permintaan kebutuhan harian berulang dan basket relatif terdiversifikasi.",
+      "Sistem pasokan, POS, promosi, dan SOP brand mengurangi beban membangun operasi dari nol.",
+      "Data transaksi harian membuat kontrol SKU, shrinkage, dan jam ramai relatif terukur.",
+    ],
+    cons: [
+      "Margin kotor tipis membuat salah pilih lokasi atau sewa mahal cepat menggerus laba.",
+      "Modal awal besar dan working capital stok menyerap kas.",
+      "Royalti progresif, susut barang, dan kompetisi radius harus dihitung pada level toko.",
+    ],
+  };
+
+  if (archetype === "beverage") return {
+    pros: [
+      "Unit economics mudah diukur lewat cup/hari, average ticket, dan HPP.",
+      "Format booth dapat mencapai throughput tinggi dengan ruang relatif kecil.",
+      "Menu tambahan dan delivery memberi ruang menaikkan average ticket.",
+    ],
+    cons: [
+      "Lokasi dan tren sangat menentukan; traffic turun langsung memukul utilisasi staf dan sewa.",
+      "Ketergantungan bahan baku pusat dapat membatasi fleksibilitas HPP.",
+      "Promo platform dan diskon dapat membuat omzet terlihat besar tetapi margin mengecil.",
+    ],
+  };
+
+  if (archetype === "food") return {
+    pros: [
+      "Permintaan makan harian dan delivery membuka peluang repeat order.",
+      "Volume order, food cost, dan waste dapat dipantau sebagai KPI operasional yang jelas.",
+      "Brand/SOP dapat mempercepat standardisasi rasa dan pembukaan outlet.",
+    ],
+    cons: [
+      "Food cost, waste, payroll, dan kecepatan servis bisa mengubah laba sangat cepat.",
+      "Kualitas harus konsisten di jam sibuk; satu bottleneck dapur membatasi omzet.",
+      "Sewa dan kebutuhan parkir membuat lokasi bagus mahal.",
+    ],
+  };
+
+  if (archetype === "logistics") return {
+    pros: [
+      "Model relatif asset-light dan tidak memerlukan stok dagangan besar.",
+      "Pendapatan dapat diproyeksikan langsung dari paket/hari dan unit commission.",
+      "Bisa mendapatkan pelanggan berulang dari seller lokal dan kebutuhan pickup.",
+    ],
+    cons: [
+      "Komisi per paket tipis; volume adalah penentu utama, bukan sekadar jumlah walk-in.",
+      "Ketentuan pickup, cutoff, deposit, eksklusivitas, dan target berbeda menurut jaringan/cabang.",
+      "Perubahan subsidi marketplace dapat mengalihkan volume antarkurir dengan cepat.",
+    ],
+  };
+
+  if (archetype === "health") return {
+    pros: [
+      "Permintaan obat dan produk kesehatan lebih defensif daripada banyak kategori discretionary.",
+      "Basket dapat diperluas lewat OTC, vitamin, personal care, dan layanan kesehatan.",
+      "Sistem brand membantu procurement, POS, dan standardisasi operasional.",
+    ],
+    cons: [
+      "Modal kerja stok tinggi serta risiko slow moving/kedaluwarsa.",
+      "Regulasi dan kebutuhan tenaga profesional menambah fixed cost dan kompleksitas.",
+      "Margin produk bervariasi; omzet besar tidak otomatis berarti laba besar.",
+    ],
+  };
+
+  if (archetype === "laundry") return {
+    pros: [
+      "Repeat demand tinggi di kos, apartemen, dan perumahan padat.",
+      "Pendapatan sederhana untuk dimodelkan dari kg/hari x harga/kg.",
+      "Upsell express, antar-jemput, sepatu, dan bedding dapat menaikkan ticket.",
+    ],
+    cons: [
+      "Downtime mesin, kualitas air, listrik, dan komplain rework langsung memukul kapasitas.",
+      "Persaingan harga lokal tinggi dan radius layanan cenderung sempit.",
+      "Utilisasi mesin rendah membuat payback alat memanjang.",
+    ],
+  };
+
+  return {
+    pros: [
+      "SOP dan nama brand dapat mengurangi waktu membangun kepercayaan dari nol.",
+      "Model transaksi memudahkan pengujian target omzet sebelum ekspansi.",
+      "Skala dapat dinaikkan setelah unit economics dan repeat rate terbukti.",
+    ],
+    cons: [
+      "Kualitas eksekusi operator tetap lebih penting daripada nama brand.",
+      "Biaya sewa dan payroll tetap berjalan ketika traffic turun.",
+      "Quotation, kontrak, dan kewajiban pembelian pusat dapat mengubah hasil model.",
+    ],
+  };
 }
 
 export function buildFranchiseScenarioModel(franchise: Franchise): FranchiseScenarioModel {
   const archetype = classify(franchise);
   const capital = startupCapital(franchise, archetype);
   const capMid = median(capital.range);
-  const model = assumptionsFor(franchise, archetype, capMid);
-  const workingCapitalReserve = model.fixedCost * (archetype === "logistics" ? 3 : 2);
+  const template = operatingTemplate(franchise, archetype, capMid);
+  const workingCapitalReserve = template.fixedCost * (archetype === "logistics" ? 3 : 2);
   const capitalForPayback = capMid + workingCapitalReserve;
   const royaltyRate = flatRoyaltyRate(franchise);
   const profitShare = managementProfitShare(franchise);
-  const commissionRate = archetype === "logistics" ? logisticsCommission(franchise) : 0;
+  const logistics = archetype === "logistics" ? logisticsTerms(franchise) : null;
   const names: FranchiseScenarioCase["name"][] = ["Konservatif", "Dasar", "Optimistis"];
 
-  const cases = model.drivers.map((units, index): FranchiseScenarioCase => {
-    const grossSales = units * model.ticket * 30;
-    let partnerRevenue = grossSales * (1 - model.variableRate);
+  const cases = template.fallbackDrivers.map((units, index): FranchiseScenarioCase => {
+    const grossSales = units * template.ticket * 30;
+    let partnerRevenue = grossSales * (1 - template.variableRate);
     let operatingProfit: number;
 
-    if (archetype === "logistics") {
-      partnerRevenue = grossSales * commissionRate;
-      operatingProfit = partnerRevenue * (1 - model.variableRate) - model.fixedCost;
+    if (archetype === "logistics" && logistics) {
+      partnerRevenue = logistics.mode === "fixed"
+        ? units * 30 * logistics.commissionPerPackage
+        : grossSales * logistics.rates[index];
+      operatingProfit = partnerRevenue * (1 - template.variableRate) - template.fixedCost;
     } else {
       const royalty = archetype === "minimarket"
         ? minimarketRoyalty(franchise, grossSales)
         : grossSales * royaltyRate;
-      operatingProfit = partnerRevenue - model.fixedCost - royalty;
+      operatingProfit = partnerRevenue - template.fixedCost - royalty;
       if (profitShare > 0 && operatingProfit > 0) operatingProfit *= 1 - profitShare;
     }
 
-    const paybackMonths = positive(operatingProfit) ? capitalForPayback / operatingProfit : null;
     return {
       name: names[index],
-      driver: `${units} ${model.unit}`,
+      driver: `${units} ${template.unit}`,
       grossSales,
       partnerRevenue,
       operatingProfit,
       operatingMargin: grossSales > 0 ? operatingProfit / grossSales : 0,
-      paybackMonths,
+      paybackMonths: positive(operatingProfit) ? capitalForPayback / operatingProfit : null,
     };
   });
 
   const { pros, cons } = prosAndCons(archetype);
-  const grossSalesLabel = archetype === "logistics" ? "GMV ongkir / bulan" : "Omzet kotor / bulan";
-  const partnerRevenueLabel = archetype === "logistics" ? "Pendapatan komisi agen" : "Margin kotor setelah HPP";
-
-  const basis = isRangeKnown(franchise.monthlyRevenue) || isRangeKnown(franchise.bepMonths)
-    ? "Angka publik brand tetap ditampilkan terpisah. Tabel ini menguji unit economics dengan asumsi operasional yang sama untuk skenario konservatif, dasar, dan optimistis; bila rentang omzet sudah ada, driver skenario dikalibrasi ke rentang tersebut."
-    : "Brand belum mempublikasikan omzet/BEP yang cukup untuk dianalisis. Karena itu Cek Bisnis membangun skenario sendiri dari driver operasional, bukan mengisi kolom kosong dengan angka yang seolah-olah resmi.";
+  const publishedRangeExists = isRangeKnown(franchise.monthlyRevenue) || isRangeKnown(franchise.bepMonths);
+  const basis = publishedRangeExists
+    ? "Angka publik/terkurasi tetap ditampilkan terpisah. Tabel ini menguji unit economics; untuk non-logistik, driver dikalibrasi ke rentang omzet saat definisinya cukup jelas."
+    : "Brand belum mempublikasikan omzet/BEP yang cukup. Cek Bisnis membangun skenario dari driver operasional dan menandainya sebagai model, bukan mengisi kolom kosong seolah-olah angka resmi.";
 
   const formula = archetype === "logistics"
-    ? "GMV ongkir = paket/hari x ongkir rata-rata x 30; pendapatan agen = GMV x komisi efektif; laba = pendapatan agen - biaya variabel - biaya tetap."
-    : `Omzet = ${model.unit} x average ticket x 30; margin kotor = omzet x (1 - HPP); laba = margin kotor - biaya tetap - royalti/bagi hasil yang relevan.`;
+    ? logistics?.mode === "fixed"
+      ? "GMV ongkir = paket/hari x ongkir rata-rata x 30; pendapatan agen = paket x komisi tetap; laba = pendapatan agen - biaya variabel - biaya tetap."
+      : "GMV ongkir = paket/hari x ongkir rata-rata x 30; pendapatan agen = GMV x rate komisi/diskon; laba = pendapatan agen - biaya variabel - biaya tetap."
+    : `Omzet = ${template.unit} x average ticket x 30; margin kotor = omzet x (1 - HPP); laba = margin kotor - biaya tetap - royalti/bagi hasil yang relevan.`;
 
   return {
     archetype,
     basis,
     formula,
-    grossSalesLabel,
-    partnerRevenueLabel,
+    grossSalesLabel: archetype === "logistics" ? "GMV ongkir / bulan" : "Omzet kotor / bulan",
+    partnerRevenueLabel: archetype === "logistics" ? "Pendapatan komisi agen" : "Margin kotor setelah HPP",
     startupCapital: capital.range,
     startupCapitalBasis: capital.basis,
     workingCapitalReserve,
     assumptions: [
-      ...model.assumptions,
-      `Cadangan kas untuk uji payback: ${archetype === "logistics" ? 3 : 2} bulan biaya tetap (~${formatScenarioMoney(workingCapitalReserve)}), agar model tidak menganggap modal pembukaan sebagai seluruh kebutuhan kas.`,
+      ...template.assumptions,
+      `Cadangan kas untuk uji payback: ${archetype === "logistics" ? 3 : 2} bulan biaya tetap (~${formatScenarioMoney(workingCapitalReserve)}).`,
       "Semua hasil adalah screening sebelum pajak penghasilan, bunga/cicilan, dan gaji pemilik kecuali sudah masuk biaya tetap model.",
     ],
     cases,
     pros,
     cons,
     researchLinks: BRAND_RESEARCH[franchise.id] ?? [],
+    commercialTerms: currentCommercialTerms(franchise),
   };
-}
-
-export function modelPaybackRange(model: FranchiseScenarioModel): [number, number] | null {
-  const values = model.cases
-    .map((scenario) => scenario.paybackMonths)
-    .filter((value): value is number => value !== null && Number.isFinite(value));
-  if (!values.length) return null;
-  return [Math.min(...values), Math.max(...values)];
-}
-
-export function modelRevenueRange(model: FranchiseScenarioModel): [number, number] {
-  return [model.cases[0].grossSales, model.cases[model.cases.length - 1].grossSales];
 }
