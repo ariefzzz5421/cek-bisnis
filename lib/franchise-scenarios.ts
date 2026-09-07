@@ -211,57 +211,76 @@ function logisticsCommission(franchise: Franchise) {
   return 0.22;
 }
 
+function calibratedDrivers(franchise: Franchise, ticket: number, fallback: number[]) {
+  if (!isRangeKnown(franchise.monthlyRevenue) || ticket <= 0) return fallback;
+  const rawLow = rangeLow(franchise.monthlyRevenue);
+  const high = rangeHigh(franchise.monthlyRevenue);
+  if (rawLow === null || high === null || high <= 0) return fallback;
+  const low = rawLow > 0 ? rawLow : high * 0.5;
+  const targets = [low, (low + high) / 2, high];
+  return targets.map((revenue) => Math.max(1, Math.round(revenue / ticket / 30)));
+}
+
 function assumptionsFor(
   franchise: Franchise,
   archetype: FranchiseScenarioArchetype,
   capitalMid: number,
 ) {
   switch (archetype) {
-    case "minimarket":
+    case "minimarket": {
+      const ticket = 0.045;
       return {
-        drivers: [180, 300, 450],
-        ticket: 0.045,
+        drivers: calibratedDrivers(franchise, ticket, [180, 300, 450]),
+        ticket,
         variableRate: 0.87,
         fixedCost: 28 + Math.min(8, capitalMid * 0.01),
         unit: "transaksi/hari",
         assumptions: [
           "Basket rata-rata model Rp45 ribu/transaksi.",
           "Margin kotor model 13% sebelum payroll, sewa, utilitas, susut, dan royalti.",
+          "Jika brand sudah punya rentang omzet terkurasi, driver transaksi dikalibrasi ke rentang itu agar skenario tidak bertentangan dengan data publik yang tersedia.",
           "Royalti Alfamart/Indomaret dihitung progresif dari tier publik; brand lain memakai screening 2% di atas Rp175 jt penjualan.",
         ],
       };
+    }
     case "beverage": {
       const kopigo = franchise.id === "kopigo";
+      const ticket = kopigo ? 0.015 : 0.018;
       return {
-        drivers: kopigo ? [50, 100, 160] : [60, 120, 180],
-        ticket: kopigo ? 0.015 : 0.018,
+        drivers: calibratedDrivers(franchise, ticket, kopigo ? [50, 100, 160] : [60, 120, 180]),
+        ticket,
         variableRate: kopigo ? 0.38 : 0.43,
         fixedCost: (kopigo ? 8.5 : 10) + Math.min(24, capitalMid * 0.02),
         unit: "cup/hari",
         assumptions: [
           `Average ticket model ${kopigo ? "Rp15 ribu" : "Rp18 ribu"}/cup.`,
           `HPP model ${(kopigo ? 38 : 43)}% omzet; untuk KOPIGO angka 38% mengikuti simulasi brand.`,
+          "Jika rentang omzet brand/riset sudah tersedia, jumlah cup/hari dikalibrasi ke rentang tersebut.",
           "Biaya tetap mencakup payroll, sewa, utilitas, software, kebersihan, dan maintenance dasar.",
         ],
       };
     }
-    case "food":
+    case "food": {
+      const ticket = 0.028;
       return {
-        drivers: [50, 100, 160],
-        ticket: 0.028,
+        drivers: calibratedDrivers(franchise, ticket, [50, 100, 160]),
+        ticket,
         variableRate: 0.50,
         fixedCost: 14 + Math.min(20, capitalMid * 0.015),
         unit: "order/hari",
         assumptions: [
           "Average ticket model Rp28 ribu/order.",
           "HPP + packaging model 50% omzet, sejalan dengan banyak simulasi outlet F&B mass market.",
+          "Jika rentang omzet brand/riset tersedia, order/hari dikalibrasi ke rentang tersebut.",
           "Biaya tetap mencakup staf, sewa, utilitas, maintenance, dan promosi dasar; waste di luar asumsi harus diuji saat survei.",
         ],
       };
-    case "logistics":
+    }
+    case "logistics": {
+      const ticket = 0.025;
       return {
-        drivers: [20, 50, 90],
-        ticket: 0.025,
+        drivers: calibratedDrivers(franchise, ticket, [20, 50, 90]),
+        ticket,
         variableRate: 0.05,
         fixedCost: 4.5,
         unit: "paket/hari",
@@ -271,45 +290,55 @@ function assumptionsFor(
           "Biaya operasional setelah komisi dimodelkan 5% dari pendapatan agen ditambah Rp4,5 jt biaya tetap/bulan.",
         ],
       };
-    case "health":
+    }
+    case "health": {
+      const ticket = 0.12;
       return {
-        drivers: [35, 70, 110],
-        ticket: 0.12,
+        drivers: calibratedDrivers(franchise, ticket, [35, 70, 110]),
+        ticket,
         variableRate: 0.80,
         fixedCost: 18 + Math.min(18, capitalMid * 0.01),
         unit: "transaksi/hari",
         assumptions: [
           "Basket rata-rata model Rp120 ribu/transaksi.",
           "Gross margin model 20% sebelum payroll, sewa, sistem, shrinkage, dan royalti.",
+          "Jika rentang omzet tersedia, transaksi/hari dikalibrasi ke angka tersebut.",
           "Stok mati, kedaluwarsa, modal kerja obat, dan kewajiban tenaga kefarmasian wajib diuji terpisah.",
         ],
       };
-    case "laundry":
+    }
+    case "laundry": {
+      const ticket = 0.01;
       return {
-        drivers: [35, 60, 90],
-        ticket: 0.01,
+        drivers: calibratedDrivers(franchise, ticket, [35, 60, 90]),
+        ticket,
         variableRate: 0.35,
         fixedCost: 7 + Math.min(8, capitalMid * 0.015),
         unit: "kg/hari",
         assumptions: [
           "Harga rata-rata model Rp10 ribu/kg dengan mix reguler dan express.",
           "Biaya variabel model 35% untuk bahan, listrik/air variabel, packaging, dan rework.",
+          "Jika rentang omzet tersedia, kg/hari dikalibrasi ke rentang tersebut.",
           "Biaya tetap mencakup sewa, payroll dasar, maintenance, dan utilitas minimum.",
         ],
       };
-    default:
+    }
+    default: {
+      const ticket = 0.075;
       return {
-        drivers: [15, 30, 50],
-        ticket: 0.075,
+        drivers: calibratedDrivers(franchise, ticket, [15, 30, 50]),
+        ticket,
         variableRate: 0.40,
         fixedCost: 10 + Math.min(14, capitalMid * 0.015),
         unit: "transaksi/hari",
         assumptions: [
           "Average ticket model Rp75 ribu/transaksi untuk jasa umum.",
           "Biaya variabel model 40%; angka harus diganti dengan unit economics brand ketika quotation diterima.",
+          "Jika rentang omzet tersedia, transaksi/hari dikalibrasi ke rentang tersebut.",
           "Biaya tetap mencakup payroll, sewa, utilitas, sistem, dan maintenance dasar.",
         ],
       };
+    }
   }
 }
 
@@ -414,7 +443,7 @@ export function buildFranchiseScenarioModel(franchise: Franchise): FranchiseScen
   const capital = startupCapital(franchise, archetype);
   const capMid = median(capital.range);
   const model = assumptionsFor(franchise, archetype, capMid);
-  const workingCapitalReserve = model.fixedCost * 2;
+  const workingCapitalReserve = model.fixedCost * (archetype === "logistics" ? 3 : 2);
   const capitalForPayback = capMid + workingCapitalReserve;
   const royaltyRate = flatRoyaltyRate(franchise);
   const profitShare = managementProfitShare(franchise);
@@ -454,7 +483,7 @@ export function buildFranchiseScenarioModel(franchise: Franchise): FranchiseScen
   const partnerRevenueLabel = archetype === "logistics" ? "Pendapatan komisi agen" : "Margin kotor setelah HPP";
 
   const basis = isRangeKnown(franchise.monthlyRevenue) || isRangeKnown(franchise.bepMonths)
-    ? "Angka publik brand tetap ditampilkan terpisah. Tabel ini menguji unit economics dengan asumsi operasional yang sama untuk skenario konservatif, dasar, dan optimistis."
+    ? "Angka publik brand tetap ditampilkan terpisah. Tabel ini menguji unit economics dengan asumsi operasional yang sama untuk skenario konservatif, dasar, dan optimistis; bila rentang omzet sudah ada, driver skenario dikalibrasi ke rentang tersebut."
     : "Brand belum mempublikasikan omzet/BEP yang cukup untuk dianalisis. Karena itu Cek Bisnis membangun skenario sendiri dari driver operasional, bukan mengisi kolom kosong dengan angka yang seolah-olah resmi.";
 
   const formula = archetype === "logistics"
@@ -472,7 +501,7 @@ export function buildFranchiseScenarioModel(franchise: Franchise): FranchiseScen
     workingCapitalReserve,
     assumptions: [
       ...model.assumptions,
-      `Cadangan kas untuk uji payback: 2 bulan biaya tetap (~${formatScenarioMoney(workingCapitalReserve)}), agar model tidak menganggap modal pembukaan sebagai seluruh kebutuhan kas.`,
+      `Cadangan kas untuk uji payback: ${archetype === "logistics" ? 3 : 2} bulan biaya tetap (~${formatScenarioMoney(workingCapitalReserve)}), agar model tidak menganggap modal pembukaan sebagai seluruh kebutuhan kas.`,
       "Semua hasil adalah screening sebelum pajak penghasilan, bunga/cicilan, dan gaji pemilik kecuali sudah masuk biaya tetap model.",
     ],
     cases,
