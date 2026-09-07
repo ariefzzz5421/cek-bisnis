@@ -100,9 +100,8 @@ class FinancialPdf {
   }
 
   private rawText(text: string, x: number, y: number, size: number, bold = false, ink: Ink = "ink") {
-    // Explicitly set a normal text fill color for every text operation. This
-    // prevents text inheriting a previous accent fill (the old PDF bug that
-    // made complete documents lime green in Chrome's PDF viewer).
+    // Always set fill before text. The previous generator only reset stroke,
+    // so text inherited the lime rectangle fill in Chrome's PDF viewer.
     this.page().push(`${this.color(ink)} BT /F${bold ? 2 : 1} ${size} Tf ${x.toFixed(1)} ${y.toFixed(1)} Td (${pdfEscape(text)}) Tj ET`);
   }
 
@@ -247,6 +246,33 @@ class FinancialPdf {
   }
 }
 
+function currentFranchiseSections(franchise: Franchise, article: FranchiseArticle) {
+  if (franchise.id !== "lion-parcel") return article.sections;
+  return article.sections.map((section) => section.heading === "Sumber pendapatan bertingkat"
+    ? {
+        ...section,
+        body: "Ketentuan Mitra POS Lion Parcel yang tersedia saat ini memakai diskon penjualan berbeda menurut jenis layanan: 35% BOSSPACK, 30% REGPACK, 25% JAGOPACK, 20% INTERPACK, hingga 25% BIGPACK, dan 10% OTOPACK. Opsi pickup dapat mengurangi diskon. Pendapatan agen karena itu harus dihitung dari mix layanan aktual, bukan satu rate untuk semua paket.",
+      }
+    : section);
+}
+
+function currentFranchiseCostBreakdown(franchise: Franchise, article: FranchiseArticle) {
+  if (franchise.id !== "lion-parcel") return article.costBreakdown;
+  return [
+    article.costBreakdown[0],
+    {
+      item: "Diskon penjualan",
+      amount: "10%-35%",
+      note: "Berbeda menurut layanan resmi; jangan mengasumsikan semua paket mendapat rate maksimum.",
+    },
+    {
+      item: "Layanan pickup",
+      amount: "Diskon dapat berkurang",
+      note: "Ketentuan resmi menyebut opsi pickup dapat disertai pengurangan diskon.",
+    },
+  ].filter(Boolean) as FranchiseArticle["costBreakdown"];
+}
+
 export function buildFranchiseResearchPdf({
   franchise,
   article,
@@ -257,6 +283,8 @@ export function buildFranchiseResearchPdf({
   sources: FranchiseSource[];
 }) {
   const model = buildFranchiseScenarioModel(franchise);
+  const articleSections = currentFranchiseSections(franchise, article);
+  const costBreakdown = currentFranchiseCostBreakdown(franchise, article);
   const pdf = new FinancialPdf();
   pdf.header("FRANCHISE");
   pdf.kicker(`${franchiseSectorName(franchise)} - sejak ${franchise.since}`);
@@ -269,7 +297,7 @@ export function buildFranchiseResearchPdf({
   pdf.metric("Omzet / bulan", formatRevenueRange(franchise.monthlyRevenue), franchise.revenueBasis);
   pdf.metric("Balik modal", formatMonthRange(franchise.bepMonths), franchise.bepBasis);
   pdf.metric("Franchise fee", franchise.franchiseFee);
-  pdf.metric("Royalti / bagi hasil", franchise.royalty);
+  pdf.metric("Royalti / komisi", model.commercialTerms);
   pdf.metric("Kontrak", formatContractYears(franchise.contractYears));
   pdf.metric("Basis data", franchiseBasisLabel(franchise.dataBasis));
 
@@ -300,13 +328,13 @@ export function buildFranchiseResearchPdf({
   model.cons.forEach((item) => pdf.bullet(item));
 
   pdf.newPage("BREAKDOWN");
-  article.sections.forEach((section) => {
+  articleSections.forEach((section) => {
     pdf.h2(section.heading);
     pdf.paragraph(section.body);
   });
 
   pdf.h2("Rincian modal awal");
-  article.costBreakdown.forEach((row) => {
+  costBreakdown.forEach((row) => {
     pdf.paragraph(`${row.item} - ${row.amount}`, { bold: true });
     pdf.paragraph(row.note, { size: 8.7, indent: 12, muted: true });
   });
@@ -364,7 +392,7 @@ export function buildBusinessResearchPdf({
   pdf.callout(`Skenario aktif: ${scale.name}. Semua angka diturunkan dari driver usaha, biaya kota pembanding, dan target omzet - bukan angka keuntungan yang dijanjikan.`);
 
   pdf.h2("Ringkasan finansial");
-  pdf.metric("CAPEX", `${formatMoney(metrics.capexLow, 0)} - ${formatMoney(metrics.capexHigh, 0).replace("Rp", "")}`, `${scale.space}; ${scale.staff}; ${scale.capacity}`);
+  pdf.metric("CAPEX", `${formatMoney(metrics.capexLow, 0)} - ${formatMoney(metrics.capexHigh, 0)}`, `${scale.space}; ${scale.staff}; ${scale.capacity}`);
   pdf.metric("Omzet / bulan", formatMoney(metrics.monthlyRevenue, 0));
   pdf.metric("OPEX / bulan", formatMoney(metrics.opex));
   pdf.metric("Laba operasional", formatMoney(metrics.profit));
