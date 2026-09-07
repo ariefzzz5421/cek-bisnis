@@ -50,6 +50,29 @@ export function FranchiseDetail({
   sources: FranchiseSource[];
 }) {
   const model = buildFranchiseScenarioModel(franchise);
+  const articleSections = franchise.id === "lion-parcel"
+    ? article.sections.map((section) => section.heading === "Sumber pendapatan bertingkat"
+      ? {
+          ...section,
+          body: "Ketentuan Mitra POS Lion Parcel yang tersedia saat ini memakai diskon penjualan berbeda menurut jenis layanan: 35% BOSSPACK, 30% REGPACK, 25% JAGOPACK, 20% INTERPACK, hingga 25% BIGPACK, dan 10% OTOPACK. Opsi pickup dapat mengurangi diskon. Karena itu pendapatan agen harus dihitung dari mix layanan aktual, bukan satu angka komisi rata untuk semua paket.",
+        }
+      : section)
+    : article.sections;
+  const costBreakdown = franchise.id === "lion-parcel"
+    ? [
+        article.costBreakdown[0],
+        {
+          item: "Diskon penjualan",
+          amount: "10%-35%",
+          note: "Berbeda menurut layanan resmi; jangan mengasumsikan semua paket mendapat rate maksimum.",
+        },
+        {
+          item: "Layanan pickup",
+          amount: "Diskon dapat berkurang",
+          note: "Ketentuan resmi menyebut opsi pickup dapat disertai pengurangan diskon.",
+        },
+      ].filter(Boolean) as FranchiseArticle["costBreakdown"]
+    : article.costBreakdown;
 
   // Merek lain di kategori yang sama, diurutkan dari modal terdekat.
   const related = franchises
@@ -73,7 +96,7 @@ export function FranchiseDetail({
         <dl className="franchise-detail-numbers">
           <div><dt><Wallet size={15} aria-hidden="true" /> Modal awal</dt><dd>{formatInvestmentRange(franchise.investment)}</dd></div>
           <div><dt><Handshake size={15} aria-hidden="true" /> Franchise fee</dt><dd>{franchise.franchiseFee}</dd></div>
-          <div><dt><BadgePercent size={15} aria-hidden="true" /> Royalti</dt><dd>{franchise.royalty}</dd></div>
+          <div><dt><BadgePercent size={15} aria-hidden="true" /> Royalti / komisi</dt><dd>{model.commercialTerms}</dd></div>
           <div><dt><Building2 size={15} aria-hidden="true" /> Omzet / bulan</dt><dd>{formatRevenueRange(franchise.monthlyRevenue)}</dd></div>
           <div><dt><Timer size={15} aria-hidden="true" /> Balik modal</dt><dd>{formatMonthRange(franchise.bepMonths)}</dd></div>
           <div><dt><ScrollText size={15} aria-hidden="true" /> Kontrak</dt><dd>{formatContractYears(franchise.contractYears)}</dd></div>
@@ -119,7 +142,7 @@ export function FranchiseDetail({
               </table>
             </div>
             <p className="franchise-article__note">
-              <Info size={15} aria-hidden="true" /> Modal model {formatScenarioMoney(model.startupCapital[0])}-{formatScenarioMoney(model.startupCapital[1]).replace("Rp", "")} · cadangan kas payback {formatScenarioMoney(model.workingCapitalReserve)}. {model.startupCapitalBasis}
+              <Info size={15} aria-hidden="true" /> Modal model {formatScenarioMoney(model.startupCapital[0])} - {formatScenarioMoney(model.startupCapital[1])} · cadangan kas payback {formatScenarioMoney(model.workingCapitalReserve)}. {model.startupCapitalBasis}
             </p>
             {model.assumptions.map((item) => <p key={item}>• {item}</p>)}
           </section>
@@ -141,7 +164,7 @@ export function FranchiseDetail({
             </div>
           </section>
 
-          {article.sections.map((section) => (
+          {articleSections.map((section) => (
             <section key={section.heading}>
               <h2>{section.heading}</h2>
               <p>{section.body}</p>
@@ -156,7 +179,7 @@ export function FranchiseDetail({
                   <tr><th scope="col">Komponen</th><th scope="col">Perkiraan</th><th scope="col">Catatan</th></tr>
                 </thead>
                 <tbody>
-                  {article.costBreakdown.map((row) => (
+                  {costBreakdown.map((row) => (
                     <tr key={row.item}>
                       <th scope="row">{row.item}</th>
                       <td className="num">{row.amount}</td>
