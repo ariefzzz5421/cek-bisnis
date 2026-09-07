@@ -53,8 +53,8 @@ export function FranchiseDownload({
   const downloadPdf = async () => {
     setState("pdf");
     try {
-      const { buildFranchisePdf, downloadBlob } = await import("@/lib/export-documents");
-      const blob = buildFranchisePdf({ franchise, article, sources });
+      const { buildFranchiseResearchPdf, downloadBlob } = await import("@/lib/financial-pdf");
+      const blob = buildFranchiseResearchPdf({ franchise, article, sources });
       downloadBlob(blob, `cek-bisnis-${franchise.id}-analisis-lengkap.pdf`);
       setState("idle");
     } catch {
@@ -94,7 +94,7 @@ export function FranchiseDownload({
           <Download size={18} />
         </button>
         <p className="download-note">
-          PDF memuat breakdown modal, basis angka, skema kemitraan, KPI, syarat, penilaian, dokumen, dan sumber. PNG merangkum angka utama + skema agar mudah disimpan atau dibagikan.
+          PDF memakai teks hitam/abu normal dan memisahkan angka publik dari skenario Cek Bisnis. Isinya mencakup breakdown modal, tiga skenario finansial, laba/payback, kelebihan-kekurangan, KPI, syarat, dokumen, dan sumber.
         </p>
         {state === "error" && (
           <p className="download-error"><ShieldAlert size={15} /> Gagal membuat file di peramban ini. Coba ulang atau gunakan Chrome terbaru.</p>
