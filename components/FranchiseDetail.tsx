@@ -31,6 +31,11 @@ import {
   type FranchiseArticle,
   type FranchiseSource,
 } from "@/lib/franchise-data";
+import {
+  buildFranchiseScenarioModel,
+  formatScenarioMoney,
+  formatScenarioPayback,
+} from "@/lib/franchise-scenarios";
 
 const CURRENT_PROSPECTUS_NOTE =
   "Menurut Pasal 5 PP 35/2024 tentang Waralaba, prospektus penawaran waralaba harus diberikan kepada calon penerima paling lambat 14 hari kalender sebelum penandatanganan perjanjian. Dokumen itu umumnya tidak diunduh bebas, jadi tautan di bawah mengarah ke halaman kemitraan resmi tempat kamu bisa memintanya.";
@@ -44,6 +49,8 @@ export function FranchiseDetail({
   article: FranchiseArticle;
   sources: FranchiseSource[];
 }) {
+  const model = buildFranchiseScenarioModel(franchise);
+
   // Merek lain di kategori yang sama, diurutkan dari modal terdekat.
   const related = franchises
     .filter((item) => item.id !== franchise.id && item.category === franchise.category)
@@ -79,6 +86,59 @@ export function FranchiseDetail({
             <h2>Basis angka</h2>
             <p><b>{franchiseBasisLabel(franchise.dataBasis)}.</b> {franchise.revenueBasis ?? "Angka omzet dipakai sebagai screening awal dan harus divalidasi dengan proposal terbaru."}</p>
             <p>{franchise.bepBasis ?? "Rentang BEP bukan jaminan dan sangat dipengaruhi lokasi, biaya sewa, payroll, HPP, serta volume penjualan."}</p>
+          </section>
+
+          <section>
+            <h2>Skenario finansial Cek Bisnis</h2>
+            <p>{model.basis}</p>
+            <p><b>Formula:</b> {model.formula}</p>
+            <div className="franchise-cost-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Skenario</th>
+                    <th scope="col">Driver</th>
+                    <th scope="col">{model.grossSalesLabel}</th>
+                    <th scope="col">{model.partnerRevenueLabel}</th>
+                    <th scope="col">Laba operasional</th>
+                    <th scope="col">Payback model</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {model.cases.map((scenario) => (
+                    <tr key={scenario.name}>
+                      <th scope="row">{scenario.name}</th>
+                      <td>{scenario.driver}</td>
+                      <td className="num">{formatScenarioMoney(scenario.grossSales)}</td>
+                      <td className="num">{formatScenarioMoney(scenario.partnerRevenue)}</td>
+                      <td className="num">{formatScenarioMoney(scenario.operatingProfit)}</td>
+                      <td className="num">{formatScenarioPayback(scenario.paybackMonths)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="franchise-article__note">
+              <Info size={15} aria-hidden="true" /> Modal model {formatScenarioMoney(model.startupCapital[0])}-{formatScenarioMoney(model.startupCapital[1]).replace("Rp", "")} · cadangan kas payback {formatScenarioMoney(model.workingCapitalReserve)}. {model.startupCapitalBasis}
+            </p>
+            {model.assumptions.map((item) => <p key={item}>• {item}</p>)}
+          </section>
+
+          <section>
+            <h2>Kelebihan & kekurangan</h2>
+            <div className="franchise-cost-table">
+              <table>
+                <thead><tr><th scope="col">Kelebihan</th><th scope="col">Kekurangan / risiko</th></tr></thead>
+                <tbody>
+                  {Array.from({ length: Math.max(model.pros.length, model.cons.length) }, (_, index) => (
+                    <tr key={`${model.pros[index] ?? "pro"}-${model.cons[index] ?? "con"}`}>
+                      <td>{model.pros[index] ?? "-"}</td>
+                      <td>{model.cons[index] ?? "-"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </section>
 
           {article.sections.map((section) => (
@@ -149,10 +209,15 @@ export function FranchiseDetail({
           </div>
 
           <div className="franchise-side-card franchise-side-card--sources">
-            <h3><ShieldAlert size={17} aria-hidden="true" /> Sumber angka</h3>
+            <h3><ShieldAlert size={17} aria-hidden="true" /> Sumber angka & model</h3>
             <ul>
               {sources.map((source) => (
                 <li key={source.id}>
+                  <a href={source.url} target="_blank" rel="noreferrer">{source.title} <ArrowUpRight size={13} aria-hidden="true" /></a>
+                </li>
+              ))}
+              {model.researchLinks.map((source) => (
+                <li key={source.url}>
                   <a href={source.url} target="_blank" rel="noreferrer">{source.title} <ArrowUpRight size={13} aria-hidden="true" /></a>
                 </li>
               ))}
