@@ -1,5 +1,6 @@
 import {
   businesses,
+  calculateMetrics,
   cities,
   formatMoney,
   formatMonths,
@@ -27,39 +28,19 @@ import {
  */
 export type BaselineMetrics = {
   fixedCost: number;
-  breakEvenRevenue: number;
+  breakEvenRevenue: number | null;
   monthlyRevenue: number;
   profit: number;
   capexMid: number;
-  traffic: number;
-  payback: number;
+  traffic: number | null;
+  payback: number | null;
   contributionMargin: number;
   marginRate: number;
   roiPerYear: number;
 };
 
 export const baselineMetrics = (business: Business): BaselineMetrics => {
-  const fixedCost = business.fixedBase;
-  const breakEvenRevenue = fixedCost / (1 - business.variableRate);
-  const monthlyRevenue = business.targetRevenue;
-  const profit = monthlyRevenue * (1 - business.variableRate) - fixedCost;
-  const capexMid = (business.capex[0] + business.capex[1]) / 2;
-  const traffic = business.trafficMode === "member"
-    ? Math.ceil(breakEvenRevenue / business.avgTicket)
-    : Math.ceil(breakEvenRevenue / business.avgTicket / 30);
-
-  return {
-    fixedCost,
-    breakEvenRevenue,
-    monthlyRevenue,
-    profit,
-    capexMid,
-    traffic,
-    payback: profit > 0 ? capexMid / profit : Infinity,
-    contributionMargin: 1 - business.variableRate,
-    marginRate: monthlyRevenue > 0 ? profit / monthlyRevenue : 0,
-    roiPerYear: capexMid > 0 ? (profit * 12) / capexMid : 0,
-  };
+  return calculateMetrics(business,cities[0]);
 };
 
 export type LeaderboardEntry = {
@@ -190,11 +171,11 @@ export const buildLeaderboards = (): Leaderboard[] => {
     {
       id: "bep-usaha",
       title: "Balik modal tercepat",
-      measure: "Modal tengah dibagi laba operasional bulanan, pada target omzet baseline tiap model.",
-      caveat: "Belum termasuk cicilan, pajak penghasilan, dan gaji pemilik.",
+      measure: "Total modal termasuk modal kerja dibagi arus kas bulanan positif pada model dasar.",
+      caveat: "Estimasi sebelum pajak dan cicilan; kompensasi pemilik sudah termasuk.",
       entries: withMetrics
-        .filter((item) => Number.isFinite(item.metrics.payback))
-        .sort((a, b) => a.metrics.payback - b.metrics.payback)
+        .filter((item) => item.metrics.payback !== null)
+        .sort((a, b) => (a.metrics.payback??1e9) - (b.metrics.payback??1e9))
         .slice(0, TOP)
         .map(({ business, metrics }) => businessEntry(
           business,
@@ -213,7 +194,7 @@ export const buildLeaderboards = (): Leaderboard[] => {
         .map((business) => businessEntry(
           business,
           formatMoney(business.capex[0], 0),
-          `Sampai ${formatMoney(business.capex[1], 0)} · BEP khas ${business.bepMonths[0]}-${business.bepMonths[1]} bln`,
+          `Total modal estimasi · payback dasar ${formatMonths(baselineMetrics(business).payback)}`,
         )),
     },
     {
@@ -237,19 +218,19 @@ export const buildLeaderboards = (): Leaderboard[] => {
       caveat: "Satuannya berbeda antar model, jadi bandingkan bersama nilai transaksi rata-ratanya.",
       entries: withMetrics
         .filter(({ business }) => business.trafficMode === "daily")
-        .sort((a, b) => a.metrics.traffic - b.metrics.traffic)
+        .sort((a, b) => (a.metrics.traffic??1e9) - (b.metrics.traffic??1e9))
         .slice(0, TOP)
         .map(({ business, metrics }) => businessEntry(
           business,
-          `${metrics.traffic}`,
+          `${metrics.traffic??"Di luar kapasitas"}`,
           `${business.trafficLabel} · omzet BEP ${formatMoney(metrics.breakEvenRevenue)}`,
         )),
     },
     {
       id: "bep-franchise",
       title: "Waralaba balik modal tercepat",
-      measure: "Batas bawah rentang balik modal yang dipublikasikan untuk merek tersebut.",
-      caveat: "Franchise tanpa angka BEP publik dikeluarkan dari ranking. Angka franchisor tetap perlu divalidasi dengan prospektus resmi.",
+      measure: "Payback skenario estimasi Cek Bisnis; bukan angka yang dipublikasikan brand.",
+      caveat: "Skenario tanpa arus kas positif tidak punya payback. Perbedaan format dan kapasitas membatasi perbandingan.",
       entries: sortFranchises(franchises, "bep-asc")
         .filter((franchise) => rangeLow(franchise.bepMonths) !== null)
         .slice(0, TOP)
@@ -262,8 +243,8 @@ export const buildLeaderboards = (): Leaderboard[] => {
     {
       id: "modal-franchise",
       title: "Waralaba modal paling ringan",
-      measure: "Batas bawah investasi awal yang dipublikasikan merek tersebut.",
-      caveat: "Franchise quotation-only tidak dianggap bermodal Rp0. Sewa lokasi dan modal kerja sering berada di luar angka paket.",
+      measure: "Total modal model estimasi termasuk deposit, stok dan cadangan kas.",
+      caveat: "Fee yang belum terkonfirmasi dapat menambah modal. Ini bukan daftar harga paket resmi.",
       entries: sortFranchises(franchises, "modal-asc")
         .filter((franchise) => rangeLow(franchise.investment) !== null)
         .slice(0, TOP)

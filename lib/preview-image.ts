@@ -314,7 +314,7 @@ export async function renderBusinessPreview({ business, city, scale, metrics }: 
   kicker(ctx, "BALIK MODAL", M + 24, y + 22, COLORS.paper2);
   ctx.fillStyle = COLORS.ink;
   ctx.font = font(66, 800, MONO);
-  const bepText = `${business.bepMonths[0]}-${business.bepMonths[1]}`;
+  const bepText = business.bepMonths?business.bepMonths.join("-"):"Belum tercapai";
   // Lebarnya harus diukur selagi font besar masih aktif, kalau tidak label
   // "bulan" akan ditumpuk di atas angkanya.
   const bepWidth = ctx.measureText(bepText).width;

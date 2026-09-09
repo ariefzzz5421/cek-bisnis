@@ -75,7 +75,7 @@ export type AnalysisScenario = {
 const rupiah = (million: number) => `Rp${million.toLocaleString("id-ID", { maximumFractionDigits: 1 })} juta`;
 
 export function buildAnalysisPrompt(scenario: AnalysisScenario) {
-  return `Kamu adalah analis UMKM Indonesia yang konservatif. Analisis skenario berikut tanpa menjanjikan keuntungan dan tanpa mengarang data eksternal.
+  return `Kamu adalah analis UMKM Indonesia yang konservatif. Analisis skenario berikut tanpa menjanjikan keuntungan dan tanpa mengarang data eksternal. Semua angka sudah dihitung mesin deterministik. Jangan membuat angka finansial baru, mengubah proyeksi, atau menghitung ulang. Hanya jelaskan angka input dan risiko secara kualitatif; angka nol BEP dengan catatan tidak tersedia bukan titik impas nol.
 
 USAHA: ${scenario.business} (${scenario.category})
 LOKASI: ${scenario.city}, ${scenario.province}

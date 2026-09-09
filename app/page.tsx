@@ -32,7 +32,7 @@ export default function Home() {
             <span><i />03 Lokasi</span><b />
             <span><i />04 Rencana</span>
           </div>
-          <p className="workbench-kicker"><span aria-hidden="true" /> Data Indonesia · diperbarui {businessData.updatedAt}</p>
+          <p className="workbench-kicker"><span aria-hidden="true" /> Model estimasi · audit {businessData.updatedAt}</p>
           <h1 id="workbench-title">Sebelum buka usaha,<br />buka angkanya.</h1>
           <p>Bandingkan modal, biaya bulanan, omzet BEP, alat, dan lokasi untuk model UMKM dan franchise Indonesia.</p>
           <div className="workbench-hero__actions">
@@ -49,14 +49,14 @@ export default function Home() {
 
         <div className="workbench-preview" aria-label="Contoh ringkasan analisis Laundry Kiloan">
           <div className="hum-character" aria-hidden="true"><i /><i /><i /></div>
-          <div className="workbench-preview__bar"><span>Ringkasan keputusan</span><i>Siap dihitung</i></div>
+          <div className="workbench-preview__bar"><span>Model estimasi</span><i>Bukan data outlet</i></div>
           <div className="workbench-preview__business">
             <Image src={`/businesses/${featured.slug}.jpg`} alt={`Contoh ${featured.name}`} width={640} height={420} priority unoptimized />
             <div><small>{featured.category}</small><h2>{featured.name}</h2><p>{featured.oneLine}</p></div>
           </div>
           <div className="workbench-preview__metrics">
             <div><small>Modal awal</small><b>{formatMoney(featured.capex[0], 0)}-{formatMoney(featured.capex[1], 0).replace("Rp", "")}</b></div>
-            <div><small>Target omzet</small><b>{formatMoney(featured.targetRevenue, 0)}/bln</b></div>
+            <div><small>Omzet estimasi</small><b>{formatMoney(featured.targetRevenue, 0)}/bln</b></div>
             <div><small>Harga rata-rata</small><b>{formatTicket(featured.avgTicket)}</b></div>
           </div>
           <Link href={`/usaha/${featured.slug}`}>Buka simulasi lengkap <ArrowUpRight size={17} aria-hidden="true" /></Link>
@@ -66,7 +66,7 @@ export default function Home() {
       <section className="business-browser" id="pilih-usaha" aria-labelledby="business-browser-title">
         <header className="workbench-section-heading">
           <div><p>1.0 · PILIH MODEL USAHA</p><h2 id="business-browser-title">Mulai dari usaha yang kamu pahami.</h2></div>
-          <p>Setiap analisis berisi tiga skala modal, simulasi kota, daftar alat lengkap, dan rencana yang bisa diunduh.</p>
+          <p>Setiap analisis memisahkan fakta dan estimasi: asumsi, tiga skenario, sensitivitas, peralatan, dan laporan.</p>
         </header>
 
         <div className="business-browser__grid">
@@ -74,14 +74,14 @@ export default function Home() {
             <article className={`business-browser__item ${index === 0 || index === 4 ? "is-wide" : ""}`} key={business.id}>
               <Link href={`/usaha/${business.slug}`} aria-label={`Buka analisis ${business.name}`}>
                 <div className="business-browser__media">
-                  <Image src={`/businesses/${business.slug}.jpg`} alt={`Contoh nyata ${business.name} di Indonesia`} width={720} height={480} unoptimized />
+                  <Image src={`/businesses/${business.slug}.jpg`} alt={`Ilustrasi format ${business.name}`} width={720} height={480} unoptimized />
                   <span><BusinessIcon id={business.id} size={18} /> {business.category}</span>
                 </div>
                 <div className="business-browser__body">
                   <div><h3>{business.name}</h3><p>{business.oneLine}</p></div>
                   <dl>
-                    <div><dt>Modal mulai</dt><dd>{formatMoney(business.capex[0], 0)}</dd></div>
-                    <div><dt>Target omzet</dt><dd>{formatMoney(business.targetRevenue, 0)}/bln</dd></div>
+                    <div><dt>Modal model</dt><dd>{formatMoney(business.capex[0], 0)}</dd></div>
+                    <div><dt>Omzet estimasi</dt><dd>{formatMoney(business.targetRevenue, 0)}/bln</dd></div>
                   </dl>
                   <span className="business-browser__action">Analisis usaha <ArrowUpRight size={17} aria-hidden="true" /></span>
                 </div>
@@ -93,15 +93,15 @@ export default function Home() {
             <Link href="/franchise" aria-label={`Bandingkan ${franchises.length} waralaba Indonesia`}>
               <div className="business-browser__media">
                 <Image src={`/businesses/${franchiseSample.slug}.jpg`} alt="Gerai waralaba minuman di Indonesia" width={720} height={480} unoptimized />
-                <span><Store size={18} aria-hidden="true" /> Waralaba siap pakai</span>
+                <span><Store size={18} aria-hidden="true" /> Riset waralaba</span>
               </div>
               <div className="business-browser__body">
                 <div>
                   <h3>Franchise</h3>
-                  <p>Beli sistem yang sudah jalan: {franchises.length} merek dengan modal, fee, royalti, sektor, dan BEP yang bisa dibandingkan.</p>
+                  <p>Telusuri status penawaran: {franchises.length} merek dengan modal, fee, royalti, sektor, dan BEP yang bisa dibandingkan.</p>
                 </div>
                 <dl>
-                  <div><dt>Modal mulai</dt><dd>{formatInvestment(franchiseEntryCost)}</dd></div>
+                  <div><dt>Modal model</dt><dd>{formatInvestment(franchiseEntryCost)}</dd></div>
                   <div><dt>Merek dibandingkan</dt><dd>{franchises.length}</dd></div>
                 </dl>
                 <span className="business-browser__action">Lihat daftar franchise <ArrowUpRight size={17} aria-hidden="true" /></span>
@@ -152,8 +152,8 @@ export default function Home() {
           <p>Pilih usaha terlebih dahulu. Dua file tersedia langsung dari halaman analisis.</p>
         </header>
         <div className="download-workspace__rows">
-          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · 5 halaman</small><h3>Panduan usaha lengkap</h3><p>Modal, daftar alat berfoto dengan tautan marketplace, skema pendapatan, KPI, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
-          <article><ImageDown size={24} aria-hidden="true" /><div><small>PNG · RINGKASAN</small><h3>Satu gambar, semua angka</h3><p>Foto usaha, modal, omzet BEP, skema pendapatan, KPI, dan lama balik modal — dibuat dari simulasi yang sedang kamu buka.</p></div><span>Tersedia per usaha</span></article>
+          <article><FileText size={24} aria-hidden="true" /><div><small>PDF · model & sumber</small><h3>Panduan usaha lengkap</h3><p>Modal, daftar alat berfoto dengan tautan marketplace, skema pendapatan, KPI, operasi, risiko, dan rencana 90 hari.</p></div><span>Tersedia per usaha</span></article>
+          <article><ImageDown size={24} aria-hidden="true" /><div><small>PNG · RINGKASAN</small><h3>Satu gambar, semua angka</h3><p>Modal, pendapatan, biaya, BEP, arus kas dan payback — dibuat dari simulasi yang sedang kamu buka.</p></div><span>Tersedia per usaha</span></article>
         </div>
       </section>
 

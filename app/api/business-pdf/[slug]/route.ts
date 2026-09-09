@@ -1,50 +1,13 @@
-import {
-  calculateMetrics,
-  cities,
-  getBusiness,
-  getBusinessSources,
-} from "@/lib/business-data";
-import { getBusinessDetail } from "@/lib/business-details";
-import { buildBusinessResearchPdf } from "@/lib/financial-pdf";
-
-type RouteContext = { params: Promise<{ slug: string }> };
-
-export async function GET(request: Request, { params }: RouteContext) {
-  const { slug } = await params;
-  const business = getBusiness(slug);
-  if (!business) return new Response("Usaha tidak ditemukan", { status: 404 });
-
-  const detail = getBusinessDetail(business.id);
-  const url = new URL(request.url);
-  const cityId = url.searchParams.get("city");
-  const scaleId = url.searchParams.get("scale");
-  const revenueParam = Number(url.searchParams.get("revenue"));
-
-  const city = cities.find((item) => item.id === cityId)
-    ?? cities.find((item) => item.id === "kediri")
-    ?? cities[0];
-  const scale = detail.scales.find((item) => item.id === scaleId)
-    ?? detail.scales[1]
-    ?? detail.scales[0];
-  const baselineRevenue = Math.round(((scale.revenue[0] + scale.revenue[1]) / 2) * city.demandFactor);
-  const targetRevenue = Number.isFinite(revenueParam) && revenueParam > 0 ? revenueParam : baselineRevenue;
-  const metrics = calculateMetrics(business, city, targetRevenue, scale.capex);
-
-  const blob = buildBusinessResearchPdf({
-    business,
-    city,
-    scale,
-    metrics,
-    sources: getBusinessSources(business),
-  });
-  const body = await blob.arrayBuffer();
-
-  return new Response(body, {
-    status: 200,
-    headers: {
-      "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="cek-bisnis-${business.slug}-${city.id}-analisis.pdf"`,
-      "Cache-Control": "public, max-age=300, s-maxage=3600",
-    },
-  });
+import {getBusiness} from '@/lib/business-data';
+import {getDossier} from '@/financial-models/catalog';
+import {withOverrides} from '@/financial-models/engine';
+import {buildDossierPdf} from '@/lib/financial-pdf';
+export async function GET(request:Request,{params}:{params:Promise<{slug:string}>}){
+ const {slug}=await params,b=getBusiness(slug);if(!b)return new Response('Usaha tidak ditemukan',{status:404});
+ const d=getDossier(b.id),url=new URL(request.url),value=url.searchParams.get('revenue');
+ if(value!==null&&(!Number.isFinite(Number(value))||Number(value)<0))return new Response('Pendapatan tidak valid',{status:400});
+ const units=value===null?d.model.inputs.units.value:Number(value)*1e6/(d.model.inputs.ticket.value*(d.model.mode==='membership'?1:d.model.inputs.days.value));
+ if(units>d.model.capacity)return new Response('Volume melampaui kapasitas model. Gunakan pengaturan di halaman usaha.',{status:400});
+ const model=withOverrides(d.model,{units});model.location=(url.searchParams.get('city')??'Nasional').slice(0,100)+' — biaya lokal belum disurvei';
+ const blob=buildDossierPdf(d,model);return new Response(await blob.arrayBuffer(),{headers:{'Content-Type':'application/pdf','Content-Disposition':`attachment; filename="cek-bisnis-${slug}-model.pdf"`,'Cache-Control':'no-store'}});
 }

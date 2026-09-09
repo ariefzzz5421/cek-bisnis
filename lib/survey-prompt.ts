@@ -61,7 +61,7 @@ export function buildSurveyPrompt({ business, place, lat, lng, radius, result }:
     `- Satuan traffic: ${business.trafficLabel}`,
     `- Radius pasar ideal: ${business.idealRadius}`,
     `- Sinyal lokasi yang dicari: ${business.locationSignal}`,
-    `- Balik modal khas model ini: ${business.bepMonths[0]}-${business.bepMonths[1]} bulan`,
+    `- Payback estimasi: ${business.bepMonths?business.bepMonths.join("-")+" bulan pada skenario positif":"belum tercapai"}`,
   );
 
   if (result) {

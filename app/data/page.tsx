@@ -1,46 +1,6 @@
-import type { Metadata } from "next";
-import { ArrowUpRight, ShieldCheck } from "lucide-react";
-import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
-import { businessData } from "@/lib/business-data";
-import { franchiseData } from "@/lib/franchise-data";
-
-export const metadata: Metadata = {
-  title: "Dasar Data & Metodologi | Cek Bisnis",
-  description: "Sumber dan metodologi yang digunakan Cek Bisnis untuk model usaha, franchise, biaya, omzet, BEP, dan screening lokasi.",
-  openGraph: { title: "Dasar Data & Metodologi | Cek Bisnis", url: "/data" },
-};
-
-export default function DataPage() {
-  return (
-    <main className="workbench-page page-plain">
-      <SiteHeader />
-      <section className="data-workspace" aria-labelledby="data-page-title">
-        <div>
-          <ShieldCheck size={34} aria-hidden="true" />
-          <p>DASAR DATA</p>
-          <h1 id="data-page-title">Angka boleh dipakai. Asalnya harus jelas.</h1>
-          <span>{businessData.methodNote}</span>
-          <span>{franchiseData.note}</span>
-        </div>
-        <nav aria-label="Sumber data usaha dan franchise">
-          {businessData.sources.map((source) => (
-            <a href={source.url} target="_blank" rel="noreferrer" key={`business-${source.id}`}>
-              <span><b>{source.title}</b><small>{source.note}</small></span><ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-          ))}
-          {franchiseData.sources.map((source) => (
-            <a href={source.url} target="_blank" rel="noreferrer" key={`franchise-${source.id}`}>
-              <span><b>{source.title}</b><small>Sumber franchise / kemitraan</small></span><ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-          ))}
-        </nav>
-      </section>
-      <section className="workbench-closing" aria-labelledby="data-closing-title">
-        <p>Prinsip metodologi</p>
-        <h2 id="data-closing-title">Kalau brand tidak publish,<br />jangan mengarang.</h2>
-      </section>
-      <SiteFooter />
-    </main>
-  );
-}
+import Link from 'next/link';
+import {SiteHeader} from '@/components/SiteHeader';
+import {SiteFooter} from '@/components/SiteFooter';
+import {dossiers,confidence,sourceList} from '@/financial-models/catalog';
+export const metadata={title:'Dasar Data & Audit | Cek Bisnis'};
+export default function DataPage(){return <main className="workbench-page"><SiteHeader/><div className="fi-page"><header className="fi-business-header"><span className="fi-eyebrow">METODOLOGI / AUDIT 2026-09-08</span><h1>Angka boleh dipakai. Asalnya harus jelas.</h1><p>50 brand dan 8 model usaha diperiksa. Angka arsip tanpa bukti tidak diteruskan sebagai fakta. Simulasi industri tidak membuktikan bahwa kemitraan suatu merek tersedia.</p></header><div className="fi-risk-grid">{[['OFFICIAL','Dipublikasikan perusahaan, pemerintah, atau dokumen resmi. Tetap perhatikan tanggal dan cakupan.'],['VERIFIED THIRD-PARTY','Publikasi pihak ketiga yang dapat ditelusuri. Bukan konfirmasi langsung brand.'],['CEK BISNIS ESTIMATE','Asumsi perencanaan dengan rumus deterministik. Tidak sama dengan performa outlet.'],['UNKNOWN','Bukti belum cukup. Nilai kontrak tidak ditebak; model pembanding disajikan terpisah.']].map(([a,b])=><article key={a}><h3>{a}</h3><p>{b}</p></article>)}</div><section className="fi-panel"><h2>Bagaimana model dihitung</h2><p>Riset → input terstruktur → mesin TypeScript → skenario → grafik dan PDF. Input sama menghasilkan output sama. AI opsional hanya membantu interpretasi, tidak menghasilkan angka model.</p><p>Semua nominal mesin dalam rupiah; 20% disimpan 0,20. Agen kurir menggunakan komisi persentase atau Rp/paket, bukan seluruh GMV ongkir. Laundry memakai kg dan biaya produksi/kg; gym memakai member per bulan.</p><p>Total modal = CAPEX + fee + deposit + stok awal + cadangan biaya tetap. Payback memakai arus kas positif. ROI tahunan sederhana bukan IRR. Biaya lokal tidak dikalikan satu faktor kota.</p><p>Fee yang belum diketahui dapat diisi 0 sebagai batas bawah asumsi, dengan status UNKNOWN pada fakta publik. Sebelum keputusan, wajib isi proposal dan uji sensitivitas fee.</p><p>Skor lokasi adalah indikator screening model dari cakupan data publik, bukan penjualan, footfall atau probabilitas sukses. Data OSM tidak lengkap dan bukan survei komersial.</p></section><section className="fi-dashboard"><h2>Cakupan audit seluruh katalog</h2><div className="fi-table-scroll"><table><thead><tr><th>Usaha / merek</th><th>Keyakinan</th><th>Temuan & koreksi</th><th>Bukti</th></tr></thead><tbody>{dossiers.map(d=><tr key={d.id}><th><Link href={d.href}>{d.name}</Link><p>{d.model.archetype} · {d.research.status}</p></th><td>{confidence(d).label}</td><td>{d.research.note}</td><td>{sourceList(d).map(s=><p key={s.id}><a href={s.url} target="_blank" rel="noreferrer">{s.publisher}: {s.status}</a></p>)}</td></tr>)}</tbody></table></div><h2>Apa yang masih belum pasti?</h2><p>Sejumlah sumber tidak dapat diakses atau tidak memuat angka kontrak. Data permintaan, sewa, gaji dan laba outlet belum disurvei. Model yang sama dipakai untuk format pembanding dalam satu industri; bukan klaim bahwa ekonomi semua merek identik. Lihat asumsi pada tiap halaman dan minta quotation tertulis.</p></section></div><SiteFooter/></main>;}

@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const modal = formatInvestmentRange(franchise.investment);
   return {
-    title: `Franchise ${franchise.name} - Modal ${modal}, Skema dan BEP | Cek Bisnis`,
-    description: `Rincian kemitraan ${franchise.name}: modal awal ${modal}, franchise fee ${franchise.franchiseFee}, royalti ${franchise.royalty}, KPI, syarat, dan rentang balik modal.`,
+    title: `${franchise.name} - Riset & Simulasi Keuangan | Cek Bisnis`,
+    description: `Riset ${franchise.name}: model modal estimasi ${modal}, asumsi, skenario, risiko dan sumber. Bukan penawaran kemitraan atau laporan performa outlet.`,
     openGraph: {
       title: `Franchise ${franchise.name} - Modal, Skema dan BEP`,
       description: `Modal awal ${modal}. Rincian skema kemitraan, KPI, syarat, dan sumber data.`,
