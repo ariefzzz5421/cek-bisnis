@@ -35,7 +35,7 @@ import {
 } from "@/lib/franchise-data";
 
 const SORTS: { id: FranchiseSort; label: string }[] = [
-  { id: "modal-asc", label: "Modal terkecil" },
+  { id: "modal-asc", label: "Modal model terkecil" },
   { id: "modal-desc", label: "Modal terbesar" },
   { id: "bep-asc", label: "Balik modal tercepat" },
   { id: "nama", label: "Nama A-Z" },
@@ -91,10 +91,10 @@ export function FranchiseBrowser() {
     <>
       <section className="franchise-hero" aria-labelledby="franchise-title">
         <div className="franchise-hero__copy">
-          <p className="workbench-kicker"><span aria-hidden="true" /> Data waralaba · diperbarui {franchiseData.updatedAt}</p>
+          <p className="workbench-kicker"><span aria-hidden="true" /> Audit model waralaba · {franchiseData.updatedAt}</p>
           <h1 id="franchise-title">Beli sistem,<br />bukan cuma merek.</h1>
           <p>
-            Modal awal, franchise fee, royalti, skema kemitraan, sektor, dan rentang balik modal dari {franchiseData.franchises.length} waralaba
+            Modal awal, franchise fee, royalti, skema kemitraan, sektor, dan rentang balik modal dari {franchiseData.franchises.length} merek yang ditelusuri
             Indonesia — dengan metric resmi dipisahkan dari estimasi.
           </p>
           <div className="workbench-hero__actions">
@@ -104,7 +104,7 @@ export function FranchiseBrowser() {
           <dl className="workbench-proof">
             <div><dt>Merek dibandingkan</dt><dd>{franchiseData.franchises.length}</dd></div>
             <div><dt>Modal terkecil</dt><dd>{cheapestLow === null ? "-" : formatInvestment(cheapestLow)}</dd></div>
-            <div><dt>BEP tercepat</dt><dd>{fastestBep === null ? "-" : `${fastestBep} bln`}</dd></div>
+            <div><dt>Payback skenario positif</dt><dd>{fastestBep === null ? "-" : `${fastestBep} bln`}</dd></div>
           </dl>
         </div>
 
@@ -188,7 +188,7 @@ export function FranchiseBrowser() {
                 <th scope="col">Modal awal</th>
                 <th scope="col">Franchise fee</th>
                 <th scope="col">Royalti</th>
-                <th scope="col">Omzet / bulan</th>
+                <th scope="col">Pendapatan / bulan</th>
                 <th scope="col">BEP</th>
               </tr>
             </thead>
@@ -254,11 +254,11 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
         <BrandLogo franchise={franchise} name={franchise.name} size={56} />
         <div>
           <h3>{franchise.name}</h3>
-          <p>{franchiseSectorName(franchise)} · sejak {franchise.since} · {franchise.outlets}</p>
+          <p>{franchiseSectorName(franchise)} · {franchise.outlets}</p>
         </div>
       </div>
 
-      <dl className="franchise-card__numbers">
+      <span className="fi-badge estimate">CEK BISNIS ESTIMATE · bukan quotation</span><p className="franchise-card__investnote">{franchise.scheme}</p><dl className="franchise-card__numbers">
         <div><dt><Wallet size={14} aria-hidden="true" /> Modal awal</dt><dd>{formatInvestmentRange(franchise.investment)}</dd></div>
         <div><dt><Timer size={14} aria-hidden="true" /> Balik modal</dt><dd>{formatMonthRange(franchise.bepMonths)}</dd></div>
         <div><dt><Handshake size={14} aria-hidden="true" /> Franchise fee</dt><dd>{franchise.franchiseFee}</dd></div>
@@ -267,7 +267,7 @@ function FranchiseCard({ franchise, open, onToggle }: { franchise: Franchise; op
 
       <p className="franchise-card__revenue">
         <Building2 size={15} aria-hidden="true" />
-        Omzet / skenario <b>{formatRevenueRange(franchise.monthlyRevenue)}</b> per bulan
+        Pendapatan estimasi <b>{formatRevenueRange(franchise.monthlyRevenue)}</b> per bulan
       </p>
 
       <div className="franchise-card__actions">

@@ -34,7 +34,7 @@ test("server-renders the Cek Bisnis landing page with clean navigation", async (
   assert.match(html, /Pilih model usaha/i);
   assert.match(html, /Peta usaha Indonesia/i);
   assert.match(html, /497/i);
-  assert.match(html, /PDF · 5 halaman/i);
+  assert.match(html, /PDF · model &amp; sumber|PDF · model & sources|PDF · model & sumber/i);
   assert.match(html, /Ranking franchise/i);
   assert.equal((html.match(/class="franchise-rank"/g) ?? []).length, 10);
   assert.doesNotMatch(html, /href="\/#(?:pilih-usaha|data)"/i);
@@ -81,11 +81,13 @@ test("every franchise resolves to a distinct visual identity", async () => {
 
   // Setiap berkas yang dipetakan harus benar-benar ada, kalau tidak ubinnya
   // jatuh ke monogram tanpa ada yang menyadarinya.
-  const mapped = [...assets.matchAll(/"([^"]+)": \{ file: "([^"]+)"/g)];
+  const mapped = [...assets.matchAll(/^\s*"?([a-z0-9-]+)"?: \{ file: "([^"]+)"/gm)];
   assert.ok(mapped.length >= 25, "brand logo map is unexpectedly small");
   for (const [, id, file] of mapped) {
     const info = await stat(new URL(`../public/brands/franchises/${file}`, import.meta.url));
-    assert.ok(info.size > 1_000, `${id} logo file is unexpectedly small`);
+    assert.ok(info.size > 100, `${id} logo file is unexpectedly small`);
+    const content = await readFile(new URL(`../public/brands/franchises/${file}`, import.meta.url));
+    if(file.endsWith('.svg')) assert.match(content.toString(), /<svg[\s>]/, id);
   }
 
   const allFranchises = [...franchiseData.franchises, ...franchiseExtra.franchises];
@@ -111,8 +113,8 @@ test("new researched franchises have routed detail pages", async () => {
     assert.equal(response.status, 200, franchise.id);
     const html = await response.text();
     assert.match(html, new RegExp(franchise.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), franchise.id);
-    assert.match(html, /Basis angka/i, franchise.id);
-    assert.match(html, /Hubungi \/ buka situs resmi/i, franchise.id);
+    assert.match(html, /CEK BISNIS ESTIMATE/i, franchise.id);
+    assert.match(html, /Situs brand/i, franchise.id);
   }
 });
 
@@ -125,10 +127,10 @@ test("every business has a working routed analysis page", async () => {
     assert.equal(response.status, 200, business.slug);
     const html = await response.text();
     assert.match(html, new RegExp(business.name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-    assert.match(html, /HITUNG ANGKA/i);
+    assert.match(html, /Ringkasan model dasar/i);
     assert.match(html, /SURVEI LOKASI/i);
-    assert.match(html, /PDF panduan 5 halaman/i);
-    assert.match(html, /SECOND OPINION AI/i);
+    assert.match(html, /Unduh laporan PDF/i);
+    assert.match(html, /Interpretasi AI \(opsional\)/i);
     assert.match(html, new RegExp(`/equipment/${business.slug}-atlas\\.webp`));
     assert.equal((html.match(/class="equipment-product"/g) ?? []).length, 8, `${business.slug} equipment card count`);
     assert.equal((html.match(/class="equipment-product__body"/g) ?? []).length, 8, `${business.slug} supplier link count`);

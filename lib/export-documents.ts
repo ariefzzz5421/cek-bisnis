@@ -192,7 +192,7 @@ export async function renderFranchiseSummaryPng({
   drawLabel(ctx, "SKEMA KEMITRAAN", 82, y + 48, CYAN);
   setFont(ctx, 24, 600);
   ctx.fillStyle = INK;
-  let schemeBottom = drawWrapped(ctx, franchise.scheme, 82, y + 102, 1036, 36, 5);
+  const schemeBottom = drawWrapped(ctx, franchise.scheme, 82, y + 102, 1036, 36, 5);
   setFont(ctx, 18, 700);
   ctx.fillStyle = MUTED;
   ctx.fillText(franchiseBasisLabel(franchise.dataBasis), 82, Math.min(y + 255, schemeBottom + 30));

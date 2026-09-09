@@ -1,6 +1,8 @@
 import rawArticles from "@/data/franchise-articles.json";
 import rawData from "@/data/franchise-data.json";
 import rawExtra from "@/data/franchise-extra.json";
+import { getDossier, modelSummary, dossiers, sourceList } from "@/financial-models/catalog";
+import { scenarios } from "@/financial-models/engine";
 
 export type FranchiseCategoryId = "minimarket" | "minuman" | "makanan" | "jasa" | "kesehatan";
 export type FranchiseDataBasis = "official" | "mixed" | "estimate" | "under-verification";
@@ -142,8 +144,30 @@ const mergeById = <T extends { id: string }>(base: T[], extra: T[]) => {
 
 export const franchiseData: FranchiseFile = {
   ...baseData,
-  sources: mergeById(baseData.sources, extraData.sources),
-  franchises: mergeById(baseData.franchises, extraData.franchises),
+  updatedAt:"2026-09-08",
+  note:"Katalog riset, bukan daftar penawaran aktif. Total modal, pendapatan dan payback adalah estimasi model; fakta publik ada pada halaman masing-masing.",
+  disclaimer:"Ketersediaan kemitraan, fee dan kontrak perlu konfirmasi. Angka skenario bukan laporan laba outlet.",
+  sources: dossiers.filter(d=>d.kind==="franchise").flatMap(d=>d.research.sources.map(s=>({id:s.id,title:s.title,url:s.url}))),
+  franchises: mergeById(baseData.franchises, extraData.franchises).map(f => {
+    const d = getDossier(f.id);
+    const result = modelSummary(f.id);
+    const cases = scenarios(d.model).map(s => s.result);
+    const paybacks = cases.map(s=>s.payback).filter((x):x is number=>x!==null);
+    return {...f, dataBasis:'estimate' as const, investment:[result.capital/1e6,result.capital/1e6] as [number,number],
+      investmentNote:'Total modal simulasi termasuk CAPEX, fee model, deposit, persediaan dan cadangan kas. Bukan quotation brand.',
+      monthlyRevenue:[Math.min(...cases.map(s=>s.revenue))/1e6,Math.max(...cases.map(s=>s.revenue))/1e6] as [number,number],
+      revenueBasis:'Pendapatan dihitung dari volume dan harga/komisi model. Untuk agen: pendapatan komisi, bukan GMV ongkir.',
+      bepMonths:paybacks.length?[Math.min(...paybacks),Math.max(...paybacks)] as [number,number]:null,
+      bepBasis:'Payback model = total modal / cash flow bulanan positif. Skenario rugi tidak punya payback.',
+      franchiseFee:d.research.facts.find(x=>x.label.includes('Fee'))?.note ?? 'Unknown — fee kontrak perlu konfirmasi; lihat asumsi model.',
+      royalty:d.model.royaltyTiers?'Royalti progresif resmi; lihat model':d.model.mode==='commission-fixed'?'Estimasi komisi tetap per paket; kontrak belum terverifikasi':d.model.mode==='commission-rate'?'Estimasi komisi sebagai bagian GMV; lihat asumsi':'Biaya royalti model terpisah; konfirmasi kontrak.',
+      contractYears:f.id==='alfamart'?5:f.id==='kopigo'?3:0,
+      outlets:'Cakupan jaringan perlu verifikasi',
+      scheme:d.research.note,
+      kpi:[`Volume dasar ${d.model.inputs.units.value} ${d.model.unit}`,`Batas kapasitas model ${d.model.capacity} ${d.model.unit}`,'Catat HPP, retensi dan kas aktual setiap minggu.'],
+      requirements:['Ketersediaan kemitraan dan lokasi harus disetujui brand.', 'Luas, staf, izin dan hak wilayah mengikuti kontrak terbaru.'],
+    };
+  }),
 };
 export const franchises = franchiseData.franchises;
 export const franchiseCategories = franchiseData.categories;
@@ -203,7 +227,7 @@ export const accessibleBrandInk = (brandColor: string) => {
 };
 
 export const getFranchiseSources = (franchise: Franchise) =>
-  franchiseSources.filter((source) => franchise.sourceIds.includes(source.id));
+  sourceList(getDossier(franchise.id)).map(s=>({id:s.id,title:s.title,url:s.url}));
 
 export const franchiseCategoryName = (id: FranchiseCategoryId) =>
   franchiseCategories.find((category) => category.id === id)?.name ?? id;
@@ -303,7 +327,12 @@ export const sortFranchises = (list: Franchise[], sort: FranchiseSort) => {
 
 export const getFranchise = (id: string) => franchises.find((franchise) => franchise.id === id);
 export const getFranchiseArticle = (id: string): FranchiseArticle | undefined =>
-  franchiseArticleFile.articles[id];
+  {
+    const original=franchiseArticleFile.articles[id];
+    if(!original)return undefined;
+    const d=getDossier(id);
+    return {...original,lede:d.research.note,sections:[{heading:'Bagaimana uang dihasilkan',body:d.model.capacityNote},{heading:'Ketergantungan lokasi',body:d.locationDependency},{heading:'Kesulitan eksekusi',body:d.executionDifficulty}],costBreakdown:[],verdict:'Gunakan model di bawah untuk menguji volume minimum, biaya lokal dan modal kerja. Nilai kontrak yang belum diketahui perlu quotation.'};
+  };
 
 export type FranchiseEstimate = {
   rank: number;
@@ -324,135 +353,15 @@ export type FranchiseEstimate = {
  * yang telah diaudit. Angka brand dipakai hanya saat situs resmi menerbitkan
  * simulasi; sisanya adalah skenario konservatif Cek Bisnis untuk screening.
  */
-export const franchiseLeaderboard: FranchiseEstimate[] = [
-  {
-    rank: 1,
-    slug: "kopigo",
-    name: "KOPIGO",
-    logo: "/brands/franchises/kopigo.svg",
-    officialUrl: "https://kemitraan.kopigo.id/",
-    investment: "Rp53-87 jt all-in",
-    monthlyRevenue: "Rp45 jt",
-    monthlyProfit: 20.65,
-    rating: 9,
-    basis: "Proyeksi brand",
-    note: "Contoh resmi setelah royalti mulai bulan ke-6.",
-  },
-  {
-    rank: 2,
-    slug: "bingxue",
-    name: "Bingxue",
-    logo: "/brands/franchises/bingxue.png",
-    officialUrl: "https://bingxueindonesia.co.id/",
-    investment: "Minta quotation",
-    monthlyRevenue: "Rp55-80 jt",
-    monthlyProfit: 18,
-    rating: 8,
-    basis: "Skenario Cek Bisnis",
-    note: "Skenario memakai margin kotor resmi sekitar 60% lalu dikurangi OPEX.",
-  },
-  {
-    rank: 3,
-    slug: "ayam-geprek-sai",
-    name: "Ayam Geprek Sa'i",
-    logo: "/brands/franchises/ayam-geprek-sai.png",
-    officialUrl: "https://ayamgepreksai.com/",
-    investment: "±Rp300 jt + sewa",
-    monthlyRevenue: "Rp85-115 jt",
-    monthlyProfit: 17,
-    rating: 7,
-    basis: "Skenario Cek Bisnis",
-    note: "Estimasi bagian mitra setelah biaya dan skema bagi hasil.",
-  },
-  {
-    rank: 4,
-    slug: "es-teh-indonesia",
-    name: "Esteh Indonesia",
-    logo: "/brands/franchises/esteh-indonesia.svg",
-    officialUrl: "https://www.estehindonesia.com/partnership",
-    investment: "Minta quotation",
-    monthlyRevenue: "Rp55-75 jt",
-    monthlyProfit: 14,
-    rating: 8,
-    basis: "Skenario Cek Bisnis",
-    note: "Format grab-and-go; nilai akhir wajib mengikuti proposal terbaru.",
-  },
-  {
-    rank: 5,
-    slug: "baba-rafi",
-    name: "Kebab Baba Rafi",
-    logo: "/brands/franchises/baba-rafi.png",
-    officialUrl: "https://www.babarafi.com/",
-    investment: "Minta quotation",
-    monthlyRevenue: "Rp45-65 jt",
-    monthlyProfit: 12,
-    rating: 8,
-    basis: "Skenario Cek Bisnis",
-    note: "Skenario booth pada titik komuter dengan traffic stabil.",
-  },
-  {
-    rank: 6,
-    slug: "rocket-chicken",
-    name: "Rocket Chicken",
-    logo: "https://firebasestorage.googleapis.com/v0/b/rocketchicken-v2/o/Assets%2Frc_logo_square.png?alt=media&token=4d2c56f5-c57a-48a4-8989-31c356e5cb2e",
-    officialUrl: "https://www.rocketchicken.co.id/about",
-    investment: "Minta quotation",
-    monthlyRevenue: "Rp75-100 jt",
-    monthlyProfit: 10,
-    rating: 7,
-    basis: "Skenario Cek Bisnis",
-    note: "Restoran penuh: omzet besar, tetapi gaji, sewa, dan bahan juga tinggi.",
-  },
-  {
-    rank: 7,
-    slug: "sabana",
-    name: "Sabana Fried Chicken",
-    logo: "/brands/franchises/sabana.webp",
-    officialUrl: "https://sabana.co.id/?page_id=10",
-    investment: "Rp22 jt",
-    monthlyRevenue: "Rp28-40 jt",
-    monthlyProfit: 7,
-    rating: 8,
-    basis: "Skenario Cek Bisnis",
-    note: "Tanpa royalti; bahan utama tetap wajib dari pusat.",
-  },
-  {
-    rank: 8,
-    slug: "nyoklat-klasik",
-    name: "Nyoklat Klasik",
-    logo: "https://nyoklatklasik.co.id/wp-content/uploads/2020/10/logo_nyoklat.png",
-    officialUrl: "https://nyoklatklasik.co.id/faq/",
-    investment: "Rp12-17 jt",
-    monthlyRevenue: "Rp15-30 jt",
-    monthlyProfit: 6,
-    rating: 8,
-    basis: "Skenario Cek Bisnis",
-    note: "Memakai sisi bawah rentang penjualan harian yang dipublikasikan brand.",
-  },
-  {
-    rank: 9,
-    slug: "teh-poci",
-    name: "Es Teh Poci",
-    logo: "/brands/franchises/esteh-poci.png",
-    officialUrl: "https://estehpoci.id/",
-    investment: "Rp22,49 jt",
-    monthlyRevenue: "Rp10,5 jt",
-    monthlyProfit: 3.8,
-    rating: 9,
-    basis: "Proyeksi brand",
-    note: "Simulasi resmi 70 cup per hari dengan harga Rp5.000.",
-  },
-  {
-    rank: 10,
-    slug: "tahu-go",
-    name: "Tahu Go",
-    logo: "https://www.tahugo.co.id/wp-content/uploads/2019/11/Screen-Shot-2019-11-05-at-12.23.08-1024x962.png",
-    officialUrl: "https://www.tahugo.co.id/",
-    investment: "Minta quotation",
-    monthlyRevenue: "Rp16-25 jt",
-    monthlyProfit: 3.5,
-    rating: 7,
-    basis: "Skenario Cek Bisnis",
-    note: "Skenario volume rendah; situs resmi mengingatkan omzet dapat naik-turun.",
-  },
-];
+export const franchiseLeaderboard: FranchiseEstimate[] = franchises
+  .filter(f=>getDossier(f.id).research.status !== 'closed')
+  .map(f=>({f,r:modelSummary(f.id)}))
+  .sort((a,b)=>b.r.operatingProfit-a.r.operatingProfit)
+  .slice(0,10)
+  .map(({f,r},index,array)=>({
+    rank:index+1,slug:f.id,name:f.name,logo:f.logoUrl ?? '/brands/categories/'+f.category+'.webp',
+    officialUrl:f.officialUrl,investment:formatInvestment(r.capital/1e6),
+    monthlyRevenue:formatInvestment(r.revenue/1e6),monthlyProfit:r.operatingProfit/1e6,
+    rating:Math.max(1,Math.min(10,Math.round(Math.max(0,r.operatingProfit)/Math.max(1,array[0].r.operatingProfit)*10))),
+    basis:'Skenario Cek Bisnis' as const,note:'Urutan simulasi laba absolut, bukan kualitas investasi. Buka asumsi dan uji biaya/volume lokasi.'
+  }));

@@ -28,7 +28,7 @@ export default function BusinessIndexPage() {
       <section className="business-browser" aria-labelledby="business-index-title">
         <header className="workbench-section-heading">
           <div><p>JENIS USAHA</p><h1 id="business-index-title">Pilih model yang mau diuji.</h1></div>
-          <p>Setiap halaman berisi modal, biaya, target omzet, BEP, KPI, risiko, dan simulasi lokasi. Setelah itu kamu bisa membandingkannya langsung.</p>
+          <p>Semua angka kartu adalah CEK BISNIS ESTIMATE. Buka asumsi, biaya, BEP, skenario dan risiko sebelum membandingkan.</p>
         </header>
 
         <div className="workbench-hero__actions" style={{ marginBottom: 28 }}>
@@ -47,8 +47,8 @@ export default function BusinessIndexPage() {
                 <div className="business-browser__body">
                   <div><h2>{business.name}</h2><p>{business.oneLine}</p></div>
                   <dl>
-                    <div><dt>Modal mulai</dt><dd>{formatMoney(business.capex[0], 0)}</dd></div>
-                    <div><dt>Target omzet</dt><dd>{formatMoney(business.targetRevenue, 0)}/bln</dd></div>
+                    <div><dt>Modal estimasi</dt><dd>{formatMoney(business.capex[0], 0)}</dd></div>
+                    <div><dt>Omzet estimasi</dt><dd>{formatMoney(business.targetRevenue, 0)}/bln</dd></div>
                   </dl>
                   <span className="business-browser__action">Analisis usaha <ArrowUpRight size={17} aria-hidden="true" /></span>
                 </div>
@@ -65,7 +65,7 @@ export default function BusinessIndexPage() {
               <div className="business-browser__body">
                 <div><h2>Franchise</h2><p>{franchises.length} brand dengan sektor, modal, fee, royalty, omzet, dan BEP yang bisa dibandingkan.</p></div>
                 <dl>
-                  <div><dt>Modal terendah terpublikasi</dt><dd>{formatInvestment(franchiseEntryCost)}</dd></div>
+                  <div><dt>Modal model terendah</dt><dd>{formatInvestment(franchiseEntryCost)}</dd></div>
                   <div><dt>Brand dibandingkan</dt><dd>{franchises.length}</dd></div>
                 </dl>
                 <span className="business-browser__action">Lihat franchise <ArrowUpRight size={17} aria-hidden="true" /></span>
