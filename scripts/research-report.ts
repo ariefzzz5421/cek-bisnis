@@ -73,7 +73,7 @@ for (const id of [
   );
   await writeFile(
     `output/pdf/${id}.pdf`,
-    new Uint8Array(await buildDossierPdf(d).arrayBuffer()),
+    new Uint8Array(await (await buildDossierPdf(d)).arrayBuffer()),
   );
 }
 report.push(
@@ -106,7 +106,7 @@ await writeFile(
 for (const d of dossiers.filter((d) => d.kind === "business"))
   await writeFile(
     `public/downloads/cek-bisnis-${d.href.split("/").at(-1)}-guide.pdf`,
-    new Uint8Array(await buildDossierPdf(d).arrayBuffer()),
+    new Uint8Array(await (await buildDossierPdf(d)).arrayBuffer()),
   );
 console.log(
   "58 model snapshots, complete audit inventory, 8 QA PDFs and 8 refreshed legacy download PDFs generated.",

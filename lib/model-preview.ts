@@ -6,6 +6,41 @@ import {
   months,
   type Model,
 } from "@/financial-models/engine";
+import { brandLogoAssets } from "@/lib/brand-logo-assets";
+
+async function drawBrandLogo(
+  context: CanvasRenderingContext2D,
+  d: Dossier,
+) {
+  if (d.kind !== "franchise") return;
+  const asset = brandLogoAssets[d.id];
+  if (!asset) return;
+  try {
+    const response = await fetch(`/brands/franchises/${asset.file}`);
+    if (!response.ok) return;
+    const source = URL.createObjectURL(await response.blob());
+    try {
+      const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+        const element = new Image();
+        element.onload = () => resolve(element);
+        element.onerror = () => reject(new Error("Logo tidak dapat dibaca"));
+        element.src = source;
+      });
+      const ratio = Math.min(180 / image.naturalWidth, 64 / image.naturalHeight);
+      context.drawImage(
+        image,
+        1070 - image.naturalWidth * ratio,
+        38,
+        image.naturalWidth * ratio,
+        image.naturalHeight * ratio,
+      );
+    } finally {
+      URL.revokeObjectURL(source);
+    }
+  } catch {
+    // The financial summary remains downloadable when a brand asset is unavailable.
+  }
+}
 export async function renderModelPng(d: Dossier, m: Model): Promise<Blob> {
   const r = calculate(m),
     canvas = document.createElement("canvas");
@@ -19,6 +54,7 @@ export async function renderModelPng(d: Dossier, m: Model): Promise<Blob> {
   c.fillRect(0, 0, 1200, 12);
   c.font = "bold 24px sans-serif";
   c.fillText("CEK BISNIS / FINANCIAL RESEARCH", 64, 75);
+  await drawBrandLogo(c, d);
   c.font = "bold 42px sans-serif";
   c.fillText(d.name, 64, 145, 1060);
   c.font = "20px sans-serif";
@@ -35,19 +71,17 @@ export async function renderModelPng(d: Dossier, m: Model): Promise<Blob> {
     ...(r.gmv !== null
       ? [["GMV ongkir (bukan pendapatan)", money(r.gmv)]]
       : []),
-    ["HPP / biaya variabel", money(r.cogs)],
-    ["Biaya tetap", money(r.fixedOpex)],
     ["Laba operasional", money(r.operatingProfit)],
     ["Arus kas / bulan", money(r.cashFlow)],
     ["Margin operasi", percent(r.operatingMargin)],
     [
-      "BEP pendapatan",
-      r.breakEvenRevenue === null
+      "BEP minimum",
+      r.breakEvenUnits === null
         ? "Di luar kapasitas"
-        : money(r.breakEvenRevenue),
+        : `${Math.ceil(r.breakEvenUnits)} ${m.unit}`,
     ],
     ["Payback", months(r.payback)],
-    ["ROI sederhana tahunan", percent(r.annualRoi)],
+    ["Status model", r.operatingProfit > 0 ? "Laba pada asumsi dasar" : "Belum layak pada asumsi dasar"],
   ];
   rows.forEach(([label, value], i) => {
     const y = 295 + i * 66;

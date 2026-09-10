@@ -54,7 +54,7 @@ export function FranchiseDownload({
     setState("pdf");
     try {
       const { buildFranchiseResearchPdf, downloadBlob } = await import("@/lib/financial-pdf");
-      const blob = buildFranchiseResearchPdf({ franchise, article, sources });
+      const blob = await buildFranchiseResearchPdf({ franchise, article, sources });
       downloadBlob(blob, `cek-bisnis-${franchise.id}-analisis-lengkap.pdf`);
       setState("idle");
     } catch {

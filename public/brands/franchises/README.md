@@ -14,6 +14,7 @@ node scripts/import-brand-logos.mjs
 | --- | --- | --- |
 | Diunggah manual ke repo | Alfamart, Ayam Geprek Sa'i, Baba Rafi, Bingxue, Doyan Ayam, Es Teh Indonesia, Es Teh Poci, Geprek Bensu, J&T Express, Janji Jiwa, KOPIGO, Mr Klin, Nyoklat Klasik, Point Coffee, Sabana, Tahu Go | — |
 | npm [`idn-finlogos@2.5.0`](https://github.com/hafidznoor/idn-finlogos) | Alfamidi, Anteraja, FamilyMart, Indomaret, JNE, Lawson, Lion Parcel, Ninja Xpress, OMI Indogrosir, SiCepat, Wahana Express, Yomart | CC BY-NC 4.0 (kurasi) |
+| Situs brand/merchant/press yang dicatat di `scripts/sync-researched-brand-logos.mjs` | Basmalah Mart, 212 Mart, Mixue, Haus!, Hisana, D'Besto, Rocket Chicken, dan merek kesehatan/optik tambahan | Hak merek tetap milik pemiliknya; periksa sumber per aset |
 
 Koleksi itu berisi ribuan ikon, jadi tiap kandidat dicocokkan secara visual
 sebelum dipakai, bukan hanya berdasarkan kemiripan nama. Ikon bernama `212` di
@@ -36,6 +37,11 @@ konsekuensi yang perlu disadari pemilik situs:
 Logo merek dipakai di sini untuk **identifikasi** merek yang sedang dibahas.
 Pemakaian itu tidak menyatakan afiliasi, dukungan, atau kemitraan dengan
 pemilik merek mana pun.
+
+Istilah "logo resmi" hanya dipakai bila sumbernya memang situs brand atau
+dokumen pemilik merek. Aset dari merchant, media, direktori, atau koleksi publik
+tetap diberi konteks sebagai identitas publik. Jika tidak ada mark yang dapat
+diverifikasi, aplikasi memakai badge nama/monogram dan tidak mengarang logo.
 
 ## Merek yang belum punya berkas logo
 

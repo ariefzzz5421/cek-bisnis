@@ -3,7 +3,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R 15 0 R 17 0 R 19 0 R 21 0 R] /Count 9 >>
+<< /Type /Pages /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] /Count 5 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
@@ -15,7 +15,7 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
 endobj
 6 0 obj
-<< /Length 3464 >>
+<< /Length 3840 >>
 stream
 0.08 0.08 0.08 rg 48 798 24 24 re f
 0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
@@ -30,483 +30,224 @@ stream
 0.95 0.95 0.95 rg 48 622.364 499 48 re f
 0.72 0.72 0.72 RG 0.7 w 48 622.364 499 48 re S
 0.06 0.06 0.06 rg BT /F2 8.8 Tf 60.0 651.4 Td (Semua unit economics usaha mandiri adalah estimasi Cek Bisnis. Harga vendor dan statistik publik hanya) Tj ET
-0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 638.4 Td (mendukung komponen tertentu, bukan laba usaha.) Tj ET
+0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 638.4 Td (mendukung komponen tertentu, bukan laba usaha. Angka model selalu berlabel estimasi.) Tj ET
 0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 600.4 Td (Executive summary) Tj ET
 0.24 0.24 0.24 RG 0.8 w 48 590.364 m 547 590.364 l S
 0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 572.4 Td (Layak diuji. Biaya operasional tertutup sekitar 31 cup/hari. Volume dasar 85 cup/hari; sewa dan payroll) Tj ET
 0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 558.5 Td (menyerap 5% dan 12% pendapatan. Penilaian skenario, bukan rekomendasi investasi.) Tj ET
 0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 537.7 Td (TOTAL MODAL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 537.7 Td (Rp 126.676.000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 523.7 Td (CAPEX + fee + deposit + stok awal + cadangan kas.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 510.22800000000007 m 547 510.22800000000007 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 502.2 Td (PENDAPATAN / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 502.2 Td (Rp 71.400.000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 488.2 Td (Penjualan model.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 474.72800000000007 m 547 474.72800000000007 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 466.7 Td (LABA OPERASIONAL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 466.7 Td (Rp 26.520.000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 452.7 Td (EBITDA-like, sebelum pajak/cicilan.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 439.22800000000007 m 547 439.22800000000007 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 431.2 Td (ARUS KAS) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 431.2 Td (Rp 26.520.000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 417.2 Td (Setelah cadangan pajak/cicilan/penggantian aset yang diinput.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 403.72800000000007 m 547 403.72800000000007 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 395.7 Td (MARGIN OPERASI) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 395.7 Td (37%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 375.72800000000007 m 547 375.72800000000007 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 367.7 Td (PAYBACK) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 367.7 Td (5 bulan) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 347.72800000000007 m 547 347.72800000000007 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 339.7 Td (ROI SEDERHANA / TAHUN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 339.7 Td (251%) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 325.7 Td (12 x arus kas bulanan / total modal; bukan IRR atau jaminan.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 312.22800000000007 m 547 312.22800000000007 l S
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 1 / 9) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 537.7 Td (Rp 126.676.000) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 519.7 Td (CAPEX + fee + deposit + stok awal + cadangan kas.) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 502.72800000000007 m 547 502.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 494.7 Td (PENDAPATAN / BULAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 494.7 Td (Rp 71.400.000) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 476.7 Td (Penjualan model.) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 459.72800000000007 m 547 459.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 451.7 Td (LABA OPERASIONAL) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 451.7 Td (Rp 26.520.000) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 433.7 Td (EBITDA-like, sebelum pajak/cicilan.) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 416.72800000000007 m 547 416.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 408.7 Td (MARGIN OPERASI) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 408.7 Td (37%) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 380.72800000000007 m 547 380.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 372.7 Td (BEP VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 372.7 Td (31 cup/hari) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 354.7 Td (Volume minimum agar operasi impas.) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 337.72800000000007 m 547 337.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 329.7 Td (PAYBACK) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 329.7 Td (5 bulan) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 301.72800000000007 m 547 301.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 293.7 Td (ARUS KAS / BULAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 293.7 Td (Rp 26.520.000) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 275.7 Td (Setelah cadangan yang diinput.) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 258.72800000000007 m 547 258.72800000000007 l S
+0.95 0.95 0.95 rg 48 211.72800000000007 499 48 re f
+0.72 0.72 0.72 RG 0.7 w 48 211.72800000000007 499 48 re S
+0.06 0.06 0.06 rg BT /F2 8.8 Tf 60.0 240.7 Td (INTI KEPUTUSAN: Biaya operasional tertutup sekitar 31 cup/hari. Volume dasar 85 cup/hari; sewa dan) Tj ET
+0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 227.7 Td (payroll menyerap 5% dan 12% pendapatan. Titik minimum model: 31 cup/hari.) Tj ET
+0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 1 / 5) Tj ET
 endstream
 endobj
 7 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
 endobj
 8 0 obj
-<< /Length 556 >>
+<< /Length 3754 >>
 stream
 0.08 0.08 0.08 rg 48 798 24 24 re f
 0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 475.6 806.0 Td (FAKTA & SUMBER) Tj ET
+0.34 0.34 0.34 rg BT /F2 8 Tf 480.7 806.0 Td (DATA & ASUMSI) Tj ET
 0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Official / public data) Tj ET
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Data publik yang relevan) Tj ET
 0.24 0.24 0.24 RG 0.8 w 48 753 m 547 753 l S
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 735.0 Td (Usaha independen. Unit economics seluruhnya estimasi; sumber industri hanya konteks komponen.) Tj ET
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 2 / 9) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 735.0 Td (Tidak ada angka resmi yang cukup untuk unit economics. Perhitungan di laporan ini adalah simulasi) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 721.2 Td (terbuka.) Tj ET
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 697.4 Td (Asumsi inti model) Tj ET
+0.24 0.24 0.24 RG 0.8 w 48 687.364 m 547 687.364 l S
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 669.4 Td (Uang memakai rupiah penuh; rasio 20% dihitung sebagai 0.20. Nilai nol pada fee yang belum diketahui) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 655.5 Td (bukan berarti gratis.) Tj ET
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 634.7 Td (VOLUME PER PERIODE) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 634.7 Td (85 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 606.7280000000001 m 547 606.7280000000001 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 598.7 Td (HARGA / BASKET / ONGKIR) Tj ET
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 587.7 Td (RATA-RATA) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 598.7 Td (Rp 28.000 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 569.7280000000001 m 547 569.7280000000001 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 561.7 Td (HARI OPERASI PER BULAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 561.7 Td (30 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 533.7280000000001 m 547 533.7280000000001 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 525.7 Td (KOMISI \(RASIO\)) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 525.7 Td (20% \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 497.72800000000007 m 547 497.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 489.7 Td (HPP \(RASIO\)) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 489.7 Td (42% \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 461.72800000000007 m 547 461.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 453.7 Td (JUMLAH STAF) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 453.7 Td (2 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 425.72800000000007 m 547 425.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 417.7 Td (GAJI PER STAF / BULAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 417.7 Td (Rp 3.300.000 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 389.72800000000007 m 547 389.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 381.7 Td (SEWA / BULAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 381.7 Td (Rp 3.500.000 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 353.72800000000007 m 547 353.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 345.7 Td (UTILITAS / BULAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 345.7 Td (Rp 900.000 \(CEK BISNIS ESTIMATE\)) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 317.72800000000007 m 547 317.72800000000007 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 309.7 Td (MODAL AWAL) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 309.7 Td (Rp 126.676.000) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 291.7 Td (CAPEX Rp 70.000.000 + fee Rp 0 + deposit Rp 7.000.000 + modal kerja Rp) Tj ET
+0.34 0.34 0.34 rg BT /F1 7.6 Tf 225.0 281.2 Td (49.676.000.) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 263.72800000000007 m 547 263.72800000000007 l S
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 255.7 Td (Kapasitas: 200 cup/hari. Gerai minuman kecil; ticket dan HPP adalah bauran menu asumsi, bukan statistik) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 241.9 Td (brand.) Tj ET
+0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 2 / 5) Tj ET
 endstream
 endobj
 9 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
 endobj
 10 0 obj
-<< /Length 6387 >>
+<< /Length 3736 >>
 stream
 0.08 0.08 0.08 rg 48 798 24 24 re f
 0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 516.4 806.0 Td (ASUMSI) Tj ET
+0.34 0.34 0.34 rg BT /F2 8 Tf 465.4 806.0 Td (MODEL & SKENARIO) Tj ET
 0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Asumsi model) Tj ET
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Cara bisnis menghasilkan uang) Tj ET
 0.24 0.24 0.24 RG 0.8 w 48 753 m 547 753 l S
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 735.0 Td (Uang: rupiah penuh. Rasio: 20% = 0.20. Nol pada fee yang belum diketahui bukan klaim bebas biaya. Input) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 721.2 Td (pengguna menggantikan status data resmi.) Tj ET
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 700.4 Td (VOLUME PER PERIODE) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 700.4 Td (85) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 686.4 Td (CEK BISNIS ESTIMATE | Gerai minuman kecil; ticket dan HPP adalah bauran menu asumsi,) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 675.9 Td (bukan statistik brand.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 662.364 m 547 662.364 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 654.4 Td (HARGA / BASKET / ONGKIR RATA-RATA) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 654.4 Td (28000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 640.4 Td (CEK BISNIS ESTIMATE | Bauran coffee booth independen, asumsi menu.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 626.864 m 547 626.864 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 618.9 Td (HARI OPERASI PER BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 618.9 Td (30) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 604.9 Td (CEK BISNIS ESTIMATE | 30 hari/bulan steady-state, tidak mengasumsikan pertumbuhan.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 591.364 m 547 591.364 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 583.4 Td (KOMISI \(RASIO\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 583.4 Td (0.2) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 569.4 Td (CEK BISNIS ESTIMATE | Asumsi 20% dari nilai ongkir; bukan rate kontrak brand.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 555.864 m 547 555.864 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 547.9 Td (KOMISI RP PER PAKET) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 547.9 Td (2500) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 533.9 Td (CEK BISNIS ESTIMATE | Asumsi Rp2.500/paket, tidak dipakai untuk model persentase.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 520.364 m 547 520.364 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 512.4 Td (HPP \(RASIO\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 512.4 Td (0.42) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 498.4 Td (CEK BISNIS ESTIMATE | Rasio HPP model mencakup pembelian bahan/barang dan waste) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 487.9 Td (dasar.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 474.36400000000003 m 547 474.36400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 466.4 Td (BIAYA VARIABEL RP PER UNIT) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 466.4 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 452.4 Td (CEK BISNIS ESTIMATE | Biaya per unit di luar rasio HPP.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 438.86400000000003 m 547 438.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 430.9 Td (JUMLAH STAF) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 430.9 Td (2) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 416.9 Td (CEK BISNIS ESTIMATE | Anggaran Cek Bisnis untuk format usaha ini; sesuaikan) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 406.4 Td (quotation.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 392.86400000000003 m 547 392.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 384.9 Td (GAJI PER STAF / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 384.9 Td (3300000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 370.9 Td (CEK BISNIS ESTIMATE | Anggaran per staf; bandingkan UMK/keahlian lokal. BPS nasional) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 360.4 Td (hanya konteks. | bps-wage) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 346.86400000000003 m 547 346.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 338.9 Td (CADANGAN BENEFIT \(RASIO\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 338.9 Td (0.12) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 324.9 Td (CEK BISNIS ESTIMATE | Cadangan benefit/THR 12% asumsi perencanaan, bukan tarif) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 314.4 Td (kewajiban hukum. | bps-wage) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 300.86400000000003 m 547 300.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 292.9 Td (KOMPENSASI PEMILIK / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 292.9 Td (1500000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 278.9 Td (CEK BISNIS ESTIMATE | Imbalan waktu pemilik Rp1,5 juta/bulan sebagai asumsi biaya;) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 268.4 Td (sesuaikan jam kerja.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 254.86400000000003 m 547 254.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 246.9 Td (SEWA / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 246.9 Td (3500000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 232.9 Td (CEK BISNIS ESTIMATE | Sewa bulanan asumsi lokasi lingkungan; belum merupakan survei) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 222.4 Td (properti.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 208.86400000000003 m 547 208.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 200.9 Td (UTILITAS / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 200.9 Td (900000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 186.9 Td (CEK BISNIS ESTIMATE | Anggaran tetap; konsumsi dan golongan tarif wajib divalidasi. |) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 176.4 Td (esdm-electricity) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 162.86400000000003 m 547 162.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 154.9 Td (LOGISTIK / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 154.9 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 140.9 Td (CEK BISNIS ESTIMATE | Anggaran Cek Bisnis untuk format usaha ini; sesuaikan) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 130.4 Td (quotation.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 116.86400000000003 m 547 116.86400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 108.9 Td (MARKETING / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 108.9 Td (800000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 94.9 Td (CEK BISNIS ESTIMATE | Anggaran Cek Bisnis untuk format usaha ini; sesuaikan) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 84.4 Td (quotation.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 70.86400000000003 m 547 70.86400000000003 l S
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 3 / 9) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 735.0 Td (85 cup/hari x 28000 Rp x 30 periode = Rp 71.400.000 penjualan) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 714.2 Td (Pendapatan Rp 71.400.000 - HPP Rp 29.988.000 = laba kotor Rp 41.412.000. Dikurangi OPEX tetap Rp) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 700.4 Td (14.892.000, royalti Rp 0 dan bagi hasil Rp 0 = laba operasi Rp 26.520.000.) Tj ET
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 679.5 Td (CAPEX) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 679.5 Td (Rp 70.000.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 651.546 m 547 651.546 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 643.5 Td (MODAL KERJA) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 643.5 Td (Rp 49.676.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 615.546 m 547 615.546 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 607.5 Td (HPP) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 607.5 Td (Rp 29.988.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 579.546 m 547 579.546 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 571.5 Td (LABA KOTOR) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 571.5 Td (Rp 41.412.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 543.546 m 547 543.546 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 535.5 Td (OPEX TETAP) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 535.5 Td (Rp 14.892.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 507.54600000000005 m 547 507.54600000000005 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 499.5 Td (ARUS KAS BULANAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 499.5 Td (Rp 26.520.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 471.54600000000005 m 547 471.54600000000005 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 463.5 Td (BEP PENDAPATAN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 463.5 Td (Rp 25.675.862) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 435.54600000000005 m 547 435.54600000000005 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 427.5 Td (BEP VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 427.5 Td (31 cup/hari) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 399.54600000000005 m 547 399.54600000000005 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 391.5 Td (ROI SEDERHANA / TAHUN) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 391.5 Td (251%) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 363.54600000000005 m 547 363.54600000000005 l S
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 352.5 Td (Konservatif / dasar / optimistis) Tj ET
+0.24 0.24 0.24 RG 0.8 w 48 342.54600000000005 m 547 342.54600000000005 l S
+0.06 0.06 0.06 rg BT /F2 10.8 Tf 48.0 324.5 Td (Konservatif - 45 cup/hari) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 306.5 Td (Volume rendah; biaya tetap dan harga tetap. Pendapatan Rp 37.800.000; laba Rp 7.032.000; margin 19%;) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 292.7 Td (payback 19 bulan.) Tj ET
+0.06 0.06 0.06 rg BT /F2 10.8 Tf 48.0 271.9 Td (Dasar - 85 cup/hari) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 253.9 Td (Hipotesis volume kerja, bukan hasil observasi outlet. Pendapatan Rp 71.400.000; laba Rp 26.520.000;) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 240.1 Td (margin 37%; payback 5 bulan.) Tj ET
+0.06 0.06 0.06 rg BT /F2 10.8 Tf 48.0 219.3 Td (Optimistis - 140 cup/hari) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 201.3 Td (Volume lebih tinggi, masih dalam batas kapasitas; tanpa menaikkan harga atau komisi. Pendapatan Rp) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 187.5 Td (117.600.000; laba Rp 53.316.000; margin 45%; payback 3 bulan.) Tj ET
+0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 3 / 5) Tj ET
 endstream
 endobj
 11 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
 endobj
 12 0 obj
-<< /Length 5512 >>
+<< /Length 3708 >>
 stream
 0.08 0.08 0.08 rg 48 798 24 24 re f
 0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 516.4 806.0 Td (ASUMSI) Tj ET
+0.34 0.34 0.34 rg BT /F2 8 Tf 475.6 806.0 Td (BIAYA & RISIKO) Tj ET
 0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 766.0 Td (MAINTENANCE / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 766.0 Td (400000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 752.0 Td (CEK BISNIS ESTIMATE | Anggaran Cek Bisnis untuk format usaha ini; sesuaikan) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 741.5 Td (quotation.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 728 m 547 728 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 720.0 Td (BIAYA LAINNYA / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 720.0 Td (400000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 706.0 Td (CEK BISNIS ESTIMATE | Anggaran Cek Bisnis untuk format usaha ini; sesuaikan) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 695.5 Td (quotation.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 682 m 547 682 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 674.0 Td (ROYALTI \(RASIO\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 674.0 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 660.0 Td (CEK BISNIS ESTIMATE | Nol hanya asumsi sampai proposal diterima; uji sensitivitas) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 649.5 Td (fee. Lihat fakta publik.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 636 m 547 636 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 628.0 Td (BIAYA SISTEM / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 628.0 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 614.0 Td (CEK BISNIS ESTIMATE | 0: biaya sistem/perpanjangan belum diketahui; tambahkan setelah) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 603.5 Td (quotation.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 590 m 547 590 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 582.0 Td (BAGI LABA POSITIF \(RASIO\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 582.0 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 568.0 Td (CEK BISNIS ESTIMATE | 0: belum pembagian laba pihak manajemen, kecuali input) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 557.5 Td (eksplisit.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 544 m 547 544 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 536.0 Td (PERALATAN / PAKET SETUP) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 536.0 Td (45000000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 522.0 Td (CEK BISNIS ESTIMATE | Anggaran alat/setup format pembanding. Belum quotation vendor.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 508.5 m 547 508.5 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 500.5 Td (RENOVASI / INSTALASI) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 500.5 Td (25000000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 486.5 Td (CEK BISNIS ESTIMATE | Anggaran interior dan instalasi; belum RAB lokasi.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 473 m 547 473 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 465.0 Td (FEE AWAL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 465.0 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 451.0 Td (CEK BISNIS ESTIMATE | Belum ada fee terverifikasi di model default; nol adalah asumsi) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 440.5 Td (biaya minimum, bukan klaim bebas biaya.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 427 m 547 427 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 419.0 Td (DEPOSIT) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 419.0 Td (7000000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 405.0 Td (CEK BISNIS ESTIMATE | Deposit sewa 2 bulan, asumsi terpisah dari biaya sewa bulanan.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 391.5 m 547 391.5 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 383.5 Td (STOK AWAL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 383.5 Td (5000000) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 369.5 Td (CEK BISNIS ESTIMATE | Persediaan awal di modal kerja; HPP bulanan tetap dihitung saat) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 359.0 Td (terjual, bukan beban awal dua kali.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 345.5 m 547 345.5 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 337.5 Td (CADANGAN BIAYA TETAP \(BULAN\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 337.5 Td (3) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 323.5 Td (CEK BISNIS ESTIMATE | Cadangan 3 bulan biaya tetap; bukan biaya tambahan bulanan.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 310 m 547 310 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 302.0 Td (CADANGAN PAJAK LABA \(RASIO\)) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 302.0 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 288.0 Td (CEK BISNIS ESTIMATE | 0: model sebelum pajak penghasilan; bukan bebas pajak.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 274.5 m 547 274.5 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 266.5 Td (CICILAN / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 266.5 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 252.5 Td (CEK BISNIS ESTIMATE | 0: asumsi modal sendiri, belum cicilan.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 239 m 547 239 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 231.0 Td (CADANGAN PENGGANTIAN ASET / BULAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 231.0 Td (0) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 217.0 Td (CEK BISNIS ESTIMATE | 0: belum cadangan penggantian aset besar; maintenance rutin) Tj ET
-0.34 0.34 0.34 rg BT /F1 7.6 Tf 190.0 206.5 Td (sudah dihitung.) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 193 m 547 193 l S
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 185.0 Td (Kapasitas: 200 cup/hari. Gerai minuman kecil; ticket dan HPP adalah bauran menu asumsi, bukan statistik) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 171.2 Td (brand.) Tj ET
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 4 / 9) Tj ET
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Struktur biaya utama) Tj ET
+0.24 0.24 0.24 RG 0.8 w 48 753 m 547 753 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 735.0 Td (HPP / BIAYA VARIABEL) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 735.0 Td (Rp 29.988.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 707 m 547 707 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 699.0 Td (PAYROLL + PEMILIK) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 699.0 Td (Rp 8.892.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 671 m 547 671 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 663.0 Td (SEWA) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 663.0 Td (Rp 3.500.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 635 m 547 635 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 627.0 Td (UTILITAS) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 627.0 Td (Rp 900.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 599 m 547 599 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 591.0 Td (MARKETING) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 591.0 Td (Rp 800.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 563 m 547 563 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 555.0 Td (MAINTENANCE) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 555.0 Td (Rp 400.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 527 m 547 527 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 519.0 Td (LAINNYA / BIAYA BERULANG) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 519.0 Td (Rp 400.000) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 491 m 547 491 l S
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 480.0 Td (Sensitivitas volume) Tj ET
+0.24 0.24 0.24 RG 0.8 w 48 470 m 547 470 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 452.0 Td (-20% VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 452.0 Td (Rp 18.237.600 laba operasi) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 424 m 547 424 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 416.0 Td (-10% VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 416.0 Td (Rp 22.378.800 laba operasi) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 388 m 547 388 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 380.0 Td (0% VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 380.0 Td (Rp 26.520.000 laba operasi) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 352 m 547 352 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 344.0 Td (10% VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 344.0 Td (Rp 30.661.200 laba operasi) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 316 m 547 316 l S
+0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 308.0 Td (20% VOLUME) Tj ET
+0.06 0.06 0.06 rg BT /F2 10 Tf 225.0 308.0 Td (Rp 34.802.400 laba operasi) Tj ET
+0.78 0.78 0.78 RG 0.45 w 48 280 m 547 280 l S
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 272.0 Td (Harga tetap; biaya variabel mengikuti volume dan biaya tetap tidak berubah. Ini uji tekanan, bukan) Tj ET
+0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 258.2 Td (prediksi.) Tj ET
+0.95 0.95 0.95 rg 48 204.364 499 42 re f
+0.72 0.72 0.72 RG 0.7 w 48 204.364 499 42 re S
+0.06 0.06 0.06 rg BT /F2 8.8 Tf 60.0 227.4 Td (KEKUATAN MODEL: Resep dan porsi terukur memudahkan kontrol bahan. Format ringkas menekan kebutuhan ruang.) Tj ET
+0.95 0.95 0.95 rg 48 133.364 499 61 re f
+0.72 0.72 0.72 RG 0.7 w 48 133.364 499 61 re S
+0.06 0.06 0.06 rg BT /F2 8.8 Tf 60.0 175.4 Td (RISIKO UTAMA: Promosi aplikasi dan kemasan bisa menaikkan biaya efektif per cup. Traffic sekolah/kantor) Tj ET
+0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 162.4 Td (turun saat libur; survei jam ramai diperlukan. Sewa terlalu mahal untuk volume Kualitas rasa tidak) Tj ET
+0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 149.4 Td (konsisten Bahan susu dan sirup mudah waste) Tj ET
+0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 4 / 5) Tj ET
 endstream
 endobj
 13 0 obj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 14 0 R >>
 endobj
 14 0 obj
-<< /Length 5202 >>
-stream
-0.08 0.08 0.08 rg 48 798 24 24 re f
-0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 490.9 806.0 Td (PERHITUNGAN) Tj ET
-0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Rumus pendapatan) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 753 m 547 753 l S
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 735.0 Td (85 cup/hari x 28000 Rp x 30 periode = Rp 71.400.000 penjualan) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 714.2 Td (HPP = pendapatan x 42% + unit bulanan x Rp 0. Laba kotor = pendapatan - HPP.) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 693.4 Td (Payroll = staf x gaji x \(1 + cadangan benefit\) + kompensasi pemilik. Laba operasi = laba kotor - biaya) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 679.5 Td (tetap - royalti - bagi laba positif.) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 658.7 Td (Arus kas = laba operasi - cadangan pajak atas laba positif - cicilan - cadangan aset. Modal = peralatan) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 644.9 Td (+ renovasi + fee + deposit + stok + cadangan bulan x OPEX tetap.) Tj ET
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 624.1 Td (CAPEX) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 624.1 Td (Rp 70.000.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 604.0920000000001 m 547 604.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 596.1 Td (FEE) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 596.1 Td (Rp 0) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 576.0920000000001 m 547 576.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 568.1 Td (DEPOSIT) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 568.1 Td (Rp 7.000.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 548.0920000000001 m 547 548.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 540.1 Td (MODAL KERJA) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 540.1 Td (Rp 49.676.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 520.0920000000001 m 547 520.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 512.1 Td (HPP) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 512.1 Td (Rp 29.988.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 492.0920000000001 m 547 492.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 484.1 Td (LABA KOTOR) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 484.1 Td (Rp 41.412.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 464.0920000000001 m 547 464.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 456.1 Td (MARGIN KOTOR) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 456.1 Td (58%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 436.0920000000001 m 547 436.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 428.1 Td (OPEX TETAP) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 428.1 Td (Rp 14.892.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 408.0920000000001 m 547 408.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 400.1 Td (TOTAL BIAYA INCL HPP) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 400.1 Td (Rp 44.880.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 380.0920000000001 m 547 380.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 372.1 Td (BEP PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 372.1 Td (Rp 25.675.862) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 352.0920000000001 m 547 352.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 344.1 Td (BEP VOLUME) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 344.1 Td (31 cup/hari) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 324.0920000000001 m 547 324.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 316.1 Td (ROI BULANAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 316.1 Td (21%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 296.0920000000001 m 547 296.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 288.1 Td (PENDAPATAN / MODAL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 288.1 Td (56%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 268.0920000000001 m 547 268.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 260.1 Td (SEWA / PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 260.1 Td (5%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 240.0920000000001 m 547 240.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 232.1 Td (PAYROLL / PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 232.1 Td (12%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 212.0920000000001 m 547 212.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 204.1 Td (MARKETING / PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 204.1 Td (1%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 184.0920000000001 m 547 184.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 176.1 Td (RASIO VARIABEL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 176.1 Td (42%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 156.0920000000001 m 547 156.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 148.1 Td (MARGIN OF SAFETY) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 148.1 Td (64%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 128.0920000000001 m 547 128.0920000000001 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 117.1 Td (Struktur biaya) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 107.0920000000001 m 547 107.0920000000001 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 89.1 Td (HPP / BIAYA VARIABEL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 89.1 Td (Rp 29.988.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 69.0920000000001 m 547 69.0920000000001 l S
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 5 / 9) Tj ET
-endstream
-endobj
-15 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 16 0 R >>
-endobj
-16 0 obj
-<< /Length 1705 >>
-stream
-0.08 0.08 0.08 rg 48 798 24 24 re f
-0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 490.9 806.0 Td (PERHITUNGAN) Tj ET
-0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 766.0 Td (PAYROLL + PEMILIK) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 766.0 Td (Rp 8.892.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 746 m 547 746 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 738.0 Td (SEWA) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 738.0 Td (Rp 3.500.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 718 m 547 718 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 710.0 Td (UTILITAS) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 710.0 Td (Rp 900.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 690 m 547 690 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 682.0 Td (LOGISTIK) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 682.0 Td (Rp 0) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 662 m 547 662 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 654.0 Td (MARKETING) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 654.0 Td (Rp 800.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 634 m 547 634 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 626.0 Td (MAINTENANCE) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 626.0 Td (Rp 400.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 606 m 547 606 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 598.0 Td (ROYALTI / BAGI HASIL) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 598.0 Td (Rp 0) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 578 m 547 578 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 570.0 Td (LAINNYA / BIAYA BERULANG) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 570.0 Td (Rp 400.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 550 m 547 550 l S
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 6 / 9) Tj ET
-endstream
-endobj
-17 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 18 0 R >>
-endobj
-18 0 obj
-<< /Length 4970 >>
-stream
-0.08 0.08 0.08 rg 48 798 24 24 re f
-0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 506.2 806.0 Td (SKENARIO) Tj ET
-0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Konservatif / dasar / optimistis) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 753 m 547 753 l S
-0.06 0.06 0.06 rg BT /F2 10.8 Tf 48.0 735.0 Td (Konservatif - 45 cup/hari) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 717.0 Td (Volume rendah; biaya tetap dan harga tetap.) Tj ET
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 696.2 Td (PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 696.2 Td (Rp 37.800.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 676.182 m 547 676.182 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 668.2 Td (LABA OPERASI) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 668.2 Td (Rp 7.032.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 648.182 m 547 648.182 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 640.2 Td (MARGIN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 640.2 Td (19%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 620.182 m 547 620.182 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 612.2 Td (PAYBACK) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 612.2 Td (19 bulan) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 592.182 m 547 592.182 l S
-0.06 0.06 0.06 rg BT /F2 10.8 Tf 48.0 584.2 Td (Dasar - 85 cup/hari) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 566.2 Td (Hipotesis volume kerja, bukan hasil observasi outlet.) Tj ET
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 545.4 Td (PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 545.4 Td (Rp 71.400.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 525.364 m 547 525.364 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 517.4 Td (LABA OPERASI) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 517.4 Td (Rp 26.520.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 497.36400000000003 m 547 497.36400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 489.4 Td (MARGIN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 489.4 Td (37%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 469.36400000000003 m 547 469.36400000000003 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 461.4 Td (PAYBACK) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 461.4 Td (5 bulan) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 441.36400000000003 m 547 441.36400000000003 l S
-0.06 0.06 0.06 rg BT /F2 10.8 Tf 48.0 433.4 Td (Optimistis - 140 cup/hari) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 415.4 Td (Volume lebih tinggi, masih dalam batas kapasitas; tanpa menaikkan harga atau komisi.) Tj ET
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 394.5 Td (PENDAPATAN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 394.5 Td (Rp 117.600.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 374.54600000000005 m 547 374.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 366.5 Td (LABA OPERASI) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 366.5 Td (Rp 53.316.000) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 346.54600000000005 m 547 346.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 338.5 Td (MARGIN) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 338.5 Td (45%) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 318.54600000000005 m 547 318.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 310.5 Td (PAYBACK) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 310.5 Td (3 bulan) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 290.54600000000005 m 547 290.54600000000005 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 279.5 Td (Sensitivitas volume) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 269.54600000000005 m 547 269.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 251.5 Td (-20% VOLUME) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 251.5 Td (Rp 18.237.600 laba operasi) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 231.54600000000005 m 547 231.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 223.5 Td (-10% VOLUME) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 223.5 Td (Rp 22.378.800 laba operasi) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 203.54600000000005 m 547 203.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 195.5 Td (0% VOLUME) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 195.5 Td (Rp 26.520.000 laba operasi) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 175.54600000000005 m 547 175.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 167.5 Td (10% VOLUME) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 167.5 Td (Rp 30.661.200 laba operasi) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 147.54600000000005 m 547 147.54600000000005 l S
-0.34 0.34 0.34 rg BT /F2 7.4 Tf 48.0 139.5 Td (20% VOLUME) Tj ET
-0.06 0.06 0.06 rg BT /F2 10 Tf 190.0 139.5 Td (Rp 34.802.400 laba operasi) Tj ET
-0.78 0.78 0.78 RG 0.45 w 48 119.54600000000005 m 547 119.54600000000005 l S
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 111.5 Td (Harga tetap. Biaya variabel mengikuti volume; biaya tetap tidak berubah. BEP dicari numerik dengan) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 97.7 Td (royalti progresif bila berlaku. Payback = pembulatan ke atas total modal / arus kas positif; jika) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 83.9 Td (negatif tidak tercapai.) Tj ET
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 7 / 9) Tj ET
-endstream
-endobj
-19 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 20 0 R >>
-endobj
-20 0 obj
-<< /Length 4235 >>
-stream
-0.08 0.08 0.08 rg 48 798 24 24 re f
-0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
-0.34 0.34 0.34 rg BT /F2 8 Tf 485.8 806.0 Td (RISIKO & KPI) Tj ET
-0.12 0.12 0.12 RG 1.2 w 48 788 m 547 788 l S
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 763.0 Td (Keunggulan) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 753 m 547 753 l S
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 735.0 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 735.0 Td (Resep dan porsi terukur memudahkan kontrol bahan.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 716.5 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 716.5 Td (Format ringkas menekan kebutuhan ruang.) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 695.0 Td (Kelemahan) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 685 m 547 685 l S
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 667.0 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 667.0 Td (Promosi aplikasi dan kemasan bisa menaikkan biaya efektif per cup.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 648.5 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 648.5 Td (Traffic sekolah/kantor turun saat libur; survei jam ramai diperlukan.) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 627.0 Td (Risiko operasional) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 617 m 547 617 l S
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 599.0 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 599.0 Td (Promosi aplikasi dan kemasan bisa menaikkan biaya efektif per cup.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 580.5 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 580.5 Td (Traffic sekolah/kantor turun saat libur; survei jam ramai diperlukan.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 562.0 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 562.0 Td (Sewa terlalu mahal untuk volume) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 543.5 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 543.5 Td (Kualitas rasa tidak konsisten) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 525.0 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 525.0 Td (Bahan susu dan sirup mudah waste) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 503.5 Td (Risiko keuangan) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 493.5 m 547 493.5 l S
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 475.5 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 475.5 Td (Modal kerja dan kompensasi pemilik memengaruhi hasil.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 457.0 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 457.0 Td (Omzet rendah dapat menghabiskan cadangan kas sebelum bisnis stabil.) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 435.5 Td (Lokasi & eksekusi) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 425.5 m 547 425.5 l S
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 407.5 Td (Kantor, kampus, arus komuter, titik nongkrong sore) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 386.7 Td (Gerai minuman kecil; ticket dan HPP adalah bauran menu asumsi, bukan statistik brand.) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 362.9 Td (KPI) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 352.86400000000003 m 547 352.86400000000003 l S
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 334.9 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 334.9 Td (Ukur transaksi, nilai struk, HPP/waste, utilisasi, payroll dan kas aktual setiap hari. Bandingkan) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 321.4 Td (volume dengan BEP 31 cup/hari.) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 299.9 Td (Batasan) Tj ET
-0.24 0.24 0.24 RG 0.8 w 48 289.86400000000003 m 547 289.86400000000003 l S
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 271.9 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 271.9 Td (Steady-state: volume tetap, tanpa ramp-up, inflasi atau nilai jual kembali aset.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 253.4 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 253.4 Td (Cash flow setelah biaya model; belum pajak, cicilan dan penggantian aset besar kecuali diisi.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 234.9 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 234.9 Td (Fee/komisi yang belum diketahui harus diganti dengan kontrak sebelum keputusan.) Tj ET
-0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 216.4 Td (-) Tj ET
-0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 216.4 Td (Pendapatan asumsi net pajak penjualan; settlement platform belum dimodelkan terpisah.) Tj ET
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 8 / 9) Tj ET
-endstream
-endobj
-21 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 22 0 R >>
-endobj
-22 0 obj
-<< /Length 2691 >>
+<< /Length 2699 >>
 stream
 0.08 0.08 0.08 rg 48 798 24 24 re f
 0.06 0.06 0.06 rg BT /F2 13 Tf 82.0 805.0 Td (CEK BISNIS) Tj ET
@@ -525,7 +266,7 @@ stream
 0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 593.7 Td (Mendukung: Kebijakan tarif tidak naik; jumlah tagihan usaha tetap asumsi konsumsi, bukan angka resmi) Tj ET
 0.06 0.06 0.06 rg BT /F1 9.4 Tf 48.0 579.9 Td (PLN. | Status: reviewed) Tj ET
 0.06 0.06 0.06 rg BT /F1 7.5 Tf 48.0 559.0 Td (https://www.esdm.go.id/id/media-center/arsip-berita/jaga-daya-beli-menteri-esdm-tarif-listrik-tidak-naik) Tj ET
-0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 538.0 Td (Koreksi audit) Tj ET
+0.06 0.06 0.06 rg BT /F2 14 Tf 48.0 538.0 Td (Catatan audit penting) Tj ET
 0.24 0.24 0.24 RG 0.8 w 48 528.0170000000002 m 547 528.0170000000002 l S
 0.06 0.06 0.06 rg BT /F2 9.1 Tf 51.0 510.0 Td (-) Tj ET
 0.06 0.06 0.06 rg BT /F1 9.1 Tf 66.0 510.0 Td (Rentang balik modal lama dihentikan; hasil kini dihitung dari cash flow dan total modal.) Tj ET
@@ -536,36 +277,28 @@ stream
 0.06 0.06 0.06 rg BT /F2 8.8 Tf 60.0 463.0 Td (DISCLAIMER: Model edukasi perencanaan, bukan rekomendasi investasi, penawaran franchise atau jaminan) Tj ET
 0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 450.0 Td (profit. Validasi kontrak, biaya setempat, pajak dan kapasitas sebelum keputusan. Sumber resmi tidak) Tj ET
 0.06 0.06 0.06 rg BT /F1 8.8 Tf 60.0 437.0 Td (memverifikasi seluruh asumsi model.) Tj ET
-0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 9 / 9) Tj ET
+0.34 0.34 0.34 rg BT /F1 8 Tf 48 28 Td (CEK BISNIS ESTIMATE - 5 / 5) Tj ET
 endstream
 endobj
 xref
-0 23
+0 15
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000169 00000 n 
-0000000239 00000 n 
-0000000314 00000 n 
-0000000450 00000 n 
-0000003966 00000 n 
-0000004102 00000 n 
-0000004709 00000 n 
-0000004846 00000 n 
-0000011286 00000 n 
-0000011424 00000 n 
-0000016989 00000 n 
-0000017127 00000 n 
-0000022382 00000 n 
-0000022520 00000 n 
-0000024278 00000 n 
-0000024416 00000 n 
-0000029439 00000 n 
-0000029577 00000 n 
-0000033865 00000 n 
-0000034003 00000 n 
+0000000141 00000 n 
+0000000211 00000 n 
+0000000286 00000 n 
+0000000422 00000 n 
+0000004314 00000 n 
+0000004450 00000 n 
+0000008256 00000 n 
+0000008393 00000 n 
+0000012182 00000 n 
+0000012320 00000 n 
+0000016081 00000 n 
+0000016219 00000 n 
 trailer
-<< /Size 23 /Root 1 0 R >>
+<< /Size 15 /Root 1 0 R >>
 startxref
-36747
+18971
 %%EOF

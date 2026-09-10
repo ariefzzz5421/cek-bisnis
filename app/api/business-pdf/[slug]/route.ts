@@ -9,5 +9,5 @@ export async function GET(request:Request,{params}:{params:Promise<{slug:string}
  const units=value===null?d.model.inputs.units.value:Number(value)*1e6/(d.model.inputs.ticket.value*(d.model.mode==='membership'?1:d.model.inputs.days.value));
  if(units>d.model.capacity)return new Response('Volume melampaui kapasitas model. Gunakan pengaturan di halaman usaha.',{status:400});
  const model=withOverrides(d.model,{units});model.location=(url.searchParams.get('city')??'Nasional').slice(0,100)+' — biaya lokal belum disurvei';
- const blob=buildDossierPdf(d,model);return new Response(await blob.arrayBuffer(),{headers:{'Content-Type':'application/pdf','Content-Disposition':`attachment; filename="cek-bisnis-${slug}-model.pdf"`,'Cache-Control':'no-store'}});
+ const blob=await buildDossierPdf(d,model);return new Response(await blob.arrayBuffer(),{headers:{'Content-Type':'application/pdf','Content-Disposition':`attachment; filename="cek-bisnis-${slug}-model.pdf"`,'Cache-Control':'no-store'}});
 }

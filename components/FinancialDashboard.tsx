@@ -269,7 +269,7 @@ export function FinancialDashboard({
         "@/lib/financial-pdf"
       );
       if (kind === "pdf")
-        downloadBlob(buildDossierPdf(d, model), `cek-bisnis-${d.id}-model.pdf`);
+        downloadBlob(await buildDossierPdf(d, model), `cek-bisnis-${d.id}-model.pdf`);
       else {
         const { renderModelPng } = await import("@/lib/model-preview");
         downloadBlob(
@@ -501,26 +501,24 @@ export function FinancialDashboard({
                   "Laba operasional ÷ pendapatan",
                 ],
                 [
-                  "Pendapatan BEP",
+                  "BEP minimum",
                   r.breakEvenRevenue === null
                     ? "Di luar kapasitas"
-                    : money(r.breakEvenRevenue),
-                  "Impas operasional, bukan balik modal",
+                    : `${Math.ceil(r.breakEvenUnits ?? 0)} ${model.unit}`,
+                  r.breakEvenRevenue === null
+                    ? "Model belum mencapai impas"
+                    : `${money(r.breakEvenRevenue)} pendapatan/bulan`,
                 ],
+                ["Arus kas / bulan", money(r.cashFlow), "Setelah cadangan yang diinput"],
                 [
                   "Payback",
                   months(r.payback),
                   "Total modal ÷ arus kas bulanan",
                 ],
                 [
-                  "ROI tahunan sederhana",
-                  percent(r.annualRoi),
-                  "12 × arus kas ÷ modal; bukan IRR",
-                ],
-                [
-                  "Margin of safety",
-                  percent(r.marginOfSafety),
-                  "Selisih pendapatan terhadap BEP",
+                  "Keyakinan data",
+                  conf.label,
+                  conf.reason,
                 ],
               ].map(([a, b, n]) => (
                 <article key={a}>
@@ -546,8 +544,22 @@ export function FinancialDashboard({
                 </p>
               </div>
             )}
+            <div className="fi-decision-grid" aria-label="Poin keputusan utama">
+              <article>
+                <span>Target model dasar</span>
+                <b>{Math.round(model.inputs.units.value)} {model.unit}</b>
+              </article>
+              <article>
+                <span>Biaya bulanan terbesar</span>
+                <b>{r.costs.filter((cost) => cost.value > 0).sort((a, b) => b.value - a.value)[0]?.name ?? "Belum tersedia"}</b>
+              </article>
+              <article>
+                <span>Lokasi paling menentukan</span>
+                <b>{d.locationDependency}</b>
+              </article>
+            </div>
             <details className="fi-panel">
-              <summary>Rumus & statistik lengkap</summary>
+              <summary>Lihat rincian angka dan rumus</summary>
               <p>
                 {model.inputs.units.value} {model.unit} ×{" "}
                 {money(
@@ -590,18 +602,7 @@ export function FinancialDashboard({
                           ? "Di luar kapasitas"
                           : `${Math.ceil(r.breakEvenUnits)} ${model.unit}`,
                       ],
-                      ["ROI bulanan", percent(r.monthlyRoi)],
-                      [
-                        "Pendapatan bulanan / modal",
-                        percent(r.revenueToCapital),
-                      ],
-                      ["Sewa / pendapatan", percent(r.rentToSales)],
-                      ["Payroll / pendapatan", percent(r.payrollToSales)],
-                      ["Marketing / pendapatan", percent(r.marketingToSales)],
-                      [
-                        "Rasio biaya variabel + royalti",
-                        percent(r.variableCostRatio),
-                      ],
+                      ["ROI sederhana / tahun", percent(r.annualRoi)],
                     ].map(([a, b]) => (
                       <tr key={a}>
                         <th>{a}</th>
@@ -786,12 +787,15 @@ export function FinancialDashboard({
             <p>{assessment?.reason}</p>
             <small>{assessment?.note}</small>
           </section>
-          <div className="fi-risk-grid">
+          <div className="fi-risk-grid fi-risk-grid--concise">
             {[
-              ["Keunggulan", d.pros],
-              ["Kelemahan", d.cons],
-              ["Risiko operasional", d.operationalRisks],
-              ["Risiko keuangan", d.financialRisks],
+              ["Kekuatan model", d.pros],
+              [
+                "Yang perlu diwaspadai",
+                [...d.cons, ...d.operationalRisks, ...d.financialRisks].filter(
+                  (item, index, all) => all.indexOf(item) === index,
+                ).slice(0, 6),
+              ],
             ].map(([title, items]) => (
               <article key={title as string}>
                 <h3>{title}</h3>
@@ -803,14 +807,8 @@ export function FinancialDashboard({
               </article>
             ))}
           </div>
-          <p>
-            <b>Ketergantungan lokasi:</b> {d.locationDependency}
-          </p>
-          <p>
-            <b>Kesulitan eksekusi:</b> {d.executionDifficulty}
-          </p>
           <details className="fi-panel">
-            <summary>Batasan model & KPI sebelum berinvestasi</summary>
+            <summary>Checklist verifikasi sebelum membuka usaha</summary>
             <ul>
               {model.limitations.map((n) => (
                 <li key={n}>{n}</li>
