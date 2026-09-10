@@ -29,7 +29,7 @@ Sensitivity changes volume by -20%, -10%, 0%, +10% and +20%. Scenarios vary oper
 
 Neutral research-oriented styling replaces decorative financial posters. Shared dashboards expose editable assumptions, provenance, formulas, scenario comparison, revenue/cost/profit bars, cost structure, cumulative cash flow, break-even and sensitivity. Charts include exact data tables. Mobile tables and charts scroll within their own containers. Long sections collapse without removing access.
 
-PDF reports use dark text, white backgrounds, tables, page numbers, source and assumption sections. Browser exports use the current edited model. Existing guide URLs remain supported. Business equipment, operating guides, comparison, map survey and AI interpretation remain accessible.
+PDF reports use dark text, white backgrounds, five concise pages for typical entries and a sixth page when more verified facts require it, wrapped table labels, page numbers, source and assumption sections. Repetitive unknown facts are consolidated into one action-oriented warning. Browser franchise exports embed the mapped official/public brand mark when a verified asset exists; the export does not invent a replacement brand logo. Browser exports use the current edited model. Existing guide URLs remain supported. Business equipment, operating guides, comparison, map survey and AI interpretation remain accessible.
 
 ## Verification performed
 

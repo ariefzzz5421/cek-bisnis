@@ -151,11 +151,15 @@ test("sensitivity follows volume and holds fixed costs; all PDFs have text, sour
           Math.abs(s.result.revenue - base.revenue * (1 + s.change)) < 0.01,
         );
       }
-    const text = await buildDossierPdf(d).text();
+    const text = await (await buildDossierPdf(d)).text();
     assert.ok(text.startsWith("%PDF-"));
     assert.match(text, /CEK BISNIS ESTIMATE/);
     assert.match(text, /REFERENSI/);
+    assert.match(text, /DATA & ASUMSI/);
     assert.match(text, /Sensitivitas volume/);
+    assert.doesNotMatch(text, /UNKNOWN/);
+    const pageCount = Number(text.match(/\/Count (\d+)/)?.[1]);
+    assert.ok(pageCount >= 4 && pageCount <= 6, `unexpected ${pageCount}-page report for ${id}`);
     assert.match(text, /1 \/ \d+/);
     assert.doesNotMatch(text, /NaN|Infinity/);
   }

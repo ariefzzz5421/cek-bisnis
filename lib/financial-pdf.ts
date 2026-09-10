@@ -25,9 +25,12 @@ import {
   percent,
   months,
   withOverrides,
+  type InputKey,
   type Model,
 } from "@/financial-models/engine";
 import { labels, evidenceLabels } from "@/financial-models/labels";
+import { brandLogoAssets } from "@/lib/brand-logo-assets";
+import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
 export function downloadBlob(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob);
   const anchor = document.createElement("a");
@@ -230,27 +233,24 @@ class FinancialPdf {
   }
 
   metric(label: string, value: string, note?: string) {
-    const valueLines = wrapPdf(value, 10, 330);
-    const noteLines = note ? wrapPdf(note, 7.6, 330) : [];
+    const labelLines = wrapPdf(label.toUpperCase(), 7.4, 102);
+    const valueLines = wrapPdf(value, 10, 310);
+    const noteLines = note ? wrapPdf(note, 7.6, 310) : [];
     const height = Math.max(
-      28,
-      valueLines.length * 14 + noteLines.length * 10.5 + 11,
+      36,
+      labelLines.length * 11 + 15,
+      valueLines.length * 14 + noteLines.length * 11 + 18,
     );
     this.ensure(height);
-    this.rawText(
-      ascii(label).toUpperCase(),
-      this.margin,
-      this.y,
-      7.4,
-      true,
-      "muted",
+    labelLines.forEach((line, index) =>
+      this.rawText(line, this.margin, this.y - index * 11, 7.4, true, "muted"),
     );
     valueLines.forEach((line, index) =>
-      this.rawText(line, 190, this.y - index * 14, 10, true),
+      this.rawText(line, 225, this.y - index * 14, 10, true),
     );
-    let noteY = this.y - valueLines.length * 14;
+    let noteY = this.y - valueLines.length * 14 - 4;
     noteLines.forEach((line) => {
-      this.rawText(line, 190, noteY, 7.6, false, "muted");
+      this.rawText(line, 225, noteY, 7.6, false, "muted");
       noteY -= 10.5;
     });
     this.y -= height;
@@ -324,7 +324,66 @@ class FinancialPdf {
   }
 }
 
-export function buildDossierPdf(d: Dossier, model: Model = d.model) {
+async function browserLogoPng(d: Dossier) {
+  if (typeof window === "undefined" || typeof document === "undefined" || d.kind !== "franchise") return null;
+  const asset = brandLogoAssets[d.id];
+  if (!asset) return null;
+  try {
+    const response = await fetch(`/brands/franchises/${asset.file}`);
+    if (!response.ok) return null;
+    const source = URL.createObjectURL(await response.blob());
+    try {
+      const image = await new Promise<HTMLImageElement>((resolve, reject) => {
+        const element = new Image();
+        element.onload = () => resolve(element);
+        element.onerror = () => reject(new Error("Logo tidak dapat dibaca"));
+        element.src = source;
+      });
+      const scale = Math.min(1, 700 / Math.max(image.naturalWidth, image.naturalHeight));
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(image.naturalWidth * scale));
+      canvas.height = Math.max(1, Math.round(image.naturalHeight * scale));
+      canvas.getContext("2d")?.drawImage(image, 0, 0, canvas.width, canvas.height);
+      const png = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/png"));
+      return png ? new Uint8Array(await png.arrayBuffer()) : null;
+    } finally {
+      URL.revokeObjectURL(source);
+    }
+  } catch {
+    return null;
+  }
+}
+
+async function addBrandIdentity(blob: Blob, d: Dossier) {
+  const bytes = await browserLogoPng(d);
+  if (!bytes) return blob;
+  const document = await PDFDocument.load(await blob.arrayBuffer());
+  const logo = await document.embedPng(bytes);
+  const font = await document.embedFont(StandardFonts.HelveticaBold);
+  document.getPages().forEach((page, index) => {
+    page.drawRectangle({ x: 45, y: 795, width: 178, height: 31, color: rgb(1, 1, 1) });
+    const fitted = logo.scaleToFit(112, 24);
+    page.drawImage(logo, { x: 48, y: 799, width: fitted.width, height: fitted.height });
+    page.drawText(index === 0 ? "CEK BISNIS" : "CEK BISNIS - RINGKASAN", {
+      x: Math.min(166, 56 + fitted.width), y: 805, size: 8, font, color: rgb(0.08, 0.08, 0.08),
+    });
+  });
+  const saved = await document.save();
+  const buffer = saved.buffer.slice(saved.byteOffset, saved.byteOffset + saved.byteLength) as ArrayBuffer;
+  return new Blob([buffer], { type: "application/pdf" });
+}
+
+const factValue = (fact: Dossier["research"]["facts"][number]) =>
+  fact.value === null ? "Belum ada data resmi yang cukup" : String(fact.value) + (fact.unit ? " " + fact.unit : "");
+
+const ratioInputs = new Set<InputKey>([
+  "commissionRate", "cogsRate", "payrollLoad", "royaltyRate", "profitShare", "taxReserve",
+]);
+const countInputs = new Set<InputKey>(["units", "days", "employees", "reserveMonths"]);
+const displayInput = (key: InputKey, value: number) =>
+  ratioInputs.has(key) ? percent(value) : countInputs.has(key) ? value.toLocaleString("id-ID") : money(value);
+
+export async function buildDossierPdf(d: Dossier, model: Model = d.model) {
   const r = calculate(model),
     pdf = new FinancialPdf(),
     conf = confidence({ ...d, model });
@@ -339,7 +398,7 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
       " | Data confidence: " +
       conf.label,
   );
-  pdf.callout(d.research.note);
+  pdf.callout(`${d.research.note} Angka model selalu berlabel estimasi.`);
   pdf.h2("Executive summary");
   const a = viability(model);
   pdf.paragraph(a.label + ". " + a.reason + " " + a.note);
@@ -366,51 +425,40 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
     money(r.operatingProfit),
     "EBITDA-like, sebelum pajak/cicilan.",
   );
-  pdf.metric(
-    "Arus kas",
-    money(r.cashFlow),
-    "Setelah cadangan pajak/cicilan/penggantian aset yang diinput.",
-  );
   pdf.metric("Margin operasi", percent(r.operatingMargin));
-  pdf.metric("Payback", months(r.payback));
   pdf.metric(
-    "ROI sederhana / tahun",
-    percent(r.annualRoi),
-    "12 x arus kas bulanan / total modal; bukan IRR atau jaminan.",
+    "BEP volume",
+    r.breakEvenUnits === null ? "Di luar kapasitas" : `${Math.ceil(r.breakEvenUnits)} ${model.unit}`,
+    "Volume minimum agar operasi impas.",
   );
-  pdf.newPage("FAKTA & SUMBER");
-  pdf.h2("Official / public data");
-  if (!d.research.facts.length)
-    pdf.paragraph(
-      "Usaha independen. Unit economics seluruhnya estimasi; sumber industri hanya konteks komponen.",
-    );
-  d.research.facts.forEach((f) =>
-    pdf.metric(
-      f.label,
-      f.value === null
-        ? "UNKNOWN"
-        : String(f.value) + (f.unit ? " " + f.unit : ""),
-      evidenceLabels[f.type] +
-        ": " +
-        f.note +
-        (f.sourceId ? " [" + f.sourceId + "]" : ""),
-    ),
+  pdf.metric("Payback", months(r.payback));
+  pdf.metric("Arus kas / bulan", money(r.cashFlow), "Setelah cadangan yang diinput.");
+  pdf.callout(
+    `INTI KEPUTUSAN: ${a.reason} Titik minimum model: ${r.breakEvenUnits === null ? "belum terjangkau kapasitas" : Math.ceil(r.breakEvenUnits) + " " + model.unit}.`,
   );
-  pdf.newPage("ASUMSI");
-  pdf.h2("Asumsi model");
+
+  pdf.newPage("DATA & ASUMSI");
+  pdf.h2("Data publik yang relevan");
+  const knownFacts = d.research.facts.filter((fact) => fact.value !== null);
+  const unknownFacts = d.research.facts.filter((fact) => fact.value === null);
+  if (!knownFacts.length)
+    pdf.paragraph("Tidak ada angka resmi yang cukup untuk unit economics. Perhitungan di laporan ini adalah simulasi terbuka.");
+  knownFacts.forEach((f) =>
+    pdf.metric(f.label, factValue(f), `${evidenceLabels[f.type]} - ${f.note}${f.sourceId ? " [" + f.sourceId + "]" : ""}`),
+  );
+  if (unknownFacts.length)
+    pdf.callout(`BELUM TERKONFIRMASI: ${unknownFacts.map((fact) => fact.label).join(", ")}. Minta bukti tertulis sebelum transaksi.`);
+  pdf.h2("Asumsi inti model");
   pdf.paragraph(
-    "Uang: rupiah penuh. Rasio: 20% = 0.20. Nol pada fee yang belum diketahui bukan klaim bebas biaya. Input pengguna menggantikan status data resmi.",
+    "Uang memakai rupiah penuh; rasio 20% dihitung sebagai 0.20. Nilai nol pada fee yang belum diketahui bukan berarti gratis.",
   );
-  Object.entries(model.inputs).forEach(([key, i]) =>
-    pdf.metric(
-      labels[key as keyof typeof labels],
-      String(i.value),
-      evidenceLabels[i.type] +
-        " | " +
-        i.note +
-        (i.sourceIds.length ? " | " + i.sourceIds.join(", ") : ""),
-    ),
-  );
+  const assumptionKeys = ["units", "ticket", "days", model.mode === "commission-fixed" ? "commissionFixed" : "commissionRate", "cogsRate", "unitCost", "employees", "salary", "rent", "utilities"] as const;
+  assumptionKeys.forEach((key) => {
+    const i = model.inputs[key];
+    if (i.value !== 0 || ["units", "ticket", "days", "employees", "rent"].includes(key))
+      pdf.metric(labels[key], `${displayInput(key, i.value)} (${evidenceLabels[i.type]})`);
+  });
+  pdf.metric("Modal awal", money(r.capital), `CAPEX ${money(r.capex)} + fee ${money(r.entryFee)} + deposit ${money(r.deposit)} + modal kerja ${money(r.workingCapital)}.`);
   pdf.paragraph(
     "Kapasitas: " +
       model.capacity +
@@ -433,8 +481,8 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
           )
           .join("; "),
     );
-  pdf.newPage("PERHITUNGAN");
-  pdf.h2("Rumus pendapatan");
+  pdf.newPage("MODEL & SKENARIO");
+  pdf.h2("Cara bisnis menghasilkan uang");
   pdf.paragraph(
     model.inputs.units.value +
       " " +
@@ -461,29 +509,14 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
             money(r.revenue) +
             " pendapatan komisi.",
     );
-  pdf.paragraph(
-    "HPP = pendapatan x " +
-      percent(model.inputs.cogsRate.value) +
-      " + unit bulanan x " +
-      money(model.inputs.unitCost.value) +
-      ". Laba kotor = pendapatan - HPP.",
-  );
-  pdf.paragraph(
-    "Payroll = staf x gaji x (1 + cadangan benefit) + kompensasi pemilik. Laba operasi = laba kotor - biaya tetap - royalti - bagi laba positif.",
-  );
-  pdf.paragraph(
-    "Arus kas = laba operasi - cadangan pajak atas laba positif - cicilan - cadangan aset. Modal = peralatan + renovasi + fee + deposit + stok + cadangan bulan x OPEX tetap.",
-  );
+  pdf.paragraph(`Pendapatan ${money(r.revenue)} - HPP ${money(r.cogs)} = laba kotor ${money(r.grossProfit)}. Dikurangi OPEX tetap ${money(r.fixedOpex)}, royalti ${money(r.royalty)} dan bagi hasil ${money(r.managementShare)} = laba operasi ${money(r.operatingProfit)}.`);
   for (const [k, v] of [
     ["CAPEX", money(r.capex)],
-    ["Fee", money(r.entryFee)],
-    ["Deposit", money(r.deposit)],
     ["Modal kerja", money(r.workingCapital)],
     ["HPP", money(r.cogs)],
     ["Laba kotor", money(r.grossProfit)],
-    ["Margin kotor", percent(r.grossMargin)],
     ["OPEX tetap", money(r.fixedOpex)],
-    ["Total biaya incl HPP", money(r.totalOpex)],
+    ["Arus kas bulanan", money(r.cashFlow)],
     [
       "BEP pendapatan",
       r.breakEvenRevenue === null
@@ -496,18 +529,9 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
         ? "Di luar kapasitas"
         : Math.ceil(r.breakEvenUnits) + " " + model.unit,
     ],
-    ["ROI bulanan", percent(r.monthlyRoi)],
-    ["Pendapatan / modal", percent(r.revenueToCapital)],
-    ["Sewa / pendapatan", percent(r.rentToSales)],
-    ["Payroll / pendapatan", percent(r.payrollToSales)],
-    ["Marketing / pendapatan", percent(r.marketingToSales)],
-    ["Rasio variabel", percent(r.variableCostRatio)],
-    ["Margin of safety", percent(r.marginOfSafety)],
+    ["ROI sederhana / tahun", percent(r.annualRoi)],
   ])
     pdf.metric(k, v);
-  pdf.h2("Struktur biaya");
-  r.costs.forEach((c) => pdf.metric(c.name, money(c.value)));
-  pdf.newPage("SKENARIO");
   pdf.h2("Konservatif / dasar / optimistis");
   scenarios(model).forEach((s) => {
     pdf.h3(
@@ -517,12 +541,11 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
         " " +
         model.unit,
     );
-    pdf.paragraph(s.rationale);
-    pdf.metric("Pendapatan", money(s.result.revenue));
-    pdf.metric("Laba operasi", money(s.result.operatingProfit));
-    pdf.metric("Margin", percent(s.result.operatingMargin));
-    pdf.metric("Payback", months(s.result.payback));
+    pdf.paragraph(`${s.rationale} Pendapatan ${money(s.result.revenue)}; laba ${money(s.result.operatingProfit)}; margin ${percent(s.result.operatingMargin)}; payback ${months(s.result.payback)}.`);
   });
+  pdf.newPage("BIAYA & RISIKO");
+  pdf.h2("Struktur biaya utama");
+  r.costs.filter((cost) => cost.value > 0).sort((a, b) => b.value - a.value).slice(0, 7).forEach((c) => pdf.metric(c.name, money(c.value)));
   pdf.h2("Sensitivitas volume");
   sensitivity(model).forEach((s) =>
     pdf.metric(
@@ -532,32 +555,14 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
         : "Melampaui kapasitas",
     ),
   );
-  pdf.paragraph(
-    "Harga tetap. Biaya variabel mengikuti volume; biaya tetap tidak berubah. BEP dicari numerik dengan royalti progresif bila berlaku. Payback = pembulatan ke atas total modal / arus kas positif; jika negatif tidak tercapai.",
+  pdf.paragraph("Harga tetap; biaya variabel mengikuti volume dan biaya tetap tidak berubah. Ini uji tekanan, bukan prediksi.");
+  pdf.callout(`KEKUATAN MODEL: ${d.pros.join(" ")}`);
+  pdf.callout(
+    `RISIKO UTAMA: ${[...d.cons, ...d.operationalRisks, ...d.financialRisks]
+      .filter((item, index, all) => all.indexOf(item) === index)
+      .slice(0, 5)
+      .join(" ")}`,
   );
-  pdf.newPage("RISIKO & KPI");
-  for (const [title, items] of [
-    ["Keunggulan", d.pros],
-    ["Kelemahan", d.cons],
-    ["Risiko operasional", d.operationalRisks],
-    ["Risiko keuangan", d.financialRisks],
-  ] as [string, string[]][]) {
-    pdf.h2(title);
-    items.forEach((i) => pdf.bullet(i));
-  }
-  pdf.h2("Lokasi & eksekusi");
-  pdf.paragraph(d.locationDependency);
-  pdf.paragraph(d.executionDifficulty);
-  pdf.h2("KPI");
-  pdf.bullet(
-    "Ukur transaksi, nilai struk, HPP/waste, utilisasi, payroll dan kas aktual setiap hari. Bandingkan volume dengan BEP " +
-      (r.breakEvenUnits === null
-        ? "di luar kapasitas"
-        : Math.ceil(r.breakEvenUnits) + " " + model.unit) +
-      ".",
-  );
-  pdf.h2("Batasan");
-  model.limitations.forEach((i) => pdf.bullet(i));
   pdf.newPage("REFERENSI");
   pdf.h2("Sumber");
   sourceList(d).forEach((s) => {
@@ -574,12 +579,14 @@ export function buildDossierPdf(d: Dossier, model: Model = d.model) {
     pdf.paragraph("Mendukung: " + s.supports + " | Status: " + s.status);
     pdf.paragraph(s.url, { size: 7.5 });
   });
-  pdf.h2("Koreksi audit");
-  d.research.corrections.forEach((i) => pdf.bullet(i));
+  if (d.research.corrections.length) {
+    pdf.h2("Catatan audit penting");
+    d.research.corrections.slice(0, 4).forEach((i) => pdf.bullet(i));
+  }
   pdf.callout(
     "DISCLAIMER: Model edukasi perencanaan, bukan rekomendasi investasi, penawaran franchise atau jaminan profit. Validasi kontrak, biaya setempat, pajak dan kapasitas sebelum keputusan. Sumber resmi tidak memverifikasi seluruh asumsi model.",
   );
-  return pdf.toBlob();
+  return addBrandIdentity(pdf.toBlob(), d);
 }
 export function buildFranchiseResearchPdf({
   franchise,
